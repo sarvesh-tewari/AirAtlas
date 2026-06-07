@@ -1,0 +1,46 @@
+# Hourly refresh: CPCB live + Open-Meteo current -> data/live/ -> commit.
+# SKELETON ONLY — pipeline steps are wired up in Phase 6.
+name: refresh-hourly
+
+on:
+  schedule:
+    - cron: "17 * * * *" # hourly, offset to avoid the top-of-hour rush
+  workflow_dispatch: {}
+
+# Avoid overlapping runs piling up commits.
+concurrency:
+  group: data-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write # commit refreshed data back to the repo
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # - name: Install pipeline
+      #   run: pip install -e ./pipeline
+
+      # - name: Refresh live data
+      #   env:
+      #     DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
+      #     OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
+      #   run: python pipeline/run.py --mode hourly
+
+      # - name: Commit refreshed data
+      #   run: |
+      #     git config user.name  "airatlas-bot"
+      #     git config user.email "airatlas-bot@users.noreply.github.com"
+      #     git add data/
+      #     git diff --staged --quiet || git commit -m "data: hourly refresh"
+      #     git push
+
+      - name: Placeholder
+        run: echo "refresh-hourly skeleton — wired up in Phase 6"

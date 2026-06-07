@@ -1,0 +1,39 @@
+Data License — Creative Commons Attribution 4.0 International (CC BY 4.0)
+=========================================================================
+
+The datasets published in this repository under `data/` (the live JSON
+snapshots and the historical/recent Parquet files) are licensed under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+You are free to share and adapt the data for any purpose, including
+commercially, provided you give appropriate credit.
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:           https://creativecommons.org/licenses/by/4.0/
+
+This licence applies to the DATA only. The source code is licensed
+separately under the MIT License — see LICENSE.
+
+-------------------------------------------------------------------------
+REQUIRED ATTRIBUTION
+-------------------------------------------------------------------------
+
+This dataset is derived from the following upstream sources. When you use or
+redistribute the data, you must credit them:
+
+  • Central Pollution Control Board (CPCB), Government of India —
+    "Real time Air Quality Index from various locations", via data.gov.in.
+    Live (same-day) air-quality values.
+
+  • OpenAQ — https://openaq.org —
+    Historical (multi-year) air-quality measurements. Licensed CC BY;
+    redistribution complies with OpenAQ's upstream terms.
+
+  • Open-Meteo — https://open-meteo.com —
+    Current and historical weather (Forecast API + ERA5 Archive API).
+    Licensed CC BY 4.0.
+
+Suggested attribution string:
+
+  "Air-quality data © CPCB / data.gov.in and OpenAQ (CC BY); weather data
+   © Open-Meteo (CC BY 4.0). Compiled by the AirAtlas project."

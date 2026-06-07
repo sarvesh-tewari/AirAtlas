@@ -1,0 +1,59 @@
+# Daily refresh: OpenAQ + Open-Meteo archive deltas -> data/history + data/recent
+# -> rebuild frontend -> deploy. SKELETON ONLY — wired up in Phases 6 & 10.
+name: refresh-daily
+
+on:
+  schedule:
+    - cron: "40 1 * * *" # 01:40 UTC daily
+  workflow_dispatch: {}
+
+concurrency:
+  group: data-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  refresh-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # - name: Install pipeline
+      #   run: pip install -e ./pipeline
+
+      # - name: Refresh history + recent
+      #   env:
+      #     DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
+      #     OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
+      #   run: python pipeline/run.py --mode daily
+
+      # - name: Commit refreshed data
+      #   run: |
+      #     git config user.name  "airatlas-bot"
+      #     git config user.email "airatlas-bot@users.noreply.github.com"
+      #     git add data/
+      #     git diff --staged --quiet || git commit -m "data: daily refresh"
+      #     git push
+
+      # - name: Build frontend
+      #   run: |
+      #     cd web && npm ci && npm run build
+
+      # - name: Deploy to GitHub Pages
+      #   uses: actions/deploy-pages@v4
+      #   # NOTE: Pages from a PRIVATE repo needs a paid plan. Flip repo to public before launch.
+
+      - name: Placeholder
+        run: echo "refresh-daily skeleton — wired up in Phases 6 & 10"
