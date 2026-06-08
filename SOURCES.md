@@ -44,16 +44,42 @@ To avoid a visible contradiction between CPCB and OpenAQ for the same hour:
 
 ---
 
-## 3. AQI standard versions (pin exact versions here)
+## 3. AQI standard versions (pinned)
 
-| Standard | Version / date | Source | Notes |
+| Standard | Version / date | Source (verified 2026-06-08) | Notes |
 |---|---|---|---|
-| India NAQI | CPCB 2014 | CPCB | 8 pollutants; overall = max sub-index. |
-| US EPA AQI | Effective 2024-05-06 | EPA AQS code table + May 2024 AQI TAD (airnow.gov) | Gas tables _(TBC at implementation)_. |
-| EU EAQI | EEA 2024 revision | airindex.eea.europa.eu | 6-band; numeric bands _(TBC at implementation)_. |
+| India NAQI | CPCB 2014 | CPCB National Air Quality Index | 8 pollutants (PM2.5, PM10, NO2, SO2, O3, CO, NH3, Pb); overall = max sub-index. |
+| US EPA AQI | Effective 2024-05-06 | EPA AQS breakpoints code table (`aqs.epa.gov/aqsweb/documents/codetables/aqi_breakpoints.html`) | 6 pollutants; gases in ppb/ppm; PM2.5 May-2024 revision. |
+| EU EAQI | EEA 2024 revision | `airindex.eea.europa.eu` + ETC HE Report 2024-17; cross-checked vs `aqihub.info/indices/eu` | 6-band; aligned to WHO 2021 guidelines. **Supersedes pre-2024 bands.** |
 
-Breakpoint tables live in `pipeline/aqi/breakpoints.py`. When a standard is revised,
-update that module + its tests and bump the version row above.
+Breakpoint tables live in `pipeline/aqi/breakpoints.py` (verified data, fully unit-tested
+incl. the §7 three-standard regression). When a standard is revised, update that module +
+its tests and bump the version row above.
+
+### Encoded decisions (for reproducibility)
+
+- **NAQI top-of-scale:** CPCB leaves the 401–500 ("Severe") band open-topped. Segments are
+  encoded with closed bounds through the 301–400 band; any concentration above the top
+  closed breakpoint returns **AQI 500 flagged `off_scale`**. The whole 401–500 range is one
+  category ("Severe") so policy messaging is unaffected.
+- **EU EAQI bands (current, µg/m³)** — upper-bound inclusive:
+  | Band | PM2.5 | PM10 | NO2 | O3 | SO2 |
+  |---|---|---|---|---|---|
+  | Good | 0–5 | 0–15 | 0–10 | 0–60 | 0–20 |
+  | Fair | 6–15 | 16–45 | 11–25 | 61–100 | 21–40 |
+  | Moderate | 16–50 | 46–120 | 26–60 | 101–120 | 41–125 |
+  | Poor | 51–90 | 121–195 | 61–100 | 121–160 | 126–190 |
+  | Very Poor | 91–140 | 196–270 | 101–150 | 161–180 | 191–275 |
+  | Extremely Poor | >140 | >270 | >150 | >180 | >275 |
+  Averaging: **PM2.5/PM10 = 24h running mean; NO2/O3/SO2 = hourly** (per current EEA
+  methodology — corrects the build plan's §6 "all hourly" note).
+- **µg/m³ → ppb/ppm conversion (US gases):** `ppb = C(µg/m³) × 24.45 / MW` at 25 °C, 1 atm.
+  MW: NO2 46.0055, SO2 64.066, O3 48.00, CO 28.010. CO is stored in mg/m³ → ppm directly.
+- **Plan §7 EU expectation corrected:** the build plan said the §7 case reads "Extremely
+  Poor" under EU — that reflected the pre-2024 bands. Under the current bands it is
+  **"Very Poor" (dominant PM10)**. The regression test asserts the correct current value.
+- **Pb (NAQI 8th pollutant):** breakpoints are encoded, but Pb is rarely present in the live
+  CPCB / OpenAQ feeds; it is simply omitted from the overall index when absent.
 
 ---
 

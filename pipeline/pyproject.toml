@@ -2,7 +2,6 @@
 name = "airatlas-pipeline"
 version = "0.1.0"
 description = "Data pipeline for AirAtlas: fetch → compute AQI → aggregate → reconcile → publish."
-readme = "../README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
 dependencies = [
