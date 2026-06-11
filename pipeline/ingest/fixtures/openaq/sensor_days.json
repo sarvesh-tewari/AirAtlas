@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "name": "openaq-api",
+    "website": "/",
+    "page": 1,
+    "limit": 3,
+    "found": ">3"
+  },
+  "results": [
+    {
+      "value": 78.1,
+      "flagInfo": {
+        "hasFlags": false
+      },
+      "parameter": {
+        "id": 2,
+        "name": "pm25",
+        "units": "µg/m³",
+        "displayName": null
+      },
+      "period": {
+        "label": "1day",
+        "interval": "24:00:00",
+        "datetimeFrom": {
+          "utc": "2025-02-18T18:30:00Z",
+          "local": "2025-02-19T00:00:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-19T18:30:00Z",
+          "local": "2025-02-20T00:00:00+05:30"
+        }
+      },
+      "coordinates": null,
+      "summary": {
+        "min": 31.75,
+        "q02": 34.17,
+        "q25": 62.375,
+        "median": 80.5,
+        "q75": 98.0,
+        "q98": 107.02999999999999,
+        "max": 110.0,
+        "avg": 78.05434782608695,
+        "sd": 23.556503218294477
+      },
+      "coverage": {
+        "expectedCount": 24,
+        "expectedInterval": "24:00:00",
+        "observedCount": 23,
+        "observedInterval": "23:00:00",
+        "percentComplete": 96.0,
+        "percentCoverage": 96.0,
+        "datetimeFrom": {
+          "utc": "2025-02-18T20:15:00Z",
+          "local": "2025-02-19T01:45:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-19T18:15:00Z",
+          "local": "2025-02-19T23:45:00+05:30"
+        }
+      }
+    },
+    {
+      "value": 49.3,
+      "flagInfo": {
+        "hasFlags": false
+      },
+      "parameter": {
+        "id": 2,
+        "name": "pm25",
+        "units": "µg/m³",
+        "displayName": null
+      },
+      "period": {
+        "label": "1day",
+        "interval": "24:00:00",
+        "datetimeFrom": {
+          "utc": "2025-02-19T18:30:00Z",
+          "local": "2025-02-20T00:00:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-20T18:30:00Z",
+          "local": "2025-02-21T00:00:00+05:30"
+        }
+      },
+      "coordinates": null,
+      "summary": {
+        "min": 35.5,
+        "q02": 35.96,
+        "q25": 41.625,
+        "median": 48.0,
+        "q75": 54.4375,
+        "q98": 70.38,
+        "max": 74.75,
+        "avg": 49.322916666666664,
+        "sd": 10.237261216269951
+      },
+      "coverage": {
+        "expectedCount": 24,
+        "expectedInterval": "24:00:00",
+        "observedCount": 24,
+        "observedInterval": "24:00:00",
+        "percentComplete": 100.0,
+        "percentCoverage": 100.0,
+        "datetimeFrom": {
+          "utc": "2025-02-19T19:15:00Z",
+          "local": "2025-02-20T00:45:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-20T18:15:00Z",
+          "local": "2025-02-20T23:45:00+05:30"
+        }
+      }
+    },
+    {
+      "value": 90.9,
+      "flagInfo": {
+        "hasFlags": false
+      },
+      "parameter": {
+        "id": 2,
+        "name": "pm25",
+        "units": "µg/m³",
+        "displayName": null
+      },
+      "period": {
+        "label": "1day",
+        "interval": "24:00:00",
+        "datetimeFrom": {
+          "utc": "2025-02-20T18:30:00Z",
+          "local": "2025-02-21T00:00:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-21T18:30:00Z",
+          "local": "2025-02-22T00:00:00+05:30"
+        }
+      },
+      "coordinates": null,
+      "summary": {
+        "min": 50.75,
+        "q02": 52.245,
+        "q25": 77.5625,
+        "median": 89.5,
+        "q75": 102.0,
+        "q98": 138.015,
+        "max": 148.25,
+        "avg": 90.91319444444446,
+        "sd": 22.5833196850949
+      },
+      "coverage": {
+        "expectedCount": 24,
+        "expectedInterval": "24:00:00",
+        "observedCount": 24,
+        "observedInterval": "24:00:00",
+        "percentComplete": 100.0,
+        "percentCoverage": 100.0,
+        "datetimeFrom": {
+          "utc": "2025-02-20T19:15:00Z",
+          "local": "2025-02-21T00:45:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-21T18:15:00Z",
+          "local": "2025-02-21T23:45:00+05:30"
+        }
+      }
+    }
+  ]
+}

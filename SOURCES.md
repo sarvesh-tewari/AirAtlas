@@ -119,6 +119,29 @@ Describes every published column and unit. _(Filled in during the Storage phase.
 
 ## 6. Units convention
 
-- Concentrations stored in **µg/m³**, except **CO in mg/m³** (source units preserved).
-- US EPA gas sub-indices require **ppb/ppm**; conversion happens in the AQI engine, not
-  in storage. Stored values remain in source units.
+- Concentrations are normalized at **ingestion** to **µg/m³**, except **CO in mg/m³**.
+- Some sources report gases in **ppb** (e.g. OpenAQ's modern CPCB sensors report NO2/SO2/CO
+  in ppb). These are converted ppb → µg/m³ at ingestion using `ppb × MW / 24.45` (25 °C,
+  1 atm) so storage is single-unit. The US EPA engine then converts µg/m³ → ppb internally
+  for its own sub-index lookup — the two conversions are independent and intentional.
+
+---
+
+## 7. Ingestion notes (verified at build, 2026-06-11)
+
+- **OpenAQ v3:** CPCB stations live under **provider id 168**. A station's multi-year series
+  for one pollutant can be **split across several sensor ids** over time (and stations carry
+  duplicate sensors per pollutant, some ppb / some µg/m³) — history fetch unions all
+  same-parameter sensors at a location. Aggregate endpoints (`/sensors/{id}/days`, `/hours`)
+  filter on **`date_from`/`date_to`** (date-only); only raw `/measurements` uses
+  `datetime_from`/`datetime_to`. Daily records key on the **local calendar date**.
+- **Open-Meteo:** Forecast API (`current` + `hourly`) and Archive/ERA5 (`daily`); no key.
+  Wind requested as `wind_speed_unit=ms`; parser also converts km/h→m/s defensively.
+- **CPCB / data.gov.in:** resource `3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69`. Two field-name
+  variants exist (`pollutant_avg`/… vs `avg_value`/… + `latitude`); the parser handles both.
+  Missing values are the string `"NA"`. `last_update` is **IST** → converted to UTC.
+  **⚠ Live verification pending:** data.gov.in was returning 502/timeouts during the build,
+  so `cpcb.py` is tested against a fixture mirroring the documented schema; re-verify against
+  the live API once it recovers (`cpcb.fetch_live(<key>)`).
+- HTTP layer (`ingest/http.py`): disk cache in `pipeline/.cache/` (gitignored; api-key
+  stripped from cache keys), retry/backoff on 5xx/timeouts, immediate raise on 4xx.

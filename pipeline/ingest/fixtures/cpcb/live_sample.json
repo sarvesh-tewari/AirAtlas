@@ -1,0 +1,67 @@
+{
+  "_comment": "Hand-built fixture mirroring the data.gov.in real-time AQI resource (3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69). API was down at build time; verify live once it recovers. Includes BOTH known field-name variants and an 'NA' missing value.",
+  "status": "ok",
+  "total": 4,
+  "count": 4,
+  "records": [
+    {
+      "id": "1686",
+      "country": "India",
+      "state": "Delhi",
+      "city": "Delhi",
+      "station": "R K Puram, Delhi - DPCC",
+      "last_update": "11-06-2026 18:00:00",
+      "latitude": "28.5631",
+      "longitude": "77.1869",
+      "pollutant_id": "PM2.5",
+      "pollutant_min": "70",
+      "pollutant_max": "110",
+      "pollutant_avg": "90",
+      "pollutant_unit": "NA"
+    },
+    {
+      "id": "1687",
+      "country": "India",
+      "state": "Delhi",
+      "city": "Delhi",
+      "station": "R K Puram, Delhi - DPCC",
+      "last_update": "11-06-2026 18:00:00",
+      "latitude": "28.5631",
+      "longitude": "77.1869",
+      "pollutant_id": "PM10",
+      "pollutant_min": "180",
+      "pollutant_max": "320",
+      "pollutant_avg": "250",
+      "pollutant_unit": "NA"
+    },
+    {
+      "id": "1688",
+      "country": "India",
+      "state": "Delhi",
+      "city": "Delhi",
+      "station": "R K Puram, Delhi - DPCC",
+      "last_update": "11-06-2026 18:00:00",
+      "latitude": "28.5631",
+      "longitude": "77.1869",
+      "pollutant_id": "OZONE",
+      "pollutant_min": "NA",
+      "pollutant_max": "NA",
+      "pollutant_avg": "NA",
+      "pollutant_unit": "NA"
+    },
+    {
+      "id": "2001",
+      "country": "India",
+      "state": "Maharashtra",
+      "city": "Mumbai",
+      "station": "Bandra, Mumbai - MPCB",
+      "last_update": "11-06-2026 18:00:00",
+      "latitude": "19.0606",
+      "longitude": "72.8365",
+      "pollutant_id": "NO2",
+      "min_value": "20",
+      "max_value": "60",
+      "avg_value": "40"
+    }
+  ]
+}

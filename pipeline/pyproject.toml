@@ -25,7 +25,7 @@ build-backend = "setuptools.build_meta"
 packages = ["aqi", "ingest", "transform"]
 
 [tool.pytest.ini_options]
-testpaths = ["aqi"]
+testpaths = ["aqi", "ingest"]
 
 [tool.ruff]
 line-length = 100

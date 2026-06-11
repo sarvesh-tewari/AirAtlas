@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "name": "openaq-api",
+    "website": "/",
+    "page": 1,
+    "limit": 3,
+    "found": ">3"
+  },
+  "results": [
+    {
+      "value": 110.0,
+      "flagInfo": {
+        "hasFlags": false
+      },
+      "parameter": {
+        "id": 2,
+        "name": "pm25",
+        "units": "µg/m³",
+        "displayName": null
+      },
+      "period": {
+        "label": "1hour",
+        "interval": "01:00:00",
+        "datetimeFrom": {
+          "utc": "2025-02-18T19:30:00Z",
+          "local": "2025-02-19T01:00:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-18T20:30:00Z",
+          "local": "2025-02-19T02:00:00+05:30"
+        }
+      },
+      "coordinates": null,
+      "summary": {
+        "min": 97.0,
+        "q02": 97.52,
+        "q25": 103.5,
+        "median": 110.0,
+        "q75": 116.5,
+        "q98": 122.48,
+        "max": 123.0,
+        "avg": 110.0,
+        "sd": 18.384776310850235
+      },
+      "coverage": {
+        "expectedCount": 4,
+        "expectedInterval": "01:00:00",
+        "observedCount": 2,
+        "observedInterval": "00:30:00",
+        "percentComplete": 50.0,
+        "percentCoverage": 50.0,
+        "datetimeFrom": {
+          "utc": "2025-02-18T19:15:00Z",
+          "local": "2025-02-19T00:45:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-18T20:30:00Z",
+          "local": "2025-02-19T02:00:00+05:30"
+        }
+      }
+    },
+    {
+      "value": 94.8,
+      "flagInfo": {
+        "hasFlags": false
+      },
+      "parameter": {
+        "id": 2,
+        "name": "pm25",
+        "units": "µg/m³",
+        "displayName": null
+      },
+      "period": {
+        "label": "1hour",
+        "interval": "01:00:00",
+        "datetimeFrom": {
+          "utc": "2025-02-18T20:30:00Z",
+          "local": "2025-02-19T02:00:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-18T21:30:00Z",
+          "local": "2025-02-19T03:00:00+05:30"
+        }
+      },
+      "coordinates": null,
+      "summary": {
+        "min": 88.0,
+        "q02": 88.54,
+        "q25": 94.75,
+        "median": 97.0,
+        "q75": 97.0,
+        "q98": 97.0,
+        "max": 97.0,
+        "avg": 94.75,
+        "sd": 4.5
+      },
+      "coverage": {
+        "expectedCount": 4,
+        "expectedInterval": "01:00:00",
+        "observedCount": 4,
+        "observedInterval": "01:00:00",
+        "percentComplete": 100.0,
+        "percentCoverage": 100.0,
+        "datetimeFrom": {
+          "utc": "2025-02-18T19:45:00Z",
+          "local": "2025-02-19T01:15:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-18T21:30:00Z",
+          "local": "2025-02-19T03:00:00+05:30"
+        }
+      }
+    },
+    {
+      "value": 94.5,
+      "flagInfo": {
+        "hasFlags": false
+      },
+      "parameter": {
+        "id": 2,
+        "name": "pm25",
+        "units": "µg/m³",
+        "displayName": null
+      },
+      "period": {
+        "label": "1hour",
+        "interval": "01:00:00",
+        "datetimeFrom": {
+          "utc": "2025-02-18T21:30:00Z",
+          "local": "2025-02-19T03:00:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-18T22:30:00Z",
+          "local": "2025-02-19T04:00:00+05:30"
+        }
+      },
+      "coordinates": null,
+      "summary": {
+        "min": 88.0,
+        "q02": 88.0,
+        "q25": 88.0,
+        "median": 88.0,
+        "q75": 94.5,
+        "q98": 112.44,
+        "max": 114.0,
+        "avg": 94.5,
+        "sd": 13.0
+      },
+      "coverage": {
+        "expectedCount": 4,
+        "expectedInterval": "01:00:00",
+        "observedCount": 4,
+        "observedInterval": "01:00:00",
+        "percentComplete": 100.0,
+        "percentCoverage": 100.0,
+        "datetimeFrom": {
+          "utc": "2025-02-18T20:45:00Z",
+          "local": "2025-02-19T02:15:00+05:30"
+        },
+        "datetimeTo": {
+          "utc": "2025-02-18T22:30:00Z",
+          "local": "2025-02-19T04:00:00+05:30"
+        }
+      }
+    }
+  ]
+}
