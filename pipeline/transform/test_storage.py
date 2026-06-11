@@ -1,0 +1,82 @@
+"""Tests for assembling wide, storage-ready rows (concentrations + precomputed AQI + weather)."""
+
+from ingest.records import WeatherRecord
+from transform.aggregate import CityPollutantRecord
+from transform import storage
+
+
+def _c(city, param, date, value, source="openaq", unit="µg/m³"):
+    return CityPollutantRecord(city=city, parameter=param, datetime_utc=f"{date}T00:00:00Z",
+                               averaging="1d", value=value, unit=unit, n_stations=3,
+                               coverage_pct=100.0, source=source)
+
+
+def test_assemble_daily_row_has_concentrations_and_all_three_aqis():
+    recs = [
+        _c("Delhi", "pm25", "2026-06-01", 90.0),
+        _c("Delhi", "pm10", "2026-06-01", 250.0),
+        _c("Delhi", "no2", "2026-06-01", 80.0),
+        _c("Delhi", "so2", "2026-06-01", 40.0),
+    ]
+    rows = storage.assemble_daily_rows(recs)
+    assert len(rows) == 1
+    row = rows[0]
+    assert row["city"] == "Delhi"
+    assert row["date"] == "2026-06-01"
+    assert row["pm25"] == 90.0 and row["pm10"] == 250.0
+    # §7 expectations — precomputed by the tested engine.
+    assert row["aqi_naqi"] == 200 and row["naqi_category"] == "Moderate"
+    assert row["aqi_us"] == 175 and row["us_category"] == "Unhealthy"
+    assert row["eu_band"] == "Very Poor"
+    assert row["source"] == "openaq"
+
+
+def test_assemble_daily_row_naqi_invalid_when_too_few_pollutants():
+    rows = storage.assemble_daily_rows([_c("Delhi", "pm25", "2026-06-01", 90.0)])
+    assert rows[0]["aqi_naqi"] is None       # NAQI needs >=3 pollutants
+    assert rows[0]["aqi_us"] == 175           # US still computes
+
+
+def test_assemble_daily_rows_merges_weather():
+    recs = [
+        _c("Delhi", "pm25", "2026-06-01", 90.0),
+        _c("Delhi", "pm10", "2026-06-01", 250.0),
+        _c("Delhi", "no2", "2026-06-01", 80.0),
+    ]
+    weather = {("Delhi", "2026-06-01"): WeatherRecord(
+        source="open-meteo", lat=28.6, lon=77.2, datetime_utc="2026-06-01T00:00:00Z",
+        averaging="1d", temp_c=38.5, rh_pct=40, precip_mm=0.0, wind_speed_ms=2.5,
+        temp_min_c=29.0, temp_max_c=44.0)}
+    rows = storage.assemble_daily_rows(recs, weather_by_city_date=weather)
+    assert rows[0]["temp_c"] == 38.5
+    assert rows[0]["wind_ms"] == 2.5
+    assert rows[0]["temp_max_c"] == 44.0
+
+
+def test_assemble_daily_rows_sorted_by_city_date():
+    recs = [
+        _c("Mumbai", "pm25", "2026-06-02", 40.0),
+        _c("Delhi", "pm25", "2026-06-01", 90.0),
+        _c("Delhi", "pm25", "2026-06-02", 95.0),
+    ]
+    rows = storage.assemble_daily_rows(recs)
+    assert [(r["city"], r["date"]) for r in rows] == [
+        ("Delhi", "2026-06-01"), ("Delhi", "2026-06-02"), ("Mumbai", "2026-06-02")]
+
+
+def test_live_snapshot_shape():
+    recs = [
+        _c("Delhi", "pm25", "2026-06-11", 90.0, source="cpcb"),
+        _c("Delhi", "pm10", "2026-06-11", 250.0, source="cpcb"),
+        _c("Delhi", "no2", "2026-06-11", 80.0, source="cpcb"),
+    ]
+    snap = storage.live_snapshot("Delhi", recs, updated_utc="2026-06-11T12:30:00Z")
+    assert snap["city"] == "Delhi"
+    assert snap["source"] == "cpcb"
+    assert snap["updated_utc"] == "2026-06-11T12:30:00Z"
+    assert snap["pollutants"]["pm25"]["value"] == 90.0
+    # per-pollutant sub-index for the default standard (NAQI) is included
+    assert snap["pollutants"]["pm25"]["naqi_subindex"] == 200
+    assert snap["aqi"]["naqi"]["index"] == 200
+    assert snap["aqi"]["us"]["index"] == 175
+    assert snap["aqi"]["eu"]["band"] == "Very Poor"

@@ -93,27 +93,58 @@ completeness, and flagging thin cities. _(Generated in the Storage phase.)_
 
 ## 5. Data dictionary
 
-Describes every published column and unit. _(Filled in during the Storage phase.)_
+Describes every published column and unit. Files are keyed by a city **slug**
+(lowercased, non-alphanumerics → `-`). Concentrations are µg/m³ except **CO in mg/m³**.
 
-### `data/live/<city>.json` — current snapshot _(TBC)_
-| Field | Type | Unit | Description |
-|---|---|---|---|
-| _TBC_ | | | |
-
-### `data/history/<city>.parquet` — multi-year daily _(TBC)_
+### `data/history/<city-slug>.parquet` — one row per city per DAY
 | Column | Type | Unit | Description |
 |---|---|---|---|
-| _TBC_ | | | |
+| `city` | str | — | City name (CPCB label) |
+| `date` | str | — | Local calendar date `YYYY-MM-DD` |
+| `source` | str | — | `cpcb` (today) or `openaq` (history) |
+| `n_stations` | int | — | Stations contributing that day |
+| `pm25`,`pm10`,`no2`,`so2`,`o3`,`co`,`nh3` | float? | µg/m³ (CO mg/m³) | City-mean concentrations (null if absent) |
+| `aqi_naqi` | int? | index | NAQI 0–500 (null if <3 pollutants) |
+| `naqi_category` | str? | — | Good…Severe |
+| `naqi_dominant` | str? | — | Comma-sep dominant pollutant(s) |
+| `aqi_us` | int? | index | US EPA AQI 0–500 |
+| `us_category`,`us_dominant` | str? | — | US category / dominant |
+| `eu_band` | str? | — | EU EAQI band (Good…Extremely Poor) |
+| `eu_dominant` | str? | — | EU dominant pollutant(s) |
+| `temp_c`,`temp_min_c`,`temp_max_c` | float? | °C | Daily mean/min/max temperature |
+| `rh_pct` | float? | % | Daily mean relative humidity |
+| `precip_mm` | float? | mm | Daily precipitation sum |
+| `wind_ms` | float? | m/s | Daily max wind speed |
 
-### `data/recent/<city>.parquet` — last ~90 days hourly _(TBC)_
+### `data/recent/<city-slug>.parquet` — one row per city per HOUR (last ~90 days)
 | Column | Type | Unit | Description |
 |---|---|---|---|
-| _TBC_ | | | |
+| `city` | str | — | City name |
+| `datetime_utc` | str | — | Hour instant, ISO-8601 Z |
+| `source` | str | — | `openaq` |
+| `pm25`,`pm10`,`no2`,`so2`,`o3`,`co`,`nh3` | float? | µg/m³ (CO mg/m³) | City-mean hourly concentrations |
+| `temp_c`,`rh_pct`,`precip_mm`,`wind_ms` | float? | — | Hourly weather (when available) |
 
-### `data/meta/` — city list, station map, coverage report _(TBC)_
+No per-hour AQI: AQI requires a 24h window, so AQI lives in the daily file.
+
+### `data/live/<city-slug>.json` — today's snapshot
+| Field | Type | Description |
+|---|---|---|
+| `city`,`source`,`updated_utc`,`n_stations` | — | Identity + freshness (source = `cpcb`) |
+| `pollutants.<p>.value` / `.unit` | float / str | Current concentration + unit |
+| `pollutants.<p>.naqi_subindex` / `.us_subindex` | int | Per-pollutant sub-index |
+| `aqi.naqi` / `aqi.us` / `aqi.eu` | obj | `{index|band, category, dominant[], valid}` per standard |
+| `weather` | obj? | `{temp_c, rh_pct, precip_mm, wind_ms, wind_dir_deg}` |
+
+### `data/meta/`
 | File | Description |
 |---|---|
-| _TBC_ | |
+| `city_list.json` | Cities present + generation date |
+| `station_city_map.json` | Resolved `station_id → city` |
+| `unmapped_stations.json` | Station ids whose city couldn't be parsed (need an override) |
+| `coverage.json` | Per city: `n_days`, `first_date`, `last_date`, `thin` flag (the §2 thin-city caveat) |
+| `station_city_overrides.json` | _(optional, manual)_ `station_id → city` overrides |
+| `city_aliases.json` | _(optional, manual)_ city-name aliases, e.g. `{"New Delhi": "Delhi"}` |
 
 ---
 

@@ -98,6 +98,11 @@ def _headers(api_key: str) -> dict:
     return {"X-API-Key": api_key}
 
 
+def _as_iso(value: str) -> str:
+    """Normalize 'YYYY-MM-DD' to a full ISO-8601 Z timestamp; pass through if already full."""
+    return value if "T" in value else f"{value}T00:00:00Z"
+
+
 def _paginate(url: str, api_key: str, params: dict, *, page_size: int = 1000,
               max_pages: int = 1000, **kw) -> list[dict]:
     """Collect all `results` across pages of a v3 list/aggregate endpoint."""
@@ -128,10 +133,14 @@ def fetch_sensor_history(
 ) -> list[rec.AQRecord]:
     """Fetch a sensor's aggregated history (period = 'days' or 'hours') and normalize.
 
-    date_from/date_to are ISO strings. NOTE: the v3 *aggregate* endpoints filter on
-    `date_from`/`date_to` (date-only); only raw `/measurements` uses `datetime_from/to`.
+    date_from/date_to are ISO strings. NOTE the v3 endpoints filter differently:
+      - `/days`  -> `date_from`/`date_to` (date-only)
+      - `/hours` -> `datetime_from`/`datetime_to` (full ISO timestamp)
     """
-    window = {"date_from": date_from[:10], "date_to": date_to[:10]}
+    if period == "hours":
+        window = {"datetime_from": _as_iso(date_from), "datetime_to": _as_iso(date_to)}
+    else:
+        window = {"date_from": date_from[:10], "date_to": date_to[:10]}
     results = _paginate(f"{BASE}/sensors/{sensor_id}/{period}", api_key, window, **kw)
     return parse_sensor_aggregate(
         {"results": results}, station_id=station_id, station_name=station_name,

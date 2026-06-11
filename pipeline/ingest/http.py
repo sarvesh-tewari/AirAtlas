@@ -16,7 +16,24 @@ import time
 
 import httpx
 
+import os
+
 CACHE_DIR = pathlib.Path(__file__).resolve().parents[1] / ".cache"
+
+# Optional politeness throttle (seconds between requests). OpenAQ's free tier is ~60/min;
+# set AIRATLAS_MIN_REQUEST_INTERVAL=1.1 to stay comfortably under it during big backfills.
+_MIN_INTERVAL = float(os.environ.get("AIRATLAS_MIN_REQUEST_INTERVAL", "0") or "0")
+_last_request_at = 0.0
+
+
+def _throttle() -> None:
+    global _last_request_at
+    if _MIN_INTERVAL <= 0:
+        return
+    gap = time.time() - _last_request_at
+    if gap < _MIN_INTERVAL:
+        time.sleep(_MIN_INTERVAL - gap)
+    _last_request_at = time.time()
 
 
 def _cache_key(url: str, params: dict | None) -> str:
@@ -47,13 +64,21 @@ def get_json(
 
     last_err: Exception | None = None
     for attempt in range(retries):
+        wait = backoff * (2 ** attempt)
         try:
+            _throttle()
             r = httpx.get(url, params=params, headers=headers, timeout=timeout)
-            if r.status_code >= 500:
+            if r.status_code in (408, 429):
+                # Timeout / rate-limit — retry, honoring Retry-After if present.
+                ra = r.headers.get("Retry-After")
+                wait = float(ra) if ra and ra.isdigit() else wait
+                last_err = httpx.HTTPStatusError(
+                    str(r.status_code), request=r.request, response=r)
+            elif r.status_code >= 500:
                 last_err = httpx.HTTPStatusError(
                     f"server {r.status_code}", request=r.request, response=r)
             elif r.status_code >= 400:
-                r.raise_for_status()  # 4xx -> raise now, don't retry
+                r.raise_for_status()  # other 4xx -> raise now, don't retry
             else:
                 data = r.json()
                 if use_cache:
@@ -62,10 +87,11 @@ def get_json(
                 return data
         except (httpx.TimeoutException, httpx.TransportError, httpx.HTTPStatusError) as e:
             if isinstance(e, httpx.HTTPStatusError) and e.response is not None \
+                    and e.response.status_code not in (408, 429) \
                     and 400 <= e.response.status_code < 500:
                 raise
             last_err = e
         if attempt < retries - 1:
-            time.sleep(backoff * (2 ** attempt))
+            time.sleep(wait)
 
     raise RuntimeError(f"GET failed after {retries} attempts: {url}") from last_err
