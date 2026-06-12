@@ -22,11 +22,11 @@ export function EChart({ option, height = 280 }: { option: echarts.EChartsCoreOp
 // Theme-aware chart colors (canvas can't read CSS vars).
 export function chartTheme(dark: boolean) {
   return {
-    label: dark ? "#9aa0aa" : "#6a6e76",
-    axis: dark ? "rgba(255,255,255,0.12)" : "rgba(20,22,28,0.12)",
-    split: dark ? "rgba(255,255,255,0.06)" : "rgba(20,22,28,0.06)",
-    ink: dark ? "#e8eaed" : "#17181b",
-    accent: dark ? "#7aa5dc" : "#24426b",
-    tooltipBg: dark ? "#20242b" : "#ffffff",
+    label: dark ? "#9aa2b0" : "#6f6a60",
+    axis: dark ? "rgba(255,255,255,0.14)" : "rgba(40,33,24,0.14)",
+    split: dark ? "rgba(255,255,255,0.06)" : "rgba(40,33,24,0.07)",
+    ink: dark ? "#e9ebf0" : "#211f1b",
+    accent: dark ? "#82abe0" : "#24426b",
+    tooltipBg: dark ? "#262d3a" : "#fffdf8",
   };
 }

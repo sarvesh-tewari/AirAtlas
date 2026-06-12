@@ -3,14 +3,14 @@ import { POLLUTANT_LABELS } from "../lib/standards";
 import { SectionTitle } from "./SectionTitle";
 
 // Context-specific, restrained icons (sources/nature of each pollutant).
-const ICONS: Record<string, LucideIcon> = {
-  pm25: CloudFog,  // fine particulate / haze
-  pm10: Wind,      // coarse dust
-  no2: Factory,    // combustion / traffic
-  so2: Flame,      // fuel burning
-  o3: Sun,         // photochemical
-  co: Car,         // vehicle exhaust
-  nh3: FlaskConical,
+const ICONS: Record<string, { icon: LucideIcon; color: string }> = {
+  pm25: { icon: CloudFog, color: "#6366f1" },   // fine particulate / haze
+  pm10: { icon: Wind, color: "#0ea5e9" },       // coarse dust
+  no2: { icon: Factory, color: "#d97706" },     // combustion / traffic
+  so2: { icon: Flame, color: "#a855f7" },       // fuel burning
+  o3: { icon: Sun, color: "#10b981" },          // photochemical
+  co: { icon: Car, color: "#ef4444" },          // vehicle exhaust
+  nh3: { icon: FlaskConical, color: "#0d9488" },
 };
 
 export interface PollutantVM {
@@ -25,7 +25,7 @@ export function PollutantCards({ pollutants }: { pollutants: PollutantVM[] }) {
   if (pollutants.length === 0) return null;
   return (
     <section>
-      <div className="mb-3"><SectionTitle icon={Atom}>Pollutants</SectionTitle></div>
+      <div className="mb-3"><SectionTitle icon={Atom} color="#0284c7">Pollutants</SectionTitle></div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
         {pollutants.map((p) => (
           <div
@@ -35,7 +35,10 @@ export function PollutantCards({ pollutants }: { pollutants: PollutantVM[] }) {
           >
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-1.5 text-xs font-medium text-muted">
-                {(() => { const Icon = ICONS[p.key]; return Icon ? <Icon size={15} className="text-faint" strokeWidth={1.75} /> : null; })()}
+                {(() => {
+                  const m = ICONS[p.key];
+                  return m ? <m.icon size={15} color={m.color} strokeWidth={2} /> : null;
+                })()}
                 {POLLUTANT_LABELS[p.key] ?? p.key}
               </span>
               {p.dominant && <span className="text-[10px] uppercase tracking-wide text-accent">dom</span>}

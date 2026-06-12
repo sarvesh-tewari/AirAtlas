@@ -15,12 +15,14 @@ export function Combobox({
   onChange,
   placeholder = "Search…",
   ariaLabel,
+  triggerLabel,
 }: {
   value: string;
   options: Option[];
   onChange: (value: string) => void;
   placeholder?: string;
   ariaLabel?: string;
+  triggerLabel?: string; // override the button text (e.g. "+ Add city" for an add-picker)
 }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -76,7 +78,7 @@ export function Combobox({
         onClick={() => setOpen((o) => !o)}
         className="flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm hover:bg-surface-2"
       >
-        <span className="font-medium text-ink">{selected?.label ?? "Select"}</span>
+        <span className="font-medium text-ink">{triggerLabel ?? selected?.label ?? "Select"}</span>
         <span className="text-faint" aria-hidden>▾</span>
       </button>
 

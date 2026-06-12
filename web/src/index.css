@@ -6,26 +6,26 @@
 :root {
   --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-  --bg: #f7f8f9;
-  --surface: #ffffff;
-  --surface-2: #eef0f2;
-  --border: rgba(20, 22, 28, 0.1);
-  --ink: #17181b;
-  --muted: #6a6e76;
-  --faint: #9095a0;
+  --bg: #f3f1ea;
+  --surface: #fffdf8;
+  --surface-2: #ece8df;
+  --border: rgba(40, 33, 24, 0.12);
+  --ink: #211f1b;
+  --muted: #6f6a60;
+  --faint: #9a9387;
   --accent: #24426b;
-  --gauge-dot-bg: #ffffff;
+  --gauge-dot-bg: #fffdf8;
 }
 .dark {
-  --bg: #0f1216;
-  --surface: #171a1f;
-  --surface-2: #20242b;
-  --border: rgba(255, 255, 255, 0.09);
-  --ink: #e8eaed;
-  --muted: #9aa0aa;
-  --faint: #6b7280;
-  --accent: #7aa5dc;
-  --gauge-dot-bg: #171a1f;
+  --bg: #13161d;
+  --surface: #1c212c;
+  --surface-2: #262d3a;
+  --border: rgba(255, 255, 255, 0.1);
+  --ink: #e9ebf0;
+  --muted: #9aa2b0;
+  --faint: #6c7686;
+  --accent: #82abe0;
+  --gauge-dot-bg: #1c212c;
 }
 
 @theme inline {

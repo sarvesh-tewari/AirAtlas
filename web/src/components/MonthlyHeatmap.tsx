@@ -54,7 +54,7 @@ export function MonthlyHeatmap({ rows, standard, dark }: { rows: DailyRow[]; sta
 
   return (
     <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={LayoutGrid}>Monthly pattern</SectionTitle></div>
+      <div className="mb-3"><SectionTitle icon={LayoutGrid} color="#7c3aed">Monthly pattern</SectionTitle></div>
       {data.length ? <EChart option={option} height={Math.max(150, years.length * 42 + 60)} />
         : <p className="py-8 text-center text-sm text-muted">No data.</p>}
       <p className="mt-2 text-xs text-faint">Average {cfg.numeric ? "AQI" : "band"} per month — seasonal pattern across years.</p>

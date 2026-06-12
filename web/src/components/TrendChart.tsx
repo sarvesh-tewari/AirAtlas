@@ -73,7 +73,7 @@ export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standar
   return (
     <section className="card p-5">
       <div className="mb-3 flex items-center justify-between">
-        <SectionTitle icon={LineChart}>Multi-year trend</SectionTitle>
+        <SectionTitle icon={LineChart} color="#6366f1">Multi-year trend</SectionTitle>
         <div className="inline-flex overflow-hidden rounded-lg border border-border text-xs">
           {(["90d", "1y", "all"] as Range[]).map((r) => (
             <button
