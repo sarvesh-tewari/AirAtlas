@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: toggle `.dark` on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gauge-dot-bg: #ffffff;
+}
+.dark {
+  --gauge-dot-bg: #16171a;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background: #f7f7f5;
+  color: #1c1c1a;
+}
+.dark body {
+  background: #16171a;
+  color: #e7e7e4;
+}
