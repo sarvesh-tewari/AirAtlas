@@ -14,7 +14,7 @@ export interface HeadlineVM {
   nStations: number;
 }
 
-export function Headline({ standard, vm }: { standard: StandardId; vm: HeadlineVM }) {
+export function Headline({ standard, vm, loading = false }: { standard: StandardId; vm: HeadlineVM; loading?: boolean }) {
   const color = vm.category ? bandByLabel(standard, vm.category).color : "var(--muted)";
   // Category wash: the card subtly tints to the current AQI category.
   const wash = vm.category
@@ -36,8 +36,13 @@ export function Headline({ standard, vm }: { standard: StandardId; vm: HeadlineV
               <span className="font-display text-2xl" style={{ color }}>{vm.band}</span>
               <span className="text-xs text-faint">EU EAQI band</span>
             </div>
+          ) : loading ? (
+            <div className="flex flex-col items-center gap-3 py-10 text-muted">
+              <div className="h-6 w-6 animate-spin rounded-full border-2 border-border border-t-accent" />
+              <span className="text-sm">Loading…</span>
+            </div>
           ) : (
-            <div className="py-10 text-muted">No data</div>
+            <div className="py-10 text-muted">No data for this selection</div>
           )}
         </div>
 

@@ -76,7 +76,7 @@ export function Compare({ available, current, standard, dark }: { available: str
           />
         )}
       </div>
-      {selected.length ? <EChart option={option} height={260} /> : <p className="py-8 text-center text-sm text-muted">Select cities to compare.</p>}
+      {selected.length ? <EChart option={option} height={260} ariaLabel="AQI comparison across selected cities" /> : <p className="py-8 text-center text-sm text-muted">Select cities to compare.</p>}
     </section>
   );
 }

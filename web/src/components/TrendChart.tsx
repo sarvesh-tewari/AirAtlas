@@ -87,7 +87,7 @@ export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standar
         </div>
       </div>
       {filtered.length > 1 ? (
-        <EChart option={option} height={260} />
+        <EChart option={option} height={260} ariaLabel="Multi-year daily AQI trend with category bands" />
       ) : (
         <p className="py-10 text-center text-sm text-muted">Not enough history for this range.</p>
       )}

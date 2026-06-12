@@ -59,6 +59,7 @@ export default function App() {
   const [standard, setStandard] = useState<StandardId>("naqi");
   const [live, setLive] = useState<LiveSnapshot | null>(null);
   const [history, setHistory] = useState<DailyRow[]>([]);
+  const [histLoading, setHistLoading] = useState(true);
   const [picked, setPicked] = useState(false); // user manually chose a city
   const [err, setErr] = useState<string | null>(null);
 
@@ -86,8 +87,12 @@ export default function App() {
     if (!city) return;
     setLive(null);
     setHistory([]);
+    setHistLoading(true);
     fetchLive(city).then(setLive).catch(() => setLive(null));
-    fetchDailyHistory(city).then(setHistory).catch((e) => setErr(String(e)));
+    fetchDailyHistory(city)
+      .then(setHistory)
+      .catch((e) => setErr(String(e)))
+      .finally(() => setHistLoading(false));
   }, [city]);
 
   const lastRow = history.length ? history[history.length - 1] : null;
@@ -169,6 +174,7 @@ export default function App() {
 
   return (
     <div className="min-h-full">
+      <a href="#main" className="skip-link">Skip to content</a>
       <TopBar
         cities={cityOptions} city={city} onCity={chooseCity}
         standard={standard} onStandard={setStandard}
@@ -176,14 +182,14 @@ export default function App() {
         dark={dark} onToggleTheme={toggle} page={page} onNav={setPage}
       />
 
-      <main className="mx-auto max-w-6xl px-5 py-6">
+      <main id="main" className="mx-auto max-w-6xl px-5 py-6">
         {err && <p className="mb-4 rounded-lg bg-red-500/10 px-3 py-2 text-sm text-red-700 dark:text-red-300">{err}</p>}
 
         {page === "methodology" ? (
           <Methodology />
         ) : (
           <div className="flex flex-col gap-6">
-            <ErrorBoundary label="Headline"><Headline standard={standard} vm={headline} /></ErrorBoundary>
+            <ErrorBoundary label="Headline"><Headline standard={standard} vm={headline} loading={histLoading && !live} /></ErrorBoundary>
             {cities.some((c) => c.lat != null) && (
               <ErrorBoundary label="Map">
                 <MapView cities={cities} standard={standard} current={city} onCity={chooseCity} dark={dark} />

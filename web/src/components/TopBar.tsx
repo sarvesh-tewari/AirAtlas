@@ -31,11 +31,12 @@ export function TopBar({
 
         <Combobox value={city} options={cities} onChange={onCity} ariaLabel="Select city" placeholder="Search cities…" />
 
-        <div className="inline-flex overflow-hidden rounded-lg border border-border text-xs">
+        <div role="group" aria-label="AQI standard" className="inline-flex overflow-hidden rounded-lg border border-border text-xs">
           {standards.map((s) => (
             <button
               key={s.id}
               onClick={() => onStandard(s.id)}
+              aria-pressed={standard === s.id}
               className={`px-3 py-1.5 transition-colors ${
                 standard === s.id ? "bg-accent text-white" : "text-muted hover:bg-surface-2"
               }`}
@@ -48,15 +49,17 @@ export function TopBar({
         <nav className="ml-auto flex items-center gap-1 text-sm">
           <button
             onClick={() => onNav("dashboard")}
+            aria-current={page === "dashboard" ? "page" : undefined}
             className={`rounded-lg px-2.5 py-1.5 ${page === "dashboard" ? "text-ink" : "text-muted hover:text-ink"}`}
           >
             Dashboard
           </button>
           <button
             onClick={() => onNav("methodology")}
+            aria-current={page === "methodology" ? "page" : undefined}
             className={`rounded-lg px-2.5 py-1.5 ${page === "methodology" ? "text-ink" : "text-muted hover:text-ink"}`}
           >
-            Methodology
+            About
           </button>
           {updatedLabel && (
             <span className="ml-1 hidden text-xs text-faint sm:inline">

@@ -3,12 +3,13 @@
 import { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 
-export function EChart({ option, height = 280 }: { option: echarts.EChartsCoreOption; height?: number }) {
+export function EChart({ option, height = 280, ariaLabel }: { option: echarts.EChartsCoreOption; height?: number; ariaLabel?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (!ref.current) return;
     const chart = echarts.init(ref.current, undefined, { renderer: "canvas" });
-    chart.setOption(option);
+    // ECharts' built-in screen-reader description of the data.
+    chart.setOption({ aria: { enabled: true }, ...option });
     const ro = new ResizeObserver(() => chart.resize());
     ro.observe(ref.current);
     return () => {
@@ -16,7 +17,7 @@ export function EChart({ option, height = 280 }: { option: echarts.EChartsCoreOp
       chart.dispose();
     };
   }, [option]);
-  return <div ref={ref} style={{ height, width: "100%" }} />;
+  return <div ref={ref} role="img" aria-label={ariaLabel} style={{ height, width: "100%" }} />;
 }
 
 // Theme-aware chart colors (canvas can't read CSS vars).

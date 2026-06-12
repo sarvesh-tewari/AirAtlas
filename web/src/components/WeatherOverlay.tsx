@@ -46,7 +46,7 @@ export function WeatherOverlay({ rows, standard, dark }: { rows: DailyRow[]; sta
           ))}
         </div>
       </div>
-      <EChart option={option} height={240} />
+      <EChart option={option} height={240} ariaLabel="AQI versus weather dual-axis chart" />
     </section>
   );
 }

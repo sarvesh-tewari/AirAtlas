@@ -37,6 +37,26 @@ export function Methodology() {
       </section>
 
       <section className="card p-6">
+        <h2 className="font-display text-lg text-ink">Freshness & coverage</h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted">
+          Today's snapshot refreshes hourly; multi-year history updates daily. Station coverage
+          varies — cities with sparse history are flagged, and a city's NAQI needs at least three
+          pollutants present (one being PM) to be valid. The site serves its own stored data, so
+          it stays up even if an upstream source is temporarily down (the headline simply shows a
+          "last updated" time and a staleness notice).
+        </p>
+      </section>
+
+      <section className="card p-6">
+        <h2 className="font-display text-lg text-ink">Open data</h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted">
+          The published per-city Parquet files <em>are</em> the open dataset — anyone can download
+          and query them. Column definitions and units are documented in the project's
+          <code className="px-1">SOURCES.md</code> data dictionary.
+        </p>
+      </section>
+
+      <section className="card p-6">
         <h2 className="font-display text-lg text-ink">Attribution</h2>
         <p className="mt-2 text-sm leading-relaxed text-muted">
           Air-quality data © CPCB / data.gov.in and OpenAQ (CC BY); weather © Open-Meteo (CC BY 4.0).

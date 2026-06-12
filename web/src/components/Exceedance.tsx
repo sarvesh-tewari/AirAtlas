@@ -48,7 +48,7 @@ export function Exceedance({ rows, standard, dark }: { rows: DailyRow[]; standar
   return (
     <section className="card p-5">
       <div className="mb-3"><SectionTitle icon={CalendarRange} color="#d97706">Days by air-quality band</SectionTitle></div>
-      {years.length ? <EChart option={option} height={260} /> : <p className="py-8 text-center text-sm text-muted">No data.</p>}
+      {years.length ? <EChart option={option} height={260} ariaLabel="Stacked count of days in each AQI band per year" /> : <p className="py-8 text-center text-sm text-muted">No data.</p>}
       <p className="mt-2 text-xs text-faint">Each day counted once in its {cfg.name} band — hover a year for the breakdown.</p>
     </section>
   );
