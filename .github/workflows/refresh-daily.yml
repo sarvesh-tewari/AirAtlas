@@ -58,18 +58,9 @@ jobs:
           git config user.name  "airatlas-bot"
           git config user.email "airatlas-bot@users.noreply.github.com"
           git add -f data/history data/recent data/live data/meta
-          git diff --staged --quiet || git commit -m "data: ${{ github.event.inputs.mode || 'daily' }} refresh [skip ci]"
+          git diff --staged --quiet || git commit -m "data: ${{ github.event.inputs.mode || 'daily' }} refresh"
           git push
-
-      # --- Phase 10: build the frontend and deploy to GitHub Pages ---
-      # NOTE: GitHub Pages from a PRIVATE repo needs a paid plan — flip the repo to public
-      # before this will publish. (Repo is intentionally private during the build.)
-      # - uses: actions/setup-node@v4
-      #   with: { node-version: "20" }
-      # - run: cd web && npm ci && npm run build
-      # - uses: actions/upload-pages-artifact@v3
-      #   with: { path: web/dist }
-      # - uses: actions/deploy-pages@v4
+          # Pushing data (no [skip ci]) triggers deploy.yml, which rebuilds + publishes the site.
 
       - name: Open/append failure issue
         if: failure()

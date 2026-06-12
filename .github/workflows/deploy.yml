@@ -1,0 +1,52 @@
+# Build the frontend and publish to GitHub Pages.
+# Runs on every push to main (code or committed data) and on demand.
+# NOTE: GitHub Pages must be enabled (Settings → Pages → Source: GitHub Actions) and the repo
+# must be public on a free plan. Until then this workflow's deploy step will fail (harmless).
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Stage published data for the build
+        run: |
+          # data/ is committed by the refresh workflows; copy it into the site's public dir.
+          if [ -d data ]; then rm -rf web/public/data && cp -r data web/public/data; fi
+
+      - name: Build
+        working-directory: web
+        env:
+          VITE_BASE: /AirAtlas/ # project-pages base path; change if using a custom domain
+        run: |
+          npm ci
+          npm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+      - id: deploy
+        uses: actions/deploy-pages@v4

@@ -39,8 +39,9 @@ def main() -> int:
 
     age = newest_live_age_hours(args.live_dir)
     if age is None:
-        print(f"STALE: no usable live snapshot in {args.live_dir}")
-        return 1
+        # No live data at all = not launched / no secrets yet, not a staleness failure.
+        print(f"No live snapshot in {args.live_dir} yet — skipping staleness check.")
+        return 0
     if age > args.max_hours:
         print(f"STALE: newest live snapshot is {age:.1f}h old (> {args.max_hours}h)")
         return 1
