@@ -1,4 +1,16 @@
+import { CloudFog, Wind, Factory, Flame, Sun, Car, FlaskConical, type LucideIcon } from "lucide-react";
 import { POLLUTANT_LABELS } from "../lib/standards";
+
+// Context-specific, restrained icons (sources/nature of each pollutant).
+const ICONS: Record<string, LucideIcon> = {
+  pm25: CloudFog,  // fine particulate / haze
+  pm10: Wind,      // coarse dust
+  no2: Factory,    // combustion / traffic
+  so2: Flame,      // fuel burning
+  o3: Sun,         // photochemical
+  co: Car,         // vehicle exhaust
+  nh3: FlaskConical,
+};
 
 export interface PollutantVM {
   key: string;
@@ -21,7 +33,10 @@ export function PollutantCards({ pollutants }: { pollutants: PollutantVM[] }) {
             style={p.dominant ? { borderColor: "var(--accent)" } : undefined}
           >
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-muted">{POLLUTANT_LABELS[p.key] ?? p.key}</span>
+              <span className="flex items-center gap-1.5 text-xs font-medium text-muted">
+                {(() => { const Icon = ICONS[p.key]; return Icon ? <Icon size={15} className="text-faint" strokeWidth={1.75} /> : null; })()}
+                {POLLUTANT_LABELS[p.key] ?? p.key}
+              </span>
               {p.dominant && <span className="text-[10px] uppercase tracking-wide text-accent">dom</span>}
             </div>
             <div className="mt-1 font-display text-2xl text-ink">{Math.round(p.value * 10) / 10}</div>

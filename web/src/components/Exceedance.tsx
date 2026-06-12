@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { EChartsCoreOption } from "echarts";
 import { EChart, chartTheme } from "./EChart";
 import { STANDARDS, bandForIndex, type StandardId } from "../lib/standards";
@@ -11,6 +11,11 @@ export function Exceedance({ rows, standard, dark }: { rows: DailyRow[]; standar
   // Standard-aware thresholds.
   const thresholds = cfg.numeric ? (standard === "naqi" ? [50, 100, 200, 300] : [50, 100, 150, 200]) : [2, 3, 4];
   const [thr, setThr] = useState(thresholds[1]);
+  // Thresholds differ per standard (EU uses band indices) — reset when the standard changes
+  // so a carried-over numeric threshold isn't used as an out-of-range EU band index.
+  useEffect(() => {
+    setThr(cfg.numeric ? (standard === "naqi" ? 100 : 100) : 3);
+  }, [standard, cfg.numeric]);
 
   const { years, counts, color } = useMemo(() => {
     const byYear = new Map<string, number>();

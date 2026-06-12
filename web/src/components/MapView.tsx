@@ -20,7 +20,7 @@ export function MapView({ cities, standard, current, onCity, dark }: {
 
   useEffect(() => {
     if (!ref.current || mapRef.current) return;
-    const map = L.map(ref.current, { scrollWheelZoom: false, attributionControl: true }).setView([22.6, 79], 4);
+    const map = L.map(ref.current, { scrollWheelZoom: true, attributionControl: true }).setView([22.6, 79], 4);
     mapRef.current = map;
     layerRef.current = L.layerGroup().addTo(map);
     return () => { map.remove(); mapRef.current = null; };

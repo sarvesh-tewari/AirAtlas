@@ -10,6 +10,7 @@ import { WeatherOverlay } from "./components/WeatherOverlay";
 import { Compare } from "./components/Compare";
 import { MapView } from "./components/MapView";
 import { Methodology } from "./components/Methodology";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import type { Option } from "./components/Combobox";
 import { POLLUTANT_LABELS, type StandardId } from "./lib/standards";
 import {
@@ -180,19 +181,21 @@ export default function App() {
           <Methodology />
         ) : (
           <div className="flex flex-col gap-6">
-            <Headline standard={standard} vm={headline} />
+            <ErrorBoundary label="Headline"><Headline standard={standard} vm={headline} /></ErrorBoundary>
             {cities.some((c) => c.lat != null) && (
-              <MapView cities={cities} standard={standard} current={city} onCity={chooseCity} dark={dark} />
+              <ErrorBoundary label="Map">
+                <MapView cities={cities} standard={standard} current={city} onCity={chooseCity} dark={dark} />
+              </ErrorBoundary>
             )}
             <WeatherStrip vm={weather} />
             <PollutantCards pollutants={pollutants} />
             {history.length > 1 && (
               <>
-                <TrendChart rows={history} standard={standard} dark={dark} />
-                <PollutantTrend rows={history} dark={dark} />
-                <Exceedance rows={history} standard={standard} dark={dark} />
-                <WeatherOverlay rows={history} standard={standard} dark={dark} />
-                <Compare available={cities.map((c) => c.city)} current={city} standard={standard} dark={dark} />
+                <ErrorBoundary label="Trend"><TrendChart rows={history} standard={standard} dark={dark} /></ErrorBoundary>
+                <ErrorBoundary label="Pollutant trends"><PollutantTrend rows={history} dark={dark} /></ErrorBoundary>
+                <ErrorBoundary label="Exceedance"><Exceedance rows={history} standard={standard} dark={dark} /></ErrorBoundary>
+                <ErrorBoundary label="Weather overlay"><WeatherOverlay rows={history} standard={standard} dark={dark} /></ErrorBoundary>
+                <ErrorBoundary label="Compare"><Compare available={cities.map((c) => c.city)} current={city} standard={standard} dark={dark} /></ErrorBoundary>
               </>
             )}
           </div>
