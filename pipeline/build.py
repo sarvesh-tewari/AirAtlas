@@ -90,10 +90,16 @@ def fetch_city_aq(api_key, stations, mapping, *, date_from, date_to, period="day
     for s in stations:
         city = mapping.get(s.station_id)
         for sensor_id, _param in _sensors_for(s, sensors):
-            raw += openaq.fetch_sensor_history(
-                api_key, sensor_id, date_from=date_from, date_to=date_to, period=period,
-                station_id=s.station_id, station_name=s.name, city=city,
-                state=None, lat=s.lat, lon=s.lon)
+            try:
+                raw += openaq.fetch_sensor_history(
+                    api_key, sensor_id, date_from=date_from, date_to=date_to, period=period,
+                    station_id=s.station_id, station_name=s.name, city=city,
+                    state=None, lat=s.lat, lon=s.lon)
+            except Exception as e:
+                # One flaky sensor must not abort the whole build (self-healing: it backfills
+                # on the next run). Log and continue.
+                print(f"[build] skip sensor {sensor_id} ({period}) for {city}: {type(e).__name__}",
+                      flush=True)
     return agg.aggregate_to_city(raw, mapping, min_coverage=min_coverage)
 
 
@@ -118,6 +124,25 @@ def fetch_live_cpcb(api_key, mapping) -> list[agg.CityPollutantRecord]:
 # --------------------------------------------------------------------------- #
 # Coverage report
 # --------------------------------------------------------------------------- #
+def build_cities_index(daily_rows, centroids) -> list[dict]:
+    """One row per city with centroid + latest-day AQI — powers the map, combobox, compare."""
+    by_city: dict[str, list[dict]] = defaultdict(list)
+    for r in daily_rows:
+        by_city[r["city"]].append(r)
+    out = []
+    for city, rows in sorted(by_city.items()):
+        last = max(rows, key=lambda r: r["date"])
+        lat, lon = centroids.get(city, (None, None))
+        out.append({
+            "city": city, "lat": lat, "lon": lon,
+            "last_date": last["date"], "n_stations": last["n_stations"],
+            "naqi": last["aqi_naqi"], "naqi_category": last["naqi_category"],
+            "us": last["aqi_us"], "us_category": last["us_category"],
+            "eu_band": last["eu_band"],
+        })
+    return out
+
+
 def build_coverage(daily_rows, *, thin_days=365) -> list[dict]:
     by_city: dict[str, list[dict]] = defaultdict(list)
     for r in daily_rows:

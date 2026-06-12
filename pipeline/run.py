@@ -130,6 +130,8 @@ def main():
                             "cities": sorted({r["city"] for r in daily_rows})},
                            build.META / "city_list.json")
         storage.write_json(build.build_coverage(daily_rows), build.META / "coverage.json")
+        storage.write_json(build.build_cities_index(daily_rows, centroids),
+                           build.META / "cities.json")
 
     n_cities = len({r["city"] for r in daily_rows})
     print(f"[run] done. daily_rows={len(daily_rows)} hourly_rows={len(hourly_rows)} "

@@ -43,26 +43,63 @@ export interface DailyRow {
   so2: number | null;
   o3: number | null;
   co: number | null;
+  nh3: number | null;
   aqi_naqi: number | null;
   naqi_category: string | null;
+  naqi_dominant: string | null;
   aqi_us: number | null;
   us_category: string | null;
+  us_dominant: string | null;
   eu_band: string | null;
+  eu_dominant: string | null;
   temp_c: number | null;
   rh_pct: number | null;
   precip_mm: number | null;
   wind_ms: number | null;
 }
 
+export interface CityIndex {
+  city: string;
+  lat: number | null;
+  lon: number | null;
+  last_date: string;
+  n_stations: number;
+  naqi: number | null;
+  naqi_category: string | null;
+  us: number | null;
+  us_category: string | null;
+  eu_band: string | null;
+}
+
+// Safe JSON GET: returns null on 404 or when the server returns HTML (dev SPA fallback).
+async function getJSON<T>(url: string): Promise<T | null> {
+  const r = await fetch(url);
+  if (!r.ok) return null;
+  if (!(r.headers.get("content-type") ?? "").includes("json")) return null;
+  try {
+    return (await r.json()) as T;
+  } catch {
+    return null;
+  }
+}
+
 export async function fetchCityList(): Promise<CityList> {
-  const r = await fetch(`${BASE}/meta/city_list.json`);
-  if (!r.ok) throw new Error(`city_list.json ${r.status}`);
-  return r.json();
+  return (await getJSON<CityList>(`${BASE}/meta/city_list.json`)) ?? { generated_today: "", cities: [] };
+}
+
+// Rich per-city index (centroid + latest AQI). Falls back to names-only if absent.
+export async function fetchCities(): Promise<CityIndex[]> {
+  const rich = await getJSON<CityIndex[]>(`${BASE}/meta/cities.json`);
+  if (rich && rich.length) return rich;
+  const list = await fetchCityList();
+  return list.cities.map((city) => ({
+    city, lat: null, lon: null, last_date: "", n_stations: 0,
+    naqi: null, naqi_category: null, us: null, us_category: null, eu_band: null,
+  }));
 }
 
 export async function fetchLive(city: string): Promise<LiveSnapshot | null> {
-  const r = await fetch(`${BASE}/live/${slug(city)}.json`);
-  return r.ok ? r.json() : null;
+  return getJSON<LiveSnapshot>(`${BASE}/live/${slug(city)}.json`);
 }
 
 export async function fetchDailyHistory(city: string): Promise<DailyRow[]> {

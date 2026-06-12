@@ -33,10 +33,13 @@ export function Gauge({ standard, index }: { standard: StandardId; index: number
         <path key={i} d={s.d} stroke={s.color} strokeWidth={15} fill="none" />
       ))}
       <circle cx={px} cy={py} r={8} fill="var(--gauge-dot-bg)" stroke={band.color} strokeWidth={4} />
-      <text x={cx} y={cy - 8} textAnchor="middle" fontSize={42} fontWeight={500} fill="currentColor">
+      <text
+        x={cx} y={cy - 4} textAnchor="middle" fontSize={46} fill="currentColor"
+        fontFamily="var(--font-sans)" fontWeight={600} style={{ letterSpacing: "-0.03em" }}
+      >
         {index}
       </text>
-      <text x={cx} y={cy + 15} textAnchor="middle" fontSize={15} fontWeight={500} fill={band.color}>
+      <text x={cx} y={cy + 17} textAnchor="middle" fontSize={14} fontWeight={500} fill={band.color}>
         {band.label}
       </text>
     </svg>

@@ -4,11 +4,40 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --bg: #f7f8f9;
+  --surface: #ffffff;
+  --surface-2: #eef0f2;
+  --border: rgba(20, 22, 28, 0.1);
+  --ink: #17181b;
+  --muted: #6a6e76;
+  --faint: #9095a0;
+  --accent: #24426b;
   --gauge-dot-bg: #ffffff;
 }
 .dark {
-  --gauge-dot-bg: #16171a;
+  --bg: #0f1216;
+  --surface: #171a1f;
+  --surface-2: #20242b;
+  --border: rgba(255, 255, 255, 0.09);
+  --ink: #e8eaed;
+  --muted: #9aa0aa;
+  --faint: #6b7280;
+  --accent: #7aa5dc;
+  --gauge-dot-bg: #171a1f;
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
 }
 
 html,
@@ -19,11 +48,26 @@ body,
 body {
   margin: 0;
   font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
-  background: #f7f7f5;
-  color: #1c1c1a;
+  letter-spacing: -0.011em;
 }
-.dark body {
-  background: #16171a;
-  color: #e7e7e4;
+.font-display {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
 }

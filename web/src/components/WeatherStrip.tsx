@@ -1,0 +1,31 @@
+export interface WeatherVM {
+  temp_c: number | null;
+  rh_pct: number | null;
+  precip_mm: number | null;
+  wind_ms: number | null;
+}
+
+function Stat({ label, value, icon }: { label: string; value: string; icon: string }) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="text-lg text-faint" aria-hidden>{icon}</span>
+      <div>
+        <div className="text-[11px] uppercase tracking-wide text-faint">{label}</div>
+        <div className="font-display text-lg text-ink">{value}</div>
+      </div>
+    </div>
+  );
+}
+
+export function WeatherStrip({ vm }: { vm: WeatherVM | null }) {
+  if (!vm) return null;
+  const n = (v: number | null, d = 0) => (v == null ? "—" : (Math.round(v * 10 ** d) / 10 ** d).toString());
+  return (
+    <section className="card flex flex-wrap items-center gap-x-8 gap-y-4 p-5">
+      <Stat label="Temp" value={`${n(vm.temp_c, 1)}°C`} icon="🌡" />
+      <Stat label="Humidity" value={`${n(vm.rh_pct)}%`} icon="💧" />
+      <Stat label="Rain" value={`${n(vm.precip_mm, 1)} mm`} icon="🌧" />
+      <Stat label="Wind" value={`${n(vm.wind_ms, 1)} m/s`} icon="🌬" />
+    </section>
+  );
+}

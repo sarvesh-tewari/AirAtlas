@@ -41,6 +41,7 @@ data/history/*.parquet
 data/recent/*.parquet
 data/live/*.json
 data/meta/city_list.json
+data/meta/cities.json
 data/meta/coverage.json
 data/meta/station_city_map.json
 data/meta/unmapped_stations.json
