@@ -1,11 +1,20 @@
-# Daily refresh: OpenAQ + Open-Meteo archive deltas -> data/history + data/recent
-# -> rebuild frontend -> deploy. SKELETON ONLY — wired up in Phases 6 & 10.
+# Daily refresh: OpenAQ + Open-Meteo deltas -> data/history + data/recent -> commit.
+# (Frontend build + Pages deploy are wired in Phase 10, once web/ exists.)
 name: refresh-daily
 
 on:
   schedule:
     - cron: "40 1 * * *" # 01:40 UTC daily
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "backfill (full history seed) or daily (delta)"
+        type: choice
+        options: [daily, backfill]
+        default: daily
+      cities:
+        description: "optional space-separated city subset (blank = all)"
+        default: ""
 
 concurrency:
   group: data-refresh
@@ -13,47 +22,72 @@ concurrency:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
+  issues: write
 
 jobs:
-  refresh-and-deploy:
+  refresh:
     runs-on: ubuntu-latest
+    # A full backfill across all cities/sensors/years is long-running.
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.13"
 
-      - uses: actions/setup-node@v4
+      - name: Install pipeline
+        run: pip install -e ./pipeline
+
+      - name: Refresh history + recent (+ live)
+        env:
+          DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
+          OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
+          AIRATLAS_MIN_REQUEST_INTERVAL: "0.6"   # stay under OpenAQ's rate limit
+        run: |
+          MODE="${{ github.event.inputs.mode || 'daily' }}"
+          CITIES="${{ github.event.inputs.cities }}"
+          if [ -n "$CITIES" ]; then
+            python pipeline/run.py "$MODE" --sensors all --cities $CITIES
+          else
+            python pipeline/run.py "$MODE" --sensors all
+          fi
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name  "airatlas-bot"
+          git config user.email "airatlas-bot@users.noreply.github.com"
+          git add -f data/history data/recent data/live data/meta
+          git diff --staged --quiet || git commit -m "data: ${{ github.event.inputs.mode || 'daily' }} refresh [skip ci]"
+          git push
+
+      # --- Phase 10: build the frontend and deploy to GitHub Pages ---
+      # NOTE: GitHub Pages from a PRIVATE repo needs a paid plan — flip the repo to public
+      # before this will publish. (Repo is intentionally private during the build.)
+      # - uses: actions/setup-node@v4
+      #   with: { node-version: "20" }
+      # - run: cd web && npm ci && npm run build
+      # - uses: actions/upload-pages-artifact@v3
+      #   with: { path: web/dist }
+      # - uses: actions/deploy-pages@v4
+
+      - name: Open/append failure issue
+        if: failure()
+        uses: actions/github-script@v7
         with:
-          node-version: "20"
-
-      # - name: Install pipeline
-      #   run: pip install -e ./pipeline
-
-      # - name: Refresh history + recent
-      #   env:
-      #     DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
-      #     OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
-      #   run: python pipeline/run.py --mode daily
-
-      # - name: Commit refreshed data
-      #   run: |
-      #     git config user.name  "airatlas-bot"
-      #     git config user.email "airatlas-bot@users.noreply.github.com"
-      #     git add data/
-      #     git diff --staged --quiet || git commit -m "data: daily refresh"
-      #     git push
-
-      # - name: Build frontend
-      #   run: |
-      #     cd web && npm ci && npm run build
-
-      # - name: Deploy to GitHub Pages
-      #   uses: actions/deploy-pages@v4
-      #   # NOTE: Pages from a PRIVATE repo needs a paid plan. Flip repo to public before launch.
-
-      - name: Placeholder
-        run: echo "refresh-daily skeleton — wired up in Phases 6 & 10"
+          script: |
+            const label = "pipeline-failure";
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = `Workflow **${context.workflow}** failed.\n\nRun: ${runUrl}`;
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: "open", labels: label });
+            if (open.data.length) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: open.data[0].number, body });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: `🚨 AirAtlas pipeline: ${context.workflow}`, body, labels: [label] });
+            }

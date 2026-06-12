@@ -157,16 +157,41 @@ def live_snapshot(
 # --------------------------------------------------------------------------- #
 # Writers
 # --------------------------------------------------------------------------- #
-def write_parquet_per_city(rows: list[dict], out_dir: Path, *, city_key: str = "city") -> list[str]:
-    """Write one Parquet file per city. Returns the slugs written."""
+def write_parquet_per_city(
+    rows: list[dict], out_dir: Path, *, city_key: str = "city",
+    merge_keys: list[str] | None = None, keep_days: int | None = None,
+    date_col: str | None = None,
+) -> list[str]:
+    """Write one Parquet file per city. Returns the slugs written.
+
+    If `merge_keys` is given and a city's file already exists, new rows are upserted into
+    it (existing rows with the same key are replaced) — making refreshes idempotent and
+    self-healing. If `keep_days`/`date_col` are given, rows older than that window are pruned
+    (used to bound the recent-hourly tier).
+    """
+    import datetime as _dt
+
     import polars as pl
     out_dir.mkdir(parents=True, exist_ok=True)
     by_city: dict[str, list[dict]] = defaultdict(list)
     for r in rows:
         by_city[r[city_key]].append(r)
+
     written = []
     for city, city_rows in by_city.items():
-        pl.DataFrame(city_rows).write_parquet(out_dir / f"{slug(city)}.parquet")
+        path = out_dir / f"{slug(city)}.parquet"
+        df = pl.DataFrame(city_rows)
+        if merge_keys and path.exists():
+            existing = pl.read_parquet(path)
+            # New rows last so unique(keep="last") lets the delta win on conflicts.
+            df = pl.concat([existing, df], how="diagonal_relaxed").unique(
+                subset=merge_keys, keep="last", maintain_order=True)
+        if keep_days and date_col:
+            cutoff = (_dt.date.today() - _dt.timedelta(days=keep_days)).isoformat()
+            df = df.filter(pl.col(date_col).str.slice(0, 10) >= cutoff)
+        if merge_keys:
+            df = df.sort(merge_keys)
+        df.write_parquet(path)
         written.append(slug(city))
     return written
 

@@ -113,22 +113,27 @@ def main():
         except Exception as e:
             print(f"[run] live snapshot skipped ({type(e).__name__}: data.gov.in down)")
 
-    # ---- Write parquet + meta ----
+    # ---- Write parquet + meta (idempotent upsert; recent tier pruned to the window) ----
     if daily_rows:
-        storage.write_parquet_per_city(daily_rows, build.DATA / "history")
+        storage.write_parquet_per_city(daily_rows, build.DATA / "history", merge_keys=["date"])
     if hourly_rows:
-        storage.write_parquet_per_city(hourly_rows, build.DATA / "recent", city_key="city")
+        storage.write_parquet_per_city(hourly_rows, build.DATA / "recent",
+                                       merge_keys=["datetime_utc"], keep_days=args.recent_days,
+                                       date_col="datetime_utc")
 
-    coverage = build.build_coverage(daily_rows) if daily_rows else []
-    storage.write_json({"generated_today": today,
-                        "cities": sorted({r["city"] for r in daily_rows})},
-                       build.META / "city_list.json")
+    # Station map is cheap + always current; city_list/coverage derive from the daily tier,
+    # so only (re)write them when this run actually built daily rows (don't clobber in hourly mode).
     storage.write_json(mapping, build.META / "station_city_map.json")
     storage.write_json({"unmapped_station_ids": unmapped}, build.META / "unmapped_stations.json")
-    storage.write_json(coverage, build.META / "coverage.json")
+    if daily_rows:
+        storage.write_json({"generated_today": today,
+                            "cities": sorted({r["city"] for r in daily_rows})},
+                           build.META / "city_list.json")
+        storage.write_json(build.build_coverage(daily_rows), build.META / "coverage.json")
 
+    n_cities = len({r["city"] for r in daily_rows})
     print(f"[run] done. daily_rows={len(daily_rows)} hourly_rows={len(hourly_rows)} "
-          f"live_cities={live_count} coverage_cities={len(coverage)}")
+          f"live_cities={live_count} daily_cities={n_cities}")
 
 
 if __name__ == "__main__":
