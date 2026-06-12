@@ -1,5 +1,6 @@
-import { CloudFog, Wind, Factory, Flame, Sun, Car, FlaskConical, type LucideIcon } from "lucide-react";
+import { CloudFog, Wind, Factory, Flame, Sun, Car, FlaskConical, Atom, type LucideIcon } from "lucide-react";
 import { POLLUTANT_LABELS } from "../lib/standards";
+import { SectionTitle } from "./SectionTitle";
 
 // Context-specific, restrained icons (sources/nature of each pollutant).
 const ICONS: Record<string, LucideIcon> = {
@@ -24,7 +25,7 @@ export function PollutantCards({ pollutants }: { pollutants: PollutantVM[] }) {
   if (pollutants.length === 0) return null;
   return (
     <section>
-      <h2 className="mb-3 font-display text-lg text-ink">Pollutants</h2>
+      <div className="mb-3"><SectionTitle icon={Atom}>Pollutants</SectionTitle></div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
         {pollutants.map((p) => (
           <div

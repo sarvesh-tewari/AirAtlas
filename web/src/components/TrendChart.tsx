@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import type { EChartsCoreOption } from "echarts";
+import { LineChart } from "lucide-react";
 import { EChart, chartTheme } from "./EChart";
+import { SectionTitle } from "./SectionTitle";
 import { STANDARDS, type StandardId } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
 
@@ -71,7 +73,7 @@ export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standar
   return (
     <section className="card p-5">
       <div className="mb-3 flex items-center justify-between">
-        <h2 className="font-display text-lg text-ink">Multi-year trend</h2>
+        <SectionTitle icon={LineChart}>Multi-year trend</SectionTitle>
         <div className="inline-flex overflow-hidden rounded-lg border border-border text-xs">
           {(["90d", "1y", "all"] as Range[]).map((r) => (
             <button

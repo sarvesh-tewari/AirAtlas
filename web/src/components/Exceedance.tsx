@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { EChartsCoreOption } from "echarts";
+import { CalendarRange } from "lucide-react";
 import { EChart, chartTheme } from "./EChart";
+import { SectionTitle } from "./SectionTitle";
 import { STANDARDS, bandForIndex, type StandardId } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
 
@@ -50,7 +52,7 @@ export function Exceedance({ rows, standard, dark }: { rows: DailyRow[]; standar
   return (
     <section className="card p-5">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <h2 className="font-display text-lg text-ink">Exceedance — bad-air days per year</h2>
+        <SectionTitle icon={CalendarRange}>Exceedance — bad-air days per year</SectionTitle>
         <div className="inline-flex overflow-hidden rounded-lg border border-border text-xs">
           {thresholds.map((v) => (
             <button key={v} onClick={() => setThr(v)} className={`px-3 py-1.5 ${thr === v ? "bg-accent text-white" : "text-muted hover:bg-surface-2"}`}>

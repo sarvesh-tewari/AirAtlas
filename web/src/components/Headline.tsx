@@ -16,8 +16,12 @@ export interface HeadlineVM {
 
 export function Headline({ standard, vm }: { standard: StandardId; vm: HeadlineVM }) {
   const color = vm.category ? bandByLabel(standard, vm.category).color : "var(--muted)";
+  // Category wash: the card subtly tints to the current AQI category.
+  const wash = vm.category
+    ? { background: `linear-gradient(160deg, ${color}1f 0%, ${color}08 32%, var(--surface) 70%)`, borderColor: `${color}55` }
+    : undefined;
   return (
-    <section className="card overflow-hidden">
+    <section className="card overflow-hidden" style={wash}>
       {vm.stale && (
         <div className="bg-amber-500/15 px-5 py-2 text-sm text-amber-700 dark:text-amber-300">
           Showing the last available reading — today's live data isn't in yet.

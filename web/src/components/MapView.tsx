@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { Map as MapIcon } from "lucide-react";
+import { SectionTitle } from "./SectionTitle";
 import { bandForIndex, bandByLabel, type StandardId } from "../lib/standards";
 import type { CityIndex } from "../lib/data";
 
@@ -57,7 +59,7 @@ export function MapView({ cities, standard, current, onCity, dark }: {
   return (
     <section className="card overflow-hidden">
       <div className="flex items-center justify-between px-5 pt-4">
-        <h2 className="font-display text-lg text-ink">Map</h2>
+        <SectionTitle icon={MapIcon}>Map</SectionTitle>
         <span className="text-xs text-faint">click a city · coloured by {standard.toUpperCase()}</span>
       </div>
       <div ref={ref} className="mt-3 h-[360px] w-full" style={{ background: dark ? "#0f1216" : "#eef0f2" }} />

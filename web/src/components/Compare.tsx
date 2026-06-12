@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { EChartsCoreOption } from "echarts";
+import { BarChart3 } from "lucide-react";
 import { EChart, chartTheme } from "./EChart";
+import { SectionTitle } from "./SectionTitle";
 import { STANDARDS, type StandardId } from "../lib/standards";
 import { fetchDailyHistory, type DailyRow } from "../lib/data";
 
@@ -48,7 +50,7 @@ export function Compare({ available, current, standard, dark }: { available: str
 
   return (
     <section className="card p-5">
-      <h2 className="mb-3 font-display text-lg text-ink">Compare cities</h2>
+      <div className="mb-3"><SectionTitle icon={BarChart3}>Compare cities</SectionTitle></div>
       <div className="mb-3 flex flex-wrap gap-2">
         {available.map((c) => (
           <button

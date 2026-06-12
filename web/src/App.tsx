@@ -8,6 +8,8 @@ import { PollutantTrend } from "./components/PollutantTrend";
 import { Exceedance } from "./components/Exceedance";
 import { WeatherOverlay } from "./components/WeatherOverlay";
 import { Compare } from "./components/Compare";
+import { MonthlyHeatmap } from "./components/MonthlyHeatmap";
+import { YearSummary } from "./components/YearSummary";
 import { MapView } from "./components/MapView";
 import { Methodology } from "./components/Methodology";
 import { ErrorBoundary } from "./components/ErrorBoundary";
@@ -192,6 +194,8 @@ export default function App() {
             {history.length > 1 && (
               <>
                 <ErrorBoundary label="Trend"><TrendChart rows={history} standard={standard} dark={dark} /></ErrorBoundary>
+                <ErrorBoundary label="Monthly pattern"><MonthlyHeatmap rows={history} standard={standard} dark={dark} /></ErrorBoundary>
+                <ErrorBoundary label="Year-by-year"><YearSummary rows={history} standard={standard} /></ErrorBoundary>
                 <ErrorBoundary label="Pollutant trends"><PollutantTrend rows={history} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Exceedance"><Exceedance rows={history} standard={standard} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Weather overlay"><WeatherOverlay rows={history} standard={standard} dark={dark} /></ErrorBoundary>
