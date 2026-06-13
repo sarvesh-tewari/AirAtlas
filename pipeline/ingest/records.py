@@ -49,6 +49,18 @@ def normalize_concentration(pollutant: str, value: float, unit: str | None) -> t
     u = (unit or "").strip().lower().replace("μ", "µ")
     target = canonical_unit(pollutant)
 
+    if pollutant == "co":
+        # CPCB reports CO in mg/m³. OpenAQ frequently mislabels these as "ppb" while the
+        # value is really mg/m³ (~0–50). Disambiguate by magnitude: a genuine CO ppb reading
+        # is in the hundreds–thousands. (1 ppm CO ≈ 1.145 mg/m³.)
+        if "ppm" in u:
+            return value * 1.145, "mg/m³"
+        if "ppb" in u:
+            return (ppb_to_ugm3("co", value) / 1000.0, "mg/m³") if value > 60 else (value, "mg/m³")
+        if "µg" in u or "ug" in u:
+            return value / 1000.0, "mg/m³"  # µg/m³ -> mg/m³
+        return value, "mg/m³"  # already mg/m³ (or unlabeled)
+
     if "ppm" in u:
         value = value * 1000.0  # ppm -> ppb
         u = "ppb"
