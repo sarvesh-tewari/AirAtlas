@@ -19,6 +19,16 @@ def next_batch(universe: Iterable[str], done: Iterable[str], n: int) -> list[str
     return [c for c in sorted(set(universe)) if c not in done_set][:n]
 
 
+def daily_cities(explicit: Iterable[str] | None, published: Iterable[str]) -> list[str]:
+    """Cities a daily delta should refresh: the explicit list if one was given, else only the
+    already-published set. New cities arrive solely via the drip (fully backfilled), so a bare
+    daily run never introduces thin 1-day cities. Returns [] when nothing is published yet.
+    """
+    if explicit:
+        return list(explicit)
+    return sorted(published)
+
+
 def record_attempted(prev_attempted: Iterable[str], batch: Iterable[str]) -> list[str]:
     """Union this fire's batch into the attempted set (sorted, deduped).
 

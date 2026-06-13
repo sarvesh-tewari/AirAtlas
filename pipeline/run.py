@@ -86,9 +86,21 @@ def main():
             done |= set(json.loads(ap_path.read_text()).get("cities", []))
         args.cities = plan.next_batch(set(mapping.values()), done, args.next_batch)
         if not args.cities:
-            print("[run] incremental backfill complete — no unpublished cities remain.")
+            print("[run] incremental backfill complete - no unpublished cities remain.")
             return
         print(f"[run] drip batch ({len(args.cities)}): {' '.join(args.cities)}")
+
+    # Daily delta refreshes ONLY already-published cities; new cities arrive via the drip, fully
+    # backfilled (complete-or-absent). Scope a bare daily run to the published set so the nightly
+    # cron never publishes 1-day-thin data for every discovered city.
+    if args.mode == "daily" and not args.next_batch:
+        clp = build.META / "city_list.json"
+        published = json.loads(clp.read_text()).get("cities", []) if clp.exists() else []
+        args.cities = plan.daily_cities(args.cities, published)
+        if not args.cities:
+            print("[run] daily: no published cities yet - nothing to refresh.")
+            return
+        print(f"[run] daily scoped to {len(args.cities)} published cities")
 
     sel = build.select_stations(stations, mapping, cities=set(args.cities) if args.cities else None,
                                 max_per_city=args.max_per_city)

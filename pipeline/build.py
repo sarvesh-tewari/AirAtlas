@@ -20,6 +20,9 @@ from transform import citymap
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 META = DATA / "meta"
+# Curation config (station->city overrides, city aliases) lives on main, NOT in data/, so it
+# survives the data-branch hydrate (which wipes + re-extracts data/) and stays version-reviewed.
+CONFIG = Path(__file__).resolve().parent / "config"
 
 AQI_PARAMS = {"pm25", "pm10", "no2", "so2", "o3", "co", "nh3"}
 
@@ -27,8 +30,8 @@ AQI_PARAMS = {"pm25", "pm10", "no2", "so2", "o3", "co", "nh3"}
 # --------------------------------------------------------------------------- #
 # Discovery + mapping
 # --------------------------------------------------------------------------- #
-def _load_meta_json(name: str, default):
-    path = META / name
+def _load_config_json(name: str, default):
+    path = CONFIG / name
     if path.exists():
         return json.loads(path.read_text())
     return default
@@ -37,8 +40,8 @@ def _load_meta_json(name: str, default):
 def discover(api_key: str) -> tuple[list[Station], dict[str, str], list[str]]:
     """All CPCB stations + station->city map (with overrides/aliases) + unmapped ids."""
     stations = openaq.fetch_india_locations(api_key, page_size=1000)
-    overrides = _load_meta_json("station_city_overrides.json", {})
-    aliases = _load_meta_json("city_aliases.json", {})
+    overrides = _load_config_json("station_city_overrides.json", {})
+    aliases = _load_config_json("city_aliases.json", {})
     mapping, unmapped = citymap.build_station_city_map(
         stations, overrides=overrides, aliases=aliases)
     return stations, mapping, unmapped

@@ -38,6 +38,24 @@ def test_build_map_applies_overrides_and_aliases():
     assert unmapped == []
 
 
+def test_sector_dash_number_misparse_fixed_by_alias():
+    # "Sector - 125, Noida..." splits on " - " so the parser yields "125, Noida, UP" as the city.
+    # The curated city alias normalizes that (and the Greater Noida variant) back to a clean name.
+    stations = [
+        _st("openaq:10", "Sector - 125, Noida, UP - UPPCB"),
+        _st("openaq:11", "Knowledge Park - III, Greater Noida - UPPCB"),
+    ]
+    raw, _ = citymap.build_station_city_map(stations)
+    assert raw["openaq:10"] == "125, Noida, UP"          # the misparse we saw in production
+    assert raw["openaq:11"] == "III, Greater Noida"
+    fixed, _ = citymap.build_station_city_map(stations, aliases={
+        "125, Noida, UP": "Noida",
+        "III, Greater Noida": "Greater Noida",
+    })
+    assert fixed["openaq:10"] == "Noida"
+    assert fixed["openaq:11"] == "Greater Noida"
+
+
 def test_build_map_reports_unmapped():
     stations = [_st("openaq:3", "IGI Airport")]
     mapping, unmapped = citymap.build_station_city_map(stations)
