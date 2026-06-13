@@ -3,6 +3,7 @@ import type { EChartsCoreOption } from "echarts";
 import { Activity } from "lucide-react";
 import { EChart } from "./EChart";
 import { chartTheme } from "../lib/chartTheme";
+import { dateAxisTooltip } from "../lib/format";
 import { SectionTitle } from "./SectionTitle";
 import { POLLUTANT_LABELS } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
@@ -22,7 +23,7 @@ export function PollutantTrend({ rows, dark }: { rows: DailyRow[]; dark: boolean
       grid: { left: 44, right: 16, top: 30, bottom: 28 },
       legend: { top: 0, textStyle: { color: t.label, fontSize: 11 }, icon: "roundRect",
         selected: { "PM2.5": true, "PM10": true, "NO₂": false, "SO₂": false, "O₃": false } },
-      tooltip: { trigger: "axis", backgroundColor: t.tooltipBg, borderWidth: 0, textStyle: { color: t.ink, fontSize: 12 } },
+      tooltip: { trigger: "axis", formatter: dateAxisTooltip(), backgroundColor: t.tooltipBg, borderWidth: 0, textStyle: { color: t.ink, fontSize: 12 } },
       xAxis: { type: "time", axisLine: { lineStyle: { color: t.axis } }, axisLabel: { color: t.label, fontSize: 11 } },
       yAxis: { type: "value", name: "µg/m³", nameTextStyle: { color: t.label, fontSize: 10 },
         axisLabel: { color: t.label, fontSize: 11 }, splitLine: { lineStyle: { color: t.split } } },

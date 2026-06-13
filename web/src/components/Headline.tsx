@@ -1,6 +1,7 @@
 import { Clock } from "lucide-react";
 import { Gauge } from "./Gauge";
 import { STANDARDS, bandByLabel, type StandardId } from "../lib/standards";
+import { formatDate, formatDateTimeIST } from "../lib/format";
 
 export interface HeadlineVM {
   city: string;
@@ -13,6 +14,9 @@ export interface HeadlineVM {
   stale: boolean;
   live: boolean;
   nStations: number;
+  updatedUtc: string | null;
+  lastDate: string | null;
+  source: string | null;
 }
 
 export function Headline({ standard, vm, loading = false }: { standard: StandardId; vm: HeadlineVM; loading?: boolean }) {
@@ -22,12 +26,17 @@ export function Headline({ standard, vm, loading = false }: { standard: Standard
   const wash = vm.category
     ? { background: `color-mix(in srgb, ${color} 12%, var(--surface))`, borderColor: `${color}55` }
     : undefined;
+  // When the last refresh happened: a live reading shows a full IST timestamp; history shows a date.
+  const updatedText = vm.live && vm.updatedUtc
+    ? formatDateTimeIST(vm.updatedUtc)
+    : vm.lastDate ? formatDate(vm.lastDate) : null;
+  const sourceLabel = vm.source === "cpcb" ? "CPCB" : vm.source === "openaq" ? "OpenAQ" : null;
   return (
     <section className="card overflow-hidden" style={wash}>
       {vm.stale && (
         <div className="flex items-center gap-2 border-b border-border px-6 py-2 text-xs text-body">
           <Clock size={13} aria-hidden />
-          Showing the latest available reading. Live data refreshes hourly.
+          Showing the latest available reading{updatedText ? ` from ${updatedText}` : ""}. Live data refreshes hourly.
         </div>
       )}
       <div className="grid gap-6 p-6 sm:grid-cols-[260px_1fr] sm:items-center">
@@ -67,8 +76,9 @@ export function Headline({ standard, vm, loading = false }: { standard: Standard
             </p>
           )}
           <p className="mt-2 text-xs text-muted">
-            {vm.nStations > 0 ? `${vm.nStations} station${vm.nStations > 1 ? "s" : ""}` : ""}
-            {vm.live ? " · live (CPCB)" : " · latest available"}
+            {vm.nStations > 0 ? `${vm.nStations} station${vm.nStations > 1 ? "s" : ""} · ` : ""}
+            {sourceLabel ? `${sourceLabel} · ` : ""}
+            {updatedText ? (vm.live ? `updated ${updatedText}` : `latest data ${updatedText}`) : (vm.live ? "live" : "latest available")}
           </p>
         </div>
       </div>

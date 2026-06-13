@@ -4,7 +4,7 @@ import { Logo } from "./Logo";
 import type { StandardId } from "../lib/standards";
 
 export function TopBar({
-  cities, city, onCity, standard, onStandard, updatedLabel, source,
+  cities, city, onCity, standard, onStandard,
   dark, onToggleTheme, page, onNav,
 }: {
   cities: Option[];
@@ -12,8 +12,6 @@ export function TopBar({
   onCity: (c: string) => void;
   standard: StandardId;
   onStandard: (s: StandardId) => void;
-  updatedLabel: string | null;
-  source: string | null;
   dark: boolean;
   onToggleTheme: () => void;
   page: "dashboard" | "methodology";
@@ -86,11 +84,6 @@ export function TopBar({
           >
             About
           </button>
-          {page === "dashboard" && updatedLabel && (
-            <span className="ml-1 hidden text-xs text-muted sm:inline">
-              {source === "cpcb" ? "CPCB" : source === "openaq" ? "OpenAQ" : ""} · {updatedLabel}
-            </span>
-          )}
           <button
             onClick={onToggleTheme}
             aria-label="Toggle theme"

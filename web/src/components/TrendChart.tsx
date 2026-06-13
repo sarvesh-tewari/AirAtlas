@@ -3,6 +3,7 @@ import type { EChartsCoreOption } from "echarts";
 import { LineChart } from "lucide-react";
 import { EChart } from "./EChart";
 import { chartTheme } from "../lib/chartTheme";
+import { dateAxisTooltip } from "../lib/format";
 import { SectionTitle } from "./SectionTitle";
 import { STANDARDS, type StandardId } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
@@ -46,7 +47,7 @@ export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standar
 
     return {
       grid: { left: 44, right: 16, top: 16, bottom: 28 },
-      tooltip: { trigger: "axis", backgroundColor: t.tooltipBg, borderWidth: 0,
+      tooltip: { trigger: "axis", formatter: dateAxisTooltip(), backgroundColor: t.tooltipBg, borderWidth: 0,
         textStyle: { color: t.ink, fontSize: 12 } },
       xAxis: { type: "time", axisLine: { lineStyle: { color: t.axis } },
         axisLabel: { color: t.label, fontSize: 11 }, splitLine: { show: false } },

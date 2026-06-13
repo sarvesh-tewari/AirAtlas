@@ -35,13 +35,6 @@ function useTheme() {
   return { dark, toggle: () => setDark((d) => !d) };
 }
 
-function timeAgo(iso: string): string {
-  const h = (Date.now() - new Date(iso).getTime()) / 3.6e6;
-  if (h < 1) return `${Math.round(h * 60)}m ago`;
-  if (h < 48) return `${Math.round(h)}h ago`;
-  return `${Math.round(h / 24)}d ago`;
-}
-
 function nearestCity(cities: CityIndex[], lat: number, lon: number): string | null {
   let best: string | null = null, bestD = Infinity;
   for (const c of cities) {
@@ -106,6 +99,9 @@ export default function App() {
       city, index: null, band: null, category: null, dominantLabel: null,
       dominantValue: null, dominantUnit: null, stale: !live, live: !!live,
       nStations: live?.n_stations ?? lastRow?.n_stations ?? 0,
+      updatedUtc: live?.updated_utc ?? null,
+      lastDate: lastRow?.date ?? null,
+      source: live?.source ?? lastRow?.source ?? null,
     };
     let dominant: string[] = [];
     if (live) {
@@ -171,9 +167,6 @@ export default function App() {
     [cities],
   );
 
-  const updatedLabel = live ? timeAgo(live.updated_utc) : lastRow ? `as of ${lastRow.date}` : null;
-  const source = live?.source ?? lastRow?.source ?? null;
-
   const cityNames = useMemo(() => cities.map((c) => c.city), [cities]);
 
   function chooseCity(c: string) { pickedRef.current = true; setCity(c); }
@@ -184,7 +177,6 @@ export default function App() {
       <TopBar
         cities={cityOptions} city={city} onCity={chooseCity}
         standard={standard} onStandard={setStandard}
-        updatedLabel={updatedLabel} source={source}
         dark={dark} onToggleTheme={toggle} page={page} onNav={setPage}
       />
 

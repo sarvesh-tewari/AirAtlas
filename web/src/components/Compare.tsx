@@ -3,6 +3,7 @@ import type { EChartsCoreOption } from "echarts";
 import { BarChart3, X } from "lucide-react";
 import { EChart } from "./EChart";
 import { chartTheme } from "../lib/chartTheme";
+import { dateAxisTooltip } from "../lib/format";
 import { SectionTitle } from "./SectionTitle";
 import { Combobox } from "./Combobox";
 import { STANDARDS, type StandardId } from "../lib/standards";
@@ -39,7 +40,7 @@ export function Compare({ available, current, standard, dark }: { available: str
   const option = useMemo(() => ({
     grid: { left: 44, right: 16, top: 30, bottom: 28 },
     legend: { top: 0, textStyle: { color: t.label, fontSize: 11 }, icon: "roundRect" },
-    tooltip: { trigger: "axis", backgroundColor: t.tooltipBg, borderWidth: 0, textStyle: { color: t.ink, fontSize: 12 } },
+    tooltip: { trigger: "axis", formatter: dateAxisTooltip(), backgroundColor: t.tooltipBg, borderWidth: 0, textStyle: { color: t.ink, fontSize: 12 } },
     xAxis: { type: "time", axisLine: { lineStyle: { color: t.axis } }, axisLabel: { color: t.label, fontSize: 11 } },
     yAxis: { type: "value", name: cfg.numeric ? "AQI" : "band", nameTextStyle: { color: t.label, fontSize: 10 }, axisLabel: { color: t.label, fontSize: 11 }, splitLine: { lineStyle: { color: t.split } } },
     series: selected.map((c, i) => ({
