@@ -50,6 +50,19 @@ jobs:
       - name: Install pipeline
         run: pip install -e ./pipeline
 
+      # Data lives on the orphan `data` branch (not main). The pipeline UPSERTS into existing
+      # parquet and backfill RESUMABILITY depends on prior data being present, so repopulate the
+      # working tree from the branch BEFORE running. Guarded for the no-branch case.
+      - name: Hydrate prior data from data branch
+        run: |
+          if git fetch --depth 1 origin '+refs/heads/data:refs/remotes/origin/data' 2>/dev/null; then
+            rm -rf data
+            git archive origin/data data | tar -x
+            echo "Hydrated $(find data -type f | wc -l) files from data branch."
+          else
+            echo "No data branch yet; starting fresh."
+          fi
+
       - name: Refresh history + recent (+ live)
         env:
           DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
@@ -68,18 +81,27 @@ jobs:
           echo "run.py $MODE $ARGS"
           python pipeline/run.py "$MODE" $ARGS
 
-      - name: Commit refreshed data
+      # Publish the whole data/ tree as a single PARENTLESS commit on the `data` branch
+      # (rolling snapshot; force-push keeps the branch at one commit). Built in a throwaway index.
+      # Skip if unchanged to avoid a no-op redeploy. The push to the data branch is what the
+      # refresh completing triggers deploy.yml (workflow_run), which rebuilds + publishes.
+      - name: Publish data to data branch
         run: |
           git config user.name  "airatlas-bot"
           git config user.email "airatlas-bot@users.noreply.github.com"
-          git add -f data/history data/recent data/live data/meta
-          if ! git diff --staged --quiet; then
-            git commit -m "data: ${{ github.event.inputs.mode || 'daily' }} refresh"
-            # Rebase onto any commits landed while we ran, then push (retry once).
-            git pull --rebase --autostash origin main || true
-            git push || (git pull --rebase --autostash origin main && git push)
+          NEW_TREE=$(
+            export GIT_INDEX_FILE="$(mktemp -u)"
+            git add -f data
+            git write-tree
+          )
+          PREV_TREE=$(git rev-parse --verify --quiet 'refs/remotes/origin/data^{tree}' || echo none)
+          if [ "$NEW_TREE" = "$PREV_TREE" ]; then
+            echo "No data change; skipping publish + redeploy."
+            exit 0
           fi
-          # The refresh completing triggers deploy.yml (workflow_run), which rebuilds + publishes.
+          NEW_COMMIT=$(git commit-tree "$NEW_TREE" -m "data: ${{ github.event.inputs.mode || 'daily' }} refresh")
+          git push --force origin "${NEW_COMMIT}:refs/heads/data"
+          echo "Published data tree $NEW_TREE to data branch."
 
       - name: Open/append failure issue
         if: failure()

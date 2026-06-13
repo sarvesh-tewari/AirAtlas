@@ -28,6 +28,19 @@ jobs:
       - name: Install pipeline
         run: pip install -e ./pipeline
 
+      # Data lives on the orphan `data` branch (not main). The pipeline UPSERTS into existing
+      # parquet, so we must repopulate the working tree from the branch BEFORE running, or the
+      # publish below would drop history/recent. Guarded for the (now unlikely) no-branch case.
+      - name: Hydrate prior data from data branch
+        run: |
+          if git fetch --depth 1 origin '+refs/heads/data:refs/remotes/origin/data' 2>/dev/null; then
+            rm -rf data
+            git archive origin/data data | tar -x
+            echo "Hydrated $(find data -type f | wc -l) files from data branch."
+          else
+            echo "No data branch yet; starting fresh."
+          fi
+
       - name: Refresh live snapshot
         env:
           DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
@@ -40,17 +53,27 @@ jobs:
       - name: Staleness check
         run: python pipeline/checks.py --live-dir data/live --max-hours 6
 
-      - name: Commit refreshed data
+      # Publish the whole data/ tree as a single PARENTLESS commit on the `data` branch
+      # (rolling snapshot — force-push keeps the branch at one commit, so main history and
+      # the data branch both stay lean). Built in a throwaway index so the real index/worktree
+      # are untouched. Skip if nothing changed to avoid a no-op redeploy.
+      - name: Publish data to data branch
         run: |
           git config user.name  "airatlas-bot"
           git config user.email "airatlas-bot@users.noreply.github.com"
-          git add -f data/live data/meta   # data/* is dev-gitignored; CI is source of truth
-          if ! git diff --staged --quiet; then
-            git commit -m "data: hourly refresh"
-            # Rebase onto any commits that landed while we ran, then push (retry once).
-            git pull --rebase --autostash origin main || true
-            git push || (git pull --rebase --autostash origin main && git push)
+          NEW_TREE=$(
+            export GIT_INDEX_FILE="$(mktemp -u)"
+            git add -f data
+            git write-tree
+          )
+          PREV_TREE=$(git rev-parse --verify --quiet 'refs/remotes/origin/data^{tree}' || echo none)
+          if [ "$NEW_TREE" = "$PREV_TREE" ]; then
+            echo "No data change; skipping publish + redeploy."
+            exit 0
           fi
+          NEW_COMMIT=$(git commit-tree "$NEW_TREE" -m "data: hourly refresh")
+          git push --force origin "${NEW_COMMIT}:refs/heads/data"
+          echo "Published data tree $NEW_TREE to data branch."
 
       - name: Open/append failure issue
         if: failure()

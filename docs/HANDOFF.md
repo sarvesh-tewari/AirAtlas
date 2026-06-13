@@ -24,8 +24,9 @@ citymap.py, storage.py), `build.py` + `run.py` orchestration, `checks.py`. Write
 Parquet (`data/history` daily, `data/recent` hourly) + `data/live/*.json` + `data/meta/*.json`.
 `web/` (React+Vite+TS+Tailwind v4 + DuckDB-WASM + ECharts + Leaflet) reads those files; AQI is
 **precomputed in the pipeline** (single tested engine), frontend just renders. GitHub Actions:
-`ci.yml` (lint+tests+web build), `refresh-hourly.yml`, `refresh-daily.yml` (commit data),
-`deploy.yml` (build+publish to Pages; triggered on push, dispatch, and workflow_run after refresh).
+`ci.yml` (lint+tests+web build), `refresh-hourly.yml`, `refresh-daily.yml` (hydrate data from
+the `data` branch → run pipeline → publish back to the `data` branch), `deploy.yml` (fetch data
+from the `data` branch + build+publish to Pages; triggered on push, dispatch, and workflow_run).
 
 ## Locked decisions (don't relitigate)
 - Repo name **AirAtlas**; license **MIT** (code) + **CC BY 4.0** (data); host **GitHub Pages**.
@@ -48,8 +49,14 @@ Parquet (`data/history` daily, `data/recent` hourly) + `data/live/*.json` + `dat
 - **Show screenshots as you go** to catch issues early and save tokens.
 
 ## Open / deferred items (prioritised)
-1. **Data out of git** (HIGH, long-term): binary Parquet committed forever will bloat the repo.
-   Move `data/` to an orphan `data` branch or release artifacts before long unattended running.
+1. ~~**Data out of git**~~ ✅ DONE (2026-06-13): data now lives on an orphan `data` branch as a
+   single **parentless, force-pushed** commit (rolling snapshot — branch + main history both stay
+   lean). `main` tracks only `.gitkeep` placeholders under `data/`. Refresh workflows hydrate from
+   the branch (pipeline UPSERTS, so prior data must be present) → run → publish back; `deploy.yml`
+   fetches the branch + stages into `web/public/data`. Mechanics: seed/publish via a throwaway
+   `GIT_INDEX_FILE` (`git add -f data` → `write-tree` → parentless `commit-tree` → force-push);
+   deploy/hydrate via `git archive origin/data data | tar -x`. Tree-equality check skips no-op
+   redeploys. The two refresh crons are serialized by `concurrency: data-refresh`.
 2. **Full backfill**: currently 14 demo cities. Run all ~285 via
    `gh workflow run refresh-daily.yml -f mode=backfill` (long; resumable; auto-deploys).
 3. **CPCB live verification**: data.gov.in was DOWN the entire project — the `cpcb.py` path is
@@ -66,9 +73,16 @@ Parquet (`data/history` daily, `data/recent` hourly) + `data/live/*.json` + `dat
   "ppb" but is really mg/m³** (handled by magnitude); gases often ppb → normalized to µg/m³.
 - **Dirty data**: sensor errors (PM2.5 > PM10, SO2 spikes) filtered by `drop_implausible`.
 - **DuckDB-WASM** returns int64 as **BigInt** — coerce to Number (done in `lib/duckdb.ts`).
-- **GitHub Actions**: a commit made by a workflow token does NOT re-trigger `push` workflows →
-  `deploy.yml` uses a `workflow_run` trigger. Always **`git pull --rebase` before bot push**
-  (scheduled refreshes commit between your pushes — rebase or you get non-fast-forward).
+- **GitHub Actions**: a push made by a workflow token does NOT re-trigger `push` workflows →
+  `deploy.yml` uses a `workflow_run` trigger. Refreshes now **force-push a self-contained
+  parentless tree to the `data` branch** (not main), so the old `git pull --rebase before push`
+  dance is gone; the `concurrency: data-refresh` group serializes the two crons so they never
+  race the force-push. (Human pushes to `main` are unaffected — refreshes never touch main.)
+- **Orphan `data` branch publish**: build the commit in a **throwaway `GIT_INDEX_FILE`** (subshell-
+  scoped — if it leaks into a later `git status`, that shell sees an empty index and reports every
+  file "deleted"; the real index is fine). Refspecs use **`${VAR}:refs/...` braces** — bare
+  `$VAR:refs` triggers zsh's `:r` modifier locally (mangled the first push). On Actions (bash) it's
+  moot, but brace anyway.
 - **Pages base path** is hardcoded `/AirAtlas/` (VITE_BASE in deploy.yml) — matches repo name.
 - **Preview screenshots** capture only the top viewport and fire before DuckDB finishes (~2-3s)
   — verify below-fold/loaded content via `preview_eval` DOM checks, not just screenshots.
@@ -93,4 +107,6 @@ gh workflow run refresh-daily.yml -f mode=backfill    # full/curated backfill
 gh run watch <id>                                     # watch a run
 ```
 Local dev data: `web/public/data` is a symlink to `../../data` (gitignored). `.env` is gitignored.
-Generated `data/` is dev-gitignored but committed by CI (`git add -f`).
+Generated `data/` is dev-gitignored and **not on `main`** — it lives on the orphan `data` branch
+(see deferred item 1). `main` keeps only `.gitkeep` placeholders so the dir structure survives a
+fresh clone. To inspect the live dataset: `git fetch origin data && git archive origin/data data | tar -t`.

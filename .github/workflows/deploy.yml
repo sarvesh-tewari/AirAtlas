@@ -40,9 +40,17 @@ jobs:
 
       - name: Stage published data for the build
         run: |
-          # data/ is committed by the refresh workflows; copy it into the site's public dir.
+          # data/ lives on the orphan `data` branch (not main); fetch + extract into the site's
+          # public dir. Build dataless (empty states) if the branch is somehow absent.
           mkdir -p web/public
-          if [ -d data ]; then rm -rf web/public/data && cp -r data web/public/data; fi
+          rm -rf web/public/data
+          if git fetch --depth 1 origin '+refs/heads/data:refs/remotes/origin/data' 2>/dev/null; then
+            git archive origin/data data | tar -x -C web/public
+            echo "Staged $(find web/public/data -type f | wc -l) data files from data branch."
+          else
+            echo "No data branch found; building without data."
+            mkdir -p web/public/data
+          fi
 
       - name: Build
         working-directory: web
