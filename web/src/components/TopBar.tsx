@@ -1,3 +1,4 @@
+import { Info } from "lucide-react";
 import { Combobox, type Option } from "./Combobox";
 import type { StandardId } from "../lib/standards";
 
@@ -45,6 +46,24 @@ export function TopBar({
             </button>
           ))}
         </div>
+
+        <span className="group relative inline-flex">
+          <button
+            aria-label="Why do the standards show different numbers?"
+            className="rounded-full p-1 text-faint hover:text-ink"
+          >
+            <Info size={16} />
+          </button>
+          <span
+            role="tooltip"
+            className="pointer-events-none absolute left-0 top-full z-30 mt-2 w-72 rounded-lg border border-border bg-surface p-3 text-xs leading-relaxed text-muted opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100"
+          >
+            Each standard computes a <span className="text-ink">different number</span> from the
+            same measured concentrations — different breakpoints, units and averaging windows. So
+            the index and even the dominant pollutant can differ across NAQI / US / EU. The raw
+            concentrations don't change; only the formula does.
+          </span>
+        </span>
 
         <nav className="ml-auto flex items-center gap-1 text-sm">
           <button

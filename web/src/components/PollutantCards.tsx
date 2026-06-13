@@ -25,7 +25,11 @@ export function PollutantCards({ pollutants }: { pollutants: PollutantVM[] }) {
   if (pollutants.length === 0) return null;
   return (
     <section>
-      <div className="mb-3"><SectionTitle icon={Atom} color="#0284c7">Pollutants</SectionTitle></div>
+      <div className="mb-1"><SectionTitle icon={Atom} color="#0284c7">Pollutants</SectionTitle></div>
+      <p className="mb-3 text-xs text-faint">
+        These are the measured concentrations. The AQI index is <em>derived</em> from them — so it
+        differs by standard, while these values stay the same.
+      </p>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
         {pollutants.map((p) => (
           <div
