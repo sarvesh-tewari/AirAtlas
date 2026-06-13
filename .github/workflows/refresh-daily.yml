@@ -15,6 +15,17 @@ on:
       cities:
         description: "optional space-separated city subset (blank = all)"
         default: ""
+      sensors:
+        description: "sensors per pollutant"
+        type: choice
+        options: [all, first]
+        default: all
+      from:
+        description: "backfill start date YYYY-MM-DD (blank = 2016)"
+        default: ""
+      max_per_city:
+        description: "cap stations per city (blank = all)"
+        default: ""
 
 concurrency:
   group: data-refresh
@@ -47,11 +58,15 @@ jobs:
         run: |
           MODE="${{ github.event.inputs.mode || 'daily' }}"
           CITIES="${{ github.event.inputs.cities }}"
-          if [ -n "$CITIES" ]; then
-            python pipeline/run.py "$MODE" --sensors all --cities $CITIES
-          else
-            python pipeline/run.py "$MODE" --sensors all
-          fi
+          SENSORS="${{ github.event.inputs.sensors || 'all' }}"
+          FROM="${{ github.event.inputs.from }}"
+          MAXPC="${{ github.event.inputs.max_per_city }}"
+          ARGS="--sensors $SENSORS"
+          [ -n "$CITIES" ] && ARGS="$ARGS --cities $CITIES"
+          [ -n "$FROM" ] && ARGS="$ARGS --from $FROM"
+          [ -n "$MAXPC" ] && ARGS="$ARGS --max-per-city $MAXPC"
+          echo "run.py $MODE $ARGS"
+          python pipeline/run.py "$MODE" $ARGS
 
       - name: Commit refreshed data
         run: |
