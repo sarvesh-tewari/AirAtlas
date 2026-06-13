@@ -1,7 +1,8 @@
 import { useMemo } from "react";
 import type { EChartsCoreOption } from "echarts";
 import { Activity } from "lucide-react";
-import { EChart, chartTheme } from "./EChart";
+import { EChart } from "./EChart";
+import { chartTheme } from "../lib/chartTheme";
 import { SectionTitle } from "./SectionTitle";
 import { POLLUTANT_LABELS } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
@@ -35,8 +36,8 @@ export function PollutantTrend({ rows, dark }: { rows: DailyRow[]; dark: boolean
 
   return (
     <section className="card p-5">
-      <SectionTitle icon={Activity} color="#10b981">Pollutant trends</SectionTitle>
-      <p className="mb-2 text-xs text-muted">Click the legend to toggle pollutants (defaults to PM2.5 vs PM10).</p>
+      <SectionTitle icon={Activity} color="#10b981" eyebrow="By pollutant">Pollutant trends</SectionTitle>
+      <p className="mb-2 text-xs text-body">Click the legend to toggle pollutants (defaults to PM2.5 vs PM10).</p>
       <EChart option={option} height={260} ariaLabel="Per-pollutant concentration trends over time" />
     </section>
   );

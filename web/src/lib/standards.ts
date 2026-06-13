@@ -1,7 +1,7 @@
 // AQI standard metadata for the UI: category bands, colour-blind-safe colours, and
 // category lookup. Mirrors the pipeline engine's categories; the pipeline precomputes the
 // numbers, this maps them to labels + colours for display. Colour is ALWAYS paired with the
-// label in the UI — never colour alone.
+// label in the UI - never colour alone.
 
 export type StandardId = "naqi" | "us" | "eu";
 

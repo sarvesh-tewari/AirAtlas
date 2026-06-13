@@ -1,7 +1,8 @@
 import { useMemo } from "react";
 import type { EChartsCoreOption } from "echarts";
 import { CalendarRange } from "lucide-react";
-import { EChart, chartTheme } from "./EChart";
+import { EChart } from "./EChart";
+import { chartTheme } from "../lib/chartTheme";
 import { SectionTitle } from "./SectionTitle";
 import { STANDARDS, bandForIndex, type StandardId } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
@@ -24,7 +25,7 @@ export function Exceedance({ rows, standard, dark }: { rows: DailyRow[]; standar
         if (!r.eu_band) continue;
         bandIdx = cfg.bands.findIndex((b) => b.label === r.eu_band);
       }
-      if (bandIdx < 0) continue; // unknown band label — don't write counts[-1]
+      if (bandIdx < 0) continue; // unknown band label - don't write counts[-1]
       const yr = r.date.slice(0, 4);
       if (!counts.has(yr)) counts.set(yr, new Array(cfg.bands.length).fill(0));
       counts.get(yr)![bandIdx] += 1;
@@ -48,9 +49,9 @@ export function Exceedance({ rows, standard, dark }: { rows: DailyRow[]; standar
 
   return (
     <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={CalendarRange} color="#d97706">Days by air-quality band</SectionTitle></div>
-      {years.length ? <EChart option={option} height={260} ariaLabel="Stacked count of days in each AQI band per year" /> : <p className="py-8 text-center text-sm text-muted">No data.</p>}
-      <p className="mt-2 text-xs text-faint">Each day counted once in its {cfg.name} band — hover a year for the breakdown.</p>
+      <div className="mb-3"><SectionTitle icon={CalendarRange} color="#d97706" eyebrow="Clean-air days">Days by air-quality band</SectionTitle></div>
+      {years.length ? <EChart option={option} height={260} ariaLabel="Stacked count of days in each AQI band per year" /> : <p className="py-8 text-center text-sm text-body">No data.</p>}
+      <p className="mt-2 text-xs text-muted">Each day counted once in its {cfg.name} band. Hover a year for the breakdown.</p>
     </section>
   );
 }

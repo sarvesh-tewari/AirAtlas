@@ -1,5 +1,5 @@
 // DuckDB-WASM bootstrap + Parquet query helper. The published per-city Parquet files are
-// queried directly in the browser — no backend. Bundles load from jsDelivr (CSP-friendly).
+// queried directly in the browser - no backend. Bundles load from jsDelivr (CSP-friendly).
 
 import * as duckdb from "@duckdb/duckdb-wasm";
 

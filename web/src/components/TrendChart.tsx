@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import type { EChartsCoreOption } from "echarts";
 import { LineChart } from "lucide-react";
-import { EChart, chartTheme } from "./EChart";
+import { EChart } from "./EChart";
+import { chartTheme } from "../lib/chartTheme";
 import { SectionTitle } from "./SectionTitle";
 import { STANDARDS, type StandardId } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
@@ -73,13 +74,13 @@ export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standar
   return (
     <section className="card p-5">
       <div className="mb-3 flex items-center justify-between">
-        <SectionTitle icon={LineChart} color="#6366f1">Multi-year trend</SectionTitle>
+        <SectionTitle icon={LineChart} color="#6366f1" eyebrow="History">Multi-year trend</SectionTitle>
         <div className="inline-flex overflow-hidden rounded-lg border border-border text-xs">
           {(["90d", "1y", "all"] as Range[]).map((r) => (
             <button
               key={r}
               onClick={() => setRange(r)}
-              className={`px-3 py-1.5 ${range === r ? "bg-accent text-white" : "text-muted hover:bg-surface-2"}`}
+              className={`px-3 py-1.5 ${range === r ? "bg-accent text-white" : "text-body hover:bg-bg-soft"}`}
             >
               {r === "90d" ? "90 days" : r === "1y" ? "1 year" : "All"}
             </button>
@@ -89,7 +90,7 @@ export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standar
       {filtered.length > 1 ? (
         <EChart option={option} height={260} ariaLabel="Multi-year daily AQI trend with category bands" />
       ) : (
-        <p className="py-10 text-center text-sm text-muted">Not enough history for this range.</p>
+        <p className="py-10 text-center text-sm text-body">Not enough history for this range.</p>
       )}
     </section>
   );

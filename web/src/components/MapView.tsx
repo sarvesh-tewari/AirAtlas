@@ -59,8 +59,8 @@ export function MapView({ cities, standard, current, onCity, dark }: {
   return (
     <section className="card overflow-hidden">
       <div className="flex items-center justify-between px-5 pt-4">
-        <SectionTitle icon={MapIcon} color="#2563eb">Map</SectionTitle>
-        <span className="text-xs text-faint">click a city · coloured by {standard.toUpperCase()}</span>
+        <SectionTitle icon={MapIcon} color="#2563eb" eyebrow="Coverage">Map</SectionTitle>
+        <span className="text-xs text-muted">click a city · coloured by {standard.toUpperCase()}</span>
       </div>
       <div ref={ref} className="mt-3 h-[360px] w-full" style={{ background: dark ? "#0f1216" : "#eef0f2" }} />
     </section>

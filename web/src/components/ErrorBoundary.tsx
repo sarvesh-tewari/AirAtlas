@@ -21,7 +21,7 @@ export class ErrorBoundary extends Component<
   render() {
     if (this.state.failed) {
       return (
-        <section className="card p-5 text-sm text-muted">
+        <section className="card p-5 text-sm text-body">
           {this.props.label ?? "This section"} couldn't render for the current selection.
         </section>
       );

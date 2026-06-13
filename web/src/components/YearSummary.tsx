@@ -31,20 +31,20 @@ export function YearSummary({ rows, standard }: { rows: DailyRow[]; standard: St
 
   return (
     <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={Sigma} color="#0d9488">Year-by-year</SectionTitle></div>
+      <div className="mb-3"><SectionTitle icon={Sigma} color="#0d9488" eyebrow="Annual summary">Year-by-year</SectionTitle></div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {years.map((y) => {
           const peakColor = cfg.numeric ? bandForIndex(standard, y.peak).color : cfg.bands[Math.min(5, y.peak)].color;
           return (
-            <div key={y.yr} className="rounded-lg border border-border bg-surface-2/40 p-3">
-              <div className="font-display text-lg text-ink">{y.yr}</div>
+            <div key={y.yr} className="rounded-lg border border-border bg-bg-soft/40 p-3">
+              <div className="font-display text-lg text-heading">{y.yr}</div>
               <div className="mt-1 flex items-baseline justify-between text-sm">
-                <span className="text-muted">avg</span><span className="font-medium text-ink">{fmt(y.avg)}</span>
+                <span className="text-body">avg</span><span className="font-medium text-heading">{fmt(y.avg)}</span>
               </div>
               <div className="flex items-baseline justify-between text-sm">
-                <span className="text-muted">peak</span><span className="font-medium" style={{ color: peakColor }}>{fmt(y.peak)}</span>
+                <span className="text-body">peak</span><span className="font-medium" style={{ color: peakColor }}>{fmt(y.peak)}</span>
               </div>
-              <div className="mt-1 flex justify-between text-xs text-faint">
+              <div className="mt-1 flex justify-between text-xs text-muted">
                 <span>{y.good} good</span><span>{y.poor} poor</span>
               </div>
             </div>

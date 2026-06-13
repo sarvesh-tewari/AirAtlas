@@ -1,43 +1,65 @@
 @import "tailwindcss";
 
-/* Class-based dark mode: toggle `.dark` on <html>. */
-@custom-variant dark (&:where(.dark, .dark *));
+/* Theme is driven by [data-theme="dark"] on <html> (set by the toggle). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-  --bg: #f3f1ea;
-  --surface: #fffdf8;
-  --surface-2: #ece8df;
-  --border: rgba(40, 33, 24, 0.12);
-  --ink: #211f1b;
-  --muted: #6f6a60;
-  --faint: #78736a; /* AA-contrast (~4.5:1) on warm surfaces */
-  --accent: #24426b;
-  --gauge-dot-bg: #fffdf8;
+  --bg: #ffffff;
+  --bg-soft: #f8fafc;
+  --canvas: #f8fafc; /* page canvas - soft grey so white cards lift off it */
+  --surface: #ffffff;
+  --heading: #0f172a;
+  --body: #64748b;
+  --body-strong: #475569;
+  --nav: #374151;
+  --muted: #94a3b8;
+  --accent: #3d7fe6;
+  --accent-text: #3d7fe6;
+  --success: #16a34a;
+  --danger: #ef4444;
+  --border: rgba(15, 23, 42, 0.08);
+
+  --card-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --gauge-dot-bg: #ffffff;
 }
-.dark {
-  --bg: #13161d;
-  --surface: #1c212c;
-  --surface-2: #262d3a;
-  --border: rgba(255, 255, 255, 0.1);
-  --ink: #e9ebf0;
-  --muted: #9aa2b0;
-  --faint: #969db0; /* AA-contrast on dark slate surfaces */
-  --accent: #82abe0;
-  --gauge-dot-bg: #1c212c;
+
+[data-theme="dark"] {
+  --bg: #0b1120;
+  --bg-soft: #0f172a;
+  --canvas: #0b1120; /* deepest, so elevated cards (--surface) lift off it */
+  --surface: #131c2e;
+  --heading: #f1f5f9;
+  --body: #94a3b8;
+  --body-strong: #cbd5e1;
+  --nav: #cbd5e1;
+  --muted: #64748b;
+  --accent: #3d7fe6;
+  --accent-text: #6ba1ff;
+  --success: #4ade80;
+  --danger: #f87171;
+  --border: rgba(255, 255, 255, 0.08);
+
+  --card-shadow: none; /* shadows are invisible on dark - rely on border + elevation */
+  --gauge-dot-bg: #131c2e;
 }
 
 @theme inline {
   --font-sans: var(--font-sans);
   --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
   --color-surface: var(--surface);
-  --color-surface-2: var(--surface-2);
-  --color-border: var(--border);
-  --color-ink: var(--ink);
+  --color-heading: var(--heading);
+  --color-body: var(--body);
+  --color-body-strong: var(--body-strong);
+  --color-nav: var(--nav);
   --color-muted: var(--muted);
-  --color-faint: var(--faint);
   --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-border: var(--border);
 }
 
 html,
@@ -48,15 +70,137 @@ body,
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background: var(--bg);
-  color: var(--ink);
+  font-size: 14px; /* body / subtitle */
+  font-weight: 400;
+  background: var(--canvas);
+  color: var(--body);
   -webkit-font-smoothing: antialiased;
-  letter-spacing: -0.011em;
 }
+
+/* Headings: heavy (800) with a tight, modern negative tracking. */
 .font-display {
   font-family: var(--font-sans);
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--heading);
+}
+
+/* Type-scale helpers (px values from the design system). */
+.t-hero {
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+.t-stat {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.t-section {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.t-card {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.t-lead {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Eyebrow: small uppercase pill label above a heading. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* AirAtlas logo (size scales with the root font-size set where it's placed). */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-sans);
+  line-height: 1;
+}
+.logo-mark {
+  flex: none;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 0.36em;
+  background: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-mark > span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.05em;
+  letter-spacing: -0.02em;
+}
+.logo-text {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.1em;
+}
+.logo-word {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--heading);
+}
+/* "Atlas" carries the AQI-scale gradient (good → severe) in both themes. */
+.logo-atlas {
+  background: linear-gradient(90deg, #2e9e6b 0%, #8fbf3f 28%, #e0a100 55%, #d86a2e 78%, #c8455b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.logo-tagline {
+  font-size: 0.32em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+/* Buttons. */
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--body-strong);
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+/* Cards: surface + hairline border; soft shadow in light, border-only in dark. */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
 }
 
 /* Visible keyboard focus for all interactive elements. */
@@ -79,7 +223,7 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-  color: var(--ink);
+  color: var(--heading);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -87,11 +231,6 @@ body {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
-}
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
 }
 ::-webkit-scrollbar {
   width: 10px;

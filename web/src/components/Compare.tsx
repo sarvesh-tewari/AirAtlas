@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { EChartsCoreOption } from "echarts";
 import { BarChart3, X } from "lucide-react";
-import { EChart, chartTheme } from "./EChart";
+import { EChart } from "./EChart";
+import { chartTheme } from "../lib/chartTheme";
 import { SectionTitle } from "./SectionTitle";
 import { Combobox } from "./Combobox";
 import { STANDARDS, type StandardId } from "../lib/standards";
@@ -54,13 +55,13 @@ export function Compare({ available, current, standard, dark }: { available: str
 
   return (
     <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={BarChart3} color="#db2777">Compare cities</SectionTitle></div>
+      <div className="mb-3"><SectionTitle icon={BarChart3} color="#db2777" eyebrow="Side by side">Compare cities</SectionTitle></div>
       <div className="mb-3 flex flex-wrap items-center gap-2">
         {selected.map((c, i) => (
-          <span key={c} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-2/60 py-1 pl-2.5 pr-1.5 text-xs text-ink">
+          <span key={c} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-soft/60 py-1 pl-2.5 pr-1.5 text-xs text-heading">
             <span className="h-2 w-2 rounded-full" style={{ background: LINE[i % LINE.length] }} />
             {c}
-            <button onClick={() => remove(c)} aria-label={`Remove ${c}`} className="rounded-full p-0.5 text-faint hover:bg-border hover:text-ink">
+            <button onClick={() => remove(c)} aria-label={`Remove ${c}`} className="rounded-full p-0.5 text-muted hover:bg-border hover:text-heading">
               <X size={12} />
             </button>
           </span>
@@ -76,7 +77,7 @@ export function Compare({ available, current, standard, dark }: { available: str
           />
         )}
       </div>
-      {selected.length ? <EChart option={option} height={260} ariaLabel="AQI comparison across selected cities" /> : <p className="py-8 text-center text-sm text-muted">Select cities to compare.</p>}
+      {selected.length ? <EChart option={option} height={260} ariaLabel="AQI comparison across selected cities" /> : <p className="py-8 text-center text-sm text-body">Select cities to compare.</p>}
     </section>
   );
 }

@@ -25,9 +25,9 @@ export function PollutantCards({ pollutants }: { pollutants: PollutantVM[] }) {
   if (pollutants.length === 0) return null;
   return (
     <section>
-      <div className="mb-1"><SectionTitle icon={Atom} color="#0284c7">Pollutants</SectionTitle></div>
-      <p className="mb-3 text-xs text-faint">
-        These are the measured concentrations. The AQI index is <em>derived</em> from them — so it
+      <div className="mb-1"><SectionTitle icon={Atom} color="#0284c7" eyebrow="In the air">Pollutants</SectionTitle></div>
+      <p className="mb-3 text-xs text-muted">
+        These are the measured concentrations. The AQI index is <em>derived</em> from them, so it
         differs by standard, while these values stay the same.
       </p>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
@@ -38,19 +38,19 @@ export function PollutantCards({ pollutants }: { pollutants: PollutantVM[] }) {
             style={p.dominant ? { borderColor: "var(--accent)" } : undefined}
           >
             <div className="flex items-center justify-between">
-              <span className="flex items-center gap-1.5 text-xs font-medium text-muted">
+              <span className="flex items-center gap-1.5 text-xs font-medium text-body">
                 {(() => {
                   const m = ICONS[p.key];
                   return m ? <m.icon size={15} color={m.color} strokeWidth={2} /> : null;
                 })()}
                 {POLLUTANT_LABELS[p.key] ?? p.key}
               </span>
-              {p.dominant && <span className="text-[10px] uppercase tracking-wide text-accent">dom</span>}
+              {p.dominant && <span className="text-[10px] uppercase tracking-wide text-accent-text">dom</span>}
             </div>
-            <div className="mt-1 font-display text-2xl text-ink">{Math.round(p.value * 10) / 10}</div>
-            <div className="text-[11px] text-faint">{p.unit}</div>
+            <div className="mt-1 font-display text-2xl text-heading">{Math.round(p.value * 10) / 10}</div>
+            <div className="text-[11px] text-muted">{p.unit}</div>
             {p.subindex != null && (
-              <div className="mt-1 text-[11px] text-muted">sub-index {p.subindex}</div>
+              <div className="mt-1 text-[11px] text-body">sub-index {p.subindex}</div>
             )}
           </div>
         ))}

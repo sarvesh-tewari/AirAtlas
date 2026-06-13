@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { TopBar } from "./components/TopBar";
 import { Headline, type HeadlineVM } from "./components/Headline";
+import { Logo } from "./components/Logo";
 import { PollutantCards, type PollutantVM } from "./components/PollutantCards";
 import { WeatherStrip, type WeatherVM } from "./components/WeatherStrip";
 import { TrendChart } from "./components/TrendChart";
@@ -28,7 +29,7 @@ function useTheme() {
       (!localStorage.getItem("theme") && matchMedia("(prefers-color-scheme: dark)").matches),
   );
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
     localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
   return { dark, toggle: () => setDark((d) => !d) };
@@ -192,6 +193,11 @@ export default function App() {
 
         {page === "methodology" ? (
           <Methodology />
+        ) : histLoading && !live && history.length === 0 ? (
+          <div className="flex min-h-[60vh] flex-col items-center justify-center gap-5">
+            <Logo variant="lockup" className="animate-pulse text-[40px]" />
+            <p className="text-sm text-muted">Loading air quality…</p>
+          </div>
         ) : (
           <div className="flex flex-col gap-6">
             <ErrorBoundary label="Headline"><Headline standard={standard} vm={headline} loading={histLoading && !live} /></ErrorBoundary>

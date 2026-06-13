@@ -1,7 +1,8 @@
 import { useMemo } from "react";
 import type { EChartsCoreOption } from "echarts";
 import { LayoutGrid } from "lucide-react";
-import { EChart, chartTheme } from "./EChart";
+import { EChart } from "./EChart";
+import { chartTheme } from "../lib/chartTheme";
 import { SectionTitle } from "./SectionTitle";
 import { STANDARDS, type StandardId } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
@@ -54,10 +55,10 @@ export function MonthlyHeatmap({ rows, standard, dark }: { rows: DailyRow[]; sta
 
   return (
     <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={LayoutGrid} color="#7c3aed">Monthly pattern</SectionTitle></div>
+      <div className="mb-3"><SectionTitle icon={LayoutGrid} color="#7c3aed" eyebrow="Seasonality">Monthly pattern</SectionTitle></div>
       {data.length ? <EChart option={option} height={Math.max(150, years.length * 42 + 60)} ariaLabel="Average AQI by month and year heatmap" />
-        : <p className="py-8 text-center text-sm text-muted">No data.</p>}
-      <p className="mt-2 text-xs text-faint">Average {cfg.numeric ? "AQI" : "band"} per month — seasonal pattern across years.</p>
+        : <p className="py-8 text-center text-sm text-body">No data.</p>}
+      <p className="mt-2 text-xs text-muted">Average {cfg.numeric ? "AQI" : "band"} per month, showing the seasonal pattern across years.</p>
     </section>
   );
 }

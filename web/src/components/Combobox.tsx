@@ -76,10 +76,10 @@ export function Combobox({
         type="button"
         aria-label={ariaLabel}
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm hover:bg-surface-2"
+        className="flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm hover:bg-bg-soft"
       >
-        <span className="font-medium text-ink">{triggerLabel ?? selected?.label ?? "Select"}</span>
-        <span className="text-faint" aria-hidden>▾</span>
+        <span className="font-medium text-heading">{triggerLabel ?? selected?.label ?? "Select"}</span>
+        <span className="text-muted" aria-hidden>▾</span>
       </button>
 
       {open && (
@@ -95,11 +95,11 @@ export function Combobox({
             placeholder={placeholder}
             aria-label={ariaLabel ?? "Search"}
             aria-controls={listId}
-            className="w-full border-b border-border bg-transparent px-3 py-2 text-sm outline-none placeholder:text-faint"
+            className="w-full border-b border-border bg-transparent px-3 py-2 text-sm outline-none placeholder:text-muted"
           />
           <ul id={listId} role="listbox" className="max-h-64 overflow-auto py-1">
             {filtered.length === 0 && (
-              <li className="px-3 py-2 text-sm text-muted">No matches</li>
+              <li className="px-3 py-2 text-sm text-body">No matches</li>
             )}
             {filtered.map((o, i) => (
               <li
@@ -112,11 +112,11 @@ export function Combobox({
                   commit(o.value);
                 }}
                 className={`flex cursor-pointer items-center justify-between px-3 py-2 text-sm ${
-                  i === active ? "bg-surface-2" : ""
-                } ${o.value === value ? "text-accent" : "text-ink"}`}
+                  i === active ? "bg-bg-soft" : ""
+                } ${o.value === value ? "text-accent-text" : "text-heading"}`}
               >
                 <span>{o.label}</span>
-                {o.hint && <span className="text-xs text-faint">{o.hint}</span>}
+                {o.hint && <span className="text-xs text-muted">{o.hint}</span>}
               </li>
             ))}
           </ul>

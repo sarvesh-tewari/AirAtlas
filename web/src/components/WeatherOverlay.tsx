@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import type { EChartsCoreOption } from "echarts";
 import { CloudSun } from "lucide-react";
-import { EChart, chartTheme } from "./EChart";
+import { EChart } from "./EChart";
+import { chartTheme } from "../lib/chartTheme";
 import { SectionTitle } from "./SectionTitle";
 import type { StandardId } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
@@ -37,10 +38,10 @@ export function WeatherOverlay({ rows, standard, dark }: { rows: DailyRow[]; sta
   return (
     <section className="card p-5">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <SectionTitle icon={CloudSun} color="#0891b2">AQI ↔ weather</SectionTitle>
+        <SectionTitle icon={CloudSun} color="#0891b2" eyebrow="Correlation">AQI ↔ weather</SectionTitle>
         <div className="inline-flex overflow-hidden rounded-lg border border-border text-xs">
           {WX.map((w) => (
-            <button key={w.key} onClick={() => setWx(w.key)} className={`px-3 py-1.5 ${wx === w.key ? "bg-accent text-white" : "text-muted hover:bg-surface-2"}`}>
+            <button key={w.key} onClick={() => setWx(w.key)} className={`px-3 py-1.5 ${wx === w.key ? "bg-accent text-white" : "text-body hover:bg-bg-soft"}`}>
               {w.label}
             </button>
           ))}
