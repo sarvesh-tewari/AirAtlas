@@ -34,6 +34,34 @@ def _cov(r: AQRecord) -> float:
     return r.coverage_pct if r.coverage_pct is not None else -1.0
 
 
+# Per-pollutant plausibility ceilings (µg/m³; CO mg/m³). Above these is a sensor error, not
+# real air — daily means never legitimately reach them. Values are generous so genuine
+# extreme-pollution days (e.g. Delhi winter) are kept.
+PLAUSIBLE_MAX = {
+    "pm25": 1000.0, "pm10": 3000.0, "no2": 1000.0, "so2": 2000.0,
+    "o3": 1000.0, "co": 60.0, "nh3": 2000.0,
+}
+
+
+def drop_implausible(records: list[AQRecord]) -> list[AQRecord]:
+    """Remove physically impossible readings: out-of-range values, and PM2.5 that exceeds
+    PM10 at the same station+time (PM2.5 is a subset of PM10, so it cannot be larger)."""
+    bounded = [
+        r for r in records
+        if r.value is not None and 0 <= r.value <= PLAUSIBLE_MAX.get(r.parameter, float("inf"))
+    ]
+    pm10 = {(r.station_id, r.datetime_utc): r.value
+            for r in bounded if r.parameter == "pm10" and r.value is not None}
+    out = []
+    for r in bounded:
+        if r.parameter == "pm25":
+            ceiling = pm10.get((r.station_id, r.datetime_utc))
+            if ceiling is not None and r.value > ceiling:
+                continue  # impossible: PM2.5 > PM10
+        out.append(r)
+    return out
+
+
 def merge_sensor_duplicates(records: list[AQRecord]) -> list[AQRecord]:
     """Collapse duplicate sensors: one value per (station, parameter, datetime),
     keeping the record with the highest coverage (ties -> first seen)."""
@@ -59,7 +87,7 @@ def aggregate_to_city(
     sensors are merged first.
     """
     station_city = station_city or {}
-    merged = merge_sensor_duplicates(records)
+    merged = drop_implausible(merge_sensor_duplicates(records))
 
     groups: dict[tuple, list[AQRecord]] = defaultdict(list)
     for r in merged:

@@ -176,3 +176,8 @@ No per-hour AQI: AQI requires a 24h window, so AQI lives in the daily file.
   the live API once it recovers (`cpcb.fetch_live(<key>)`).
 - HTTP layer (`ingest/http.py`): disk cache in `pipeline/.cache/` (gitignored; api-key
   stripped from cache keys), retry/backoff on 5xx/timeouts, immediate raise on 4xx.
+- **Plausibility QA (`transform/aggregate.drop_implausible`):** sensor-error outliers are
+  dropped before city aggregation — values outside per-pollutant physical bounds (e.g. SO2
+  > 2000, PM2.5 > 1000 µg/m³) and **PM2.5 readings that exceed PM10** at the same station
+  (physically impossible — PM2.5 is a subset of PM10). Caps are generous so genuine
+  extreme-pollution days are retained.
