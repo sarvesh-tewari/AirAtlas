@@ -34,6 +34,7 @@ jobs:
       - name: Stage published data for the build
         run: |
           # data/ is committed by the refresh workflows; copy it into the site's public dir.
+          mkdir -p web/public
           if [ -d data ]; then rm -rf web/public/data && cp -r data web/public/data; fi
 
       - name: Build
