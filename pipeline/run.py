@@ -49,8 +49,10 @@ def main():
     args = ap.parse_args()
 
     _load_env()
-    oa_key = os.environ.get("OPENAQ_API_KEY", "")
-    dg_key = os.environ.get("DATA_GOV_IN_KEY", "")
+    # .strip() guards against stray whitespace/newlines in the stored secret (an errant
+    # leading space makes httpx reject the X-API-Key header).
+    oa_key = os.environ.get("OPENAQ_API_KEY", "").strip()
+    dg_key = os.environ.get("DATA_GOV_IN_KEY", "").strip()
     if not oa_key:
         # No OpenAQ key (e.g. CI before secrets are configured) — exit cleanly, not as a failure.
         print("[run] OPENAQ_API_KEY not set — nothing to do. Add the Actions secret to enable refreshes.")

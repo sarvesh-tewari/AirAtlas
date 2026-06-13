@@ -98,7 +98,7 @@ def fetch_live(api_key: str, *, limit: int = 5000, **kw) -> list[rec.AQRecord]:
     Raises RuntimeError if data.gov.in is unreachable after retries.
     """
     payload = http.get_json(
-        BASE, params={"api-key": api_key, "format": "json", "limit": limit},
+        BASE, params={"api-key": api_key.strip(), "format": "json", "limit": limit},
         use_cache=kw.pop("use_cache", False), **kw,
     )
     return parse_live(payload)

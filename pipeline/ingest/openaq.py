@@ -95,7 +95,7 @@ def parse_sensor_aggregate(
 # Fetching (thin HTTP + pagination)
 # --------------------------------------------------------------------------- #
 def _headers(api_key: str) -> dict:
-    return {"X-API-Key": api_key}
+    return {"X-API-Key": api_key.strip()}
 
 
 def _as_iso(value: str) -> str:
