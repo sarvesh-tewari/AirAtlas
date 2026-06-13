@@ -57,7 +57,9 @@ export function MapView({ cities, standard, current, onCity, dark }: {
   }, [cities, standard, current, onCity]);
 
   return (
-    <section className="card overflow-hidden">
+    // relative z-0 gives the map its own stacking context so Leaflet's panes/controls (z-index up
+    // to ~1000) stay confined below the sticky topbar (z-20) instead of painting over the filters.
+    <section className="card relative z-0 overflow-hidden">
       <div className="flex items-center justify-between px-5 pt-4">
         <SectionTitle icon={MapIcon} color="#2563eb" eyebrow="Coverage">Map</SectionTitle>
         <span className="text-xs text-muted">click a city · coloured by {standard.toUpperCase()}</span>
