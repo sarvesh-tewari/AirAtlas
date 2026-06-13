@@ -84,6 +84,28 @@ def test_write_parquet_merges_idempotently(tmp_path):
     assert df.filter(pl.col("date") == "2026-06-02")["pm25"].item() == 999.0    # delta won
 
 
+def test_read_all_daily_returns_union_across_incremental_batches(tmp_path):
+    # Incremental backfill writes one city's parquet per batch. Meta must be rebuilt from the
+    # UNION of everything on disk, not just the latest batch — else a "Mumbai" batch would drop
+    # Delhi from the city list/index. read_all_daily is what makes that union available.
+    batch1 = storage.assemble_daily_rows([
+        _c("Delhi", "pm25", "2026-06-01", 50.0), _c("Delhi", "no2", "2026-06-01", 30.0),
+        _c("Delhi", "pm25", "2026-06-02", 60.0), _c("Delhi", "no2", "2026-06-02", 30.0),
+    ])
+    storage.write_parquet_per_city(batch1, tmp_path, merge_keys=["date"])
+    # A separate, later batch for a different city (Delhi's file is untouched).
+    batch2 = storage.assemble_daily_rows([
+        _c("Mumbai", "pm25", "2026-06-02", 40.0), _c("Mumbai", "no2", "2026-06-02", 20.0),
+    ])
+    storage.write_parquet_per_city(batch2, tmp_path, merge_keys=["date"])
+
+    rows = storage.read_all_daily(tmp_path)
+    cities = {r["city"] for r in rows}
+    assert cities == {"Delhi", "Mumbai"}                       # union, not just the last batch
+    delhi_dates = sorted(r["date"] for r in rows if r["city"] == "Delhi")
+    assert delhi_dates == ["2026-06-01", "2026-06-02"]          # full Delhi history preserved
+
+
 def test_write_parquet_recent_prunes_old(tmp_path):
     import datetime as dt
     import polars as pl

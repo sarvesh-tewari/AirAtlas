@@ -200,6 +200,19 @@ def write_parquet_per_city(
     return written
 
 
+def read_all_daily(history_dir: Path) -> list[dict]:
+    """Read every per-city daily Parquet back into row dicts — the full published tier.
+
+    Meta (city_list/coverage/cities) is rebuilt from this union so an incremental/subset run
+    reflects ALL cities on disk, not just the cities it processed.
+    """
+    import polars as pl
+    rows: list[dict] = []
+    for path in sorted(Path(history_dir).glob("*.parquet")):
+        rows.extend(pl.read_parquet(path).to_dicts())
+    return rows
+
+
 def write_live_json(snapshot: dict, out_dir: Path) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"{slug(snapshot['city'])}.json"

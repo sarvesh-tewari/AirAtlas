@@ -154,6 +154,20 @@ def build_cities_index(daily_rows, centroids) -> list[dict]:
     return out
 
 
+def merge_centroids(centroids: dict, prior_index: list[dict]) -> dict:
+    """Fill centroids for cities this run didn't process from the previously-published index.
+
+    When meta is rebuilt from the full on-disk union, cities outside this batch still need a
+    lat/lon for their map marker; recover it from the prior cities.json. This run's freshly
+    computed centroids take precedence over the prior (possibly stale) values.
+    """
+    merged = dict(centroids)
+    for e in prior_index:
+        if e["city"] not in merged and e.get("lat") is not None:
+            merged[e["city"]] = (e["lat"], e["lon"])
+    return merged
+
+
 def build_coverage(daily_rows, *, thin_days=365) -> list[dict]:
     by_city: dict[str, list[dict]] = defaultdict(list)
     for r in daily_rows:

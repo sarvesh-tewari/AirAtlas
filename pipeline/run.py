@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import json
 import os
 
 import build
@@ -138,11 +139,19 @@ def main():
     storage.write_json(mapping, build.META / "station_city_map.json")
     storage.write_json({"unmapped_station_ids": unmapped}, build.META / "unmapped_stations.json")
     if daily_rows:
+        # Rebuild meta from the FULL on-disk daily tier (all cities, all history) — NOT just this
+        # run's rows. This makes incremental/subset backfills accumulate cities instead of
+        # clobbering the selector, and makes coverage reflect full history rather than the delta
+        # window. Centroids for cities outside this run are recovered from the prior index.
+        all_daily = storage.read_all_daily(build.DATA / "history")
+        prior_path = build.META / "cities.json"
+        prior_index = json.loads(prior_path.read_text()) if prior_path.exists() else []
+        all_centroids = build.merge_centroids(centroids, prior_index)
         storage.write_json({"generated_today": today,
-                            "cities": sorted({r["city"] for r in daily_rows})},
+                            "cities": sorted({r["city"] for r in all_daily})},
                            build.META / "city_list.json")
-        storage.write_json(build.build_coverage(daily_rows), build.META / "coverage.json")
-        storage.write_json(build.build_cities_index(daily_rows, centroids),
+        storage.write_json(build.build_coverage(all_daily), build.META / "coverage.json")
+        storage.write_json(build.build_cities_index(all_daily, all_centroids),
                            build.META / "cities.json")
 
     n_cities = len({r["city"] for r in daily_rows})
