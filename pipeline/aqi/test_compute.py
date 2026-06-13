@@ -148,6 +148,13 @@ def test_naqi_city_requires_three_stations():
 # Top-of-scale handling
 # --------------------------------------------------------------------------- #
 
+def test_us_above_table_caps_at_pollutant_max_not_500():
+    # US O3 8h table tops at AQI 300; a value above it caps at 300 (not 500).
+    assert compute.sub_index("us", "o3", 600) == 300   # ~0.3 ppm O3, off the 8h table
+    # US SO2 1h table tops at AQI 200.
+    assert compute.sub_index("us", "so2", 3000) == 200  # very high SO2, off the 1h table
+
+
 def test_naqi_above_scale_caps_at_500():
     r = compute.overall("naqi", {"pm25": 9999, "pm10": 9999, "no2": 9999})
     assert r.index == 500

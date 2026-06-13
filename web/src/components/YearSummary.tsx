@@ -10,9 +10,9 @@ export function YearSummary({ rows, standard }: { rows: DailyRow[]; standard: St
   const years = useMemo(() => {
     const by = new Map<string, number[]>();
     for (const r of rows) {
-      const v = cfg.numeric ? (standard === "naqi" ? r.aqi_naqi : r.aqi_us)
+      let v = cfg.numeric ? (standard === "naqi" ? r.aqi_naqi : r.aqi_us)
         : (r.eu_band ? cfg.bands.findIndex((b) => b.label === r.eu_band) : null);
-      if (v == null) continue;
+      if (v == null || v < 0) continue; // -1 = unknown band label; skip rather than crash later
       const yr = r.date.slice(0, 4);
       (by.get(yr) ?? by.set(yr, []).get(yr)!).push(v);
     }

@@ -43,8 +43,10 @@ def _to_utc_z(local_iso: str, utc_offset_seconds: int) -> str:
     return utc.replace(tzinfo=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def parse_current(payload: dict) -> rec.WeatherRecord:
-    cur = payload["current"]
+def parse_current(payload: dict) -> rec.WeatherRecord | None:
+    cur = payload.get("current")
+    if not cur:  # error/empty payload (e.g. {"error": true, ...})
+        return None
     units = payload.get("current_units", {})
     offset = payload.get("utc_offset_seconds", 0)
     return rec.WeatherRecord(
@@ -61,7 +63,9 @@ def parse_current(payload: dict) -> rec.WeatherRecord:
 
 
 def parse_archive_daily(payload: dict) -> list[rec.WeatherRecord]:
-    daily = payload["daily"]
+    daily = payload.get("daily")
+    if not daily or not daily.get("time"):  # error/empty payload
+        return []
     units = payload.get("daily_units", {})
     lat, lon = payload["latitude"], payload["longitude"]
     out: list[rec.WeatherRecord] = []

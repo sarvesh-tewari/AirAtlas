@@ -58,8 +58,10 @@ NAQI_PRECISION = {"pm10": 0, "pm25": 0, "no2": 0, "so2": 0, "o3": 0,
 # US EPA AQI (effective 2024-05-06). Segments in each pollutant's NATIVE unit:
 #   PM2.5, PM10 -> µg/m³ ; O3, CO -> ppm ; NO2, SO2 -> ppb.
 # Gases are converted from µg/m³ before lookup (see compute.ugm3_to_*).
-# Hybrid windows: O3 8h up to AQI 300 (1h fills 101–500); SO2 1h up to 200
-# (24h handles higher) — encoded directly so the dominant-pollutant logic holds.
+# O3 is the 8-hour table (tops at AQI 300), SO2 the 1-hour table (tops at AQI 200). EPA's
+# full method switches to 1-hour O3 / 24-hour SO2 above those points; we do NOT encode those
+# hybrid curves — a value above the table is capped at that pollutant's max tabulated index
+# (see compute._sub_index_full), flagged off_scale, rather than overstating to 500.
 # --------------------------------------------------------------------------- #
 US: dict[str, list[tuple[float, float, int, int]]] = {
     "pm25": [(0.0, 9.0, 0, 50), (9.1, 35.4, 51, 100), (35.5, 55.4, 101, 150),

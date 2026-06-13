@@ -74,10 +74,12 @@ def _to_native_us(pollutant: str, value: float) -> float:
     raise ValueError(f"Unknown US pollutant: {pollutant}")
 
 
-def _interp(conc: float, segments: list[tuple[float, float, int, int]]) -> tuple[int, bool]:
-    """Piecewise-linear sub-index. Returns (value, off_scale).
+def _interp(conc: float, segments: list[tuple[float, float, int, int]],
+            off_scale: int = 500) -> tuple[int, bool]:
+    """Piecewise-linear sub-index. Returns (value, off_scale_flag).
 
-    Below the first segment -> 0. Above the last closed segment -> 500, off_scale.
+    Below the first segment -> 0. Above the last closed segment -> `off_scale` (the index
+    cap for that pollutant), flagged off_scale.
     """
     if conc <= segments[0][0]:
         return 0, False
@@ -85,7 +87,7 @@ def _interp(conc: float, segments: list[tuple[float, float, int, int]]) -> tuple
         if c_lo <= conc <= c_hi:
             value = (i_hi - i_lo) / (c_hi - c_lo) * (conc - c_lo) + i_lo
             return _round_half_up(value), False
-    return 500, True  # above the top closed breakpoint -> off the scale
+    return off_scale, True  # above the top closed breakpoint
 
 
 # --------------------------------------------------------------------------- #
@@ -101,12 +103,14 @@ def _sub_index_full(standard: str, pollutant: str, concentration: float) -> tupl
     if standard == "naqi":
         prec = bp.NAQI_PRECISION[pollutant]
         c = _truncate(concentration, prec)
-        return _interp(c, bp.NAQI[pollutant])
+        return _interp(c, bp.NAQI[pollutant], off_scale=500)  # NAQI Severe tops at 500
     if standard == "us":
         native = _to_native_us(pollutant, concentration)
         prec = bp.US_PRECISION[pollutant]
         c = _truncate(native, prec)
-        return _interp(c, bp.US[pollutant])
+        # Above a US pollutant's tabulated range, cap at that pollutant's max tabulated index
+        # (O3 -> 300, SO2 -> 200; PM/CO/NO2 -> 500) rather than always 500.
+        return _interp(c, bp.US[pollutant], off_scale=bp.US[pollutant][-1][3])
     raise ValueError(f"sub_index not defined for standard {standard!r}")
 
 

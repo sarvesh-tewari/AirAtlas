@@ -106,13 +106,24 @@ def fetch_city_aq(api_key, stations, mapping, *, date_from, date_to, period="day
 def fetch_weather_daily(centroids, *, start_date, end_date) -> dict[tuple, object]:
     out = {}
     for city, (lat, lon) in centroids.items():
-        for w in openmeteo.fetch_archive_daily(lat, lon, start_date=start_date, end_date=end_date):
-            out[(city, w.datetime_utc[:10])] = w
+        try:  # one city's weather failing (e.g. ERA5 lag -> 400) must not abort the run
+            for w in openmeteo.fetch_archive_daily(lat, lon, start_date=start_date, end_date=end_date):
+                out[(city, w.datetime_utc[:10])] = w
+        except Exception as e:
+            print(f"[build] skip daily weather for {city}: {type(e).__name__}", flush=True)
     return out
 
 
 def fetch_weather_current(centroids) -> dict[str, object]:
-    return {city: openmeteo.fetch_current(lat, lon) for city, (lat, lon) in centroids.items()}
+    out = {}
+    for city, (lat, lon) in centroids.items():
+        try:
+            w = openmeteo.fetch_current(lat, lon)
+            if w is not None:
+                out[city] = w
+        except Exception as e:
+            print(f"[build] skip current weather for {city}: {type(e).__name__}", flush=True)
+    return out
 
 
 def fetch_live_cpcb(api_key, mapping) -> list[agg.CityPollutantRecord]:

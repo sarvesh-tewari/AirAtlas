@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { TopBar } from "./components/TopBar";
 import { Headline, type HeadlineVM } from "./components/Headline";
 import { PollutantCards, type PollutantVM } from "./components/PollutantCards";
@@ -60,7 +60,7 @@ export default function App() {
   const [live, setLive] = useState<LiveSnapshot | null>(null);
   const [history, setHistory] = useState<DailyRow[]>([]);
   const [histLoading, setHistLoading] = useState(true);
-  const [picked, setPicked] = useState(false); // user manually chose a city
+  const pickedRef = useRef(false); // user manually chose a city (read inside async callbacks)
   const [err, setErr] = useState<string | null>(null);
 
   useEffect(() => {
@@ -68,11 +68,11 @@ export default function App() {
       .then((cs) => {
         setCities(cs);
         if (cs.length && !cs.some((c) => c.city === city)) setCity(cs[0].city);
-        if (!picked && navigator.geolocation) {
+        if (!pickedRef.current && navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
             (pos) => {
               const n = nearestCity(cs, pos.coords.latitude, pos.coords.longitude);
-              if (n && !picked) setCity(n);
+              if (n && !pickedRef.current) setCity(n); // don't override a manual pick made meanwhile
             },
             () => {},
             { timeout: 5000 },
@@ -83,16 +83,19 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Load the selected city; guard against out-of-order resolution (fast city toggling).
   useEffect(() => {
     if (!city) return;
+    let alive = true;
     setLive(null);
     setHistory([]);
     setHistLoading(true);
-    fetchLive(city).then(setLive).catch(() => setLive(null));
+    fetchLive(city).then((v) => alive && setLive(v)).catch(() => alive && setLive(null));
     fetchDailyHistory(city)
-      .then(setHistory)
-      .catch((e) => setErr(String(e)))
-      .finally(() => setHistLoading(false));
+      .then((r) => { if (alive) setHistory(r); })
+      .catch((e) => alive && setErr(String(e)))
+      .finally(() => { if (alive) setHistLoading(false); });
+    return () => { alive = false; };
   }, [city]);
 
   const lastRow = history.length ? history[history.length - 1] : null;
@@ -170,7 +173,9 @@ export default function App() {
   const updatedLabel = live ? timeAgo(live.updated_utc) : lastRow ? `as of ${lastRow.date}` : null;
   const source = live?.source ?? lastRow?.source ?? null;
 
-  function chooseCity(c: string) { setPicked(true); setCity(c); }
+  const cityNames = useMemo(() => cities.map((c) => c.city), [cities]);
+
+  function chooseCity(c: string) { pickedRef.current = true; setCity(c); }
 
   return (
     <div className="min-h-full">
@@ -205,7 +210,7 @@ export default function App() {
                 <ErrorBoundary label="Pollutant trends"><PollutantTrend rows={history} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Exceedance"><Exceedance rows={history} standard={standard} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Weather overlay"><WeatherOverlay rows={history} standard={standard} dark={dark} /></ErrorBoundary>
-                <ErrorBoundary label="Compare"><Compare available={cities.map((c) => c.city)} current={city} standard={standard} dark={dark} /></ErrorBoundary>
+                <ErrorBoundary label="Compare"><Compare available={cityNames} current={city} standard={standard} dark={dark} /></ErrorBoundary>
               </>
             )}
           </div>

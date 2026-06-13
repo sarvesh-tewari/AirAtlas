@@ -24,6 +24,7 @@ export function Exceedance({ rows, standard, dark }: { rows: DailyRow[]; standar
         if (!r.eu_band) continue;
         bandIdx = cfg.bands.findIndex((b) => b.label === r.eu_band);
       }
+      if (bandIdx < 0) continue; // unknown band label — don't write counts[-1]
       const yr = r.date.slice(0, 4);
       if (!counts.has(yr)) counts.set(yr, new Array(cfg.bands.length).fill(0));
       counts.get(yr)![bandIdx] += 1;

@@ -69,8 +69,12 @@ export function bandForIndex(standard: StandardId, index: number): Band {
   return bands[bands.length - 1];
 }
 
-export function bandByLabel(standard: StandardId, label: string): Band {
-  return STANDARDS[standard].bands.find((b) => b.label === label) ?? STANDARDS[standard].bands[0];
+const UNKNOWN_BAND: Band = { label: "Unknown", color: "#9095a0" };
+
+export function bandByLabel(standard: StandardId, label: string | null): Band {
+  // Fall back to neutral grey (not "Good"/green) so an unexpected label never miscolours a
+  // hazardous reading as safe.
+  return STANDARDS[standard].bands.find((b) => b.label === label) ?? UNKNOWN_BAND;
 }
 
 export const POLLUTANT_LABELS: Record<string, string> = {

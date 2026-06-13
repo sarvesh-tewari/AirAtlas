@@ -90,7 +90,7 @@ export async function fetchCityList(): Promise<CityList> {
 // Rich per-city index (centroid + latest AQI). Falls back to names-only if absent.
 export async function fetchCities(): Promise<CityIndex[]> {
   const rich = await getJSON<CityIndex[]>(`${BASE}/meta/cities.json`);
-  if (rich && rich.length) return rich;
+  if (Array.isArray(rich) && rich.length) return rich;
   const list = await fetchCityList();
   return list.cities.map((city) => ({
     city, lat: null, lon: null, last_date: "", n_stations: 0,

@@ -29,7 +29,8 @@ def _load_env():
             line = line.strip()
             if line and not line.startswith("#") and "=" in line:
                 k, v = line.split("=", 1)
-                os.environ.setdefault(k.strip(), v.strip())
+                v = v.strip().strip('"').strip("'")
+                os.environ.setdefault(k.strip(), v)
 
 
 def _today_ist() -> str:
@@ -106,18 +107,23 @@ def main():
         try:
             live = build.fetch_live_cpcb(dg_key, mapping)
             wx_now = build.fetch_weather_current(centroids)
-            by_city = {}
-            for r in live:
-                if args.cities and r.city not in set(args.cities):
-                    continue
-                by_city.setdefault(r.city, []).append(r)
-            for city, recs in by_city.items():
+        except Exception as e:
+            live, wx_now = [], {}
+            print(f"[run] CPCB live fetch failed ({type(e).__name__}); keeping last-good live data")
+        by_city = {}
+        for r in live:
+            if args.cities and r.city not in set(args.cities):
+                continue
+            by_city.setdefault(r.city, []).append(r)
+        for city, recs in by_city.items():
+            # Isolate per city so one bad city can't suppress the rest.
+            try:
                 snap = storage.live_snapshot(city, recs, updated_utc=recs[0].datetime_utc,
                                              weather=wx_now.get(city))
                 storage.write_live_json(snap, build.DATA / "live")
                 live_count += 1
-        except Exception as e:
-            print(f"[run] live snapshot skipped ({type(e).__name__}: data.gov.in down)")
+            except Exception as e:
+                print(f"[run] live snapshot skipped for {city}: {type(e).__name__}: {e}")
 
     # ---- Write parquet + meta (idempotent upsert; recent tier pruned to the window) ----
     if daily_rows:

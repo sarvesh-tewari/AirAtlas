@@ -19,7 +19,7 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-from aqi import compute
+from aqi import breakpoints as bp, compute
 from ingest.records import WeatherRecord
 from .aggregate import CityPollutantRecord
 
@@ -124,11 +124,13 @@ def live_snapshot(
 
     pollutants = {}
     for p, v in conc.items():
+        # Only standards that actually define this pollutant get a sub-index (e.g. NH3 has
+        # no US table — computing it would raise). Absent → null.
         pollutants[p] = {
             "value": v,
             "unit": units.get(p, "µg/m³"),
-            "naqi_subindex": compute.sub_index("naqi", p, v),
-            "us_subindex": compute.sub_index("us", p, v),
+            "naqi_subindex": compute.sub_index("naqi", p, v) if p in bp.NAQI else None,
+            "us_subindex": compute.sub_index("us", p, v) if p in bp.US else None,
         }
 
     naqi, us, eu = (compute.overall(s, conc) for s in ("naqi", "us", "eu"))

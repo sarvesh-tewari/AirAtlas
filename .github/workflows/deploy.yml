@@ -26,6 +26,8 @@ concurrency:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    # Don't publish after a FAILED/cancelled refresh (workflow_run fires on any completion).
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
