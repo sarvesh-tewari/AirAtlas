@@ -1,6 +1,7 @@
-# Incremental backfill "drip": every few hours, fully backfill the next batch of not-yet-published
-# cities (all sensors, 2016+) and publish them. Guarantees complete-or-absent — a city only appears
-# once it has full history. Self-disables when every discovered city is published.
+# Incremental backfill "drip": fully backfill the next batch of not-yet-published cities
+# (all sensors, 2016+), publish them, then re-dispatch itself (self-chaining via DRIP_PAT) until
+# every discovered city is published, then self-disables. Guarantees complete-or-absent: a city
+# only appears once it has full history. A 2-hourly cron stays as a best-effort backup trigger.
 name: backfill-drip
 
 on:
@@ -10,7 +11,7 @@ on:
     inputs:
       batch_size:
         description: "cities to backfill this run"
-        default: "8"
+        default: "15"
 
 # Share the data-refresh lock so the drip never races the hourly/daily publishers on the data
 # branch force-push (they serialize; whichever holds the lock finishes first).
@@ -82,12 +83,25 @@ jobs:
           git push --force origin "${NEW_COMMIT}:refs/heads/data"
           echo "Published data tree $NEW_TREE to data branch."
 
+      # Self-chain: re-dispatch the next batch. Uses DRIP_PAT because the built-in GITHUB_TOKEN
+      # can't trigger workflow_dispatch (anti-recursion). Guarded by success() so a failed batch
+      # halts the chain (the failure issue alerts) instead of looping; the concurrency lock makes
+      # the chained run wait for this one. Reliable + unattended, unlike GitHub's best-effort cron.
+      - name: Chain next batch
+        if: success() && steps.backfill.outputs.done != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.DRIP_PAT }}
+        run: |
+          BATCH="${{ github.event.inputs.batch_size || '15' }}"
+          gh workflow run backfill-drip.yml -f batch_size="$BATCH"
+          echo "Chained next batch (size $BATCH)."
+
       - name: Disable drip when backfill is complete
         if: steps.backfill.outputs.done == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "All discovered cities published — disabling the drip schedule."
+          echo "All discovered cities published; disabling the drip schedule."
           gh workflow disable backfill-drip.yml
 
       - name: Open/append failure issue
