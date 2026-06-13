@@ -19,7 +19,7 @@
     "n_stations": 2,
     "naqi": 90,
     "naqi_category": "Satisfactory",
-    "us": 83,
+    "us": 77,
     "us_category": "Moderate",
     "eu_band": "Moderate"
   },
@@ -29,10 +29,10 @@
     "lon": 72.850955,
     "last_date": "2026-06-12",
     "n_stations": 2,
-    "naqi": 500,
-    "naqi_category": "Severe",
-    "us": 500,
-    "us_category": "Hazardous",
-    "eu_band": "Extremely Poor"
+    "naqi": 76,
+    "naqi_category": "Satisfactory",
+    "us": 129,
+    "us_category": "Unhealthy for Sensitive Groups",
+    "eu_band": "Moderate"
   }
 ]
