@@ -20,6 +20,7 @@ import json
 import os
 
 import build
+import plan
 from transform import reconcile, storage
 
 
@@ -48,6 +49,9 @@ def main():
     ap.add_argument("--to", dest="date_to", default=None)
     ap.add_argument("--sensors", choices=["first", "all"], default="first")
     ap.add_argument("--recent-days", type=int, default=90)
+    ap.add_argument("--next-batch", type=int, default=None,
+                    help="backfill the next N not-yet-published cities (incremental drip); "
+                         "self-selects from discovered universe minus data/meta/city_list.json")
     args = ap.parse_args()
 
     _load_env()
@@ -70,6 +74,22 @@ def main():
 
     print("[run] discovering stations…")
     stations, mapping, unmapped = build.discover(oa_key)
+
+    # Incremental drip: self-select the next N cities not yet processed (complete-or-absent).
+    # "Processed" = published (city_list) OR already attempted — the latter so mapped-but-empty
+    # cities (no OpenAQ history) aren't re-selected forever, which would stall the drip.
+    if args.next_batch:
+        clp = build.META / "city_list.json"
+        done = set(json.loads(clp.read_text()).get("cities", [])) if clp.exists() else set()
+        ap_path = build.META / "backfill_attempted.json"
+        if ap_path.exists():
+            done |= set(json.loads(ap_path.read_text()).get("cities", []))
+        args.cities = plan.next_batch(set(mapping.values()), done, args.next_batch)
+        if not args.cities:
+            print("[run] incremental backfill complete — no unpublished cities remain.")
+            return
+        print(f"[run] drip batch ({len(args.cities)}): {' '.join(args.cities)}")
+
     sel = build.select_stations(stations, mapping, cities=set(args.cities) if args.cities else None,
                                 max_per_city=args.max_per_city)
     centroids = build.city_centroids(sel, mapping)
@@ -153,6 +173,14 @@ def main():
         storage.write_json(build.build_coverage(all_daily), build.META / "coverage.json")
         storage.write_json(build.build_cities_index(all_daily, all_centroids),
                            build.META / "cities.json")
+
+    # Drip bookkeeping: mark this batch attempted (even cities that yielded no data) so the next
+    # fire advances instead of re-selecting empties. Written after the run, so a crash mid-batch
+    # leaves them un-attempted and they retry next time.
+    if args.next_batch and args.cities:
+        ap_path = build.META / "backfill_attempted.json"
+        prev = json.loads(ap_path.read_text()).get("cities", []) if ap_path.exists() else []
+        storage.write_json({"cities": plan.record_attempted(prev, args.cities)}, ap_path)
 
     n_cities = len({r["city"] for r in daily_rows})
     print(f"[run] done. daily_rows={len(daily_rows)} hourly_rows={len(hourly_rows)} "

@@ -11,7 +11,7 @@ on:
   # Data commits are made by the refresh workflows' token, which doesn't re-trigger `push`
   # (GitHub anti-recursion). So redeploy after a refresh completes.
   workflow_run:
-    workflows: [refresh-hourly, refresh-daily]
+    workflows: [refresh-hourly, refresh-daily, backfill-drip]
     types: [completed]
 
 permissions:
