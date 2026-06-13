@@ -1,3 +1,4 @@
+import { Clock } from "lucide-react";
 import { Gauge } from "./Gauge";
 import { STANDARDS, bandByLabel, type StandardId } from "../lib/standards";
 
@@ -23,8 +24,9 @@ export function Headline({ standard, vm, loading = false }: { standard: Standard
   return (
     <section className="card overflow-hidden" style={wash}>
       {vm.stale && (
-        <div className="bg-amber-500/15 px-5 py-2 text-sm text-amber-700 dark:text-amber-300">
-          Showing the last available reading — today's live data isn't in yet.
+        <div className="flex items-center gap-2 border-b border-border px-6 py-2 text-xs text-muted">
+          <Clock size={13} aria-hidden />
+          Showing the latest available reading — live data refreshes hourly.
         </div>
       )}
       <div className="grid gap-6 p-6 sm:grid-cols-[260px_1fr] sm:items-center">

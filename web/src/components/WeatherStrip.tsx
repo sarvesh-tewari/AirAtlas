@@ -1,3 +1,6 @@
+import { CloudSun } from "lucide-react";
+import { SectionTitle } from "./SectionTitle";
+
 export interface WeatherVM {
   temp_c: number | null;
   rh_pct: number | null;
@@ -21,11 +24,14 @@ export function WeatherStrip({ vm }: { vm: WeatherVM | null }) {
   if (!vm) return null;
   const n = (v: number | null, d = 0) => (v == null ? "—" : (Math.round(v * 10 ** d) / 10 ** d).toString());
   return (
-    <section className="card flex flex-wrap items-center gap-x-8 gap-y-4 p-5">
-      <Stat label="Temp" value={`${n(vm.temp_c, 1)}°C`} icon="🌡" />
-      <Stat label="Humidity" value={`${n(vm.rh_pct)}%`} icon="💧" />
-      <Stat label="Rain" value={`${n(vm.precip_mm, 1)} mm`} icon="🌧" />
-      <Stat label="Wind" value={`${n(vm.wind_ms, 1)} m/s`} icon="🌬" />
+    <section className="card p-5">
+      <div className="mb-3"><SectionTitle icon={CloudSun} color="#0891b2">Weather</SectionTitle></div>
+      <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+        <Stat label="Temp" value={`${n(vm.temp_c, 1)}°C`} icon="🌡" />
+        <Stat label="Humidity" value={`${n(vm.rh_pct)}%`} icon="💧" />
+        <Stat label="Rain" value={`${n(vm.precip_mm, 1)} mm`} icon="🌧" />
+        <Stat label="Wind" value={`${n(vm.wind_ms, 1)} m/s`} icon="🌬" />
+      </div>
     </section>
   );
 }

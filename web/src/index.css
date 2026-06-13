@@ -12,7 +12,7 @@
   --border: rgba(40, 33, 24, 0.12);
   --ink: #211f1b;
   --muted: #6f6a60;
-  --faint: #9a9387;
+  --faint: #78736a; /* AA-contrast (~4.5:1) on warm surfaces */
   --accent: #24426b;
   --gauge-dot-bg: #fffdf8;
 }
@@ -23,7 +23,7 @@
   --border: rgba(255, 255, 255, 0.1);
   --ink: #e9ebf0;
   --muted: #9aa2b0;
-  --faint: #6c7686;
+  --faint: #969db0; /* AA-contrast on dark slate surfaces */
   --accent: #82abe0;
   --gauge-dot-bg: #1c212c;
 }
