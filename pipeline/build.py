@@ -113,7 +113,9 @@ def fetch_weather_daily(centroids, *, start_date, end_date) -> dict[tuple, objec
             for w in openmeteo.fetch_archive_daily(lat, lon, start_date=start_date, end_date=end_date):
                 out[(city, w.datetime_utc[:10])] = w
         except Exception as e:
-            print(f"[build] skip daily weather for {city}: {type(e).__name__}", flush=True)
+            resp = getattr(e, "response", None)
+            detail = f" HTTP {resp.status_code}" if resp is not None else ""
+            print(f"[build] skip daily weather for {city}: {type(e).__name__}{detail}", flush=True)
     return out
 
 

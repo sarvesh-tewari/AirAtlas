@@ -9,10 +9,17 @@ Parsing is pure (testable on fixtures); fetching is thin HTTP with cache.
 
 from __future__ import annotations
 
+import os
+
 from . import http, records as rec
 
 FORECAST_BASE = "https://api.open-meteo.com/v1/forecast"
 ARCHIVE_BASE = "https://archive-api.open-meteo.com/v1/archive"
+
+# Open-Meteo's archive uses WEIGHTED rate limits: a full-history (multi-year x 6-var) request is
+# "heavy", and ~5 in a minute trips the minutely limit (429). Pace these calls well under that
+# (~4/min) so a 15-city batch doesn't get throttled; tune via env if needed.
+_ARCHIVE_INTERVAL = float(os.environ.get("AIRATLAS_WEATHER_REQUEST_INTERVAL", "15") or "15")
 
 _HOURLY = "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m,wind_direction_10m"
 _CURRENT = "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m,wind_direction_10m"
@@ -113,5 +120,5 @@ def fetch_archive_daily(lat: float, lon: float, *, start_date: str, end_date: st
         "latitude": lat, "longitude": lon,
         "start_date": start_date, "end_date": end_date,
         "daily": _DAILY, "wind_speed_unit": "ms", "timezone": "auto",
-    }, **kw)
+    }, min_interval=_ARCHIVE_INTERVAL, **kw)
     return parse_archive_daily(payload)

@@ -26,14 +26,35 @@ _MIN_INTERVAL = float(os.environ.get("AIRATLAS_MIN_REQUEST_INTERVAL", "0") or "0
 _last_request_at = 0.0
 
 
-def _throttle() -> None:
+def _throttle(interval: float | None = None) -> None:
+    """Space requests at least `interval` seconds apart (defaults to the global throttle).
+
+    A per-call override lets heavy endpoints (Open-Meteo's weighted archive API) pace much
+    slower than OpenAQ without slowing the bulk AQ fetch.
+    """
     global _last_request_at
-    if _MIN_INTERVAL <= 0:
+    iv = _MIN_INTERVAL if interval is None else interval
+    if iv <= 0:
         return
     gap = time.time() - _last_request_at
-    if gap < _MIN_INTERVAL:
-        time.sleep(_MIN_INTERVAL - gap)
+    if gap < iv:
+        time.sleep(iv - gap)
     _last_request_at = time.time()
+
+
+def _retry_wait(status_code: int | None, retry_after, attempt: int, backoff: float,
+                rate_limit_floor: float = 60.0) -> float:
+    """Seconds to wait before the next retry.
+
+    A 429 honors a numeric Retry-After, else waits at least `rate_limit_floor`: Open-Meteo's
+    weighted minutely limit needs ~a full minute to reset, and the short exponential backoff
+    would otherwise exhaust retries inside the same minute. Other retryable errors (timeouts,
+    5xx) use plain exponential backoff.
+    """
+    if retry_after is not None and str(retry_after).isdigit():
+        return float(retry_after)
+    exp = backoff * (2 ** attempt)
+    return max(exp, rate_limit_floor) if status_code == 429 else exp
 
 
 def _cache_key(url: str, params: dict | None) -> str:
@@ -48,14 +69,16 @@ def get_json(
     params: dict | None = None,
     headers: dict | None = None,
     timeout: float = 30.0,
-    retries: int = 4,
+    retries: int = 5,
     backoff: float = 2.0,
     use_cache: bool = True,
     cache_ttl: float | None = None,
+    min_interval: float | None = None,
 ) -> dict:
     """GET `url` and return parsed JSON, with disk cache + retry.
 
     cache_ttl: if set, a cached file older than this many seconds is ignored.
+    min_interval: per-call request spacing override (e.g. for rate-strict endpoints).
     """
     cache_file = CACHE_DIR / f"{_cache_key(url, params)}.json"
     if use_cache and cache_file.exists():
@@ -64,17 +87,17 @@ def get_json(
 
     last_err: Exception | None = None
     for attempt in range(retries):
-        wait = backoff * (2 ** attempt)
+        wait = _retry_wait(None, None, attempt, backoff)  # transient/timeout default
         try:
-            _throttle()
+            _throttle(min_interval)
             r = httpx.get(url, params=params, headers=headers, timeout=timeout)
             if r.status_code in (408, 429):
-                # Timeout / rate-limit — retry, honoring Retry-After if present.
-                ra = r.headers.get("Retry-After")
-                wait = float(ra) if ra and ra.isdigit() else wait
+                # Timeout / rate-limit — retry, honoring Retry-After, with a minute floor on 429.
+                wait = _retry_wait(r.status_code, r.headers.get("Retry-After"), attempt, backoff)
                 last_err = httpx.HTTPStatusError(
                     str(r.status_code), request=r.request, response=r)
             elif r.status_code >= 500:
+                wait = _retry_wait(r.status_code, None, attempt, backoff)
                 last_err = httpx.HTTPStatusError(
                     f"server {r.status_code}", request=r.request, response=r)
             elif r.status_code >= 400:

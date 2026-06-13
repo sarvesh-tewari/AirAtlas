@@ -125,7 +125,9 @@ def main():
         city_daily = reconcile.reconcile_daily(today_cpcb=today_cpcb,
                                                 history_openaq=city_daily, today=today)
         print("[run] fetching daily weather…")
-        wx_daily = build.fetch_weather_daily(centroids, start_date=date_from, end_date=today)
+        # Open-Meteo's archive only allows end_date up to YESTERDAY (today is out of range -> 400).
+        # Today's conditions come from the live/current-weather path, not the daily archive.
+        wx_daily = build.fetch_weather_daily(centroids, start_date=date_from, end_date=yesterday)
         daily_rows = storage.assemble_daily_rows(city_daily, weather_by_city_date=wx_daily)
 
         print("[run] fetching recent hourly…")
