@@ -8,6 +8,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch: {}
+  # Data commits are made by the refresh workflows' token, which doesn't re-trigger `push`
+  # (GitHub anti-recursion). So redeploy after a refresh completes.
+  workflow_run:
+    workflows: [refresh-hourly, refresh-daily]
+    types: [completed]
 
 permissions:
   contents: read
