@@ -101,6 +101,16 @@ def test_write_parquet_recent_prunes_old(tmp_path):
     assert df["datetime_utc"].item().startswith(fresh)
 
 
+def test_write_parquet_handles_late_appearing_column(tmp_path):
+    import polars as pl
+    # A column null for the first 100+ rows then a float later must not break schema inference.
+    rows = [{"city": "X", "date": f"2026-01-{(i % 28) + 1:02d}-{i}", "co": None} for i in range(110)]
+    rows.append({"city": "X", "date": "2026-05-01", "co": 989.97})
+    storage.write_parquet_per_city(rows, tmp_path, merge_keys=["date"])
+    df = pl.read_parquet(tmp_path / "x.parquet")
+    assert df.filter(pl.col("date") == "2026-05-01")["co"].item() == 989.97
+
+
 def test_live_snapshot_shape():
     recs = [
         _c("Delhi", "pm25", "2026-06-11", 90.0, source="cpcb"),

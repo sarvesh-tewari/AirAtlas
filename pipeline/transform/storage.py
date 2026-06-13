@@ -180,7 +180,9 @@ def write_parquet_per_city(
     written = []
     for city, city_rows in by_city.items():
         path = out_dir / f"{slug(city)}.parquet"
-        df = pl.DataFrame(city_rows)
+        # infer_schema_length=None scans all rows, so a column that's null for the first
+        # 100 rows then has a float later won't break type inference.
+        df = pl.DataFrame(city_rows, infer_schema_length=None)
         if merge_keys and path.exists():
             existing = pl.read_parquet(path)
             # New rows last so unique(keep="last") lets the delta win on conflicts.
