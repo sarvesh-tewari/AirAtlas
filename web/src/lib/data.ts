@@ -5,6 +5,13 @@ import { queryParquet } from "./duckdb";
 
 const BASE = `${import.meta.env.BASE_URL}data`;
 
+// Cache-buster: data files live at stable URLs but their CONTENT changes on every refresh, so
+// without a version query the CDN/browser serves stale data after a publish. VITE_DATA_VERSION is
+// set at deploy time to the data-branch commit SHA, so it changes exactly when the data does:
+// files stay cacheable within a deploy and bust the moment new data is published.
+const DATA_VERSION = (import.meta.env as Record<string, string | undefined>).VITE_DATA_VERSION ?? "";
+const V = DATA_VERSION ? `?v=${DATA_VERSION}` : "";
+
 export function slug(city: string): string {
   return city.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
@@ -84,12 +91,12 @@ async function getJSON<T>(url: string): Promise<T | null> {
 }
 
 export async function fetchCityList(): Promise<CityList> {
-  return (await getJSON<CityList>(`${BASE}/meta/city_list.json`)) ?? { generated_today: "", cities: [] };
+  return (await getJSON<CityList>(`${BASE}/meta/city_list.json${V}`)) ?? { generated_today: "", cities: [] };
 }
 
 // Rich per-city index (centroid + latest AQI). Falls back to names-only if absent.
 export async function fetchCities(): Promise<CityIndex[]> {
-  const rich = await getJSON<CityIndex[]>(`${BASE}/meta/cities.json`);
+  const rich = await getJSON<CityIndex[]>(`${BASE}/meta/cities.json${V}`);
   if (Array.isArray(rich) && rich.length) return rich;
   const list = await fetchCityList();
   return list.cities.map((city) => ({
@@ -99,10 +106,10 @@ export async function fetchCities(): Promise<CityIndex[]> {
 }
 
 export async function fetchLive(city: string): Promise<LiveSnapshot | null> {
-  return getJSON<LiveSnapshot>(`${BASE}/live/${slug(city)}.json`);
+  return getJSON<LiveSnapshot>(`${BASE}/live/${slug(city)}.json${V}`);
 }
 
 export async function fetchDailyHistory(city: string): Promise<DailyRow[]> {
-  const url = `${new URL(BASE, window.location.href).href}/history/${slug(city)}.parquet`;
+  const url = `${new URL(BASE, window.location.href).href}/history/${slug(city)}.parquet${V}`;
   return queryParquet<DailyRow>(url, (t) => `SELECT * FROM ${t} ORDER BY date`);
 }

@@ -29,7 +29,8 @@ export async function queryParquet<T = Record<string, unknown>>(
   sql: (table: string) => string,
 ): Promise<T[]> {
   const db = await getDB();
-  const name = url.split("/").pop() ?? "data.parquet";
+  // Strip any ?v= cache-buster so the registered table alias stays a clean filename.
+  const name = (url.split("/").pop() ?? "data.parquet").split("?")[0];
   await db.registerFileURL(name, url, duckdb.DuckDBDataProtocol.HTTP, false);
   const conn = await db.connect();
   try {

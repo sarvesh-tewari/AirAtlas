@@ -11,7 +11,7 @@ on:
   # Data commits are made by the refresh workflows' token, which doesn't re-trigger `push`
   # (GitHub anti-recursion). So redeploy after a refresh completes.
   workflow_run:
-    workflows: [refresh-hourly, refresh-daily, backfill-drip]
+    workflows: [refresh-hourly, refresh-daily, backfill-drip, remedian-drip]
     types: [completed]
 
 permissions:
@@ -47,15 +47,20 @@ jobs:
           if git fetch --depth 1 origin '+refs/heads/data:refs/remotes/origin/data' 2>/dev/null; then
             git archive origin/data data | tar -x -C web/public
             echo "Staged $(find web/public/data -type f | wc -l) data files from data branch."
+            # Cache-buster for the build: the data-branch SHA changes exactly when data is
+            # republished, so the frontend can version its data URLs and never serve stale files.
+            echo "DATA_VERSION=$(git rev-parse --short origin/data)" >> "$GITHUB_ENV"
           else
             echo "No data branch found; building without data."
             mkdir -p web/public/data
+            echo "DATA_VERSION=nodata" >> "$GITHUB_ENV"
           fi
 
       - name: Build
         working-directory: web
         env:
           VITE_BASE: /AirAtlas/ # project-pages base path; change if using a custom domain
+          VITE_DATA_VERSION: ${{ env.DATA_VERSION }} # cache-buster appended to data-file URLs
         run: |
           npm ci
           npm run build
