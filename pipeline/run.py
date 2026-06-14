@@ -7,6 +7,7 @@ Modes:
     python run.py backfill   # full daily history + recent hourly + live + meta
     python run.py daily      # recent daily delta + recent hourly + live + meta
     python run.py hourly     # live snapshot + current weather only
+    python run.py scrub      # one-time: drop sentinel rows from published parquet + rebuild meta
 
 Re-running reproduces the same outputs; gaps backfill on the next run. Bound the work with
 --cities / --max-per-city / --from / --to (used for sampling and CI shards).
@@ -40,9 +41,44 @@ def _today_ist() -> str:
     return dt.datetime.now(tz=ist).strftime("%Y-%m-%d")
 
 
+# Known citymap orphans: city slugs that should never have existed as their own city. The
+# station is re-mapped to its real city in pipeline/config/city_aliases.json, but the orphan's
+# stale parquet persists, so the one-time scrub removes it.
+ORPHAN_CITY_SLUGS = ("dn-park",)
+
+
+def _scrub() -> None:
+    """One-time cleanup of already-published data: drop sentinel-code rows that pre-date the
+    aggregation fix, remove orphaned-city files, and rebuild meta from what survives."""
+    for slug in ORPHAN_CITY_SLUGS:
+        for tier in ("history", "recent"):
+            p = build.DATA / tier / f"{slug}.parquet"
+            if p.exists():
+                p.unlink()
+                print(f"[scrub] removed orphan {tier}/{slug}.parquet")
+
+    for tier in ("history", "recent"):
+        summary = storage.scrub_sentinel_parquets(build.DATA / tier)
+        print(f"[scrub] {tier}: dropped {summary['rows_dropped']} sentinel rows, "
+              f"rewrote {summary['files_rewritten']} files, deleted {summary['files_deleted']}")
+
+    # Rebuild city_list/coverage/cities from the surviving daily tier (centroids recovered
+    # from the prior index, since scrub does no station discovery).
+    all_daily = storage.read_all_daily(build.DATA / "history")
+    prior_path = build.META / "cities.json"
+    prior_index = json.loads(prior_path.read_text()) if prior_path.exists() else []
+    centroids = build.merge_centroids({}, prior_index)
+    storage.write_json({"generated_today": _today_ist(),
+                        "cities": sorted({r["city"] for r in all_daily})},
+                       build.META / "city_list.json")
+    storage.write_json(build.build_coverage(all_daily), build.META / "coverage.json")
+    storage.write_json(build.build_cities_index(all_daily, centroids), build.META / "cities.json")
+    print(f"[scrub] rebuilt meta from {len({r['city'] for r in all_daily})} surviving cities.")
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("mode", choices=["backfill", "daily", "hourly"])
+    ap.add_argument("mode", choices=["backfill", "daily", "hourly", "scrub"])
     ap.add_argument("--cities", nargs="*", default=None, help="limit to these cities")
     ap.add_argument("--max-per-city", type=int, default=None)
     ap.add_argument("--from", dest="date_from", default=None)
@@ -55,6 +91,10 @@ def main():
     args = ap.parse_args()
 
     _load_env()
+    if args.mode == "scrub":
+        _scrub()
+        return
+
     # .strip() guards against stray whitespace/newlines in the stored secret (an errant
     # leading space makes httpx reject the X-API-Key header).
     oa_key = os.environ.get("OPENAQ_API_KEY", "").strip()

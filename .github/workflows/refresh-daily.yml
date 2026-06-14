@@ -11,9 +11,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "backfill (full history seed) or daily (delta)"
+        description: "daily (delta), backfill (full history seed), or scrub (clean published data)"
         type: choice
-        options: [daily, backfill]
+        options: [daily, backfill, scrub]
         default: daily
       cities:
         description: "optional space-separated city subset (blank = all)"

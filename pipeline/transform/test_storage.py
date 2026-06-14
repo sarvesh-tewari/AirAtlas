@@ -84,6 +84,37 @@ def test_write_parquet_merges_idempotently(tmp_path):
     assert df.filter(pl.col("date") == "2026-06-02")["pm25"].item() == 999.0    # delta won
 
 
+def test_drop_sentinel_rows_removes_artifact_rows():
+    import polars as pl
+    # A row carrying a device sentinel code (985.0) on any pollutant is junk and dropped;
+    # plausible rows are kept untouched.
+    df = pl.DataFrame({
+        "date": ["2026-06-01", "2026-06-02", "2026-06-03"],
+        "pm25": [42.0, 985.0, 50.0],     # row 2 = sentinel -> dropped
+        "pm10": [60.0, 70.0, 990.0],     # row 3 = sentinel -> dropped
+    })
+    out = storage.drop_sentinel_rows(df)
+    assert out["date"].to_list() == ["2026-06-01"]
+
+
+def test_scrub_sentinel_parquets_rewrites_and_deletes_emptied(tmp_path):
+    import polars as pl
+    # mixed city: one junk row dropped, file kept with the good row.
+    pl.DataFrame({"date": ["2026-06-01", "2026-06-02"],
+                  "pm25": [42.0, 985.0]}).write_parquet(tmp_path / "mumbai.parquet")
+    # all-junk single-station city: file removed entirely.
+    pl.DataFrame({"date": ["2026-06-01"],
+                  "pm10": [985.0]}).write_parquet(tmp_path / "ariyalur.parquet")
+
+    summary = storage.scrub_sentinel_parquets(tmp_path)
+
+    assert (tmp_path / "mumbai.parquet").exists()
+    assert pl.read_parquet(tmp_path / "mumbai.parquet")["date"].to_list() == ["2026-06-01"]
+    assert not (tmp_path / "ariyalur.parquet").exists()
+    assert summary["rows_dropped"] == 2
+    assert summary["files_deleted"] == 1
+
+
 def test_read_all_daily_returns_union_across_incremental_batches(tmp_path):
     # Incremental backfill writes one city's parquet per batch. Meta must be rebuilt from the
     # UNION of everything on disk, not just the latest batch — else a "Mumbai" batch would drop

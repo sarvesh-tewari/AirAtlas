@@ -213,6 +213,48 @@ def read_all_daily(history_dir: Path) -> list[dict]:
     return rows
 
 
+def drop_sentinel_rows(df):
+    """Drop rows carrying a device sentinel/saturation code (e.g. 985.0) on any pollutant.
+
+    A one-time cleanup for already-published parquet: the per-station filter and median
+    aggregation prevent these going forward, but rows written before the fix persist because
+    an upsert re-fetch produces no replacement row for an all-sentinel station-day."""
+    import polars as pl
+    from .aggregate import SENSOR_SENTINELS
+
+    present = [c for c in POLLUTANTS if c in df.columns]
+    if not present:
+        return df
+    mask = pl.lit(False)
+    for col in present:
+        for s in SENSOR_SENTINELS:
+            mask = mask | ((pl.col(col) - s).abs() < 0.05).fill_null(False)
+    return df.filter(~mask)
+
+
+def scrub_sentinel_parquets(directory: Path) -> dict:
+    """Scrub sentinel rows from every per-city Parquet in `directory`. Files left with no rows
+    are deleted (their whole city was a single broken sensor). Returns a summary."""
+    import polars as pl
+    directory = Path(directory)
+    rows_dropped = files_deleted = files_rewritten = 0
+    for path in sorted(directory.glob("*.parquet")):
+        df = pl.read_parquet(path)
+        clean = drop_sentinel_rows(df)
+        dropped = df.height - clean.height
+        if dropped == 0:
+            continue
+        rows_dropped += dropped
+        if clean.height == 0:
+            path.unlink()
+            files_deleted += 1
+        else:
+            clean.write_parquet(path)
+            files_rewritten += 1
+    return {"rows_dropped": rows_dropped, "files_deleted": files_deleted,
+            "files_rewritten": files_rewritten}
+
+
 def write_live_json(snapshot: dict, out_dir: Path) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"{slug(snapshot['city'])}.json"
