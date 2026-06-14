@@ -9,13 +9,15 @@ A free, open-source, public dashboard of India air quality (AQI) + weather for ~
 Default standard NAQI, toggle to US EPA AQI and EU EAQI — all computed from **raw pollutant
 concentrations** (AQI is a *formula, not a measurement*). Static site + scheduled data pipeline.
 
-## Status (as of this handoff)
-- **Live:** https://sarvesh-tewari.github.io/AirAtlas/ (GitHub Pages, public repo
-  `sarvesh-tewari/AirAtlas`). Currently populated with a **14-city demo subset** (2024+).
-- **Phases 1–9 complete; Phase 10 (deploy) live.** Repo pushed, Actions secrets set, Pages on,
-  hourly/daily refresh crons running, auto-deploy wired.
-- **70 backend tests green; web typecheck + build clean; CI green.**
-- A full **senior code-review hardening pass** was completed (commit `93f6186`).
+## Status (as of this handoff — 2026-06-14)
+- **Live:** https://sarvesh-tewari.github.io/AirAtlas/ — fully built + deployed (public repo).
+- **Full backfill COMPLETE: 287 cities**, AQI 2016+ (where OpenAQ has it), all 3 standards. The
+  self-chaining drip ran to completion overnight + self-disabled. Weather complete for all cities.
+- **Brand redesign + logo shipped**: Inter, light/dark via `[data-theme]`, flat category-tint
+  hero, eyebrow pills, section rhythm; theme-aware AirAtlas logo (topbar/favicon/About/splash).
+- **84 backend tests green; web build clean; CI + deploy green** (actions bumped to Node24 majors).
+- **Data is ~1 day stale BY NATURE:** CPCB live source is down, so site shows ~yesterday, not
+  "today" — an honest banner explains it. Two HIGH-priority backlog items address this (see below).
 
 ## Architecture (1 paragraph)
 `pipeline/` (Python): `aqi/` engine (NAQI/US/EU breakpoints + sub-index), `ingest/` (cpcb.py,
@@ -34,9 +36,11 @@ from the `data` branch + build+publish to Pages; triggered on push, dispatch, an
   stations**, computed identically for all 3 standards (plan §8.5; documented deviation from
   CPCB's sub-index-averaging city rule).
 - **EU EAQI = current 2024 EEA bands** (user-approved); §7 EU expectation corrected to "Very Poor".
-- **Theme = "Slate Modern" + warm/slate option C**: Manrope font, warm-paper light surfaces,
-  slate-blue dark mode, ink-blue accent. AQI headline = **gauge/dial**. Single scrolling page;
-  Methodology/About separate. Colourful per-section icon chips. Colour always paired with label.
+- **Theme = user's brand design system (2026-06-14, supersedes the old Manrope "Slate Modern")**:
+  Inter font; tokens in `:root` + `[data-theme="dark"]` (web/src/index.css); flat category-tint
+  hero (no gradient); eyebrow pills + section rhythm; AQI category palette kept as the data layer
+  (exempt from the one-accent rule). Headline = gauge/dial; single scrolling page; About separate.
+  **NO EM-DASHES** anywhere in copy (user pref — see [[no-em-dashes]] memory).
 - Default city = **geolocate → nearest covered city, fallback Delhi**.
 - Extra metrics added beyond the plan: **Monthly heatmap**, **Year-by-year** summary.
 
@@ -57,17 +61,38 @@ from the `data` branch + build+publish to Pages; triggered on push, dispatch, an
    `GIT_INDEX_FILE` (`git add -f data` → `write-tree` → parentless `commit-tree` → force-push);
    deploy/hydrate via `git archive origin/data data | tar -x`. Tree-equality check skips no-op
    redeploys. The two refresh crons are serialized by `concurrency: data-refresh`.
-2. **Full backfill**: currently 14 demo cities. Run all ~285 via
-   `gh workflow run refresh-daily.yml -f mode=backfill` (long; resumable; auto-deploys).
-3. **CPCB live verification**: data.gov.in was DOWN the entire project — the `cpcb.py` path is
-   tested vs a fixture only. Verify with `python pipeline/run.py hourly` once it recovers.
-4. Full US **O3 1h / SO2 24h** hybrid curves (currently capped at the pollutant's tabulated max).
-5. Failure-issue **dedup race / comment spam** on long outages; **daily coverage-floor** health check.
-6. Recent-tier **hourly weather join** (daily weather works; hourly overlay not yet joined).
-7. Optional: **Year-by-year as a chart** (offered, not built).
+2. ~~**Full backfill**~~ ✅ DONE (2026-06-14): 287 cities via the self-chaining drip.
+3. **[BACKLOG · HIGH] Fill the 2023–2024 gap.** EVERY city is missing ~Nov 2022 → Jan 2025 (~27mo)
+   — an OpenAQ ingestion lapse (data genuinely absent from OpenAQ, not our bug; confirmed across
+   all 286 cities). User wants it filled FROM CPCB (provenance match). Plan: one-time scrape of CCR
+   `POST app.cpcbccr.com/caaqms/fetch_table_data` (base64-JSON body via `data=`, no captcha/auth —
+   open API; payload shape from gsidhu/cpcbccr-data-scraper setup_pull.py), aggregate via our
+   pipeline, upsert into parquet by date (like the weather-fill), keep raw archive. Since it's a
+   finite historical window, scrape ONCE → store → done (portal fragility irrelevant).
+   **BLOCKED right now:** CPCB infra is down — CCR = Cloudflare 526 (origin SSL), airquality.cpcb
+   .gov.in self-signed, data.gov.in times out. Step when unblocked: confirm 1 station/2023 → run
+   once. Fallback: vet archival/Kaggle datasets (MUST have RAW concentrations + city coverage).
+4. **[BACKLOG · HIGH] Re-architect freshness to OpenAQ-hourly-primary** (user to approve; NOT
+   started). CPCB "today" source is down + load-bearing; OpenAQ HOURLY is only ~3h behind (checked
+   40/287: median 3.3h, ~12% no recent hourly). Plan: live headline = rolling-24h AQI from latest
+   OpenAQ hourly (we already fetch 90d hourly), fall back to latest daily; makes CPCB optional.
+5. **[BACKLOG · low] citymap mis-parse cleanup**: "DN Park" (+ earlier Noida, now fixed) are bad
+   city names from `city_from_station_name`; add aliases in `pipeline/config/city_aliases.json`.
+6. Full US **O3 1h / SO2 24h** hybrid curves (capped at tabulated max); failure-issue dedup/spam;
+   daily coverage-floor health check; recent-tier hourly weather join; Year-by-year as a chart.
 
 ## Known gotchas / lessons (so they aren't re-hit)
-- **data.gov.in (CPCB)** is flaky/down — code retries + keeps last-good; live path unverified live.
+- **CPCB infra is fully DOWN (2026-06-14)**: data.gov.in times out; CCR (app.cpcbccr.com) = Cloudflare
+  526 (origin SSL invalid); airquality.cpcb.gov.in is self-signed; only static cpcb.nic.in works.
+  So there's NO live "today" source; pipeline keeps last-good + the headline shows a ~1-day lag.
+- **OpenAQ HOURLY is near-real-time (~3h lag)** but we only use OpenAQ `/days` (~1-day lag) for the
+  headline (backlog #4 fixes this). OpenAQ has NO India data Nov2022–Jan2025 (backlog #3).
+- **Weather (Open-Meteo archive): `end_date` must be YESTERDAY** (today → HTTP 400 "out of range");
+  it also has a WEIGHTED minute rate-limit (~5 heavy full-history calls/min → 429). Paced via
+  `AIRATLAS_WEATHER_REQUEST_INTERVAL` (15s backfill / 3s daily) + a 60s 429-retry floor (`http._retry_wait`).
+- **Drip self-chains via the `DRIP_PAT` repo secret** (GITHUB_TOKEN can't trigger workflow_dispatch).
+  GitHub's *cron* scheduler is unreliable (stalled 12h once) → refresh-daily has 2 fires/day and is
+  scoped to published cities (`plan.daily_cities`) so it never publishes thin 1-day cities.
 - **OpenAQ quirks**: provider id 168 = CPCB; `/days` uses `date_from/date_to`, `/hours` uses
   `datetime_from/datetime_to`; multi-year series split across sensor ids; **CO is mislabeled
   "ppb" but is really mg/m³** (handled by magnitude); gases often ppb → normalized to µg/m³.
@@ -92,10 +117,10 @@ from the `data` branch + build+publish to Pages; triggered on push, dispatch, an
 ```bash
 # Pipeline (Python)
 cd pipeline && python -m venv .venv && . .venv/bin/activate && pip install -e ".[dev]"
-python -m pytest -q            # 70 tests
+python -m pytest -q            # 84 tests
 python -m ruff check .
-# A local build (needs ../.env with DATA_GOV_IN_KEY + OPENAQ_API_KEY):
-python run.py daily --cities Delhi Mumbai --max-per-city 4 --from 2024-01-01 --sensors first
+# Local one-off (needs ../.env with OPENAQ_API_KEY; DATA_GOV_IN_KEY optional + currently down):
+python run.py backfill --cities Delhi --sensors all   # or --next-batch N for drip self-select
 
 # Frontend (Node)
 cd web && npm install
