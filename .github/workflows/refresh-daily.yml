@@ -4,7 +4,10 @@ name: refresh-daily
 
 on:
   schedule:
-    - cron: "40 1 * * *" # 01:40 UTC daily
+    # Two fires/day (idempotent upsert) so a skipped cron — GitHub's scheduler is best-effort —
+    # doesn't let the data go stale. Either fire refreshes yesterday's delta for published cities.
+    - cron: "40 1 * * *"  # 01:40 UTC
+    - cron: "40 13 * * *" # 13:40 UTC
   workflow_dispatch:
     inputs:
       mode:
@@ -41,9 +44,9 @@ jobs:
     # A full backfill across all cities/sensors/years is long-running.
     timeout-minutes: 330
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
 
@@ -105,7 +108,7 @@ jobs:
 
       - name: Open/append failure issue
         if: failure()
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const label = "pipeline-failure";
