@@ -54,7 +54,7 @@ def test_aggregate_drops_implausible_before_averaging():
     assert city["pm25"].n_stations == 1
 
 
-def test_aggregate_to_city_means_across_stations():
+def test_aggregate_to_city_medians_across_stations():
     recs = [
         _aq("openaq:1", "pm25", "2026-06-01T00:00:00Z", 60.0, city="Delhi", cov=100.0),
         _aq("openaq:2", "pm25", "2026-06-01T00:00:00Z", 90.0, city="Delhi", cov=100.0),
@@ -65,8 +65,45 @@ def test_aggregate_to_city_means_across_stations():
     r = city[0]
     assert r.city == "Delhi"
     assert r.parameter == "pm25"
-    assert r.value == 90.0          # mean of 60,90,120
+    assert r.value == 90.0          # median of 60,90,120
     assert r.n_stations == 3
+
+
+def test_aggregate_to_city_uses_median_robust_to_outlier_stations():
+    # A couple of stuck/drifting sensors must NOT drag the whole city up.
+    # 21 plausible monsoon-Mumbai readings + 2 stuck-high sensors (739, 867).
+    # mean -> ~89 (bogus "Poor"); median -> 18 (the real, robust city value).
+    vals = [4.5, 11.5, 12.7, 14.7, 15.6, 15.8, 16.1, 16.1, 16.5, 16.7, 17.3,
+            18.3, 19.8, 20.4, 21.0, 24.7, 25.1, 26.8, 33.7, 44.7, 51.5, 738.8, 867.0]
+    recs = [_aq(f"openaq:{i}", "pm25", "2026-06-12T00:00:00Z", v, city="Mumbai", cov=100.0)
+            for i, v in enumerate(vals)]
+    city = agg.aggregate_to_city(recs)
+    assert city[0].value == 18.3          # median, not the ~89 mean
+    assert city[0].n_stations == len(vals)
+
+
+def test_drop_implausible_removes_sensor_sentinel_values():
+    # Recurring device error/saturation codes (e.g. 985.0) sit below the generous
+    # plausibility ceiling but are not real air -> must be dropped on any pollutant.
+    recs = [
+        _aq("openaq:1", "pm25", "2026-06-01T00:00:00Z", 985.0),   # sentinel -> dropped
+        _aq("openaq:2", "pm10", "2026-06-01T00:00:00Z", 990.0),   # sentinel -> dropped
+        _aq("openaq:3", "pm25", "2026-06-01T00:00:00Z", 42.0),    # real -> kept
+    ]
+    kept = {(r.parameter, round(r.value, 1)) for r in agg.drop_implausible(recs)}
+    assert kept == {("pm25", 42.0)}
+
+
+def test_aggregate_drops_pm25_when_city_median_exceeds_pm10():
+    # Different station subsets report each pollutant, so no single station violates
+    # PM2.5<=PM10, yet the city medians invert. The city PM2.5 is then untrustworthy
+    # and must be dropped (AQI falls back to PM10/other), never published as dominant.
+    recs = [
+        _aq("openaq:1", "pm25", "2026-06-01T00:00:00Z", 95.0, city="X"),
+        _aq("openaq:2", "pm10", "2026-06-01T00:00:00Z", 60.0, city="X"),
+    ]
+    params = {r.parameter for r in agg.aggregate_to_city(recs)}
+    assert params == {"pm10"}
 
 
 def test_aggregate_to_city_resolves_city_from_map():

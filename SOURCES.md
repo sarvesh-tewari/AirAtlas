@@ -4,8 +4,6 @@ This file is the authoritative record of where AirAtlas's data comes from, under
 terms, how often it refreshes, and what every published column means. Pin exact
 breakpoint/standard versions here so the methodology is reproducible.
 
-> Items marked _(TBC at implementation)_ are filled in during the phase that builds them.
-
 ---
 
 ## 1. Sources
@@ -87,7 +85,7 @@ its tests and bump the version row above.
 
 OpenAQ depth/completeness varies by station. The build generates a coverage report at
 `data/meta/coverage.*` listing, per target city, the available date range and
-completeness, and flagging thin cities. _(Generated in the Storage phase.)_
+completeness, and flagging thin cities.
 
 ---
 
@@ -103,7 +101,7 @@ Describes every published column and unit. Files are keyed by a city **slug**
 | `date` | str | — | Local calendar date `YYYY-MM-DD` |
 | `source` | str | — | `cpcb` (today) or `openaq` (history) |
 | `n_stations` | int | — | Stations contributing that day |
-| `pm25`,`pm10`,`no2`,`so2`,`o3`,`co`,`nh3` | float? | µg/m³ (CO mg/m³) | City-mean concentrations (null if absent) |
+| `pm25`,`pm10`,`no2`,`so2`,`o3`,`co`,`nh3` | float? | µg/m³ (CO mg/m³) | City-median concentrations (null if absent) |
 | `aqi_naqi` | int? | index | NAQI 0–500 (null if <3 pollutants) |
 | `naqi_category` | str? | — | Good…Severe |
 | `naqi_dominant` | str? | — | Comma-sep dominant pollutant(s) |
@@ -122,7 +120,7 @@ Describes every published column and unit. Files are keyed by a city **slug**
 | `city` | str | — | City name |
 | `datetime_utc` | str | — | Hour instant, ISO-8601 Z |
 | `source` | str | — | `openaq` |
-| `pm25`,`pm10`,`no2`,`so2`,`o3`,`co`,`nh3` | float? | µg/m³ (CO mg/m³) | City-mean hourly concentrations |
+| `pm25`,`pm10`,`no2`,`so2`,`o3`,`co`,`nh3` | float? | µg/m³ (CO mg/m³) | City-median hourly concentrations |
 | `temp_c`,`rh_pct`,`precip_mm`,`wind_ms` | float? | — | Hourly weather (when available) |
 
 No per-hour AQI: AQI requires a 24h window, so AQI lives in the daily file.
@@ -178,6 +176,12 @@ No per-hour AQI: AQI requires a 24h window, so AQI lives in the daily file.
   stripped from cache keys), retry/backoff on 5xx/timeouts, immediate raise on 4xx.
 - **Plausibility QA (`transform/aggregate.drop_implausible`):** sensor-error outliers are
   dropped before city aggregation — values outside per-pollutant physical bounds (e.g. SO2
-  > 2000, PM2.5 > 1000 µg/m³) and **PM2.5 readings that exceed PM10** at the same station
-  (physically impossible — PM2.5 is a subset of PM10). Caps are generous so genuine
-  extreme-pollution days are retained.
+  > 2000, PM2.5 > 1000 µg/m³), **known device sentinel/saturation codes** (recurring constants
+  such as 985.0 that appear identically across unrelated cities), and **PM2.5 readings that
+  exceed PM10** at the same station (physically impossible — PM2.5 is a subset of PM10). Caps
+  are generous so genuine extreme-pollution days are retained.
+- **City aggregation is the median across stations** (`transform/aggregate.aggregate_to_city`),
+  not the mean, so a few stuck or drifting sensors cannot drag a whole city's value far above
+  what its typical station reports. A final guard drops any city-day whose median PM2.5 still
+  exceeds its median PM10 (the two pollutants are reported by different station subsets, so the
+  city medians can invert even when no single station does).

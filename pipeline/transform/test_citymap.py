@@ -23,6 +23,15 @@ def test_city_unparseable_returns_none():
     assert citymap.city_from_station_name("Victoria Memorial - WBSPCB") is None
 
 
+def test_dn_park_misparse_resolves_to_lucknow_via_alias():
+    # "Lalbagh, DN Park" (Lucknow) has no "- <Board>" suffix, so the parser takes the last
+    # comma-chunk ("DN Park", a sub-area) as the city. The alias corrects this known misparse.
+    assert citymap.city_from_station_name("Lalbagh, DN Park") == "DN Park"
+    stations = [_st("openaq:354", "Lalbagh, DN Park")]
+    mapping, _ = citymap.build_station_city_map(stations, aliases={"DN Park": "Lucknow"})
+    assert mapping == {"openaq:354": "Lucknow"}
+
+
 def test_build_map_applies_overrides_and_aliases():
     stations = [
         _st("openaq:1", "R K Puram, Delhi - DPCC"),
