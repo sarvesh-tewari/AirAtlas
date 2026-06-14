@@ -81,6 +81,31 @@ from the `data` branch + build+publish to Pages; triggered on push, dispatch, an
 6. Full US **O3 1h / SO2 24h** hybrid curves (capped at tabulated max); failure-issue dedup/spam;
    daily coverage-floor health check; recent-tier hourly weather join; Year-by-year as a chart.
 
+## Backlog from user feedback (2026-06-14) — NOT yet done
+A. **Smoke + regression tests.** SMOKE = a NEW lightweight post-deploy live check (in `deploy.yml`
+   after publish; runs on every change/deploy): assert live URL 200, `city_list.json` non-empty,
+   data files load, no console errors. REGRESSION = the existing 84-test pytest + web build; run
+   AUTOMATICALLY on all major changes, NO approval gate (user revised from "confirm first"). CI
+   already runs the suite on push — formalize/name it as the regression gate.
+B. **Proactive alerting + uptime.** Channel = GitHub issues (user Watches repo → email); already
+   auto-opens on pipeline failure. KEEP that for pipeline-fail + data-stale. ADD an external
+   UPTIME/synthetic check (Actions can't see live-site health): scheduled load of the live URL,
+   assert it renders + has data, open an issue (→email) on failure. Goal: user is alerted to
+   pipeline-fail / data-stale / site-down WITHOUT checking the site.
+C. **De-phase + clean the PUBLIC repo (think senior-dev).** REMOVE internal docs from the repo —
+   THIS `HANDOFF.md`, the build-plan doc, `docs/SETUP.md` — via `git rm --cached` + gitignore (keep
+   them locally for continuity). Scrub "Phase N" language from README/SOURCES/code comments. Write a
+   proper public README (what it is, live URL, how-to-use, data sources + attribution "CPCB via
+   OpenAQ", license). LEAVE git history as-is (no rewrite — user agreed).
+D. **Add live URL to GitHub** — repo About→Website field (`gh api`) + a README link/badge.
+E. **Info "i" buttons per dashboard box/chart** — reuse the existing info-tooltip pattern; concise
+   per-box copy (gauge/map/pollutants/trend/heatmap/year-by-year/pollutant-trends/exceedance/weather/
+   compare). UI checkpoint → draft copy, show user.
+F. **Data-quality audit.** Investigate Ariyalur AQI=500 (and WHY it's dated Jun-14 when the latest
+   should be ~the 13th); project-wide sweep for off-scale/implausible values that slipped past
+   `drop_implausible`; decide spike-vs-legit per case (500 is legit in a Delhi winter but suspect for
+   a small Tamil Nadu city in summer); tighten filtering only where it's a clear sensor artifact.
+
 ## Known gotchas / lessons (so they aren't re-hit)
 - **CPCB infra is fully DOWN (2026-06-14)**: data.gov.in times out; CCR (app.cpcbccr.com) = Cloudflare
   526 (origin SSL invalid); airquality.cpcb.gov.in is self-signed; only static cpcb.nic.in works.
