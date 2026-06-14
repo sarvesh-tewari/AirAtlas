@@ -31,12 +31,19 @@ export function Headline({ standard, vm, loading = false }: { standard: Standard
     ? formatDateTimeIST(vm.updatedUtc)
     : vm.lastDate ? formatDate(vm.lastDate) : null;
   const sourceLabel = vm.source === "cpcb" ? "CPCB" : vm.source === "openaq" ? "OpenAQ" : null;
+  // Honest freshness messaging: distinguish "live source (CPCB) currently down, showing the latest
+  // published day" from "live reading just delayed", so a normal ~1-day lag reads as
+  // latest-available rather than a broken site.
+  const notice = !vm.stale ? null
+    : vm.live
+      ? `Live reading may be delayed. Last updated ${updatedText ?? "recently"}.`
+      : `Live data (CPCB) is currently unavailable, so this shows the latest published day${updatedText ? `, ${updatedText}` : ""}. History updates daily from OpenAQ.`;
   return (
     <section className="card overflow-hidden" style={wash}>
-      {vm.stale && (
+      {notice && (
         <div className="flex items-center gap-2 border-b border-border px-6 py-2 text-xs text-body">
           <Clock size={13} aria-hidden />
-          Showing the latest available reading{updatedText ? ` from ${updatedText}` : ""}. Live data refreshes hourly.
+          {notice}
         </div>
       )}
       <div className="grid gap-6 p-6 sm:grid-cols-[260px_1fr] sm:items-center">
