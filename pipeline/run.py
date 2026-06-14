@@ -88,6 +88,9 @@ def main():
     ap.add_argument("--next-batch", type=int, default=None,
                     help="backfill the next N not-yet-published cities (incremental drip); "
                          "self-selects from discovered universe minus data/meta/city_list.json")
+    ap.add_argument("--remedian-batch", type=int, default=None,
+                    help="re-aggregate the next N ALREADY-published cities (median fix); "
+                         "self-selects from data/meta/city_list.json minus data/meta/remedian_done.json")
     args = ap.parse_args()
 
     _load_env()
@@ -129,6 +132,20 @@ def main():
             print("[run] incremental backfill complete - no unpublished cities remain.")
             return
         print(f"[run] drip batch ({len(args.cities)}): {' '.join(args.cities)}")
+
+    # Re-median drip: re-fetch the next N ALREADY-published cities and re-aggregate them with the
+    # current (median) engine, overwriting rows written by the old mean-based backfill. Progress is
+    # tracked in remedian_done.json so each fire advances; the chain self-disables when all are done.
+    if args.remedian_batch:
+        clp = build.META / "city_list.json"
+        published = set(json.loads(clp.read_text()).get("cities", [])) if clp.exists() else set()
+        rd_path = build.META / "remedian_done.json"
+        done = set(json.loads(rd_path.read_text()).get("cities", [])) if rd_path.exists() else set()
+        args.cities = plan.next_batch(published, done, args.remedian_batch)
+        if not args.cities:
+            print("[run] remedian complete - all published cities re-aggregated.")
+            return
+        print(f"[run] remedian batch ({len(args.cities)}): {' '.join(args.cities)}")
 
     # Daily delta refreshes ONLY already-published cities; new cities arrive via the drip, fully
     # backfilled (complete-or-absent). Scope a bare daily run to the published set so the nightly
@@ -235,6 +252,13 @@ def main():
         ap_path = build.META / "backfill_attempted.json"
         prev = json.loads(ap_path.read_text()).get("cities", []) if ap_path.exists() else []
         storage.write_json({"cities": plan.record_attempted(prev, args.cities)}, ap_path)
+
+    # Re-median bookkeeping: mark this batch re-aggregated so the next fire advances. Recorded by
+    # the SELECTED cities (not just those that returned data) so a now-dataless city can't stall it.
+    if args.remedian_batch and args.cities:
+        rd_path = build.META / "remedian_done.json"
+        prev = json.loads(rd_path.read_text()).get("cities", []) if rd_path.exists() else []
+        storage.write_json({"cities": plan.record_attempted(prev, args.cities)}, rd_path)
 
     n_cities = len({r["city"] for r in daily_rows})
     print(f"[run] done. daily_rows={len(daily_rows)} hourly_rows={len(hourly_rows)} "

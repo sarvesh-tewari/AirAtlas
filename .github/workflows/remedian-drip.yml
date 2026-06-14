@@ -1,0 +1,160 @@
+# Re-median "drip": re-fetch the next batch of ALREADY-published cities and re-aggregate them
+# with the current median engine, overwriting rows the old mean-based backfill produced. Self-
+# chains (via DRIP_PAT) one batch at a time until every published city is re-done, then self-
+# disables. DISPATCH-ONLY (no cron): the chain advances ONLY on success, so any failed batch
+# halts it for good (opening an informative issue) instead of looping on a broken state — resume
+# by dispatching again. One-time migration after the median/sentinel data-quality fix.
+name: remedian-drip
+
+on:
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: "published cities to re-aggregate this run (kept small so each run finishes well under the timeout)"
+        default: "8"
+
+# Share the data-refresh lock so this never races the hourly/daily publishers on the data-branch
+# force-push (they serialize; whichever holds the lock finishes first).
+concurrency:
+  group: data-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+  actions: write # to disable this workflow once every city has been re-aggregated
+
+jobs:
+  remedian:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install pipeline
+        run: pip install -e ./pipeline
+
+      # The planner reads which cities are published + already re-medianed from data/meta/, so the
+      # working tree must hold the current data branch before we run.
+      - name: Hydrate prior data from data branch
+        run: |
+          if git fetch --depth 1 origin '+refs/heads/data:refs/remotes/origin/data' 2>/dev/null; then
+            rm -rf data
+            git archive origin/data data | tar -x
+            echo "Hydrated $(find data -type f | wc -l) files from data branch."
+          else
+            echo "No data branch yet; nothing to re-aggregate."
+          fi
+
+      - name: Re-aggregate next batch
+        id: remedian
+        env:
+          DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
+          OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
+          AIRATLAS_MIN_REQUEST_INTERVAL: "1.1"   # OpenAQ allows 60 req/min; 1.1s spacing stays under it
+          AIRATLAS_WEATHER_REQUEST_INTERVAL: "3"
+        run: |
+          BATCH="${{ github.event.inputs.batch_size || '8' }}"
+          set -o pipefail
+          python pipeline/run.py backfill --remedian-batch "$BATCH" --sensors first 2>&1 | tee /tmp/airatlas-run.log
+          if grep -q "remedian complete" /tmp/airatlas-run.log; then
+            echo "done=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Same publish path as the refresh workflows: single parentless commit, force-pushed, skipped
+      # if the tree is unchanged (e.g. when the migration is already complete).
+      - name: Publish data to data branch
+        run: |
+          git config user.name  "airatlas-bot"
+          git config user.email "airatlas-bot@users.noreply.github.com"
+          NEW_TREE=$(
+            export GIT_INDEX_FILE="$(mktemp -u)"
+            git add -f data
+            git write-tree
+          )
+          PREV_TREE=$(git rev-parse --verify --quiet 'refs/remotes/origin/data^{tree}' || echo none)
+          if [ "$NEW_TREE" = "$PREV_TREE" ]; then
+            echo "No data change; skipping publish + redeploy."
+            exit 0
+          fi
+          NEW_COMMIT=$(git commit-tree "$NEW_TREE" -m "data: remedian drip")
+          git push --force origin "${NEW_COMMIT}:refs/heads/data"
+          echo "Published data tree $NEW_TREE to data branch."
+
+      # Self-chain: re-dispatch the next batch. Uses DRIP_PAT because the built-in GITHUB_TOKEN
+      # can't trigger workflow_dispatch (anti-recursion). Guarded by success() so a FAILED batch
+      # halts the chain (the failure issue alerts) instead of looping; the concurrency lock makes
+      # the chained run wait for this one.
+      - name: Chain next batch
+        if: success() && steps.remedian.outputs.done != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.DRIP_PAT }}
+        run: |
+          BATCH="${{ github.event.inputs.batch_size || '8' }}"
+          gh workflow run remedian-drip.yml -f batch_size="$BATCH"
+          echo "Chained next batch (size $BATCH)."
+
+      - name: Disable drip when re-median is complete
+        if: steps.remedian.outputs.done == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "All published cities re-aggregated; disabling the remedian drip."
+          gh workflow disable remedian-drip.yml
+
+      - name: Open/append failure issue
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require("fs");
+            const label = "pipeline-failure";
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+
+            let failedStep = "unknown step";
+            try {
+              const jobs = await github.rest.actions.listJobsForWorkflowRun({
+                owner: context.repo.owner, repo: context.repo.repo, run_id: context.runId });
+              for (const job of jobs.data.jobs) {
+                const s = (job.steps || []).find(s => s.conclusion === "failure");
+                if (s) { failedStep = `${job.name} → ${s.name}`; break; }
+              }
+            } catch (e) { /* fall back to "unknown step" */ }
+
+            let logTail = "(no run log captured)";
+            try {
+              const lines = fs.readFileSync("/tmp/airatlas-run.log", "utf8").trim().split("\n");
+              logTail = lines.slice(-40).join("\n");
+            } catch (e) { /* step may have failed before writing the log */ }
+
+            const body = [
+              `Workflow **${context.workflow}** failed — the re-median chain has HALTED and will not`,
+              `continue until re-dispatched. Re-aggregated cities so far are already published.`,
+              ``,
+              `**Failed step:** ${failedStep}`,
+              `**Run:** ${runUrl}`,
+              ``,
+              `<details><summary>Last 40 log lines</summary>`,
+              ``,
+              "```",
+              logTail,
+              "```",
+              `</details>`,
+            ].join("\n");
+
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: "open", labels: label });
+            if (open.data.length) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: open.data[0].number, body });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: `🚨 AirAtlas pipeline: ${context.workflow}`, body, labels: [label] });
+            }
