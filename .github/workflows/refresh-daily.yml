@@ -71,7 +71,7 @@ jobs:
         env:
           DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
           OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
-          AIRATLAS_MIN_REQUEST_INTERVAL: "0.6"   # stay under OpenAQ's rate limit
+          AIRATLAS_MIN_REQUEST_INTERVAL: "1.1"   # OpenAQ allows 60 req/min; 1.1s spacing stays under it (0.6 = 100/min -> 429 storms)
           # Daily deltas fetch only ~1 day of weather (light), so they don't need the heavy
           # full-history pacing the backfill uses (15s) — 3s keeps 287 cities well under an hour.
           AIRATLAS_WEATHER_REQUEST_INTERVAL: "3"
