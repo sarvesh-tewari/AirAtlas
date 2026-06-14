@@ -1,5 +1,5 @@
-# Daily refresh: OpenAQ + Open-Meteo deltas -> data/history + data/recent -> commit.
-# (Frontend build + Pages deploy are wired in Phase 10, once web/ exists.)
+# Daily refresh: OpenAQ + Open-Meteo deltas -> data/history + data/recent -> publish to the data branch.
+# The deploy workflow rebuilds Pages from the refreshed data branch.
 name: refresh-daily
 
 on:

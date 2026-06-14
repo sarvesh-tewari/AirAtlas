@@ -89,7 +89,7 @@ def parse_live(payload: dict) -> list[rec.AQRecord]:
 
 
 # --------------------------------------------------------------------------- #
-# Fetching (thin HTTP + retry). Keep-last-good is the orchestrator's job (Phase 5).
+# Fetching (thin HTTP + retry). Keep-last-good is the orchestrator's job.
 # --------------------------------------------------------------------------- #
 def fetch_live(api_key: str, *, limit: int = 5000, **kw) -> list[rec.AQRecord]:
     """Fetch the full nationwide live snapshot and normalize it.

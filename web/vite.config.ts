@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-// `base` is "/" in dev; GitHub Pages project sites need "/<repo>/" — set via env at deploy (Phase 10).
+// `base` is "/" in dev; GitHub Pages project sites need "/<repo>/" — set via VITE_BASE at deploy.
 export default defineConfig({
   base: process.env.VITE_BASE ?? "/",
   plugins: [react(), tailwindcss()],
