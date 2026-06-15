@@ -48,6 +48,24 @@ export function Methodology() {
           it stays up even if an upstream source is temporarily down (the headline simply shows a
           "last updated" time and a staleness notice).
         </p>
+        <p className="mt-3 text-sm leading-relaxed text-body">
+          Each city shows how recent its data is. Air-quality monitors occasionally go offline or
+          stop reporting; when a city's most recent valid reading is more than 30 days old, it is
+          shown muted and clearly dated rather than presented as current.
+        </p>
+      </section>
+
+      <section className="card p-6">
+        <h2 className="font-display text-lg text-heading">Sensor-fault filtering</h2>
+        <p className="mt-2 text-sm leading-relaxed text-body">
+          Real-world monitors produce bad data: out-of-range spikes, device error codes, and
+          sensors that freeze on a single value. We drop physically impossible readings (and
+          known error codes) before computing any index, and we discard values that repeat
+          <em> identically for three or more days</em> in either direction — a stuck-high reading
+          faking "Severe" or a stuck-zero faking "clean" — since genuine air quality always varies.
+          City values use the median across a city's stations, so one faulty monitor cannot skew
+          the whole city.
+        </p>
       </section>
 
       <section className="card p-6">

@@ -101,6 +101,7 @@ export default function App() {
       nStations: live?.n_stations ?? lastRow?.n_stations ?? 0,
       updatedUtc: live?.updated_utc ?? null,
       lastDate: lastRow?.date ?? null,
+      asOfDate: null,
       source: live?.source ?? lastRow?.source ?? null,
     };
     let dominant: string[] = [];
@@ -114,7 +115,7 @@ export default function App() {
       for (let i = history.length - 1; i >= 0; i--) {
         const r = history[i];
         if (standard === "eu") {
-          if (r.eu_band) { base.band = r.eu_band; base.category = r.eu_band; dominant = split(r.eu_dominant); break; }
+          if (r.eu_band) { base.band = r.eu_band; base.category = r.eu_band; dominant = split(r.eu_dominant); base.asOfDate = r.date; break; }
           continue;
         }
         const idx = standard === "naqi" ? r.aqi_naqi : r.aqi_us;
@@ -122,6 +123,7 @@ export default function App() {
           base.index = idx;
           base.category = standard === "naqi" ? r.naqi_category : r.us_category;
           dominant = split(standard === "naqi" ? r.naqi_dominant : r.us_dominant);
+          base.asOfDate = r.date;
           break;
         }
       }
