@@ -91,8 +91,10 @@ def get_json(
         try:
             _throttle(min_interval)
             r = httpx.get(url, params=params, headers=headers, timeout=timeout)
-            if r.status_code in (408, 429):
-                # Timeout / rate-limit — retry, honoring Retry-After, with a minute floor on 429.
+            if r.status_code in (403, 408, 429):
+                # Timeout / rate-limit / transient 403 — retry. OpenAQ intermittently returns 403
+                # on otherwise-valid requests (e.g. the /locations discovery call), so a single
+                # blip must not fail a whole run; a genuinely bad key still fails after `retries`.
                 wait = _retry_wait(r.status_code, r.headers.get("Retry-After"), attempt, backoff)
                 last_err = httpx.HTTPStatusError(
                     str(r.status_code), request=r.request, response=r)
@@ -110,7 +112,7 @@ def get_json(
                 return data
         except (httpx.TimeoutException, httpx.TransportError, httpx.HTTPStatusError) as e:
             if isinstance(e, httpx.HTTPStatusError) and e.response is not None \
-                    and e.response.status_code not in (408, 429) \
+                    and e.response.status_code not in (403, 408, 429) \
                     and 400 <= e.response.status_code < 500:
                 raise
             last_err = e
