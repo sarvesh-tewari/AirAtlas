@@ -115,6 +115,41 @@ def test_scrub_sentinel_parquets_rewrites_and_deletes_emptied(tmp_path):
     assert summary["files_deleted"] == 1
 
 
+def test_drop_flatlined_rows_removes_stuck_sensor_runs():
+    import polars as pl
+    # A sensor frozen at one value for >=3 consecutive readings is broken (real air varies);
+    # those rows are dropped. The genuine readings around the run are kept.
+    df = pl.DataFrame({
+        "date": ["2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06"],
+        "pm25": [42.0, 689.5, 689.5, 689.5, 689.5, 50.0],   # 689.5 x4 -> flatline
+        "pm10": [60.0, 61.0, 62.0, 63.0, 64.0, 65.0],
+    })
+    out = storage.drop_flatlined_rows(df, sort_col="date", min_run=3)
+    assert out["date"].to_list() == ["2026-06-01", "2026-06-06"]
+
+
+def test_drop_flatlined_keeps_short_repeats_and_ignores_nulls():
+    import polars as pl
+    # A 2-day repeat is below the threshold; a run of nulls is not a flatline.
+    df = pl.DataFrame({
+        "date": ["2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04"],
+        "pm25": [30.0, 30.0, None, None],
+        "pm10": [None, None, None, None],
+    })
+    out = storage.drop_flatlined_rows(df, sort_col="date", min_run=3)
+    assert out.height == 4
+
+
+def test_drop_flatlined_removes_stuck_zero():
+    import polars as pl
+    # Stuck-at-zero (dead sensor reporting 0) is also a flatline — it falsely reads "clean".
+    df = pl.DataFrame({
+        "date": ["2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05"],
+        "pm25": [0.0, 0.0, 0.0, 0.0, 0.0],
+    })
+    assert storage.drop_flatlined_rows(df, sort_col="date", min_run=3).height == 0
+
+
 def test_read_all_daily_returns_union_across_incremental_batches(tmp_path):
     # Incremental backfill writes one city's parquet per batch. Meta must be rebuilt from the
     # UNION of everything on disk, not just the latest batch — else a "Mumbai" batch would drop

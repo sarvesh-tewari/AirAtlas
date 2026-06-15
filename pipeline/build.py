@@ -39,7 +39,10 @@ def _load_config_json(name: str, default):
 
 def discover(api_key: str) -> tuple[list[Station], dict[str, str], list[str]]:
     """All CPCB stations + station->city map (with overrides/aliases) + unmapped ids."""
-    stations = openaq.fetch_india_locations(api_key, page_size=1000)
+    # This single /locations call gates the whole run, and OpenAQ throws intermittent multi-
+    # minute 403/5xx blips on it. Give it a generous retry budget (~4min of exponential backoff)
+    # so a transient blip doesn't fail the run / halt the self-chaining drip.
+    stations = openaq.fetch_india_locations(api_key, page_size=1000, retries=8)
     overrides = _load_config_json("station_city_overrides.json", {})
     aliases = _load_config_json("city_aliases.json", {})
     mapping, unmapped = citymap.build_station_city_map(

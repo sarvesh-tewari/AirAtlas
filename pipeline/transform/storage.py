@@ -162,14 +162,15 @@ def live_snapshot(
 def write_parquet_per_city(
     rows: list[dict], out_dir: Path, *, city_key: str = "city",
     merge_keys: list[str] | None = None, keep_days: int | None = None,
-    date_col: str | None = None,
+    date_col: str | None = None, flatline_col: str | None = None,
 ) -> list[str]:
     """Write one Parquet file per city. Returns the slugs written.
 
     If `merge_keys` is given and a city's file already exists, new rows are upserted into
     it (existing rows with the same key are replaced) — making refreshes idempotent and
     self-healing. If `keep_days`/`date_col` are given, rows older than that window are pruned
-    (used to bound the recent-hourly tier).
+    (used to bound the recent-hourly tier). If `flatline_col` is given, frozen-sensor runs are
+    dropped from the merged series before writing (so stuck readings never persist).
     """
     import datetime as _dt
 
@@ -193,6 +194,8 @@ def write_parquet_per_city(
         if keep_days and date_col:
             cutoff = (_dt.date.today() - _dt.timedelta(days=keep_days)).isoformat()
             df = df.filter(pl.col(date_col).str.slice(0, 10) >= cutoff)
+        if flatline_col:
+            df = drop_flatlined_rows(df, sort_col=flatline_col)
         if merge_keys:
             df = df.sort(merge_keys)
         df.write_parquet(path)
@@ -232,15 +235,46 @@ def drop_sentinel_rows(df):
     return df.filter(~mask)
 
 
-def scrub_sentinel_parquets(directory: Path) -> dict:
-    """Scrub sentinel rows from every per-city Parquet in `directory`. Files left with no rows
-    are deleted (their whole city was a single broken sensor). Returns a summary."""
+def drop_flatlined_rows(df, *, sort_col: str, min_run: int = 3):
+    """Drop rows where a pollutant reports the IDENTICAL value for >= `min_run` consecutive
+    readings — a frozen/stuck sensor (real air varies day to day), in either direction (a
+    stuck-high value faking 'Severe' or a stuck-zero faking 'clean'). A row is removed if any
+    pollutant is inside such a run. Nulls never form a run."""
+    import polars as pl
+
+    present = [c for c in POLLUTANTS if c in df.columns]
+    if not present or df.height < min_run:
+        return df
+    work = df.sort(sort_col)
+    flat = [False] * work.height
+    for c in present:
+        vals = work[c].to_list()
+        i = 0
+        while i < len(vals):
+            if vals[i] is None:
+                i += 1
+                continue
+            j = i
+            while j + 1 < len(vals) and vals[j + 1] is not None and abs(vals[j + 1] - vals[i]) < 0.01:
+                j += 1
+            if (j - i + 1) >= min_run:
+                for k in range(i, j + 1):
+                    flat[k] = True
+            i = j + 1
+    return work.filter(pl.Series(flat).not_())
+
+
+def scrub_parquets(directory: Path, *, sort_col: str | None = None, min_run: int = 3) -> dict:
+    """One-time cleanup of every per-city Parquet in `directory`: drop sentinel-code rows and
+    (when `sort_col` is given) frozen-sensor flatline runs. Files left empty are deleted."""
     import polars as pl
     directory = Path(directory)
     rows_dropped = files_deleted = files_rewritten = 0
     for path in sorted(directory.glob("*.parquet")):
         df = pl.read_parquet(path)
         clean = drop_sentinel_rows(df)
+        if sort_col and sort_col in clean.columns:
+            clean = drop_flatlined_rows(clean, sort_col=sort_col, min_run=min_run)
         dropped = df.height - clean.height
         if dropped == 0:
             continue
@@ -253,6 +287,11 @@ def scrub_sentinel_parquets(directory: Path) -> dict:
             files_rewritten += 1
     return {"rows_dropped": rows_dropped, "files_deleted": files_deleted,
             "files_rewritten": files_rewritten}
+
+
+# Back-compat alias: earlier scrub did sentinels only.
+def scrub_sentinel_parquets(directory: Path) -> dict:
+    return scrub_parquets(directory)
 
 
 def write_live_json(snapshot: dict, out_dir: Path) -> Path:

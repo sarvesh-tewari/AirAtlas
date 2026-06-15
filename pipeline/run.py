@@ -57,9 +57,9 @@ def _scrub() -> None:
                 p.unlink()
                 print(f"[scrub] removed orphan {tier}/{slug}.parquet")
 
-    for tier in ("history", "recent"):
-        summary = storage.scrub_sentinel_parquets(build.DATA / tier)
-        print(f"[scrub] {tier}: dropped {summary['rows_dropped']} sentinel rows, "
+    for tier, sort_col in (("history", "date"), ("recent", "datetime_utc")):
+        summary = storage.scrub_parquets(build.DATA / tier, sort_col=sort_col)
+        print(f"[scrub] {tier}: dropped {summary['rows_dropped']} sentinel+flatline rows, "
               f"rewrote {summary['files_rewritten']} files, deleted {summary['files_deleted']}")
 
     # Rebuild city_list/coverage/cities from the surviving daily tier (centroids recovered
@@ -219,7 +219,8 @@ def main():
 
     # ---- Write parquet + meta (idempotent upsert; recent tier pruned to the window) ----
     if daily_rows:
-        storage.write_parquet_per_city(daily_rows, build.DATA / "history", merge_keys=["date"])
+        storage.write_parquet_per_city(daily_rows, build.DATA / "history", merge_keys=["date"],
+                                       flatline_col="date")
     if hourly_rows:
         storage.write_parquet_per_city(hourly_rows, build.DATA / "recent",
                                        merge_keys=["datetime_utc"], keep_days=args.recent_days,
