@@ -10,10 +10,11 @@ from __future__ import annotations
 
 import json
 from collections import defaultdict
+from dataclasses import asdict
 from pathlib import Path
 
 from ingest import cpcb, openaq, openmeteo
-from ingest.records import AQRecord, Station
+from ingest.records import AQRecord, Sensor, Station
 from transform import aggregate as agg
 from transform import citymap
 
@@ -26,6 +27,10 @@ CONFIG = Path(__file__).resolve().parent / "config"
 
 AQI_PARAMS = {"pm25", "pm10", "no2", "so2", "o3", "co", "nh3"}
 
+# Last-good station list, persisted on the data branch. Lets a run survive an OpenAQ /locations
+# outage by falling back to the previous discovery (the station set changes only slowly).
+STATIONS_CACHE = META / "stations.json"
+
 
 # --------------------------------------------------------------------------- #
 # Discovery + mapping
@@ -37,12 +42,36 @@ def _load_config_json(name: str, default):
     return default
 
 
+def _save_stations(stations: list[Station]) -> None:
+    STATIONS_CACHE.parent.mkdir(parents=True, exist_ok=True)
+    STATIONS_CACHE.write_text(json.dumps([asdict(s) for s in stations], ensure_ascii=False))
+
+
+def _load_stations() -> list[Station]:
+    if not STATIONS_CACHE.exists():
+        return []
+    out = []
+    for d in json.loads(STATIONS_CACHE.read_text()):
+        sensors = [Sensor(**s) for s in d.pop("sensors", [])]
+        out.append(Station(**d, sensors=sensors))
+    return out
+
+
 def discover(api_key: str) -> tuple[list[Station], dict[str, str], list[str]]:
     """All CPCB stations + station->city map (with overrides/aliases) + unmapped ids."""
     # This single /locations call gates the whole run, and OpenAQ throws intermittent multi-
-    # minute 403/5xx blips on it. Give it a generous retry budget (~4min of exponential backoff)
-    # so a transient blip doesn't fail the run / halt the self-chaining drip.
-    stations = openaq.fetch_india_locations(api_key, page_size=1000, retries=8)
+    # minute 403/5xx blips on it. Retry generously (~4min of backoff); if it STILL fails, fall
+    # back to the last-good station list so a transient outage can't halt the self-chaining drip.
+    try:
+        stations = openaq.fetch_india_locations(api_key, page_size=1000, retries=8)
+        _save_stations(stations)
+    except Exception as e:
+        cached = _load_stations()
+        if not cached:
+            raise
+        print(f"[build] /locations unavailable ({type(e).__name__}); using last-good "
+              f"station list ({len(cached)} stations).", flush=True)
+        stations = cached
     overrides = _load_config_json("station_city_overrides.json", {})
     aliases = _load_config_json("city_aliases.json", {})
     mapping, unmapped = citymap.build_station_city_map(
