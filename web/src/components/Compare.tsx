@@ -56,7 +56,7 @@ export function Compare({ available, current, standard, dark }: { available: str
 
   return (
     <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={BarChart3} color="#db2777" eyebrow="Side by side">Compare cities</SectionTitle></div>
+      <div className="mb-3"><SectionTitle icon={BarChart3} color="#db2777" eyebrow="Side by side" info="Multiple cities' AQI on one chart; add cities with the picker.">Compare cities</SectionTitle></div>
       <div className="mb-3 flex flex-wrap items-center gap-2">
         {selected.map((c, i) => (
           <span key={c} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-soft/60 py-1 pl-2.5 pr-1.5 text-xs text-heading">

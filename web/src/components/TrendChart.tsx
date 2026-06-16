@@ -75,7 +75,7 @@ export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standar
   return (
     <section className="card p-5">
       <div className="mb-3 flex items-center justify-between">
-        <SectionTitle icon={LineChart} color="#6366f1" eyebrow="History">Multi-year trend</SectionTitle>
+        <SectionTitle icon={LineChart} color="#6366f1" eyebrow="History" info="Daily AQI over time with category bands behind it. The marked seam separates recent data from backfilled history.">Multi-year trend</SectionTitle>
         <div className="inline-flex overflow-hidden rounded-lg border border-border text-xs">
           {(["90d", "1y", "all"] as Range[]).map((r) => (
             <button

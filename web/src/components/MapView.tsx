@@ -3,7 +3,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { Map as MapIcon } from "lucide-react";
 import { SectionTitle } from "./SectionTitle";
-import { bandForIndex, bandByLabel, type StandardId } from "../lib/standards";
+import { bandForIndex, bandByLabel, STANDARDS, type StandardId } from "../lib/standards";
 import type { CityIndex } from "../lib/data";
 
 function colorFor(c: CityIndex, standard: StandardId): string {
@@ -59,12 +59,29 @@ export function MapView({ cities, standard, current, onCity, dark }: {
   return (
     // relative z-0 gives the map its own stacking context so Leaflet's panes/controls (z-index up
     // to ~1000) stay confined below the sticky topbar (z-20) instead of painting over the filters.
-    <section className="card relative z-0 overflow-hidden">
-      <div className="flex items-center justify-between px-5 pt-4">
-        <SectionTitle icon={MapIcon} color="#2563eb" eyebrow="Coverage">Map</SectionTitle>
+    // Clip the map element (not the section) so the info tooltip can overflow the card.
+    <section className="card relative z-0">
+      <div className="relative z-10 flex items-center justify-between px-5 pt-4">
+        <SectionTitle icon={MapIcon} color="#2563eb" eyebrow="Coverage" info={
+          <>
+            Each dot is a city, coloured by its latest {standard.toUpperCase()} AQI category. Click a dot to load that city.
+            <span className="mt-2 flex flex-col gap-1">
+              {STANDARDS[standard].bands.map((b) => (
+                <span key={b.label} className="flex items-center gap-2">
+                  <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: b.color }} aria-hidden />
+                  {b.label}
+                </span>
+              ))}
+              <span className="flex items-center gap-2">
+                <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: "#9095a0" }} aria-hidden />
+                No current reading
+              </span>
+            </span>
+          </>
+        }>Map</SectionTitle>
         <span className="text-xs text-muted">click a city · coloured by {standard.toUpperCase()}</span>
       </div>
-      <div ref={ref} className="mt-3 h-[360px] w-full" style={{ background: dark ? "#0f1216" : "#eef0f2" }} />
+      <div ref={ref} className="relative z-0 mt-3 h-[360px] w-full overflow-hidden rounded-b-[1rem]" style={{ background: dark ? "#0f1216" : "#eef0f2" }} />
     </section>
   );
 }

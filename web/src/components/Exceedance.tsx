@@ -49,7 +49,7 @@ export function Exceedance({ rows, standard, dark }: { rows: DailyRow[]; standar
 
   return (
     <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={CalendarRange} color="#d97706" eyebrow="Clean-air days">Days by air-quality band</SectionTitle></div>
+      <div className="mb-3"><SectionTitle icon={CalendarRange} color="#d97706" eyebrow="Clean-air days" info="How many days each year landed in each AQI band, using the selected standard's thresholds.">Days by air-quality band</SectionTitle></div>
       {years.length ? <EChart option={option} height={260} ariaLabel="Stacked count of days in each AQI band per year" /> : <p className="py-8 text-center text-sm text-body">No data.</p>}
       <p className="mt-2 text-xs text-muted">Each day counted once in its {cfg.name} band. Hover a year for the breakdown.</p>
     </section>

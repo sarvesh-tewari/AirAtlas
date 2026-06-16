@@ -39,7 +39,7 @@ export function WeatherOverlay({ rows, standard, dark }: { rows: DailyRow[]; sta
   return (
     <section className="card p-5">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <SectionTitle icon={CloudSun} color="#0891b2" eyebrow="Correlation">AQI ↔ weather</SectionTitle>
+        <SectionTitle icon={CloudSun} color="#0891b2" eyebrow="Correlation" info="AQI plotted against a weather variable over time, to see how conditions track pollution.">AQI ↔ weather</SectionTitle>
         <div className="inline-flex overflow-hidden rounded-lg border border-border text-xs">
           {WX.map((w) => (
             <button key={w.key} onClick={() => setWx(w.key)} className={`px-3 py-1.5 ${wx === w.key ? "bg-accent text-white" : "text-body hover:bg-bg-soft"}`}>

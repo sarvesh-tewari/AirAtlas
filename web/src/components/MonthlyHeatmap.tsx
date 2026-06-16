@@ -55,7 +55,7 @@ export function MonthlyHeatmap({ rows, standard, dark }: { rows: DailyRow[]; sta
 
   return (
     <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={LayoutGrid} color="#7c3aed" eyebrow="Seasonality">Monthly pattern</SectionTitle></div>
+      <div className="mb-3"><SectionTitle icon={LayoutGrid} color="#7c3aed" eyebrow="Seasonality" info="Average AQI per calendar month across all years, so seasonal patterns (e.g. winter peaks) stand out.">Monthly pattern</SectionTitle></div>
       {data.length ? <EChart option={option} height={Math.max(150, years.length * 42 + 60)} ariaLabel="Average AQI by month and year heatmap" />
         : <p className="py-8 text-center text-sm text-body">No data.</p>}
       <p className="mt-2 text-xs text-muted">Average {cfg.numeric ? "AQI" : "band"} per month, showing the seasonal pattern across years.</p>

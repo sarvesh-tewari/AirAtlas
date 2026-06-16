@@ -37,7 +37,7 @@ export function PollutantTrend({ rows, dark }: { rows: DailyRow[]; dark: boolean
 
   return (
     <section className="card p-5">
-      <SectionTitle icon={Activity} color="#10b981" eyebrow="By pollutant">Pollutant trends</SectionTitle>
+      <SectionTitle icon={Activity} color="#10b981" eyebrow="By pollutant" info="Each pollutant's concentration over time; toggle them in the legend to compare.">Pollutant trends</SectionTitle>
       <p className="mb-2 text-xs text-body">Click the legend to toggle pollutants (defaults to PM2.5 vs PM10).</p>
       <EChart option={option} height={260} ariaLabel="Per-pollutant concentration trends over time" />
     </section>

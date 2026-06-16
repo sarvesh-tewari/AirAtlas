@@ -25,7 +25,7 @@ export function PollutantCards({ pollutants }: { pollutants: PollutantVM[] }) {
   if (pollutants.length === 0) return null;
   return (
     <section>
-      <div className="mb-1"><SectionTitle icon={Atom} color="#0284c7" eyebrow="In the air">Pollutants</SectionTitle></div>
+      <div className="mb-1"><SectionTitle icon={Atom} color="#0284c7" eyebrow="In the air" info="The individual concentrations behind the AQI; the dominant pollutant (the one setting the index) is highlighted. Units µg/m³, CO in mg/m³.">Pollutants</SectionTitle></div>
       <p className="mb-3 text-xs text-muted">
         These are the measured concentrations. The AQI index is <em>derived</em> from them, so it
         differs by standard, while these values stay the same.

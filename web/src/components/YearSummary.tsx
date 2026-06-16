@@ -31,7 +31,7 @@ export function YearSummary({ rows, standard }: { rows: DailyRow[]; standard: St
 
   return (
     <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={Sigma} color="#0d9488" eyebrow="Annual summary">Year-by-year</SectionTitle></div>
+      <div className="mb-3"><SectionTitle icon={Sigma} color="#0d9488" eyebrow="Annual summary" info="Per-year average and peak AQI, plus how many days fell in each band.">Year-by-year</SectionTitle></div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {years.map((y) => {
           const peakColor = cfg.numeric ? bandForIndex(standard, y.peak).color : cfg.bands[Math.min(5, y.peak)].color;
