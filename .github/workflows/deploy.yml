@@ -18,6 +18,8 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  issues: write   # open an alert issue if the post-deploy smoke check fails
+  actions: read   # failure-issue step reads job/step status
 
 concurrency:
   group: pages
@@ -71,3 +73,48 @@ jobs:
           path: web/dist
       - id: deploy
         uses: actions/deploy-pages@v5
+
+      # Post-deploy smoke check: confirm the live site actually serves the app + real data
+      # (catches a broken deploy / missing data that a build-time test can't). Retries ride out
+      # CDN propagation. Node 20+ has global fetch.
+      - name: Smoke-test the deployed site
+        run: |
+          set -o pipefail
+          node scripts/smoke.mjs "${{ steps.deploy.outputs.page_url }}" 2>&1 | tee /tmp/smoke.log
+
+      - name: Open/append failure issue
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require("fs");
+            const label = "pipeline-failure";
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            let failedStep = "unknown step";
+            try {
+              const jobs = await github.rest.actions.listJobsForWorkflowRun({
+                owner: context.repo.owner, repo: context.repo.repo, run_id: context.runId });
+              for (const job of jobs.data.jobs) {
+                const s = (job.steps || []).find((s) => s.conclusion === "failure");
+                if (s) { failedStep = `${job.name} → ${s.name}`; break; }
+              }
+            } catch (e) { /* fall back */ }
+            let logTail = "(no smoke log captured — failure was before the smoke step)";
+            try {
+              logTail = fs.readFileSync("/tmp/smoke.log", "utf8").trim().split("\n").slice(-30).join("\n");
+            } catch (e) { /* build/deploy failed before smoke ran */ }
+            const body = [
+              `Workflow **${context.workflow}** failed (build, deploy, or post-deploy smoke check).`,
+              ``, `**Failed step:** ${failedStep}`, `**Run:** ${runUrl}`, ``,
+              `<details><summary>Smoke log</summary>`, ``, "```", logTail, "```", `</details>`,
+            ].join("\n");
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: "open", labels: label });
+            if (open.data.length) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: open.data[0].number, body });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: `🚨 AirAtlas: ${context.workflow}`, body, labels: [label] });
+            }

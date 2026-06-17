@@ -1,0 +1,60 @@
+# External uptime / synthetic check. Independent of the data pipeline: on a schedule it loads
+# the PUBLIC live site and asserts it is up, serves the app, and has fresh data — so the site
+# being down/broken/stale raises a GitHub issue (-> email) without anyone checking it manually.
+name: uptime
+
+on:
+  schedule:
+    - cron: "*/30 * * * *" # every 30 minutes
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+  actions: read
+
+# Don't pile up overlapping checks; a new run supersedes a stuck one.
+concurrency:
+  group: uptime
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+      - name: Synthetic check of the live site
+        run: |
+          set -o pipefail
+          node scripts/smoke.mjs "https://sarvesh-tewari.github.io/AirAtlas/" 2>&1 | tee /tmp/smoke.log
+
+      - name: Open/append failure issue
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require("fs");
+            const label = "site-down";
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            let logTail = "(no log captured)";
+            try {
+              logTail = fs.readFileSync("/tmp/smoke.log", "utf8").trim().split("\n").slice(-30).join("\n");
+            } catch (e) { /* check failed before writing */ }
+            const body = [
+              `The live site failed its synthetic check (down, broken, or data missing/stale).`,
+              ``, `**Run:** ${runUrl}`, ``,
+              `<details><summary>Check output</summary>`, ``, "```", logTail, "```", `</details>`,
+            ].join("\n");
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: "open", labels: label });
+            if (open.data.length) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: open.data[0].number, body });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: "🚨 AirAtlas: live site check failing", body, labels: [label] });
+            }

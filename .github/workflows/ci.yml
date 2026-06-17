@@ -1,3 +1,6 @@
+# Regression gate: runs automatically on every push to main and every PR (no approval gate).
+# Lints + runs the full pytest suite and type-checks/builds the frontend, blocking broken code.
+# Post-deploy smoke (deploy.yml) and the scheduled uptime check (uptime.yml) are separate.
 name: ci
 
 on:
