@@ -83,6 +83,15 @@ npm run dev
 Copy `.env.example` to `.env` and add your API keys for local pipeline runs.
 **Never commit real keys.**
 
+## Contributing
+
+Contributions, bug reports, and data-accuracy feedback are welcome, all through GitHub.
+
+- Found a problem or a reading that looks wrong? [Open an issue.](https://github.com/sarvesh-tewari/AirAtlas/issues/new/choose)
+- Want to help? Browse the [open backlog](https://github.com/sarvesh-tewari/AirAtlas/issues), especially [`good first issue`](https://github.com/sarvesh-tewari/AirAtlas/labels/good%20first%20issue) and [`help wanted`](https://github.com/sarvesh-tewari/AirAtlas/labels/help%20wanted), then open a pull request.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for setup, the checks to run before a PR, and conventions.
+
 ## Licensing
 
 - **Code:** [MIT](LICENSE)

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: How to contribute
+    url: https://github.com/sarvesh-tewari/AirAtlas/blob/main/CONTRIBUTING.md
+    about: Setup, the checks to run before a PR, and how contributions work.
+  - name: Browse open work
+    url: https://github.com/sarvesh-tewari/AirAtlas/labels/good%20first%20issue
+    about: Good first issues you can pick up and submit a PR for.
