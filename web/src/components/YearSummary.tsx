@@ -1,11 +1,22 @@
 import { useMemo } from "react";
 import { Sigma } from "lucide-react";
 import { SectionTitle } from "./SectionTitle";
-import { STANDARDS, bandForIndex, type StandardId } from "../lib/standards";
+import { STANDARDS, type StandardId } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
+import { EChart } from "./EChart";
+import { chartTheme } from "../lib/chartTheme";
 
-export function YearSummary({ rows, standard }: { rows: DailyRow[]; standard: StandardId }) {
+export function YearSummary({
+  rows,
+  standard,
+  dark,
+}: {
+  rows: DailyRow[];
+  standard: StandardId;
+  dark: boolean;
+}) {
   const cfg = STANDARDS[standard];
+  const t = chartTheme(dark);
 
   const years = useMemo(() => {
     const by = new Map<string, number[]>();
@@ -25,32 +36,73 @@ export function YearSummary({ rows, standard }: { rows: DailyRow[]; standard: St
       return { yr, avg, peak, good, poor, n: vs.length };
     });
   }, [rows, standard, cfg]);
-
   if (years.length === 0) return null;
-  const fmt = (v: number) => (cfg.numeric ? `${v}` : cfg.bands[Math.min(5, v)]?.label ?? `${v}`);
+  const option = {
+  grid: { left: 44, right: 16, top: 16, bottom: 28 },
+
+  tooltip: {
+    trigger: "axis",
+    backgroundColor: t.tooltipBg,
+    borderWidth: 0,
+    textStyle: { color: t.ink, fontSize: 12 },
+  },
+legend: {
+  top: 0,
+  textStyle: {
+    color: t.label,
+  },
+},
+  xAxis: {
+    type: "category",
+    data: years.map((y) => y.yr),
+    axisLine: { lineStyle: { color: t.axis } },
+    axisLabel: { color: t.label, fontSize: 11 },
+  },
+
+  yAxis: {
+    type: "value",
+    axisLabel: { color: t.label, fontSize: 11 },
+    splitLine: { lineStyle: { color: t.split } },
+  },
+
+series: [
+  {
+    name: "Average AQI",
+    type: "line",
+    data: years.map((y) => y.avg),
+    smooth: true,
+    lineStyle: {
+      color: cfg.bands[1].color,
+      width: 2,
+    },
+    itemStyle: {
+      color: cfg.bands[1].color,
+    },
+  },
+  {
+    name: "Peak AQI",
+    type: "line",
+    data: years.map((y) => y.peak),
+    smooth: true,
+    lineStyle: {
+      color: cfg.bands[3].color,
+      width: 2,
+    },
+    itemStyle: {
+      color: cfg.bands[3].color,
+    },
+  },
+],
+};
 
   return (
     <section className="card p-5">
       <div className="mb-3"><SectionTitle icon={Sigma} color="#0d9488" eyebrow="Annual summary" info="Per-year average and peak AQI, plus how many days fell in each band.">Year-by-year</SectionTitle></div>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-        {years.map((y) => {
-          const peakColor = cfg.numeric ? bandForIndex(standard, y.peak).color : cfg.bands[Math.min(5, y.peak)].color;
-          return (
-            <div key={y.yr} className="rounded-lg border border-border bg-bg-soft/40 p-3">
-              <div className="font-display text-lg text-heading">{y.yr}</div>
-              <div className="mt-1 flex items-baseline justify-between text-sm">
-                <span className="text-body">avg</span><span className="font-medium text-heading">{fmt(y.avg)}</span>
-              </div>
-              <div className="flex items-baseline justify-between text-sm">
-                <span className="text-body">peak</span><span className="font-medium" style={{ color: peakColor }}>{fmt(y.peak)}</span>
-              </div>
-              <div className="mt-1 flex justify-between text-xs text-muted">
-                <span>{y.good} good</span><span>{y.poor} poor</span>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+<EChart
+  option={option}
+  height={280}
+  ariaLabel="Year-by-year AQI summary chart"
+/>
     </section>
   );
 }

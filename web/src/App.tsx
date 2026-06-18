@@ -21,6 +21,7 @@ import {
   type CityIndex, type LiveSnapshot, type DailyRow,
 } from "./lib/data";
 
+
 const POLLS = ["pm25", "pm10", "no2", "so2", "o3", "co", "nh3"] as const;
 
 function useTheme() {
@@ -206,7 +207,7 @@ export default function App() {
               <>
                 <ErrorBoundary label="Trend"><TrendChart rows={history} standard={standard} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Monthly pattern"><MonthlyHeatmap rows={history} standard={standard} dark={dark} /></ErrorBoundary>
-                <ErrorBoundary label="Year-by-year"><YearSummary rows={history} standard={standard} /></ErrorBoundary>
+                <ErrorBoundary label="Year-by-year"><YearSummary rows={history} standard={standard} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Pollutant trends"><PollutantTrend rows={history} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Exceedance"><Exceedance rows={history} standard={standard} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Weather overlay"><WeatherOverlay rows={history} standard={standard} dark={dark} /></ErrorBoundary>
