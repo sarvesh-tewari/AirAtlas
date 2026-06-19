@@ -1,11 +1,10 @@
 import { useMemo } from "react";
 import { Sigma } from "lucide-react";
 import { SectionTitle } from "./SectionTitle";
-import { STANDARDS, type StandardId } from "../lib/standards";
 import type { DailyRow } from "../lib/data";
 import { EChart } from "./EChart";
 import { chartTheme } from "../lib/chartTheme";
-
+import { STANDARDS, bandForIndex, type StandardId } from "../lib/standards";
 export function YearSummary({
   rows,
   standard,
@@ -37,15 +36,43 @@ export function YearSummary({
     });
   }, [rows, standard, cfg]);
   if (years.length === 0) return null;
+  const avgColor = cfg.numeric
+  ? bandForIndex(
+      standard,
+      Math.round(
+        years.reduce((s, y) => s + y.avg, 0) / years.length
+      )
+    ).color
+  : cfg.bands[1].color;
+
+const peakColorSeries = cfg.numeric
+  ? bandForIndex(
+      standard,
+      Math.max(...years.map((y) => y.peak))
+    ).color
+  : cfg.bands[3].color;
   const option = {
   grid: { left: 44, right: 16, top: 16, bottom: 28 },
 
-  tooltip: {
-    trigger: "axis",
-    backgroundColor: t.tooltipBg,
-    borderWidth: 0,
-    textStyle: { color: t.ink, fontSize: 12 },
+tooltip: {
+  trigger: "axis",
+  backgroundColor: t.tooltipBg,
+  borderWidth: 0,
+  textStyle: { color: t.ink, fontSize: 12 },
+
+  formatter: (params: any) => {
+    const year = years[params[0].dataIndex];
+
+    return `
+      <strong>${year.yr}</strong><br/>
+      Average AQI: ${year.avg}<br/>
+      Peak AQI: ${year.peak}<br/>
+      Good Days: ${year.good}<br/>
+      Poor Days: ${year.poor}<br/>
+      Total Days: ${year.n}
+    `;
   },
+},
 legend: {
   top: 0,
   textStyle: {
@@ -72,11 +99,11 @@ series: [
     data: years.map((y) => y.avg),
     smooth: true,
     lineStyle: {
-      color: cfg.bands[1].color,
+      color: avgColor,
       width: 2,
     },
     itemStyle: {
-      color: cfg.bands[1].color,
+      color: avgColor,
     },
   },
   {
@@ -85,24 +112,81 @@ series: [
     data: years.map((y) => y.peak),
     smooth: true,
     lineStyle: {
-      color: cfg.bands[3].color,
-      width: 2,
-    },
-    itemStyle: {
-      color: cfg.bands[3].color,
-    },
+  color: peakColorSeries,
+  width: 2,
+},
+itemStyle: {
+  color: peakColorSeries,
+},
   },
 ],
 };
 
-  return (
-    <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={Sigma} color="#0d9488" eyebrow="Annual summary" info="Per-year average and peak AQI, plus how many days fell in each band.">Year-by-year</SectionTitle></div>
-<EChart
-  option={option}
-  height={280}
-  ariaLabel="Year-by-year AQI summary chart"
-/>
-    </section>
-  );
+return (
+  <section className="card p-5">
+    <div className="mb-3">
+      <SectionTitle
+        icon={Sigma}
+        color="#0d9488"
+        eyebrow="Annual summary"
+        info="Annual AQI trends and per-year summary statistics."
+      >
+        Year-by-year
+      </SectionTitle>
+    </div>
+
+    {standard !== "eu" && (
+      <EChart
+        option={option}
+        height={280}
+        ariaLabel="Year-by-year AQI summary chart"
+      />
+    )}
+
+    <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      {years.map((y) => {
+        const peakColor = cfg.numeric
+          ? bandForIndex(standard, y.peak).color
+          : cfg.bands[Math.min(5, y.peak)].color;
+
+        return (
+          <div
+            key={y.yr}
+            className="rounded-lg border border-border bg-bg-soft/40 p-3"
+          >
+            <div className="font-display text-lg text-heading">
+              {y.yr}
+            </div>
+
+            <div className="mt-1 flex items-baseline justify-between text-sm">
+              <span className="text-body">avg</span>
+              <span className="font-medium text-heading">
+                {y.avg}
+              </span>
+            </div>
+
+            <div className="flex items-baseline justify-between text-sm">
+              <span className="text-body">peak</span>
+              <span
+                className="font-medium"
+                style={{ color: peakColor }}
+              >
+                {y.peak}
+              </span>
+            </div>
+
+            <div className="mt-1 flex justify-between text-xs text-muted">
+              <span>{y.good} good</span>
+              <span>{y.poor} poor</span>
+            </div>
+
+            <div className="mt-1 text-xs text-muted">
+              {y.n} days
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+);
 }
