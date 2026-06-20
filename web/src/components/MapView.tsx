@@ -11,7 +11,19 @@ function colorFor(c: CityIndex, standard: StandardId): string {
   const idx = standard === "naqi" ? c.naqi : c.us;
   return idx != null ? bandForIndex(standard, idx).color : "#9095a0";
 }
+const STALE_AFTER_DAYS = 30;
 
+function isStale(lastDate: string): boolean {
+  if (!lastDate) return false;
+
+  const ms =
+    Date.now() -
+    new Date(`${lastDate.slice(0, 10)}T00:00:00Z`).getTime();
+
+  const ageDays = Math.floor(ms / 8.64e7);
+
+  return ageDays > STALE_AFTER_DAYS;
+}
 export function MapView({ cities, standard, current, onCity, dark }: {
   cities: CityIndex[]; standard: StandardId; current: string; onCity: (c: string) => void; dark: boolean;
 }) {
@@ -44,13 +56,21 @@ export function MapView({ cities, standard, current, onCity, dark }: {
     lg.clearLayers();
     for (const c of cities) {
       if (c.lat == null || c.lon == null) continue;
+      const stale = isStale(c.last_date);
       const m = L.circleMarker([c.lat, c.lon], {
         radius: c.city === current ? 9 : 6,
-        fillColor: colorFor(c, standard), color: c.city === current ? "#fff" : "rgba(255,255,255,0.7)",
-        weight: c.city === current ? 2.5 : 1.5, fillOpacity: 0.9,
+        fillColor: stale ? "#9095a0" : colorFor(c, standard),color: stale
+        ? "rgba(255,255,255,0.35)"
+        : c.city === current
+          ? "#fff"
+          : "rgba(255,255,255,0.7)",
+        weight: c.city === current ? 2.5 : 1.5, fillOpacity: stale ? 0.45 : 0.9,
       });
       const idx = standard === "eu" ? c.eu_band : standard === "naqi" ? c.naqi : c.us;
-      m.bindTooltip(`${c.city}${idx != null ? ` · ${idx}` : ""}`, { direction: "top" });
+            m.bindTooltip(
+          `${c.city}${idx != null ? ` · ${idx}` : ""}${stale ? " · stale data" : ""}`,
+          { direction: "top" }
+        );
       m.on("click", () => onCity(c.city));
       m.addTo(lg);
     }
@@ -73,9 +93,22 @@ export function MapView({ cities, standard, current, onCity, dark }: {
                 </span>
               ))}
               <span className="flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: "#9095a0" }} aria-hidden />
-                No current reading
-              </span>
+  <span
+    className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+    style={{ background: "#9095a0" }}
+    aria-hidden
+  />
+  No current reading
+</span>
+
+<span className="flex items-center gap-2">
+  <span
+    className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+    style={{ background: "#9095a0", opacity: 0.45 }}
+    aria-hidden
+  />
+  Stale monitor (&gt;30 days old)
+</span>
             </span>
           </>
         }>Map</SectionTitle>
