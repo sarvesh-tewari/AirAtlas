@@ -68,7 +68,7 @@ def _scrub() -> None:
     prior_path = build.META / "cities.json"
     prior_index = json.loads(prior_path.read_text()) if prior_path.exists() else []
     centroids = build.merge_centroids({}, prior_index)
-    storage.write_json({"generated_today": _today_ist(),
+    storage.write_json({"generated_today": build.latest_daily_date(all_daily),
                         "cities": sorted({r["city"] for r in all_daily})},
                        build.META / "city_list.json")
     storage.write_json(build.build_coverage(all_daily), build.META / "coverage.json")
@@ -242,25 +242,26 @@ def main():
                                        merge_keys=["datetime_utc"], keep_days=args.recent_days,
                                        date_col="datetime_utc")
 
-    # Station map is cheap + always current; city_list/coverage derive from the daily tier,
-    # so only (re)write them when this run actually built daily rows (don't clobber in hourly mode).
+    # Station map is cheap + always current; city_list/coverage derive from the daily tier.
     storage.write_json(mapping, build.META / "station_city_map.json")
     storage.write_json({"unmapped_station_ids": unmapped}, build.META / "unmapped_stations.json")
-    if daily_rows:
-        # Rebuild meta from the FULL on-disk daily tier (all cities, all history) — NOT just this
-        # run's rows. This makes incremental/subset backfills accumulate cities instead of
-        # clobbering the selector, and makes coverage reflect full history rather than the delta
-        # window. Centroids for cities outside this run are recovered from the prior index.
-        all_daily = storage.read_all_daily(build.DATA / "history")
+    # Rebuild meta from the FULL on-disk daily tier EVERY run (not gated on this run's rows), so
+    # freshness + the city list reflect what we actually hold even when no new daily rows landed.
+    # Freshness = "data through" = the latest date present in the daily tier, NOT the run date.
+    all_daily = storage.read_all_daily(build.DATA / "history")
+    if all_daily:
         prior_path = build.META / "cities.json"
         prior_index = json.loads(prior_path.read_text()) if prior_path.exists() else []
         all_centroids = build.merge_centroids(centroids, prior_index)
-        storage.write_json({"generated_today": today,
+        freshness = build.latest_daily_date(all_daily)
+        storage.write_json({"generated_today": freshness,
                             "cities": sorted({r["city"] for r in all_daily})},
                            build.META / "city_list.json")
         storage.write_json(build.build_coverage(all_daily), build.META / "coverage.json")
         storage.write_json(build.build_cities_index(all_daily, all_centroids),
                            build.META / "cities.json")
+        print(f"[run] meta rebuilt: generated_today={freshness}, "
+              f"cities={len({r['city'] for r in all_daily})}")
 
     # Drip bookkeeping: mark this batch attempted (even cities that yielded no data) so the next
     # fire advances instead of re-selecting empties. Written after the run, so a crash mid-batch
