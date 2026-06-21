@@ -12,6 +12,7 @@ sub-indices). `n_stations` is retained so NAQI's ">=3 stations" expectation can 
 
 from __future__ import annotations
 
+import datetime as dt
 import statistics
 from collections import defaultdict
 from dataclasses import dataclass
@@ -116,11 +117,11 @@ def aggregate_to_city(
         groups[(city, r.parameter, r.datetime_utc, r.averaging)].append(r)
 
     out: list[CityPollutantRecord] = []
-    for (city, param, dt, averaging), rs in groups.items():
+    for (city, param, datetime_utc, averaging), rs in groups.items():
         values = [r.value for r in rs]
         covs = [r.coverage_pct for r in rs if r.coverage_pct is not None]
         out.append(CityPollutantRecord(
-            city=city, parameter=param, datetime_utc=dt, averaging=averaging,
+            city=city, parameter=param, datetime_utc=datetime_utc, averaging=averaging,
             # Median (not mean) across stations: a few stuck/drifting sensors must not drag
             # the whole-city value. PM2.5 and PM10 are reported by different station subsets,
             # so the city is best summarized by its typical station, not its average.
@@ -130,6 +131,48 @@ def aggregate_to_city(
             source=rs[0].source,
         ))
     return _drop_city_pm25_over_pm10(out)
+
+
+def rollup_hourly_to_daily(
+    hourly: list[CityPollutantRecord], *, min_hours: int = 18, tz_offset_hours: float = 5.5,
+) -> list[CityPollutantRecord]:
+    """Roll city-hour concentration records up to city-day records by arithmetic MEAN.
+
+    This matches OpenAQ's /days `summary.avg` (the value our historical tier was built on), so
+    self-computed days are methodologically identical to the old /days-derived days. Median-across-
+    stations is already applied per hour upstream (aggregate_to_city), so this only collapses the
+    time axis. A (city, pollutant, local-day) value is emitted ONLY if at least `min_hours` valid
+    hours are present; sparser days are omitted, never fabricated. Hours are bucketed by LOCAL
+    calendar day (IST, +5:30) to match the daily tier's local-date keying.
+    """
+    tz = dt.timezone(dt.timedelta(hours=tz_offset_hours))
+    groups: dict[tuple, list[CityPollutantRecord]] = defaultdict(list)
+    for r in hourly:
+        if r.value is None:
+            continue
+        try:
+            ts = dt.datetime.fromisoformat(r.datetime_utc.replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if ts.tzinfo is None:
+            ts = ts.replace(tzinfo=dt.timezone.utc)
+        local_date = ts.astimezone(tz).date().isoformat()
+        groups[(r.city, r.parameter, local_date)].append(r)
+
+    out: list[CityPollutantRecord] = []
+    for (city, param, local_date), rs in groups.items():
+        if len(rs) < min_hours:
+            continue
+        values = [r.value for r in rs]
+        covs = [r.coverage_pct for r in rs if r.coverage_pct is not None]
+        out.append(CityPollutantRecord(
+            city=city, parameter=param, datetime_utc=f"{local_date}T00:00:00Z",
+            averaging="1d", value=sum(values) / len(values), unit=rs[0].unit,
+            n_stations=max(r.n_stations for r in rs),
+            coverage_pct=(sum(covs) / len(covs)) if covs else None,
+            source=rs[0].source or "openaq",
+        ))
+    return out
 
 
 def _drop_city_pm25_over_pm10(

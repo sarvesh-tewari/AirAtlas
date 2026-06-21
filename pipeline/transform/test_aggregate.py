@@ -2,6 +2,7 @@
 
 from ingest.records import AQRecord
 from transform import aggregate as agg
+from transform.aggregate import CityPollutantRecord
 
 
 def _aq(station, param, dt, value, *, city=None, cov=None, averaging="1d"):
@@ -135,3 +136,48 @@ def test_aggregate_to_city_min_coverage_filters_thin_station_days():
     city = agg.aggregate_to_city(recs, min_coverage=50.0)
     assert city[0].n_stations == 1   # the 20%-coverage station-day was dropped
     assert city[0].value == 90.0
+
+
+def _hourly(city, param, dt_utc, value, *, n_stations=2, cov=100.0):
+    return CityPollutantRecord(
+        city=city, parameter=param, datetime_utc=dt_utc, averaging="1h",
+        value=value, unit="µg/m³", n_stations=n_stations, coverage_pct=cov,
+        source="openaq")
+
+
+def test_rollup_means_full_day_above_threshold():
+    # 18 hours of PM2.5 on the same IST day -> one daily mean record.
+    recs = [_hourly("Pune", "pm25", f"2026-06-19T{h:02d}:00:00Z", 50.0 + h)
+            for h in range(18)]
+    out = agg.rollup_hourly_to_daily(recs, min_hours=18)
+    assert len(out) == 1
+    r = out[0]
+    assert r.averaging == "1d"
+    assert r.city == "Pune" and r.parameter == "pm25"
+    assert r.value == sum(50.0 + h for h in range(18)) / 18
+    assert r.n_stations == 2
+
+
+def test_rollup_skips_pollutant_below_threshold():
+    # Only 5 hours -> below 18 -> omitted, not fabricated.
+    recs = [_hourly("Pune", "no2", f"2026-06-19T{h:02d}:00:00Z", 20.0)
+            for h in range(5)]
+    assert agg.rollup_hourly_to_daily(recs, min_hours=18) == []
+
+
+def test_rollup_is_per_pollutant():
+    # pm25 has 18 hours (kept); co has 3 (dropped) -> only pm25 survives.
+    recs = [_hourly("Pune", "pm25", f"2026-06-19T{h:02d}:00:00Z", 40.0) for h in range(18)]
+    recs += [_hourly("Pune", "co", f"2026-06-19T{h:02d}:00:00Z", 1.0) for h in range(3)]
+    out = agg.rollup_hourly_to_daily(recs, min_hours=18)
+    assert {r.parameter for r in out} == {"pm25"}
+
+
+def test_rollup_buckets_by_ist_local_day():
+    # 2026-06-19T20:00Z is 2026-06-20T01:30 IST -> belongs to the 06-20 bucket, keyed local.
+    recs = [_hourly("Pune", "pm25", f"2026-06-19T{h:02d}:00:00Z", 10.0) for h in range(20)]
+    # Hours 18,19 (18:30Z+) cross into IST 06-20; 0..17 stay in IST 06-19 with the +5:30 shift.
+    out = agg.rollup_hourly_to_daily(recs, min_hours=1)
+    dates = sorted(r.datetime_utc for r in out)
+    assert dates[0] == "2026-06-19T00:00:00Z"
+    assert dates[-1].startswith("2026-06-20")
