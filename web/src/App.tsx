@@ -21,7 +21,6 @@ import {
   type CityIndex, type LiveSnapshot, type DailyRow,
 } from "./lib/data";
 
-
 const POLLS = ["pm25", "pm10", "no2", "so2", "o3", "co", "nh3"] as const;
 
 function useTheme() {
