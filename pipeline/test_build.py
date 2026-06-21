@@ -45,6 +45,35 @@ def test_discover_raises_when_down_and_no_cache(tmp_path, monkeypatch):
         pass
 
 
+def test_http_status_extracts_code():
+    import httpx
+    import build
+    req = httpx.Request("GET", "https://x/y")
+    resp = httpx.Response(422, request=req)
+    err = httpx.HTTPStatusError("422", request=req, response=resp)
+    assert build._http_status(err) == "HTTP 422"
+    # wrapped in a RuntimeError (the http.py path) -> unwrap via __cause__
+    wrapped = RuntimeError("GET failed")
+    wrapped.__cause__ = err
+    assert build._http_status(wrapped) == "HTTP 422"
+    assert build._http_status(ValueError("nope")) == "ValueError"
+
+
+def test_fetch_city_aq_prints_summary(monkeypatch, capsys):
+    import build
+    from ingest.records import Station, Sensor
+    st = Station(source="openaq", station_id="s1", name="S1", lat=1.0, lon=2.0,
+                 locality=None, city=None, state=None, timezone="Asia/Kolkata",
+                 sensors=[Sensor(sensor_id=1, parameter="pm25", units="µg/m³")])
+    monkeypatch.setattr(build.openaq, "fetch_sensor_history",
+                        lambda *a, **k: [])  # empty -> n_empty path
+    build.fetch_city_aq("key", [st], {"s1": "Pune"}, date_from="2026-06-18",
+                        date_to="2026-06-19", period="hours")
+    out = capsys.readouterr().out
+    assert "[build] hours:" in out
+    assert "1 sensors" in out
+
+
 def test_merge_centroids_fills_prior_cities_not_in_this_run():
     # This run only discovered Mumbai's stations, so `centroids` lacks Delhi. Delhi was published
     # by an earlier batch, so its centroid lives in the prior cities.json — recover it, or Delhi's
@@ -57,3 +86,18 @@ def test_merge_centroids_fills_prior_cities_not_in_this_run():
     merged = build.merge_centroids(centroids, prior_index)
     assert merged["Delhi"] == (28.61, 77.20)        # recovered from prior
     assert merged["Mumbai"] == (19.07, 72.87)       # this run's fresh value preserved
+
+
+def test_latest_daily_date_picks_max():
+    rows = [{"city": "A", "date": "2026-06-14"}, {"city": "B", "date": "2026-06-20"},
+            {"city": "A", "date": "2026-06-15"}]
+    assert build.latest_daily_date(rows) == "2026-06-20"
+
+
+def test_latest_daily_date_empty():
+    assert build.latest_daily_date([]) is None
+
+
+def test_latest_daily_date_skips_rows_without_date():
+    rows = [{"city": "A"}, {"city": "B", "date": "2026-06-19"}, {"city": "C", "date": None}]
+    assert build.latest_daily_date(rows) == "2026-06-19"

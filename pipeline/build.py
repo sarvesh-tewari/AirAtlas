@@ -13,6 +13,8 @@ from collections import defaultdict
 from dataclasses import asdict
 from pathlib import Path
 
+import httpx
+
 from ingest import cpcb, openaq, openmeteo
 from ingest.records import AQRecord, Sensor, Station
 from transform import aggregate as agg
@@ -30,6 +32,17 @@ AQI_PARAMS = {"pm25", "pm10", "no2", "so2", "o3", "co", "nh3"}
 # Last-good station list, persisted on the data branch. Lets a run survive an OpenAQ /locations
 # outage by falling back to the previous discovery (the station set changes only slowly).
 STATIONS_CACHE = META / "stations.json"
+
+
+def _http_status(e: Exception) -> str:
+    """Human-readable status for a fetch failure: 'HTTP 422' when available, else the type."""
+    err = e
+    cause = getattr(e, "__cause__", None)
+    if isinstance(cause, httpx.HTTPStatusError):
+        err = cause
+    if isinstance(err, httpx.HTTPStatusError) and err.response is not None:
+        return f"HTTP {err.response.status_code}"
+    return type(e).__name__
 
 
 # --------------------------------------------------------------------------- #
@@ -122,19 +135,30 @@ def fetch_city_aq(api_key, stations, mapping, *, date_from, date_to, period="day
                   sensors="first", min_coverage=0.0) -> list[agg.CityPollutantRecord]:
     """Fetch AQ history for the given stations and aggregate to city level."""
     raw: list[AQRecord] = []
+    n_ok = n_empty = n_failed = 0
+    by_status: dict[str, int] = defaultdict(int)
     for s in stations:
         city = mapping.get(s.station_id)
         for sensor_id, _param in _sensors_for(s, sensors):
             try:
-                raw += openaq.fetch_sensor_history(
+                recs = openaq.fetch_sensor_history(
                     api_key, sensor_id, date_from=date_from, date_to=date_to, period=period,
                     station_id=s.station_id, station_name=s.name, city=city,
                     state=None, lat=s.lat, lon=s.lon)
+                raw += recs
+                n_ok += 1 if recs else 0
+                n_empty += 0 if recs else 1
             except Exception as e:
-                # One flaky sensor must not abort the whole build (self-healing: it backfills
-                # on the next run). Log and continue.
-                print(f"[build] skip sensor {sensor_id} ({period}) for {city}: {type(e).__name__}",
-                      flush=True)
+                # One flaky sensor must not abort the build (self-healing: it backfills next run).
+                n_failed += 1
+                status = _http_status(e)
+                by_status[status] += 1
+                print(f"[build] skip sensor {sensor_id} ({period}) {city} "
+                      f"{date_from}..{date_to}: {status}", flush=True)
+    detail = " ".join(f"{k}×{v}" for k, v in sorted(by_status.items()))
+    print(f"[build] {period}: {n_ok + n_empty + n_failed} sensors -> "
+          f"{n_ok} ok, {n_empty} empty, {n_failed} failed"
+          f"{(' (' + detail + ')') if detail else ''}", flush=True)
     return agg.aggregate_to_city(raw, mapping, min_coverage=min_coverage)
 
 
@@ -167,6 +191,16 @@ def fetch_live_cpcb(api_key, mapping) -> list[agg.CityPollutantRecord]:
     """CPCB nationwide live snapshot, aggregated to city (uses CPCB's own city field)."""
     raw = cpcb.fetch_live(api_key)
     return agg.aggregate_to_city(raw, mapping)
+
+
+# --------------------------------------------------------------------------- #
+# Freshness helpers
+# --------------------------------------------------------------------------- #
+def latest_daily_date(all_daily: list[dict]) -> str | None:
+    """The freshest calendar date present in the daily tier, the 'data through' freshness
+    signal. Returns None when the tier is empty."""
+    dates = [r["date"] for r in all_daily if r.get("date")]
+    return max(dates) if dates else None
 
 
 # --------------------------------------------------------------------------- #

@@ -72,3 +72,9 @@ def test_retry_wait_5xx_uses_exponential_backoff():
     # Transient server errors recover fast, so keep the short exponential backoff (no minute floor).
     assert http._retry_wait(500, None, attempt=0, backoff=2.0) == 2.0
     assert http._retry_wait(500, None, attempt=2, backoff=2.0) == 8.0
+
+
+def test_runtime_error_includes_status(monkeypatch):
+    _seq_get(monkeypatch, [_Resp(503)])
+    with pytest.raises(RuntimeError, match="503"):
+        http.get_json("https://x/y", retries=2, use_cache=False)

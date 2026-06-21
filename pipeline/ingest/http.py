@@ -119,4 +119,8 @@ def get_json(
         if attempt < retries - 1:
             time.sleep(wait)
 
-    raise RuntimeError(f"GET failed after {retries} attempts: {url}") from last_err
+    status = (last_err.response.status_code
+              if isinstance(last_err, httpx.HTTPStatusError) and last_err.response is not None
+              else None)
+    label = f"HTTP {status}" if status else type(last_err).__name__
+    raise RuntimeError(f"GET failed after {retries} attempts ({label}): {url}") from last_err
