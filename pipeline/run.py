@@ -84,11 +84,11 @@ def main():
     ap.add_argument("--from", dest="date_from", default=None)
     ap.add_argument("--to", dest="date_to", default=None)
     ap.add_argument("--sensors", choices=["first", "all"], default="first")
-    ap.add_argument("--recent-days", type=int, default=90)
-    ap.add_argument("--recent-fetch-days", type=int, default=None,
-                    help="how many days of hourly to FETCH each run (retention stays --recent-days "
-                         "via the prune on write). Defaults to a small delta for daily, full window "
-                         "for backfill. Re-fetching the full window every daily run timed the cron out.")
+    ap.add_argument("--recent-days", type=int, default=1,
+                    help="rolling window (days) for the recent hourly tier (data/recent/): how much "
+                         "to fetch each run and how much to retain. Small by default — it only needs "
+                         "to cover ~the last 24h (for freshness and the future rolling-24h headline, "
+                         "issue #5). Fetching ~90 days for every city timed the daily cron out.")
     ap.add_argument("--next-batch", type=int, default=None,
                     help="backfill the next N not-yet-published cities (incremental drip); "
                          "self-selects from discovered universe minus data/meta/city_list.json")
@@ -191,13 +191,11 @@ def main():
         wx_daily = build.fetch_weather_daily(centroids, start_date=date_from, end_date=yesterday)
         daily_rows = storage.assemble_daily_rows(city_daily, weather_by_city_date=wx_daily)
 
-        # Only re-fetch the recent hourly DELTA each daily run; retention stays --recent-days via the
-        # prune on write (upsert merges the new hours into the existing 90-day tier). Re-fetching the
-        # full 90-day window for every city is what crawled past the 330-min cap.
-        fetch_days = args.recent_fetch_days if args.recent_fetch_days is not None else (
-            args.recent_days if args.mode == "backfill" else 4)
-        print(f"[run] fetching recent hourly (last {fetch_days}d)…")
-        recent_from = (dt.date.fromisoformat(today) - dt.timedelta(days=fetch_days)).isoformat()
+        # Recent hourly tier (data/recent/): only a short rolling window (--recent-days, ~24h) is
+        # needed — it's not displayed yet beyond freshness / the future rolling-24h headline (#5).
+        # We used to fetch ~90 days for every city here, which crawled past the 330-min cap.
+        print(f"[run] fetching recent hourly (last {args.recent_days}d)…")
+        recent_from = (dt.date.fromisoformat(today) - dt.timedelta(days=args.recent_days)).isoformat()
         city_hourly = build.fetch_city_aq(oa_key, sel, mapping, date_from=recent_from,
                                           date_to=today, period="hours", sensors=args.sensors)
         hourly_rows = storage.assemble_hourly_rows(city_hourly)
