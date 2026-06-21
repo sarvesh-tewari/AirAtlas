@@ -22,7 +22,7 @@ import os
 
 import build
 import plan
-from transform import reconcile, storage
+from transform import aggregate, reconcile, storage
 
 
 def _load_env():
@@ -84,11 +84,11 @@ def main():
     ap.add_argument("--from", dest="date_from", default=None)
     ap.add_argument("--to", dest="date_to", default=None)
     ap.add_argument("--sensors", choices=["first", "all"], default="first")
-    ap.add_argument("--recent-days", type=int, default=1,
+    ap.add_argument("--recent-days", type=int, default=2,
                     help="rolling window (days) for the recent hourly tier (data/recent/): how much "
-                         "to fetch each run and how much to retain. Small by default — it only needs "
-                         "to cover ~the last 24h (for freshness and the future rolling-24h headline, "
-                         "issue #5). Fetching ~90 days for every city timed the daily cron out.")
+                         "to fetch each run and how much to retain. >=2 so a full IST day can be "
+                         "rolled up (an IST calendar day spans two UTC days). Fetching ~90 days for "
+                         "every city timed the daily cron out.")
     ap.add_argument("--next-batch", type=int, default=None,
                     help="backfill the next N not-yet-published cities (incremental drip); "
                          "self-selects from discovered universe minus data/meta/city_list.json")
@@ -168,13 +168,32 @@ def main():
     centroids = build.city_centroids(sel, mapping)
     print(f"[run] {len(sel)} stations across {len(centroids)} cities ({len(unmapped)} unmapped)")
 
-    # ---- History (daily) + recent (hourly) ----
+    # ---- Recent hourly tier + daily rollup ----
+    # Daily mode is HOURLY-PRIMARY: OpenAQ /days lags days behind and 422s on equal-date windows,
+    # so we fetch only /hours and compute the daily value ourselves (mean over the day's hours,
+    # matching OpenAQ's summary.avg). backfill mode still uses /days for multi-year history.
+    # See docs/superpowers/specs/2026-06-21-hourly-primary-daily-rollup-design.md
     daily_rows, hourly_rows = [], []
     if args.mode in ("backfill", "daily"):
-        print("[run] fetching daily history…")
-        city_daily = build.fetch_city_aq(oa_key, sel, mapping, date_from=date_from,
-                                          date_to=date_to, period="days", sensors=args.sensors)
-        # today = CPCB (if available), history = OpenAQ
+        recent_from = (dt.date.fromisoformat(today) - dt.timedelta(days=args.recent_days)).isoformat()
+        print(f"[run] fetching recent hourly (last {args.recent_days}d)…")
+        city_hourly = build.fetch_city_aq(oa_key, sel, mapping, date_from=recent_from,
+                                          date_to=today, period="hours", sensors=args.sensors)
+        hourly_rows = storage.assemble_hourly_rows(city_hourly)
+
+        if args.mode == "backfill":
+            print("[run] fetching daily history (/days)…")
+            city_daily = build.fetch_city_aq(oa_key, sel, mapping, date_from=date_from,
+                                             date_to=date_to, period="days", sensors=args.sensors)
+            wx_from = date_from
+        else:
+            min_hours = int(os.environ.get("AIRATLAS_MIN_DAILY_HOURS", "18"))
+            city_daily = aggregate.rollup_hourly_to_daily(city_hourly, min_hours=min_hours)
+            print(f"[run] rolled up {len(city_daily)} city-pollutant-days from hourly "
+                  f"(min_hours={min_hours})")
+            wx_from = recent_from
+
+        # today = CPCB (if available), history = OpenAQ (rollup in daily mode)
         today_cpcb = []
         if dg_key:
             try:
@@ -186,19 +205,9 @@ def main():
         city_daily = reconcile.reconcile_daily(today_cpcb=today_cpcb,
                                                 history_openaq=city_daily, today=today)
         print("[run] fetching daily weather…")
-        # Open-Meteo's archive only allows end_date up to YESTERDAY (today is out of range -> 400).
-        # Today's conditions come from the live/current-weather path, not the daily archive.
-        wx_daily = build.fetch_weather_daily(centroids, start_date=date_from, end_date=yesterday)
+        # Open-Meteo's archive only allows end_date up to YESTERDAY (today -> 400).
+        wx_daily = build.fetch_weather_daily(centroids, start_date=wx_from, end_date=yesterday)
         daily_rows = storage.assemble_daily_rows(city_daily, weather_by_city_date=wx_daily)
-
-        # Recent hourly tier (data/recent/): only a short rolling window (--recent-days, ~24h) is
-        # needed — it's not displayed yet beyond freshness / the future rolling-24h headline (#5).
-        # We used to fetch ~90 days for every city here, which crawled past the 330-min cap.
-        print(f"[run] fetching recent hourly (last {args.recent_days}d)…")
-        recent_from = (dt.date.fromisoformat(today) - dt.timedelta(days=args.recent_days)).isoformat()
-        city_hourly = build.fetch_city_aq(oa_key, sel, mapping, date_from=recent_from,
-                                          date_to=today, period="hours", sensors=args.sensors)
-        hourly_rows = storage.assemble_hourly_rows(city_hourly)
 
     # ---- Live snapshot (today) ----
     live_count = 0
