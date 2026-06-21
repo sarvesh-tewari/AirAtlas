@@ -194,6 +194,16 @@ def fetch_live_cpcb(api_key, mapping) -> list[agg.CityPollutantRecord]:
 
 
 # --------------------------------------------------------------------------- #
+# Freshness helpers
+# --------------------------------------------------------------------------- #
+def latest_daily_date(all_daily: list[dict]) -> str | None:
+    """The freshest calendar date present in the daily tier, the 'data through' freshness
+    signal. Returns None when the tier is empty."""
+    dates = [r["date"] for r in all_daily if r.get("date")]
+    return max(dates) if dates else None
+
+
+# --------------------------------------------------------------------------- #
 # Coverage report
 # --------------------------------------------------------------------------- #
 def build_cities_index(daily_rows, centroids) -> list[dict]:

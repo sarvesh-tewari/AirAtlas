@@ -86,3 +86,18 @@ def test_merge_centroids_fills_prior_cities_not_in_this_run():
     merged = build.merge_centroids(centroids, prior_index)
     assert merged["Delhi"] == (28.61, 77.20)        # recovered from prior
     assert merged["Mumbai"] == (19.07, 72.87)       # this run's fresh value preserved
+
+
+def test_latest_daily_date_picks_max():
+    rows = [{"city": "A", "date": "2026-06-14"}, {"city": "B", "date": "2026-06-20"},
+            {"city": "A", "date": "2026-06-15"}]
+    assert build.latest_daily_date(rows) == "2026-06-20"
+
+
+def test_latest_daily_date_empty():
+    assert build.latest_daily_date([]) is None
+
+
+def test_latest_daily_date_skips_rows_without_date():
+    rows = [{"city": "A"}, {"city": "B", "date": "2026-06-19"}, {"city": "C", "date": None}]
+    assert build.latest_daily_date(rows) == "2026-06-19"
