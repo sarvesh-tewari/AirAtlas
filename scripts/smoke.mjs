@@ -9,7 +9,7 @@
 // uptime.yml (scheduled synthetic check).
 
 const BASE = (process.argv[2] || "https://sarvesh-tewari.github.io/AirAtlas/").replace(/\/?$/, "/");
-const STALE_AFTER_DAYS = 4; // data lags ~1-2 days by nature; older than this means a stalled pipeline.
+const STALE_AFTER_DAYS = 4; // generated_today = "data through" (latest daily date); data lags ~1-2d by nature, older than this means a stalled pipeline.
 
 const bust = (url) => `${url}${url.includes("?") ? "&" : "?"}cb=${Date.now()}`;
 
