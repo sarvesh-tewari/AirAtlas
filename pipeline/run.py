@@ -117,7 +117,10 @@ def main():
     date_from = args.date_from or default_from
     date_to = args.date_to or yesterday
 
-    print(f"[run] mode={args.mode} cities={args.cities or 'ALL'} window={date_from}..{date_to}")
+    if args.mode == "backfill":
+        print(f"[run] mode={args.mode} cities={args.cities or 'ALL'} window={date_from}..{date_to}")
+    else:
+        print(f"[run] mode={args.mode} cities={args.cities or 'ALL'}")
 
     print("[run] discovering stations…")
     stations, mapping, unmapped = build.discover(oa_key)

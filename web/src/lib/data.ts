@@ -17,7 +17,7 @@ export function slug(city: string): string {
 }
 
 export interface CityList {
-  generated_today: string;
+  generated_today: string | null;
   cities: string[];
 }
 
