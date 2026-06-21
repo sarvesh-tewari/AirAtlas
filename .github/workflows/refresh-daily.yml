@@ -19,10 +19,10 @@ on:
         description: "optional space-separated city subset (blank = all)"
         default: ""
       sensors:
-        description: "sensors per pollutant"
+        description: "sensors per pollutant (use 'all' only for a full backfill; daily should stay 'first')"
         type: choice
-        options: [all, first]
-        default: all
+        options: [first, all]
+        default: first
       from:
         description: "backfill start date YYYY-MM-DD (blank = 2016)"
         default: ""
@@ -78,7 +78,7 @@ jobs:
         run: |
           MODE="${{ github.event.inputs.mode || 'daily' }}"
           CITIES="${{ github.event.inputs.cities }}"
-          SENSORS="${{ github.event.inputs.sensors || 'all' }}"
+          SENSORS="${{ github.event.inputs.sensors || 'first' }}"
           FROM="${{ github.event.inputs.from }}"
           MAXPC="${{ github.event.inputs.max_per_city }}"
           ARGS="--sensors $SENSORS"
