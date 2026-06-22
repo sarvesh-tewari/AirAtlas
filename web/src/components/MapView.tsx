@@ -10,25 +10,14 @@ import {
   type StandardId,
 } from "../lib/standards";
 import type { CityIndex } from "../lib/data";
-
+import { isStale } from "../lib/freshness";
 function colorFor(c: CityIndex, standard: StandardId): string {
   if (standard === "eu")
     return c.eu_band ? bandByLabel("eu", c.eu_band).color : "#9095a0";
   const idx = standard === "naqi" ? c.naqi : c.us;
   return idx != null ? bandForIndex(standard, idx).color : "#9095a0";
 }
-const STALE_AFTER_DAYS = 30;
 
-function isStale(lastDate: string): boolean {
-  if (!lastDate) return false;
-
-  const ms =
-    Date.now() - new Date(`${lastDate.slice(0, 10)}T00:00:00Z`).getTime();
-
-  const ageDays = Math.floor(ms / 8.64e7);
-
-  return ageDays > STALE_AFTER_DAYS;
-}
 export function MapView({
   cities,
   standard,

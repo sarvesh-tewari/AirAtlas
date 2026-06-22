@@ -1,6 +1,7 @@
 import { Clock } from "lucide-react";
 import { Gauge } from "./Gauge";
 import { STANDARDS, bandByLabel, type StandardId } from "../lib/standards";
+
 import { formatDate, formatDateTimeIST, formatTimeIST } from "../lib/format";
 import { InfoDot } from "./SectionTitle";
 import { STALE_AFTER_DAYS, ageInDays } from "../lib/freshness";
@@ -72,6 +73,7 @@ export function Headline({
           Math.round((Date.now() - new Date(vm.updatedUtc).getTime()) / 3.6e6),
         )
       : null;
+
   const age = vm.live ? null : ageInDays(vm.asOfDate);
   const veryStale = age != null && age > STALE_AFTER_DAYS;
 
@@ -161,6 +163,7 @@ export function Headline({
               ? `${vm.nStations} station${vm.nStations > 1 ? "s" : ""} · `
               : ""}
             {sourceLabel ? `${sourceLabel} · ` : ""}
+
             {!updatedText
               ? vm.live
                 ? "live"
