@@ -3,7 +3,7 @@ name: refresh-hourly
 
 on:
   schedule:
-    - cron: "17 * * * *" # hourly, offset off the top of the hour
+    - cron: "17 */4 * * *" # every ~4h, offset off the top of the hour (rolling-24h headline)
   workflow_dispatch: {}
 
 # Serialize with the daily job so the two never race to push.
