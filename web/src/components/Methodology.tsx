@@ -38,9 +38,10 @@ export function Methodology() {
             <span className="font-medium text-heading"> dominant pollutant</span>.
           </li>
           <li>
-            <span className="font-medium text-heading">3. Averaging windows.</span> Each pollutant is
-            averaged over the window its standard specifies (for example PM2.5 as a 24-hour mean,
-            ozone over 8 or 1 hour) before the lookup.
+            <span className="font-medium text-heading">3. Averaging windows.</span> Each standard
+            specifies an averaging window per pollutant (PM2.5 over 24 hours, ozone over 8 or 1
+            hour). AirAtlas currently uses a 24-hour mean for all pollutants; the shorter
+            standard-specific windows are planned.
           </li>
         </ol>
         <p className="mt-3 text-sm leading-relaxed text-body">
@@ -59,14 +60,22 @@ export function Methodology() {
       </section>
 
       <section className="card p-6">
-        <h2 className="font-display text-lg text-heading">Sources & the today/history seam</h2>
+        <h2 className="font-display text-lg text-heading">Where the data comes from</h2>
         <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed text-body marker:text-muted">
-          <li><span className="font-medium text-heading">Today</span> comes from CPCB (data.gov.in).</li>
-          <li><span className="font-medium text-heading">History</span> (up to yesterday) comes from OpenAQ, which re-ingests the same CPCB stations.</li>
+          <li>
+            <span className="font-medium text-heading">Live reading.</span> AirAtlas is designed to
+            use CPCB's real-time feed (data.gov.in), but CPCB's server is frequently down. As a
+            backup, we compute the live reading from <span className="font-medium text-heading">OpenAQ</span>,
+            which re-ingests the same CPCB monitoring stations, as a rolling 24-hour average of the
+            latest hourly readings. If CPCB's feed is running, AirAtlas updates from it instead, since
+            it is the most current.
+          </li>
+          <li><span className="font-medium text-heading">History</span> (daily, multi-year) is built from the same OpenAQ readings.</li>
           <li><span className="font-medium text-heading">Weather</span> comes from Open-Meteo.</li>
         </ul>
         <p className="mt-3 text-sm leading-relaxed text-body">
-          Every view labels its source, and trend charts mark the seam between today and history.
+          Every view labels its source. When CPCB's live feed is available, trend charts mark the
+          seam where it takes over from history.
         </p>
       </section>
 
@@ -83,10 +92,12 @@ export function Methodology() {
       <section className="card p-6">
         <h2 className="font-display text-lg text-heading">Freshness & coverage</h2>
         <ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed text-body marker:text-muted">
-          <li>Today's snapshot refreshes hourly; multi-year history updates daily.</li>
+          <li>Live readings refresh every few hours; multi-year history updates daily.</li>
+          <li>The footer's <span className="font-medium text-heading">"Last refreshed"</span> is when our pipeline last ran and published. It is the same for every city, shown in IST.</li>
+          <li>Each city's <span className="font-medium text-heading">headline shows how recent that city's own reading is</span>: a rolling 24-hour average labelled with its most recent hour ("as of HH:MM IST"), or its latest daily value when recent hourly is missing. This usually lags "Last refreshed", since a city's freshest available data can be hours behind.</li>
+          <li>The site serves its own stored data, so it stays up even if an upstream source is temporarily down.</li>
           <li>A city's NAQI needs at least three pollutants present (one being PM) to be valid.</li>
-          <li>The site serves its own stored data, so it stays up even if an upstream source is temporarily down (the headline shows a "last updated" time and a staleness notice).</li>
-          <li>Each city shows how recent its data is. When a city's most recent valid reading is more than 30 days old (a monitor that has gone quiet), it is shown muted and clearly dated rather than presented as current.</li>
+          <li>When a city's most recent valid reading is more than 30 days old (a monitor that has gone quiet), it is shown muted and clearly dated rather than presented as current.</li>
         </ul>
       </section>
 
