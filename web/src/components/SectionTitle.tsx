@@ -25,8 +25,18 @@ export function InfoDot({ children, label }: { children: ReactNode; label?: stri
 
 // Section header: an uppercase eyebrow kicker over a heavy heading with a small colored icon chip,
 // plus an optional "i" info tooltip.
-export function SectionTitle({ icon: Icon, children, color = "var(--accent)", eyebrow, info }: {
-  icon: LucideIcon; children: ReactNode; color?: string; eyebrow?: string; info?: ReactNode;
+export function SectionTitle({
+  icon: Icon,
+  children,
+  color = "var(--accent)",
+  eyebrow,
+  info,
+}: {
+  icon: LucideIcon;
+  children: ReactNode;
+  color?: string;
+  eyebrow?: string;
+  info?: ReactNode;
 }) {
   return (
     <div className="flex flex-col gap-2">
@@ -39,7 +49,11 @@ export function SectionTitle({ icon: Icon, children, color = "var(--accent)", ey
           <Icon size={16} strokeWidth={2.2} aria-hidden />
         </span>
         {children}
-        {info && <InfoDot label={typeof children === "string" ? `About: ${children}` : undefined}>{info}</InfoDot>}
+        {info && (
+          <InfoDot label={typeof children === "string" ? `About: ${children}` : undefined}>
+            {info}
+          </InfoDot>
+        )}
       </h2>
     </div>
   );

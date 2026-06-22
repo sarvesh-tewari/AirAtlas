@@ -36,16 +36,13 @@ export function YearSummary({
       const avg = Math.round(vs.reduce((a, b) => a + b, 0) / vs.length);
       const peak = Math.max(...vs);
       const good = vs.filter((v) => (cfg.numeric ? v <= 50 : v <= 1)).length;
-      const poor = vs.filter(
-        (v) => v > poorCut || (!cfg.numeric && v >= poorCut),
-      ).length;
+      const poor = vs.filter((v) => v > poorCut || (!cfg.numeric && v >= poorCut)).length;
       return { yr, avg, peak, good, poor, n: vs.length };
     });
   }, [rows, standard, cfg]);
   if (years.length === 0) return null;
 
-  const fmt = (v: number) =>
-    cfg.numeric ? `${v}` : (cfg.bands[v]?.label ?? `${v}`);
+  const fmt = (v: number) => (cfg.numeric ? `${v}` : (cfg.bands[v]?.label ?? `${v}`));
 
   // EU has no numeric AQI, so (like the multi-year TrendChart) we plot the band index on a
   // 0..6 axis and label the ticks with band names rather than numbers. The lines use neutral
@@ -117,11 +114,7 @@ export function YearSummary({
         </SectionTitle>
       </div>
 
-      <EChart
-        option={option}
-        height={280}
-        ariaLabel="Year-by-year air quality summary chart"
-      />
+      <EChart option={option} height={280} ariaLabel="Year-by-year air quality summary chart" />
 
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {years.map((y) => {
@@ -130,10 +123,7 @@ export function YearSummary({
             : (cfg.bands[y.peak]?.color ?? cfg.bands[0].color);
 
           return (
-            <div
-              key={y.yr}
-              className="rounded-lg border border-border bg-bg-soft/40 p-3"
-            >
+            <div key={y.yr} className="rounded-lg border border-border bg-bg-soft/40 p-3">
               <div className="font-display text-lg text-heading">{y.yr}</div>
 
               <div className="mt-1 flex items-baseline justify-between text-sm">
