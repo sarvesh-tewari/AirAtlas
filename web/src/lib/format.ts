@@ -20,6 +20,14 @@ export function formatDateTimeIST(iso: string): string {
   return `${date}, ${time} IST`;
 }
 
+// Time-only in IST, e.g. "14:00 IST", for the rolling-24h headline "as of" label.
+export function formatTimeIST(iso: string): string {
+  const time = new Intl.DateTimeFormat("en-GB", {
+    hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Kolkata",
+  }).format(new Date(iso));
+  return `${time} IST`;
+}
+
 // ECharts axis-trigger tooltip with a "13 June 2026" header (the rest of the rows keep the
 // default marker + series name + value layout).
 export function dateAxisTooltip() {
