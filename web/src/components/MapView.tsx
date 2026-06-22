@@ -3,17 +3,11 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { Map as MapIcon } from "lucide-react";
 import { SectionTitle } from "./SectionTitle";
-import {
-  bandForIndex,
-  bandByLabel,
-  STANDARDS,
-  type StandardId,
-} from "../lib/standards";
+import { bandForIndex, bandByLabel, STANDARDS, type StandardId } from "../lib/standards";
 import type { CityIndex } from "../lib/data";
 import { isStale } from "../lib/freshness";
 function colorFor(c: CityIndex, standard: StandardId): string {
-  if (standard === "eu")
-    return c.eu_band ? bandByLabel("eu", c.eu_band).color : "#9095a0";
+  if (standard === "eu") return c.eu_band ? bandByLabel("eu", c.eu_band).color : "#9095a0";
   const idx = standard === "naqi" ? c.naqi : c.us;
   return idx != null ? bandForIndex(standard, idx).color : "#9095a0";
 }
@@ -83,12 +77,10 @@ export function MapView({
         weight: c.city === current ? 2.5 : 1.5,
         fillOpacity: stale ? 0.45 : 0.9,
       });
-      const idx =
-        standard === "eu" ? c.eu_band : standard === "naqi" ? c.naqi : c.us;
-      m.bindTooltip(
-        `${c.city}${idx != null ? ` · ${idx}` : ""}${stale ? " · stale data" : ""}`,
-        { direction: "top" },
-      );
+      const idx = standard === "eu" ? c.eu_band : standard === "naqi" ? c.naqi : c.us;
+      m.bindTooltip(`${c.city}${idx != null ? ` · ${idx}` : ""}${stale ? " · stale data" : ""}`, {
+        direction: "top",
+      });
       m.on("click", () => onCity(c.city));
       m.addTo(lg);
     }
@@ -106,9 +98,8 @@ export function MapView({
           eyebrow="Coverage"
           info={
             <>
-              Each dot is a city, coloured by its latest{" "}
-              {standard.toUpperCase()} AQI category. Click a dot to load that
-              city.
+              Each dot is a city, coloured by its latest {standard.toUpperCase()} AQI category.
+              Click a dot to load that city.
               <span className="mt-2 flex flex-col gap-1">
                 {STANDARDS[standard].bands.map((b) => (
                   <span key={b.label} className="flex items-center gap-2">

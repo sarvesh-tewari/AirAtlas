@@ -9,7 +9,15 @@ import type { DailyRow } from "../lib/data";
 
 // How many days fell in each AQI category, per year (stacked). Non-cumulative and intuitive:
 // each day is counted once, in exactly one band.
-export function Exceedance({ rows, standard, dark }: { rows: DailyRow[]; standard: StandardId; dark: boolean }) {
+export function Exceedance({
+  rows,
+  standard,
+  dark,
+}: {
+  rows: DailyRow[];
+  standard: StandardId;
+  dark: boolean;
+}) {
   const t = chartTheme(dark);
   const cfg = STANDARDS[standard];
 
@@ -35,23 +43,72 @@ export function Exceedance({ rows, standard, dark }: { rows: DailyRow[]; standar
     return { years: ys, perBand: pb };
   }, [rows, standard, cfg]);
 
-  const option = useMemo(() => ({
-    grid: { left: 40, right: 12, top: 8, bottom: 48 },
-    legend: { bottom: 0, textStyle: { color: t.label, fontSize: 10 }, itemWidth: 10, itemHeight: 10 },
-    tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, backgroundColor: t.tooltipBg, borderWidth: 0, textStyle: { color: t.ink, fontSize: 12 } },
-    xAxis: { type: "category", data: years, axisLine: { lineStyle: { color: t.axis } }, axisLabel: { color: t.label, fontSize: 11 } },
-    yAxis: { type: "value", name: "days", nameTextStyle: { color: t.label, fontSize: 10 }, axisLabel: { color: t.label, fontSize: 11 }, splitLine: { lineStyle: { color: t.split } } },
-    series: cfg.bands.map((b, i) => ({
-      name: b.label, type: "bar", stack: "days", data: perBand[i],
-      itemStyle: { color: b.color }, barMaxWidth: 48,
-    })),
-  } as EChartsCoreOption), [years, perBand, cfg, t]);
+  const option = useMemo(
+    () =>
+      ({
+        grid: { left: 40, right: 12, top: 8, bottom: 48 },
+        legend: {
+          bottom: 0,
+          textStyle: { color: t.label, fontSize: 10 },
+          itemWidth: 10,
+          itemHeight: 10,
+        },
+        tooltip: {
+          trigger: "axis",
+          axisPointer: { type: "shadow" },
+          backgroundColor: t.tooltipBg,
+          borderWidth: 0,
+          textStyle: { color: t.ink, fontSize: 12 },
+        },
+        xAxis: {
+          type: "category",
+          data: years,
+          axisLine: { lineStyle: { color: t.axis } },
+          axisLabel: { color: t.label, fontSize: 11 },
+        },
+        yAxis: {
+          type: "value",
+          name: "days",
+          nameTextStyle: { color: t.label, fontSize: 10 },
+          axisLabel: { color: t.label, fontSize: 11 },
+          splitLine: { lineStyle: { color: t.split } },
+        },
+        series: cfg.bands.map((b, i) => ({
+          name: b.label,
+          type: "bar",
+          stack: "days",
+          data: perBand[i],
+          itemStyle: { color: b.color },
+          barMaxWidth: 48,
+        })),
+      }) as EChartsCoreOption,
+    [years, perBand, cfg, t],
+  );
 
   return (
     <section className="card p-5">
-      <div className="mb-3"><SectionTitle icon={CalendarRange} color="#d97706" eyebrow="Clean-air days" info="How many days each year landed in each AQI band, using the selected standard's thresholds.">Days by air-quality band</SectionTitle></div>
-      {years.length ? <EChart option={option} height={260} ariaLabel="Stacked count of days in each AQI band per year" /> : <p className="py-8 text-center text-sm text-body">No data.</p>}
-      <p className="mt-2 text-xs text-muted">Each day counted once in its {cfg.name} band. Hover a year for the breakdown.</p>
+      <div className="mb-3">
+        <SectionTitle
+          icon={CalendarRange}
+          color="#d97706"
+          eyebrow="Clean-air days"
+          info="How many days each year landed in each AQI band, using the selected standard's thresholds."
+        >
+          Days by air-quality band
+        </SectionTitle>
+      </div>
+      {years.length ? (
+        <EChart
+          option={option}
+          height={260}
+          ariaLabel="Stacked count of days in each AQI band per year"
+        />
+      ) : (
+        <p className="py-8 text-center text-sm text-body">No data.</p>
+      )}
+      <p className="mt-2 text-xs text-muted">
+        Each day counted once in its {cfg.name} band. Hover a year for the breakdown.
+      </p>
     </section>
   );
 }

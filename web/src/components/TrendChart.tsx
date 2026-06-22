@@ -10,7 +10,15 @@ import type { DailyRow } from "../lib/data";
 
 type Range = "90d" | "1y" | "all";
 
-export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standard: StandardId; dark: boolean }) {
+export function TrendChart({
+  rows,
+  standard,
+  dark,
+}: {
+  rows: DailyRow[];
+  standard: StandardId;
+  dark: boolean;
+}) {
   const [range, setRange] = useState<Range>("1y");
   const cfg = STANDARDS[standard];
   const t = chartTheme(dark);
@@ -37,7 +45,10 @@ export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standar
     let lo = 0;
     const bandAreas = cfg.bands.map((b, i) => {
       const hi = numeric ? (b.max ?? cfg.max) : i + 1;
-      const area = [{ yAxis: numeric ? lo : i, itemStyle: { color: b.color + (dark ? "26" : "1f") } }, { yAxis: hi }];
+      const area = [
+        { yAxis: numeric ? lo : i, itemStyle: { color: b.color + (dark ? "26" : "1f") } },
+        { yAxis: hi },
+      ];
       lo = hi;
       return area;
     });
@@ -47,35 +58,78 @@ export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standar
 
     return {
       grid: { left: 44, right: 16, top: 16, bottom: 28 },
-      tooltip: { trigger: "axis", formatter: dateAxisTooltip(), backgroundColor: t.tooltipBg, borderWidth: 0,
-        textStyle: { color: t.ink, fontSize: 12 } },
-      xAxis: { type: "time", axisLine: { lineStyle: { color: t.axis } },
-        axisLabel: { color: t.label, fontSize: 11 }, splitLine: { show: false } },
+      tooltip: {
+        trigger: "axis",
+        formatter: dateAxisTooltip(),
+        backgroundColor: t.tooltipBg,
+        borderWidth: 0,
+        textStyle: { color: t.ink, fontSize: 12 },
+      },
+      xAxis: {
+        type: "time",
+        axisLine: { lineStyle: { color: t.axis } },
+        axisLabel: { color: t.label, fontSize: 11 },
+        splitLine: { show: false },
+      },
       yAxis: numeric
-        ? { type: "value", min: 0, max: cfg.max, axisLabel: { color: t.label, fontSize: 11 },
-            splitLine: { lineStyle: { color: t.split } } }
-        : { type: "value", min: 0, max: 6, interval: 1,
-            axisLabel: { color: t.label, fontSize: 10,
-              formatter: (v: number) => cfg.bands[v]?.label ?? "" },
-            splitLine: { lineStyle: { color: t.split } } },
-      series: [{
-        type: "line", data, showSymbol: false, smooth: false,
-        lineStyle: { color: t.ink, width: 1.5 }, connectNulls: false,
-        z: 3,
-        markArea: { silent: true, data: bandAreas as unknown as object[] },
-        markLine: seamRow
-          ? { symbol: "none", silent: true,
-              data: [{ xAxis: seamRow.date, label: { formatter: "today (CPCB)", color: t.label, fontSize: 10 },
-                lineStyle: { color: t.accent, type: "dashed" } }] }
-          : undefined,
-      }],
+        ? {
+            type: "value",
+            min: 0,
+            max: cfg.max,
+            axisLabel: { color: t.label, fontSize: 11 },
+            splitLine: { lineStyle: { color: t.split } },
+          }
+        : {
+            type: "value",
+            min: 0,
+            max: 6,
+            interval: 1,
+            axisLabel: {
+              color: t.label,
+              fontSize: 10,
+              formatter: (v: number) => cfg.bands[v]?.label ?? "",
+            },
+            splitLine: { lineStyle: { color: t.split } },
+          },
+      series: [
+        {
+          type: "line",
+          data,
+          showSymbol: false,
+          smooth: false,
+          lineStyle: { color: t.ink, width: 1.5 },
+          connectNulls: false,
+          z: 3,
+          markArea: { silent: true, data: bandAreas as unknown as object[] },
+          markLine: seamRow
+            ? {
+                symbol: "none",
+                silent: true,
+                data: [
+                  {
+                    xAxis: seamRow.date,
+                    label: { formatter: "today (CPCB)", color: t.label, fontSize: 10 },
+                    lineStyle: { color: t.accent, type: "dashed" },
+                  },
+                ],
+              }
+            : undefined,
+        },
+      ],
     } as EChartsCoreOption;
   }, [filtered, standard, dark, cfg, t]);
 
   return (
     <section className="card p-5">
       <div className="mb-3 flex items-center justify-between">
-        <SectionTitle icon={LineChart} color="#6366f1" eyebrow="History" info="Daily AQI over time with category bands behind it. The marked seam separates recent data from backfilled history.">Multi-year trend</SectionTitle>
+        <SectionTitle
+          icon={LineChart}
+          color="#6366f1"
+          eyebrow="History"
+          info="Daily AQI over time with category bands behind it. The marked seam separates recent data from backfilled history."
+        >
+          Multi-year trend
+        </SectionTitle>
         <div className="inline-flex overflow-hidden rounded-lg border border-border text-xs">
           {(["90d", "1y", "all"] as Range[]).map((r) => (
             <button
@@ -89,7 +143,11 @@ export function TrendChart({ rows, standard, dark }: { rows: DailyRow[]; standar
         </div>
       </div>
       {filtered.length > 1 ? (
-        <EChart option={option} height={260} ariaLabel="Multi-year daily AQI trend with category bands" />
+        <EChart
+          option={option}
+          height={260}
+          ariaLabel="Multi-year daily AQI trend with category bands"
+        />
       ) : (
         <p className="py-10 text-center text-sm text-body">Not enough history for this range.</p>
       )}

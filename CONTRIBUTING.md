@@ -46,7 +46,7 @@ CI runs the same checks automatically on every PR (no approval needed to see the
 them locally first:
 
 - **Python:** `ruff check pipeline` and `cd pipeline && pytest -q`
-- **Web:** `cd web && npm run build` (this type-checks and bundles)
+- **Web:** `cd web && npm run format` (auto-formats), then `npm run build` (type-checks and bundles)
 
 Also:
 
@@ -57,7 +57,10 @@ Also:
 ## Style and conventions
 
 - **Python:** follow `ruff` (config lives in `pipeline/`); match the surrounding code.
-- **TypeScript/React:** follow the existing component patterns; it must pass `npm run build`.
+- **TypeScript/React:** formatting is handled by **Prettier** (config in `web/.prettierrc.json`).
+  Run `npm run format` before committing; CI runs `npm run format:check` and will fail on unformatted
+  code. Let Prettier handle layout rather than hand-formatting, and don't reformat lines unrelated to
+  your change. Follow the existing component patterns; it must also pass `npm run build`.
 - **Copy / UI:** no em-dashes in user-facing copy (use commas or hyphens). Any rule that changes
   what data is shown or how (filtering, fading, capping, approximating) should be explained on the
   site (the About page or inline), so users understand what they are looking at.

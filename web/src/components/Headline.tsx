@@ -28,9 +28,7 @@ function agoText(days: number): string {
   if (days === 1) return "yesterday";
   if (days < 60) return `${days} days ago`;
   const months = Math.round(days / 30);
-  return months < 12
-    ? `${months} months ago`
-    : `${Math.round(days / 365)}+ years ago`;
+  return months < 12 ? `${months} months ago` : `${Math.round(days / 365)}+ years ago`;
 }
 
 export function Headline({
@@ -42,9 +40,7 @@ export function Headline({
   vm: HeadlineVM;
   loading?: boolean;
 }) {
-  const color = vm.category
-    ? bandByLabel(standard, vm.category).color
-    : "var(--muted)";
+  const color = vm.category ? bandByLabel(standard, vm.category).color : "var(--muted)";
   // Flat category tint: the hero fills with a flat wash of the current AQI category colour
   // (no gradient - per the design system), with a matching tinted border.
   const wash = vm.category
@@ -53,8 +49,8 @@ export function Headline({
         borderColor: `${color}55`,
       }
     : undefined;
-  // The shown reading's own date (asOfDate) — may be older than the last row when a monitor has
-  // gone quiet. A live reading shows a full IST timestamp; history shows that reading's date.
+  // The shown reading's own date (asOfDate), which may be older than the last row when a monitor
+  // has gone quiet. A live reading shows a full IST timestamp; history shows that reading's date.
   const dataDate = vm.asOfDate ?? vm.lastDate;
 
   const updatedText =
@@ -63,22 +59,18 @@ export function Headline({
       : dataDate
         ? formatDate(dataDate)
         : null;
-  const sourceLabel =
-    vm.source === "cpcb" ? "CPCB" : vm.source === "openaq" ? "OpenAQ" : null;
+  const sourceLabel = vm.source === "cpcb" ? "CPCB" : vm.source === "openaq" ? "OpenAQ" : null;
   const isRolling = vm.live && vm.source === "openaq";
   const hoursAgo =
     vm.live && vm.updatedUtc
-      ? Math.max(
-          0,
-          Math.round((Date.now() - new Date(vm.updatedUtc).getTime()) / 3.6e6),
-        )
+      ? Math.max(0, Math.round((Date.now() - new Date(vm.updatedUtc).getTime()) / 3.6e6))
       : null;
 
   const age = vm.live ? null : ageInDays(vm.asOfDate);
   const veryStale = age != null && age > STALE_AFTER_DAYS;
 
   const notice = veryStale
-    ? `This city's monitor last reported a valid reading${updatedText ? ` on ${updatedText}` : ""} (${agoText(age!)}). Shown for reference only — it may not reflect current air quality.`
+    ? `This city's monitor last reported a valid reading${updatedText ? ` on ${updatedText}` : ""} (${agoText(age!)}). Shown for reference only. It may not reflect current air quality.`
     : isRolling
       ? null
       : !vm.stale
@@ -108,9 +100,7 @@ export function Headline({
       <div className="grid gap-6 p-6 sm:grid-cols-[260px_1fr] sm:items-center">
         <div
           className="flex flex-col items-center gap-2"
-          style={
-            veryStale ? { opacity: 0.45, filter: "grayscale(0.7)" } : undefined
-          }
+          style={veryStale ? { opacity: 0.45, filter: "grayscale(0.7)" } : undefined}
         >
           {vm.index != null ? (
             <Gauge standard={standard} index={vm.index} />
@@ -133,9 +123,7 @@ export function Headline({
 
         <div>
           <div className="font-display text-3xl text-heading">{vm.city}</div>
-          <div className="mt-1 text-sm text-body">
-            {STANDARDS[standard].name}
-          </div>
+          <div className="mt-1 text-sm text-body">{STANDARDS[standard].name}</div>
           {vm.category && (
             <div
               className="mt-3 inline-flex items-center rounded-full px-3 py-1 text-sm font-medium"
@@ -147,9 +135,7 @@ export function Headline({
           {vm.dominantLabel && (
             <p className="mt-3 text-sm text-body">
               Dominant pollutant{" "}
-              <span className="font-medium text-heading">
-                {vm.dominantLabel}
-              </span>
+              <span className="font-medium text-heading">{vm.dominantLabel}</span>
               {vm.dominantValue != null && (
                 <>
                   {" "}
@@ -159,9 +145,7 @@ export function Headline({
             </p>
           )}
           <p className="mt-2 text-xs text-muted">
-            {vm.nStations > 0
-              ? `${vm.nStations} station${vm.nStations > 1 ? "s" : ""} · `
-              : ""}
+            {vm.nStations > 0 ? `${vm.nStations} station${vm.nStations > 1 ? "s" : ""} · ` : ""}
             {sourceLabel ? `${sourceLabel} · ` : ""}
 
             {!updatedText
@@ -176,9 +160,8 @@ export function Headline({
             {isRolling && (
               <span className="ml-1">
                 <InfoDot label="How the headline reading is computed">
-                  A rolling average of the last 24 hours of hourly readings
-                  (OpenAQ), labelled with the most recent hour. Updated every
-                  few hours.
+                  A rolling average of the last 24 hours of hourly readings (OpenAQ), labelled with
+                  the most recent hour. Updated every few hours.
                 </InfoDot>
               </span>
             )}

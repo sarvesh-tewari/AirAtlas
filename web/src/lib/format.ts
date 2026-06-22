@@ -3,19 +3,28 @@
 // Date-only values (e.g. "2026-06-12") format in UTC so the calendar day never shifts.
 export function formatDate(d: string | number | Date): string {
   return new Intl.DateTimeFormat("en-GB", {
-    day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
   }).format(new Date(d));
 }
 
-// A full timestamp (UTC ISO) shown in IST, e.g. "13 June 2026, 14:30 IST" — the natural
+// A full timestamp (UTC ISO) shown in IST, e.g. "13 June 2026, 14:30 IST", the natural
 // reference for an India air-quality dashboard.
 export function formatDateTimeIST(iso: string): string {
   const d = new Date(iso);
   const date = new Intl.DateTimeFormat("en-GB", {
-    day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "Asia/Kolkata",
   }).format(d);
   const time = new Intl.DateTimeFormat("en-GB", {
-    hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Kolkata",
   }).format(d);
   return `${date}, ${time} IST`;
 }
@@ -23,7 +32,10 @@ export function formatDateTimeIST(iso: string): string {
 // Time-only in IST, e.g. "14:00 IST", for the rolling-24h headline "as of" label.
 export function formatTimeIST(iso: string): string {
   const time = new Intl.DateTimeFormat("en-GB", {
-    hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Kolkata",
   }).format(new Date(iso));
   return `${time} IST`;
 }
@@ -36,7 +48,10 @@ export function dateAxisTooltip() {
     const head = `<div style="font-weight:600;margin-bottom:2px">${formatDate(params[0].axisValue)}</div>`;
     const rows = params
       .filter((p) => p.value?.[1] != null)
-      .map((p) => `<div>${p.marker}${p.seriesName ? p.seriesName + ": " : ""}${Math.round(p.value[1] * 10) / 10}</div>`)
+      .map(
+        (p) =>
+          `<div>${p.marker}${p.seriesName ? p.seriesName + ": " : ""}${Math.round(p.value[1] * 10) / 10}</div>`,
+      )
       .join("");
     return head + rows;
   };

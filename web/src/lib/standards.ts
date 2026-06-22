@@ -21,7 +21,10 @@ const C = {
   severe: "#8C2D2D",
 };
 
-export const STANDARDS: Record<StandardId, { name: string; numeric: boolean; max: number; bands: Band[] }> = {
+export const STANDARDS: Record<
+  StandardId,
+  { name: string; numeric: boolean; max: number; bands: Band[] }
+> = {
   naqi: {
     name: "India NAQI",
     numeric: true,

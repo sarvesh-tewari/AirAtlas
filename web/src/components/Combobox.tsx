@@ -78,8 +78,12 @@ export function Combobox({
         onClick={() => setOpen((o) => !o)}
         className="flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm hover:bg-bg-soft"
       >
-        <span className="font-medium text-heading">{triggerLabel ?? selected?.label ?? "Select"}</span>
-        <span className="text-muted" aria-hidden>▾</span>
+        <span className="font-medium text-heading">
+          {triggerLabel ?? selected?.label ?? "Select"}
+        </span>
+        <span className="text-muted" aria-hidden>
+          ▾
+        </span>
       </button>
 
       {open && (
@@ -98,9 +102,7 @@ export function Combobox({
             className="w-full border-b border-border bg-transparent px-3 py-2 text-sm outline-none placeholder:text-muted"
           />
           <ul id={listId} role="listbox" className="max-h-64 overflow-auto py-1">
-            {filtered.length === 0 && (
-              <li className="px-3 py-2 text-sm text-body">No matches</li>
-            )}
+            {filtered.length === 0 && <li className="px-3 py-2 text-sm text-body">No matches</li>}
             {filtered.map((o, i) => (
               <li
                 key={o.value}

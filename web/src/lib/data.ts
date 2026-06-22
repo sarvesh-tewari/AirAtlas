@@ -9,11 +9,15 @@ const BASE = `${import.meta.env.BASE_URL}data`;
 // without a version query the CDN/browser serves stale data after a publish. VITE_DATA_VERSION is
 // set at deploy time to the data-branch commit SHA, so it changes exactly when the data does:
 // files stay cacheable within a deploy and bust the moment new data is published.
-const DATA_VERSION = (import.meta.env as Record<string, string | undefined>).VITE_DATA_VERSION ?? "";
+const DATA_VERSION =
+  (import.meta.env as Record<string, string | undefined>).VITE_DATA_VERSION ?? "";
 const V = DATA_VERSION ? `?v=${DATA_VERSION}` : "";
 
 export function slug(city: string): string {
-  return city.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return city
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 export interface CityList {
@@ -35,9 +39,18 @@ export interface LiveSnapshot {
   updated_utc: string;
   source: string | null;
   n_stations: number;
-  pollutants: Record<string, { value: number; unit: string; naqi_subindex: number; us_subindex: number }>;
+  pollutants: Record<
+    string,
+    { value: number; unit: string; naqi_subindex: number; us_subindex: number }
+  >;
   aqi: { naqi: AqiResult; us: AqiResult; eu: AqiResult };
-  weather: { temp_c?: number; rh_pct?: number; precip_mm?: number; wind_ms?: number; wind_dir_deg?: number } | null;
+  weather: {
+    temp_c?: number;
+    rh_pct?: number;
+    precip_mm?: number;
+    wind_ms?: number;
+    wind_dir_deg?: number;
+  } | null;
 }
 
 export interface DailyRow {
@@ -92,7 +105,13 @@ async function getJSON<T>(url: string): Promise<T | null> {
 }
 
 export async function fetchCityList(): Promise<CityList> {
-  return (await getJSON<CityList>(`${BASE}/meta/city_list.json${V}`)) ?? { generated_today: "", refreshed_at: null, cities: [] };
+  return (
+    (await getJSON<CityList>(`${BASE}/meta/city_list.json${V}`)) ?? {
+      generated_today: "",
+      refreshed_at: null,
+      cities: [],
+    }
+  );
 }
 
 // Rich per-city index (centroid + latest AQI). Falls back to names-only if absent.
@@ -101,8 +120,16 @@ export async function fetchCities(): Promise<CityIndex[]> {
   if (Array.isArray(rich) && rich.length) return rich;
   const list = await fetchCityList();
   return list.cities.map((city) => ({
-    city, lat: null, lon: null, last_date: "", n_stations: 0,
-    naqi: null, naqi_category: null, us: null, us_category: null, eu_band: null,
+    city,
+    lat: null,
+    lon: null,
+    last_date: "",
+    n_stations: 0,
+    naqi: null,
+    naqi_category: null,
+    us: null,
+    us_category: null,
+    eu_band: null,
   }));
 }
 

@@ -162,7 +162,14 @@ body {
 }
 /* "Atlas" carries the AQI-scale gradient (good → severe) in both themes. */
 .logo-atlas {
-  background: linear-gradient(90deg, #2e9e6b 0%, #8fbf3f 28%, #e0a100 55%, #d86a2e 78%, #c8455b 100%);
+  background: linear-gradient(
+    90deg,
+    #2e9e6b 0%,
+    #8fbf3f 28%,
+    #e0a100 55%,
+    #d86a2e 78%,
+    #c8455b 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
