@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 // A small muted "i" that reveals an explanatory tooltip on hover/focus (keyboard-accessible).
 // Same pattern as the standard-toggle help in the top bar.
-function InfoDot({ children, label }: { children: ReactNode; label?: string }) {
+export function InfoDot({ children, label }: { children: ReactNode; label?: string }) {
   return (
     <span className="group relative inline-flex align-middle">
       <button

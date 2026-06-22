@@ -6,7 +6,7 @@ Pipeline: fetch (ingest/*) -> compute AQI (aqi/*) -> aggregate & reconcile (tran
 Modes:
     python run.py backfill   # full daily history + recent hourly + live + meta
     python run.py daily      # recent daily delta + recent hourly + live + meta
-    python run.py hourly     # live snapshot + current weather only
+    python run.py hourly     # rolling-24h live snapshot + recent tier refresh
     python run.py scrub      # one-time: drop sentinel rows from published parquet + rebuild meta
 
 Re-running reproduces the same outputs; gaps backfill on the next run. Bound the work with
@@ -163,14 +163,14 @@ def main():
     # Daily delta refreshes ONLY already-published cities; new cities arrive via the drip, fully
     # backfilled (complete-or-absent). Scope a bare daily run to the published set so the nightly
     # cron never publishes 1-day-thin data for every discovered city.
-    if args.mode == "daily" and not args.next_batch:
+    if args.mode in ("daily", "hourly") and not args.next_batch:
         clp = build.META / "city_list.json"
         published = json.loads(clp.read_text()).get("cities", []) if clp.exists() else []
         args.cities = plan.daily_cities(args.cities, published)
         if not args.cities:
-            print("[run] daily: no published cities yet - nothing to refresh.")
+            print(f"[run] {args.mode}: no published cities yet - nothing to refresh.")
             return
-        print(f"[run] daily scoped to {len(args.cities)} published cities")
+        print(f"[run] {args.mode} scoped to {len(args.cities)} published cities")
 
     sel = build.select_stations(stations, mapping, cities=set(args.cities) if args.cities else None,
                                 max_per_city=args.max_per_city)
@@ -218,8 +218,37 @@ def main():
         wx_daily = build.fetch_weather_daily(centroids, start_date=wx_from, end_date=yesterday)
         daily_rows = storage.assemble_daily_rows(city_daily, weather_by_city_date=wx_daily)
 
-    # ---- Live snapshot (today) ----
+    # ---- Rolling-24h live headline (hourly mode) ----
+    # OpenAQ /hours is ~3h behind real time; CPCB (the true live source) is currently unavailable. Compute a
+    # trailing-24h mean per city and write it as the live snapshot. CPCB, if present, overrides
+    # below. See docs/superpowers/specs/2026-06-22-rolling-24h-headline-design.md
     live_count = 0
+    if args.mode == "hourly":
+        recent_from = (dt.date.fromisoformat(today) - dt.timedelta(days=args.recent_days)).isoformat()
+        print(f"[run] hourly: fetching recent hourly (last {args.recent_days}d)…")
+        city_hourly = build.fetch_city_aq(oa_key, sel, mapping, date_from=recent_from,
+                                          date_to=today, period="hours", sensors=args.sensors)
+        # also refresh the recent tier from this fetch (persisted by the parquet write below)
+        hourly_rows = storage.assemble_hourly_rows(city_hourly)
+        min_hours = int(os.environ.get("AIRATLAS_MIN_ROLLING_HOURS", "12"))
+        rolling = aggregate.rolling_24h(city_hourly, min_hours=min_hours)
+        print(f"[run] hourly: rolling-24h for {len({r.city for r in rolling})} cities "
+              f"(min_hours={min_hours})")
+        wx_now = build.fetch_weather_current(centroids)
+        rolling_by_city: dict[str, list] = {}
+        for r in rolling:
+            rolling_by_city.setdefault(r.city, []).append(r)
+        for rcity, recs in rolling_by_city.items():
+            try:
+                snap = storage.live_snapshot(rcity, recs, updated_utc=recs[0].datetime_utc,
+                                             weather=wx_now.get(rcity))
+                storage.write_live_json(snap, build.DATA / "live")
+            except Exception as e:
+                print(f"[run] rolling live snapshot skipped for {rcity}: {type(e).__name__}: {e}")
+        print(f"[run] hourly: wrote {len(rolling_by_city)} rolling live snapshots")
+        live_count += len(rolling_by_city)
+
+    # ---- Live snapshot (today) ----
     if dg_key:
         try:
             live = build.fetch_live_cpcb(dg_key, mapping)

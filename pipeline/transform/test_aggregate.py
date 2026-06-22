@@ -181,3 +181,44 @@ def test_rollup_buckets_by_ist_local_day():
     dates = sorted(r.datetime_utc for r in out)
     assert dates[0] == "2026-06-19T00:00:00Z"
     assert dates[-1].startswith("2026-06-20")
+
+
+def test_rolling_24h_means_window_ending_at_latest_hour():
+    # 24 hours of pm25 ending at 2026-06-20T12:00Z -> one record, mean, latest hour as the key.
+    recs = [_hourly("Pune", "pm25", f"2026-06-19T{h:02d}:00:00Z", 40.0 + h) for h in range(13, 24)]
+    recs += [_hourly("Pune", "pm25", f"2026-06-20T{h:02d}:00:00Z", 40.0 + h) for h in range(0, 13)]
+    out = agg.rolling_24h(recs, min_hours=12)
+    assert len(out) == 1
+    r = out[0]
+    assert r.city == "Pune" and r.parameter == "pm25"
+    assert r.datetime_utc == "2026-06-20T12:00:00Z"  # most recent hour
+    assert r.averaging == "24h"
+    assert abs(r.value - (sum(40.0 + h for h in range(13, 24)) + sum(40.0 + h for h in range(0, 13))) / 24) < 1e-9
+
+
+def test_rolling_24h_excludes_pollutant_below_min_hours():
+    recs = [_hourly("Pune", "no2", f"2026-06-20T{h:02d}:00:00Z", 20.0) for h in range(0, 6)]  # 6 < 12
+    assert agg.rolling_24h(recs, min_hours=12) == []
+
+
+def test_rolling_24h_ignores_rows_older_than_window():
+    # 12 fresh hours + an old reading 3 days earlier; the old one must not enter the window.
+    recs = [_hourly("Pune", "pm25", f"2026-06-20T{h:02d}:00:00Z", 50.0) for h in range(0, 12)]
+    recs.append(_hourly("Pune", "pm25", "2026-06-17T05:00:00Z", 999.0))
+    out = agg.rolling_24h(recs, min_hours=12)
+    assert len(out) == 1
+    assert out[0].value == 50.0  # the 999 outlier is outside the 24h window, excluded
+
+
+def test_rolling_24h_per_city_latest_hour():
+    # Two cities with different latest hours; each window ends at its own latest.
+    a = [_hourly("A", "pm25", f"2026-06-20T{h:02d}:00:00Z", 30.0) for h in range(0, 12)]
+    b = [_hourly("B", "pm25", f"2026-06-19T{h:02d}:00:00Z", 60.0) for h in range(0, 12)]
+    out = {r.city: r for r in agg.rolling_24h(a + b, min_hours=12)}
+    assert out["A"].datetime_utc == "2026-06-20T11:00:00Z"
+    assert out["B"].datetime_utc == "2026-06-19T11:00:00Z"
+
+
+def test_rolling_24h_skips_none_values():
+    recs = [_hourly("Pune", "pm25", f"2026-06-20T{h:02d}:00:00Z", None) for h in range(0, 14)]
+    assert agg.rolling_24h(recs, min_hours=12) == []
