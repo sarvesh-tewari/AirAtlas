@@ -21,6 +21,9 @@ const C = {
   severe: "#8C2D2D",
 };
 
+// Muted grey for cities with no current reading, a stale (>30 day) monitor, or an unknown band.
+export const NO_DATA_COLOR = "#9095a0";
+
 export const STANDARDS: Record<
   StandardId,
   { name: string; numeric: boolean; max: number; bands: Band[] }
@@ -72,7 +75,7 @@ export function bandForIndex(standard: StandardId, index: number): Band {
   return bands[bands.length - 1];
 }
 
-const UNKNOWN_BAND: Band = { label: "Unknown", color: "#9095a0" };
+const UNKNOWN_BAND: Band = { label: "Unknown", color: NO_DATA_COLOR };
 
 export function bandByLabel(standard: StandardId, label: string | null): Band {
   // Fall back to neutral grey (not "Good"/green) so an unexpected label never miscolours a
