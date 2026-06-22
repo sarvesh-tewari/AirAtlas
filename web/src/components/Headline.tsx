@@ -1,7 +1,8 @@
 import { Clock } from "lucide-react";
 import { Gauge } from "./Gauge";
 import { STANDARDS, bandByLabel, type StandardId } from "../lib/standards";
-import { formatDate, formatDateTimeIST } from "../lib/format";
+import { formatDate, formatDateTimeIST, formatTimeIST } from "../lib/format";
+import { InfoDot } from "./SectionTitle";
 
 export interface HeadlineVM {
   city: string;
@@ -52,12 +53,17 @@ export function Headline({ standard, vm, loading = false }: { standard: Standard
     ? formatDateTimeIST(vm.updatedUtc)
     : dataDate ? formatDate(dataDate) : null;
   const sourceLabel = vm.source === "cpcb" ? "CPCB" : vm.source === "openaq" ? "OpenAQ" : null;
+  const isRolling = vm.live && vm.source === "openaq";
+  const hoursAgo = vm.live && vm.updatedUtc
+    ? Math.max(0, Math.round((Date.now() - new Date(vm.updatedUtc).getTime()) / 3.6e6))
+    : null;
   const age = vm.live ? null : ageInDays(vm.asOfDate);
   const veryStale = age != null && age > STALE_AFTER_DAYS;
   // Honest freshness messaging. A stale monitor (weeks/months old) is called out explicitly and
   // the reading is muted, so an old value is never presented as if it were current.
   const notice = veryStale
     ? `This city's monitor last reported a valid reading${updatedText ? ` on ${updatedText}` : ""} (${agoText(age!)}). Shown for reference only — it may not reflect current air quality.`
+    : isRolling ? null
     : !vm.stale ? null
     : vm.live
       ? `Live reading may be delayed. Last updated ${updatedText ?? "recently"}.`
@@ -113,8 +119,20 @@ export function Headline({ standard, vm, loading = false }: { standard: Standard
           <p className="mt-2 text-xs text-muted">
             {vm.nStations > 0 ? `${vm.nStations} station${vm.nStations > 1 ? "s" : ""} · ` : ""}
             {sourceLabel ? `${sourceLabel} · ` : ""}
-            {updatedText ? (vm.live ? `updated ${updatedText}` : `latest reading · ${updatedText}`) : (vm.live ? "live" : "latest available")}
-            {age != null && age > 1 ? `, ${agoText(age)}` : ""}
+            {!updatedText
+              ? (vm.live ? "live" : "latest available")
+              : isRolling
+                ? `24h average · as of ${formatTimeIST(vm.updatedUtc ?? "")}${hoursAgo ? `, ${hoursAgo}h ago` : ""}`
+                : vm.live
+                  ? `updated ${updatedText}`
+                  : `latest reading · ${updatedText}${age != null && age > 1 ? `, ${agoText(age)}` : ""}`}
+            {isRolling && (
+              <span className="ml-1">
+                <InfoDot label="How the headline reading is computed">
+                  A rolling average of the last 24 hours of hourly readings (OpenAQ), labelled with the most recent hour. Updated every few hours.
+                </InfoDot>
+              </span>
+            )}
           </p>
         </div>
       </div>
