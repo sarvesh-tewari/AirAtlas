@@ -175,6 +175,50 @@ def rollup_hourly_to_daily(
     return out
 
 
+def rolling_24h(
+    hourly: list[CityPollutantRecord], *, min_hours: int = 12, window_hours: int = 24,
+) -> list[CityPollutantRecord]:
+    """Per-city trailing-window mean from hourly city records, for the live headline.
+
+    For each city, find its most recent available hour, take the window of hours strictly after
+    `latest - window_hours` (up to and including the latest hour), and compute the arithmetic
+    MEAN per pollutant (same method as the daily rollup and OpenAQ's summary.avg). A pollutant
+    is emitted only if it has >= `min_hours` readings in the window. The emitted record's
+    datetime_utc is the city's most recent hour, so the live snapshot is stamped with the
+    freshest reading time. Median-across-stations is already applied per hour.
+    """
+    def _ts(r: CityPollutantRecord) -> dt.datetime:
+        return dt.datetime.fromisoformat(r.datetime_utc.replace("Z", "+00:00"))
+
+    by_city: dict[str, list[CityPollutantRecord]] = defaultdict(list)
+    for r in hourly:
+        if r.value is not None:
+            by_city[r.city].append(r)
+
+    out: list[CityPollutantRecord] = []
+    for city, rows in by_city.items():
+        latest_row = max(rows, key=_ts)
+        cutoff = _ts(latest_row) - dt.timedelta(hours=window_hours)
+        window = [r for r in rows if _ts(r) > cutoff]
+        by_param: dict[str, list[CityPollutantRecord]] = defaultdict(list)
+        for r in window:
+            by_param[r.parameter].append(r)
+        for param, rs in by_param.items():
+            if len(rs) < min_hours:
+                continue
+            values = [r.value for r in rs]
+            covs = [r.coverage_pct for r in rs if r.coverage_pct is not None]
+            out.append(CityPollutantRecord(
+                city=city, parameter=param, datetime_utc=latest_row.datetime_utc,
+                averaging="24h", value=sum(values) / len(values), unit=rs[0].unit,
+                n_stations=max(r.n_stations for r in rs),
+                # Always openaq: this is the OpenAQ-hourly rolling path by construction; CPCB has
+                # its own real-time live path. The frontend keys rolling-24h treatment on this.
+                coverage_pct=(sum(covs) / len(covs)) if covs else None, source="openaq",
+            ))
+    return out
+
+
 def _drop_city_pm25_over_pm10(
     records: list[CityPollutantRecord],
 ) -> list[CityPollutantRecord]:
