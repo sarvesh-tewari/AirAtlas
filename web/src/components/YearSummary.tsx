@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import type { EChartsCoreOption } from "echarts";
 import { Sigma } from "lucide-react";
 import { SectionTitle } from "./SectionTitle";
 import type { DailyRow } from "../lib/data";
@@ -15,7 +16,6 @@ export function YearSummary({
   dark: boolean;
 }) {
   const cfg = STANDARDS[standard];
-  const t = chartTheme(dark);
 
   const years = useMemo(() => {
     const by = new Map<string, number[]>();
@@ -43,88 +43,66 @@ export function YearSummary({
     });
   }, [rows, standard, cfg]);
   if (years.length === 0) return null;
+
   const fmt = (v: number) =>
     cfg.numeric ? `${v}` : (cfg.bands[v]?.label ?? `${v}`);
-  const avgColor = cfg.numeric
-    ? bandForIndex(
-        standard,
-        Math.round(years.reduce((s, y) => s + y.avg, 0) / years.length),
-      ).color
-    : cfg.bands[1].color;
 
-  const peakColorSeries = cfg.numeric
-    ? bandForIndex(standard, Math.max(...years.map((y) => y.peak))).color
-    : cfg.bands[3].color;
-  const option = {
-    grid: { left: 44, right: 16, top: 16, bottom: 28 },
-
-    tooltip: {
-      trigger: "axis",
-      backgroundColor: t.tooltipBg,
-      borderWidth: 0,
-      textStyle: { color: t.ink, fontSize: 12 },
-
-      formatter: (params: any) => {
-        const year = years[params[0].dataIndex];
-
-        return `
-    <strong>${year.yr}</strong><br/>
-    Average AQI: ${fmt(year.avg)}<br/>
-    Peak AQI: ${fmt(year.peak)}<br/>
-    Good Days: ${year.good}<br/>
-    Poor Days: ${year.poor}<br/>
-    Total Days: ${year.n}
-  `;
-      },
-    },
-    legend: {
-      top: 0,
-      textStyle: {
-        color: t.label,
-      },
-    },
-    xAxis: {
-      type: "category",
-      data: years.map((y) => y.yr),
-      axisLine: { lineStyle: { color: t.axis } },
-      axisLabel: { color: t.label, fontSize: 11 },
-    },
-
-    yAxis: {
-      type: "value",
-      axisLabel: { color: t.label, fontSize: 11 },
-      splitLine: { lineStyle: { color: t.split } },
-    },
-
-    series: [
-      {
-        name: "Average AQI",
-        type: "line",
-        data: years.map((y) => y.avg),
-        smooth: true,
-        lineStyle: {
-          color: avgColor,
-          width: 2,
-        },
-        itemStyle: {
-          color: avgColor,
+  // EU has no numeric AQI, so (like the multi-year TrendChart) we plot the band index on a
+  // 0..6 axis and label the ticks with band names rather than numbers. The lines use neutral
+  // theme colours; the y-axis carries the category meaning.
+  const option = useMemo(() => {
+    const t = chartTheme(dark);
+    const yAxis = cfg.numeric
+      ? {
+          type: "value",
+          axisLabel: { color: t.label, fontSize: 11 },
+          splitLine: { lineStyle: { color: t.split } },
+        }
+      : {
+          type: "value",
+          min: 0,
+          max: 6,
+          interval: 1,
+          axisLabel: {
+            color: t.label,
+            fontSize: 10,
+            formatter: (v: number) => cfg.bands[v]?.label ?? "",
+          },
+          splitLine: { lineStyle: { color: t.split } },
+        };
+    const line = (name: string, key: "avg" | "peak", color: string) => ({
+      name,
+      type: "line",
+      data: years.map((y) => y[key]),
+      smooth: true,
+      lineStyle: { color, width: 2 },
+      itemStyle: { color },
+    });
+    return {
+      // EU band names ("Extremely Poor") need more room than numeric AQI tick labels.
+      grid: { left: cfg.numeric ? 44 : 92, right: 16, top: 28, bottom: 28 },
+      legend: { top: 0, textStyle: { color: t.label } },
+      tooltip: {
+        trigger: "axis",
+        backgroundColor: t.tooltipBg,
+        borderWidth: 0,
+        textStyle: { color: t.ink, fontSize: 12 },
+        formatter: (params: any) => {
+          const y = years[params[0].dataIndex];
+          return `<strong>${y.yr}</strong><br/>Average: ${fmt(y.avg)}<br/>Peak: ${fmt(y.peak)}<br/>${y.good} good days, ${y.poor} poor days<br/>${y.n} days total`;
         },
       },
-      {
-        name: "Peak AQI",
-        type: "line",
-        data: years.map((y) => y.peak),
-        smooth: true,
-        lineStyle: {
-          color: peakColorSeries,
-          width: 2,
-        },
-        itemStyle: {
-          color: peakColorSeries,
-        },
+      xAxis: {
+        type: "category",
+        data: years.map((y) => y.yr),
+        axisLine: { lineStyle: { color: t.axis } },
+        axisLabel: { color: t.label, fontSize: 11 },
       },
-    ],
-  };
+      yAxis,
+      series: [line("Average", "avg", t.ink), line("Peak", "peak", t.accent)],
+      // fmt is pure over cfg (in deps), so referencing it here is safe.
+    } as EChartsCoreOption;
+  }, [years, dark, cfg]);
 
   return (
     <section className="card p-5">
@@ -133,19 +111,17 @@ export function YearSummary({
           icon={Sigma}
           color="#0d9488"
           eyebrow="Annual summary"
-          info="Annual AQI trends and per-year summary statistics."
+          info="Each year's average and peak air quality, plus how many days were good or poor."
         >
           Year-by-year
         </SectionTitle>
       </div>
 
-      {standard !== "eu" && (
-        <EChart
-          option={option}
-          height={280}
-          ariaLabel="Year-by-year AQI summary chart"
-        />
-      )}
+      <EChart
+        option={option}
+        height={280}
+        ariaLabel="Year-by-year air quality summary chart"
+      />
 
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {years.map((y) => {
