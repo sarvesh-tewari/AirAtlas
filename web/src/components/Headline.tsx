@@ -113,8 +113,8 @@ export function Headline({ standard, vm, loading = false }: { standard: Standard
           <p className="mt-2 text-xs text-muted">
             {vm.nStations > 0 ? `${vm.nStations} station${vm.nStations > 1 ? "s" : ""} · ` : ""}
             {sourceLabel ? `${sourceLabel} · ` : ""}
-            {updatedText ? (vm.live ? `updated ${updatedText}` : `latest data ${updatedText}`) : (vm.live ? "live" : "latest available")}
-            {age != null && age > 1 ? ` · ${agoText(age)}` : ""}
+            {updatedText ? (vm.live ? `updated ${updatedText}` : `latest reading · ${updatedText}`) : (vm.live ? "live" : "latest available")}
+            {age != null && age > 1 ? `, ${agoText(age)}` : ""}
           </p>
         </div>
       </div>

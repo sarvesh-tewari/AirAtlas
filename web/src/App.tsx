@@ -17,9 +17,10 @@ import { ErrorBoundary } from "./components/ErrorBoundary";
 import type { Option } from "./components/Combobox";
 import { POLLUTANT_LABELS, type StandardId } from "./lib/standards";
 import {
-  fetchCities, fetchLive, fetchDailyHistory,
+  fetchCities, fetchCityList, fetchLive, fetchDailyHistory,
   type CityIndex, type LiveSnapshot, type DailyRow,
 } from "./lib/data";
+import { Footer } from "./components/Footer";
 
 const POLLS = ["pm25", "pm10", "no2", "so2", "o3", "co", "nh3"] as const;
 
@@ -56,8 +57,10 @@ export default function App() {
   const [histLoading, setHistLoading] = useState(true);
   const pickedRef = useRef(false); // user manually chose a city (read inside async callbacks)
   const [err, setErr] = useState<string | null>(null);
+  const [refreshedAt, setRefreshedAt] = useState<string | null>(null);
 
   useEffect(() => {
+    fetchCityList().then((l) => setRefreshedAt(l.refreshed_at ?? null)).catch(() => {});
     fetchCities()
       .then((cs) => {
         setCities(cs);
@@ -216,6 +219,7 @@ export default function App() {
           </div>
         )}
       </main>
+      <Footer refreshedAt={refreshedAt} />
     </div>
   );
 }
