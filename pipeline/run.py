@@ -41,6 +41,11 @@ def _today_ist() -> str:
     return dt.datetime.now(tz=ist).strftime("%Y-%m-%d")
 
 
+def _now_utc() -> str:
+    """UTC timestamp of this run, published so the site can show when data was last refreshed."""
+    return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+
+
 # Known citymap orphans: city slugs that should never have existed as their own city. The
 # station is re-mapped to its real city in pipeline/config/city_aliases.json, but the orphan's
 # stale parquet persists, so the one-time scrub removes it.
@@ -69,6 +74,7 @@ def _scrub() -> None:
     prior_index = json.loads(prior_path.read_text()) if prior_path.exists() else []
     centroids = build.merge_centroids({}, prior_index)
     storage.write_json({"generated_today": build.latest_daily_date(all_daily),
+                        "refreshed_at": _now_utc(),
                         "cities": sorted({r["city"] for r in all_daily})},
                        build.META / "city_list.json")
     storage.write_json(build.build_coverage(all_daily), build.META / "coverage.json")
@@ -257,7 +263,7 @@ def main():
         prior_index = json.loads(prior_path.read_text()) if prior_path.exists() else []
         all_centroids = build.merge_centroids(centroids, prior_index)
         freshness = build.latest_daily_date(all_daily)
-        storage.write_json({"generated_today": freshness,
+        storage.write_json({"generated_today": freshness, "refreshed_at": _now_utc(),
                             "cities": sorted({r["city"] for r in all_daily})},
                            build.META / "city_list.json")
         storage.write_json(build.build_coverage(all_daily), build.META / "coverage.json")

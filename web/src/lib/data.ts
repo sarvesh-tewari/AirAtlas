@@ -18,6 +18,7 @@ export function slug(city: string): string {
 
 export interface CityList {
   generated_today: string | null;
+  refreshed_at?: string | null; // UTC ISO of the last pipeline run (for the "last refreshed" footer)
   cities: string[];
 }
 
@@ -91,7 +92,7 @@ async function getJSON<T>(url: string): Promise<T | null> {
 }
 
 export async function fetchCityList(): Promise<CityList> {
-  return (await getJSON<CityList>(`${BASE}/meta/city_list.json${V}`)) ?? { generated_today: "", cities: [] };
+  return (await getJSON<CityList>(`${BASE}/meta/city_list.json${V}`)) ?? { generated_today: "", refreshed_at: null, cities: [] };
 }
 
 // Rich per-city index (centroid + latest AQI). Falls back to names-only if absent.
