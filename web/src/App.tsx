@@ -206,7 +206,7 @@ export default function App() {
               <>
                 <ErrorBoundary label="Trend"><TrendChart rows={history} standard={standard} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Monthly pattern"><MonthlyHeatmap rows={history} standard={standard} dark={dark} /></ErrorBoundary>
-                <ErrorBoundary label="Year-by-year"><YearSummary rows={history} standard={standard} /></ErrorBoundary>
+                <ErrorBoundary label="Year-by-year"><YearSummary rows={history} standard={standard} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Pollutant trends"><PollutantTrend rows={history} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Exceedance"><Exceedance rows={history} standard={standard} dark={dark} /></ErrorBoundary>
                 <ErrorBoundary label="Weather overlay"><WeatherOverlay rows={history} standard={standard} dark={dark} /></ErrorBoundary>
