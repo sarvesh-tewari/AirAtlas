@@ -3,13 +3,19 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { Map as MapIcon } from "lucide-react";
 import { SectionTitle } from "./SectionTitle";
-import { bandForIndex, bandByLabel, STANDARDS, type StandardId } from "../lib/standards";
+import {
+  bandForIndex,
+  bandByLabel,
+  STANDARDS,
+  NO_DATA_COLOR,
+  type StandardId,
+} from "../lib/standards";
 import type { CityIndex } from "../lib/data";
 import { isStale } from "../lib/freshness";
 function colorFor(c: CityIndex, standard: StandardId): string {
-  if (standard === "eu") return c.eu_band ? bandByLabel("eu", c.eu_band).color : "#9095a0";
+  if (standard === "eu") return c.eu_band ? bandByLabel("eu", c.eu_band).color : NO_DATA_COLOR;
   const idx = standard === "naqi" ? c.naqi : c.us;
-  return idx != null ? bandForIndex(standard, idx).color : "#9095a0";
+  return idx != null ? bandForIndex(standard, idx).color : NO_DATA_COLOR;
 }
 
 export function MapView({
@@ -68,7 +74,7 @@ export function MapView({
       const stale = isStale(c.last_date);
       const m = L.circleMarker([c.lat, c.lon], {
         radius: c.city === current ? 9 : 6,
-        fillColor: stale ? "#9095a0" : colorFor(c, standard),
+        fillColor: stale ? NO_DATA_COLOR : colorFor(c, standard),
         color: stale
           ? "rgba(255,255,255,0.35)"
           : c.city === current
@@ -114,7 +120,7 @@ export function MapView({
                 <span className="flex items-center gap-2">
                   <span
                     className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
-                    style={{ background: "#9095a0" }}
+                    style={{ background: NO_DATA_COLOR }}
                     aria-hidden
                   />
                   No current reading
@@ -123,7 +129,7 @@ export function MapView({
                 <span className="flex items-center gap-2">
                   <span
                     className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
-                    style={{ background: "#9095a0", opacity: 0.45 }}
+                    style={{ background: NO_DATA_COLOR, opacity: 0.45 }}
                     aria-hidden
                   />
                   Stale monitor (&gt;30 days old)
