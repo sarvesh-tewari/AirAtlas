@@ -31,22 +31,91 @@ def newest_live_age_hours(live_dir, now: dt.datetime | None = None) -> float | N
     return (now - newest).total_seconds() / 3600.0
 
 
-def main() -> int:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--live-dir", required=True)
-    ap.add_argument("--max-hours", type=float, default=6.0)
-    args = ap.parse_args()
+def read_coverage(meta_dir) -> tuple[int | None, int | None]:
+    """(city count, total station count) from a meta dir. Each is None if its file is missing."""
+    meta = Path(meta_dir)
+    try:
+        cities = len(json.loads((meta / "city_list.json").read_text()).get("cities", []))
+    except Exception:
+        cities = None
+    try:
+        stations = sum(c.get("n_stations", 0)
+                       for c in json.loads((meta / "cities.json").read_text()))
+    except Exception:
+        stations = None
+    return cities, stations
 
-    age = newest_live_age_hours(args.live_dir)
+
+def _drop(prior: int | None, current: int | None) -> float | None:
+    """Relative drop (prior -> current). None when prior is missing or zero (metric skipped).
+    A present prior with a missing current (file gone/corrupt) is a full drop -> 1.0 (trips)."""
+    if not prior:
+        return None
+    if current is None:
+        return 1.0
+    return (prior - current) / prior
+
+
+def coverage_verdict(
+    prior_cities, current_cities, prior_stations, current_stations,
+    max_city_drop: float = 0.05, max_station_drop: float = 0.10,
+) -> tuple[bool, str]:
+    """Compare published coverage against the prior run. Alerts only on a DROP beyond threshold;
+    growth never trips, and a missing/zero prior skips that metric."""
+    problems = []
+    cd = _drop(prior_cities, current_cities)
+    if cd is not None and cd > max_city_drop:
+        problems.append(
+            f"cities {prior_cities} -> {current_cities} ({cd:.0%} > {max_city_drop:.0%})")
+    sd = _drop(prior_stations, current_stations)
+    if sd is not None and sd > max_station_drop:
+        problems.append(
+            f"stations {prior_stations} -> {current_stations} ({sd:.0%} > {max_station_drop:.0%})")
+    if problems:
+        return False, "COVERAGE DROP: " + "; ".join(problems)
+    return (True,
+            f"OK: coverage cities {current_cities} (prior {prior_cities}), "
+            f"stations {current_stations} (prior {prior_stations})")
+
+
+def _run_staleness(live_dir, max_hours) -> int:
+    age = newest_live_age_hours(live_dir)
     if age is None:
-        # No live data at all = not launched / no secrets yet, not a staleness failure.
-        print(f"No live snapshot in {args.live_dir} yet — skipping staleness check.")
+        print(f"No live snapshot in {live_dir} yet - skipping staleness check.")
         return 0
-    if age > args.max_hours:
-        print(f"STALE: newest live snapshot is {age:.1f}h old (> {args.max_hours}h)")
+    if age > max_hours:
+        print(f"STALE: newest live snapshot is {age:.1f}h old (> {max_hours}h)")
         return 1
     print(f"OK: newest live snapshot is {age:.1f}h old")
     return 0
+
+
+def _run_coverage(baseline, current, max_city_drop, max_station_drop) -> int:
+    pc, ps = read_coverage(baseline)
+    if pc is None and ps is None:
+        print(f"No baseline coverage in {baseline} yet - skipping coverage check.")
+        return 0
+    cc, cs = read_coverage(current)
+    ok, msg = coverage_verdict(pc, cc, ps, cs, max_city_drop, max_station_drop)
+    print(msg)
+    return 0 if ok else 1
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    s = sub.add_parser("staleness")
+    s.add_argument("--live-dir", required=True)
+    s.add_argument("--max-hours", type=float, default=6.0)
+    c = sub.add_parser("coverage")
+    c.add_argument("--baseline", required=True)
+    c.add_argument("--current", required=True)
+    c.add_argument("--max-city-drop", type=float, default=0.05)
+    c.add_argument("--max-station-drop", type=float, default=0.10)
+    args = ap.parse_args()
+    if args.cmd == "staleness":
+        return _run_staleness(args.live_dir, args.max_hours)
+    return _run_coverage(args.baseline, args.current, args.max_city_drop, args.max_station_drop)
 
 
 if __name__ == "__main__":

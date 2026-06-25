@@ -61,7 +61,7 @@ jobs:
       - name: Staleness check
         run: |
           set -o pipefail
-          python pipeline/checks.py --live-dir data/live --max-hours 96 2>&1 | tee -a /tmp/airatlas-run.log
+          python pipeline/checks.py staleness --live-dir data/live --max-hours 96 2>&1 | tee -a /tmp/airatlas-run.log
 
       # Publish the whole data/ tree as a single PARENTLESS commit on the `data` branch
       # (rolling snapshot — force-push keeps the branch at one commit, so main history and

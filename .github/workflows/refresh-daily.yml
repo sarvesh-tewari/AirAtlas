@@ -67,6 +67,13 @@ jobs:
             echo "No data branch yet; starting fresh."
           fi
 
+      - name: Capture coverage baseline
+        run: |
+          mkdir -p /tmp/coverage-baseline
+          cp data/meta/city_list.json data/meta/cities.json /tmp/coverage-baseline/ 2>/dev/null \
+            && echo "Captured coverage baseline." \
+            || echo "No prior meta to baseline (first run)."
+
       - name: Refresh history + recent (+ live)
         env:
           DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
@@ -90,6 +97,15 @@ jobs:
           # (pipefail so the step still fails when run.py does, despite the tee).
           set -o pipefail
           python pipeline/run.py "$MODE" $ARGS 2>&1 | tee /tmp/airatlas-run.log
+
+      # Fail (and alert) BEFORE publishing if this refresh produced far fewer cities/stations than
+      # the previous run, so we keep the prior good data instead of overwriting it with a thin set.
+      - name: Coverage-floor check
+        run: |
+          set -o pipefail
+          python pipeline/checks.py coverage \
+            --baseline /tmp/coverage-baseline --current data/meta \
+            --max-city-drop 0.05 --max-station-drop 0.10 2>&1 | tee -a /tmp/airatlas-run.log
 
       # Publish the whole data/ tree as a single PARENTLESS commit on the `data` branch
       # (rolling snapshot; force-push keeps the branch at one commit). Built in a throwaway index.
