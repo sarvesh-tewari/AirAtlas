@@ -169,6 +169,17 @@ export function Methodology() {
           <li>Code under MIT; data under CC BY 4.0.</li>
         </ul>
       </section>
+
+      <section className="card p-6">
+        <p className="text-sm leading-relaxed text-body">
+          AirAtlas is built mainly for historical and comparative analysis, not for the very latest
+          air quality. India's live AQI feed (CPCB) is frequently down, so the AQI shown is computed
+          from OpenAQ's hourly data, which currently runs roughly one to two days behind real time.
+          The headline is always honest about this, showing how old each reading is, but if you need
+          this hour's AQI this is not the right tool. Weather conditions are current (from
+          Open-Meteo), only the AQI lags.
+        </p>
+      </section>
     </div>
   );
 }
