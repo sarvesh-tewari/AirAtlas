@@ -52,14 +52,16 @@ jobs:
           python pipeline/run.py hourly 2>&1 | tee /tmp/airatlas-run.log
 
       # Keep-last-good means an OpenAQ/Open-Meteo outage leaves OLD snapshots and the run still
-      # exits 0, so check freshness BEFORE committing and alert. The live headline is now a
-      # rolling-24h average from OpenAQ hourly, whose India feed lags the wall clock by ~15-24h
-      # (not the ~3h once assumed). 36h flags a genuine multi-day stall (pipeline down or OpenAQ
-      # silent) without false-alarming on that normal lag.
+      # exits 0, so check freshness BEFORE committing and alert. The live headline is a rolling-24h
+      # average from OpenAQ hourly, whose India feed lags the wall clock badly and variably (15h to
+      # 44h+ observed). The threshold must sit ABOVE that normal lag so it only fires on a genuine
+      # multi-day blackout: 96h (4 days) means "no fresh data in 4 days, investigate" and matches
+      # the daily smoke check's 4-day staleness threshold. Tightening it back into the normal-lag
+      # band just produces false alarms on OpenAQ being slow (which we cannot fix).
       - name: Staleness check
         run: |
           set -o pipefail
-          python pipeline/checks.py --live-dir data/live --max-hours 36 2>&1 | tee -a /tmp/airatlas-run.log
+          python pipeline/checks.py --live-dir data/live --max-hours 96 2>&1 | tee -a /tmp/airatlas-run.log
 
       # Publish the whole data/ tree as a single PARENTLESS commit on the `data` branch
       # (rolling snapshot — force-push keeps the branch at one commit, so main history and
