@@ -79,7 +79,10 @@ export function Headline({
           ? `Live reading may be delayed. Last updated ${updatedText ?? "recently"}.`
           : `Live data (CPCB) is currently unavailable, so this shows the latest published day${updatedText ? `, ${updatedText}` : ""}. History updates daily from OpenAQ.`;
   return (
-    <section className="card overflow-hidden" style={wash}>
+    // overflow-hidden only when a notice banner is present (to round its corners). It must NOT be
+    // set otherwise, or it clips the rolling-24h InfoDot tooltip (which drops below the line). The
+    // banner and that tooltip never co-occur, so this is safe.
+    <section className={`card ${notice ? "overflow-hidden" : ""}`} style={wash}>
       {notice && (
         <div
           className="flex items-center gap-2 border-b px-6 py-2 text-xs"
