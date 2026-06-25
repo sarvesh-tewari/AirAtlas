@@ -47,9 +47,12 @@ def read_coverage(meta_dir) -> tuple[int | None, int | None]:
 
 
 def _drop(prior: int | None, current: int | None) -> float | None:
-    """Relative drop (prior -> current); None when prior is missing or zero (metric skipped)."""
-    if not prior or current is None:
+    """Relative drop (prior -> current). None when prior is missing or zero (metric skipped).
+    A present prior with a missing current (file gone/corrupt) is a full drop -> 1.0 (trips)."""
+    if not prior:
         return None
+    if current is None:
+        return 1.0
     return (prior - current) / prior
 
 

@@ -69,6 +69,20 @@ def test_coverage_verdict_zero_prior_skips_metric():
     assert ok is True
 
 
+def test_coverage_verdict_current_missing_trips():
+    # baseline had counts but current read is None (file missing/corrupt) -> trip, do not skip
+    ok_city, msg_city = checks.coverage_verdict(286, None, 467, 467)
+    ok_st, msg_st = checks.coverage_verdict(286, 286, 467, None)
+    assert ok_city is False and "cities" in msg_city
+    assert ok_st is False and "stations" in msg_st
+
+
+def test_coverage_verdict_partial_baseline_guards_present_metric():
+    # only the city baseline exists (stations baseline None) -> city metric still guards, stations skipped
+    ok, msg = checks.coverage_verdict(10, 2, None, 5)
+    assert ok is False and "cities" in msg and "stations" not in msg
+
+
 def test_read_coverage(tmp_path):
     (tmp_path / "city_list.json").write_text(json.dumps({"cities": ["a", "b", "c"]}))
     (tmp_path / "cities.json").write_text(json.dumps([{"n_stations": 2}, {"n_stations": 3}]))
