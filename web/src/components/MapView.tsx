@@ -72,6 +72,10 @@ export function MapView({
     for (const c of cities) {
       if (c.lat == null || c.lon == null) continue;
       const stale = isStale(c.last_date);
+      const idx = standard === "eu" ? c.eu_band : standard === "naqi" ? c.naqi : c.us;
+      const hasAnyReading = c.naqi != null || c.us != null || c.eu_band != null;
+      // Fresh data, but the selected standard can't be computed (e.g. NAQI needs 3+ pollutants).
+      const limited = !stale && idx == null && hasAnyReading;
       const m = L.circleMarker([c.lat, c.lon], {
         radius: c.city === current ? 9 : 6,
         fillColor: stale ? NO_DATA_COLOR : colorFor(c, standard),
@@ -83,8 +87,15 @@ export function MapView({
         weight: c.city === current ? 2.5 : 1.5,
         fillOpacity: stale ? 0.45 : 0.9,
       });
-      const idx = standard === "eu" ? c.eu_band : standard === "naqi" ? c.naqi : c.us;
-      m.bindTooltip(`${c.city}${idx != null ? ` · ${idx}` : ""}${stale ? " · stale data" : ""}`, {
+      let label = c.city;
+      if (idx != null) label += ` · ${idx}`;
+      if (stale) label += " · stale data";
+      else if (limited)
+        label +=
+          standard === "naqi"
+            ? " · NAQI needs 3+ pollutants, please try US/EU readings"
+            : ` · no ${standard.toUpperCase()} reading, please try another standard`;
+      m.bindTooltip(label, {
         direction: "top",
       });
       m.on("click", () => onCity(c.city));
@@ -123,7 +134,7 @@ export function MapView({
                     style={{ background: NO_DATA_COLOR }}
                     aria-hidden
                   />
-                  No current reading
+                  No reading for this standard
                 </span>
 
                 <span className="flex items-center gap-2">
@@ -135,6 +146,13 @@ export function MapView({
                   Stale monitor (&gt;30 days old)
                 </span>
               </span>
+              {standard === "naqi" && (
+                <span className="mt-2 block text-muted">
+                  On NAQI, grey is often a city reporting fewer than 3 pollutants. India's NAQI
+                  needs at least 3 (one being PM2.5 or PM10), so single-monitor cities can be blank
+                  here but still have a US or EU reading. Switch the standard to see them.
+                </span>
+              )}
             </>
           }
         >
