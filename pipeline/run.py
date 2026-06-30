@@ -49,7 +49,7 @@ def _now_utc() -> str:
 # Known citymap orphans: city slugs that should never have existed as their own city. The
 # station is re-mapped to its real city in pipeline/config/city_aliases.json, but the orphan's
 # stale parquet persists, so the one-time scrub removes it.
-ORPHAN_CITY_SLUGS = ("dn-park",)
+ORPHAN_CITY_SLUGS = ("dn-park", "tirupathi", "kalaburgi", "thrissur-kerala-pcb")
 
 
 def _scrub() -> None:
