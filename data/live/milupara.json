@@ -1,0 +1,77 @@
+{
+  "city": "Milupara",
+  "updated_utc": "2026-07-01T09:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.49865942028985505,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 69.2343165629353,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 34
+    },
+    "o3": {
+      "value": 68.6343115942029,
+      "unit": "µg/m³",
+      "naqi_subindex": 68,
+      "us_subindex": 31
+    },
+    "pm10": {
+      "value": 55.56608695652174,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 51
+    },
+    "pm25": {
+      "value": 22.1275,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 75
+    },
+    "so2": {
+      "value": 37.79079432737619,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 86,
+      "category": "Satisfactory",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 75,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 94,
+    "precip_mm": 2.5,
+    "wind_ms": 1.24,
+    "wind_dir_deg": 194
+  }
+}

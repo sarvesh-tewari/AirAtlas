@@ -1,0 +1,65 @@
+{
+  "city": "Visakhapatnam",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4182777777777778,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 82.1828254871052,
+      "unit": "µg/m³",
+      "naqi_subindex": 102,
+      "us_subindex": 41
+    },
+    "pm25": {
+      "value": 21.475,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 74
+    },
+    "so2": {
+      "value": 24.69255907748239,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 102,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 74,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.9,
+    "rh_pct": 66,
+    "precip_mm": 0.0,
+    "wind_ms": 4.96,
+    "wind_dir_deg": 266
+  }
+}

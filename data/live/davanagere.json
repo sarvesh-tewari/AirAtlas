@@ -1,0 +1,51 @@
+{
+  "city": "Davanagere",
+  "updated_utc": "2026-06-30T17:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 19.759615384615383,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 16.533958333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 15
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 15,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.8,
+    "rh_pct": 89,
+    "precip_mm": 0.1,
+    "wind_ms": 5.59,
+    "wind_dir_deg": 260
+  }
+}

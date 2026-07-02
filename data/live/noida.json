@@ -1,0 +1,79 @@
+{
+  "city": "Noida",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "co": {
+      "value": 0.6026388888888888,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 26.495139513391845,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 13
+    },
+    "o3": {
+      "value": 34.62979166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 16
+    },
+    "pm10": {
+      "value": 97.5573611111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 97,
+      "us_subindex": 72
+    },
+    "pm25": {
+      "value": 33.35611111111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 96
+    },
+    "so2": {
+      "value": 26.682793896273576,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 97,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 96,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 33.1,
+    "rh_pct": 59,
+    "precip_mm": 0.0,
+    "wind_ms": 1.25,
+    "wind_dir_deg": 331
+  }
+}

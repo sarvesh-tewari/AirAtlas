@@ -1,0 +1,80 @@
+{
+  "city": "Nashik",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "no2": {
+      "value": 5.959037220944103,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 15.154583333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 14
+    },
+    "so2": {
+      "value": 4.818915762042718,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 1
+    },
+    "co": {
+      "value": 0.3377951388888889,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "o3": {
+      "value": 15.052048611111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 6.886145833333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 38
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 15,
+      "category": "Good",
+      "dominant": [
+        "pm10",
+        "co",
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 38,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.0,
+    "rh_pct": 92,
+    "precip_mm": 0.2,
+    "wind_ms": 5.12,
+    "wind_dir_deg": 260
+  }
+}

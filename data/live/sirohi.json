@@ -1,0 +1,77 @@
+{
+  "city": "Sirohi",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.26611111111111113,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 9.53417208446944,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 22.405208333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 62.65625,
+      "unit": "µg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 54
+    },
+    "pm25": {
+      "value": 12.28125,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 57
+    },
+    "so2": {
+      "value": 7.422245754423402,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 62,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 57,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 34.5,
+    "rh_pct": 45,
+    "precip_mm": 0.0,
+    "wind_ms": 3.74,
+    "wind_dir_deg": 164
+  }
+}

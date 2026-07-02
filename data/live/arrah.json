@@ -1,0 +1,60 @@
+{
+  "city": "Arrah",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0753472222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 64.03125,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 55
+    },
+    "pm25": {
+      "value": 36.395833333333336,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 103
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 64,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 103,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.8,
+    "rh_pct": 75,
+    "precip_mm": 0.0,
+    "wind_ms": 3.56,
+    "wind_dir_deg": 87
+  }
+}

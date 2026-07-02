@@ -1,0 +1,78 @@
+{
+  "city": "Tumakuru",
+  "updated_utc": "2026-06-23T02:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0652083333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 10
+    },
+    "no2": {
+      "value": 36.11398429724778,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 18
+    },
+    "o3": {
+      "value": 0.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": 0
+    },
+    "pm10": {
+      "value": 42.23,
+      "unit": "µg/m³",
+      "naqi_subindex": 42,
+      "us_subindex": 39
+    },
+    "pm25": {
+      "value": 18.03890625,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 68
+    },
+    "so2": {
+      "value": 13.5206773006135,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 50,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 68,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.9,
+    "rh_pct": 81,
+    "precip_mm": 0.0,
+    "wind_ms": 3.51,
+    "wind_dir_deg": 234
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "city": "Prayagraj",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "no2": {
+      "value": 9.105059206714383,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    },
+    "so2": {
+      "value": 60.84818834497842,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 33
+    },
+    "co": {
+      "value": 0.21256944444444445,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 1
+    },
+    "o3": {
+      "value": 28.049479166666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 33,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.4,
+    "rh_pct": 91,
+    "precip_mm": 0.2,
+    "wind_ms": 1.74,
+    "wind_dir_deg": 139
+  }
+}

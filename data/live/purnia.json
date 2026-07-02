@@ -1,0 +1,59 @@
+{
+  "city": "Purnia",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 8.467982671810127,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    },
+    "pm25": {
+      "value": 35.51190476190476,
+      "unit": "µg/m³",
+      "naqi_subindex": 58,
+      "us_subindex": 101
+    },
+    "so2": {
+      "value": 33.8930062589081,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 58,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 101,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.3,
+    "rh_pct": 85,
+    "precip_mm": 0.1,
+    "wind_ms": 2.39,
+    "wind_dir_deg": 79
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "city": "Byasanagar",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0980555555555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 10
+    },
+    "no2": {
+      "value": 22.977269789536468,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 51.071875,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 24
+    },
+    "pm10": {
+      "value": 44.29347826086956,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 41
+    },
+    "pm25": {
+      "value": 17.25,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 66
+    },
+    "so2": {
+      "value": 20.55832958418541,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 51,
+      "category": "Satisfactory",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 66,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.3,
+    "rh_pct": 92,
+    "precip_mm": 0.4,
+    "wind_ms": 1.6,
+    "wind_dir_deg": 110
+  }
+}

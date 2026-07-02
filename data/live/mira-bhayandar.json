@@ -1,0 +1,78 @@
+{
+  "city": "Mira-Bhayandar",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.44333333333333336,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 21.934214507356284,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 9.914444444444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 12.577083333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 7.554583333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 42
+    },
+    "so2": {
+      "value": 7.001350400477165,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 26,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 42,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.1,
+    "rh_pct": 96,
+    "precip_mm": 1.8,
+    "wind_ms": 3.4,
+    "wind_dir_deg": 229
+  }
+}

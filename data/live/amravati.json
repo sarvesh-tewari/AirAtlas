@@ -1,0 +1,79 @@
+{
+  "city": "Amravati",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.20562500000000003,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 10.312821182685754,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 9.01388888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 31.899963768115942,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 29
+    },
+    "pm25": {
+      "value": 10.625,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 54
+    },
+    "so2": {
+      "value": 11.664004297318792,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 31,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 54,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.3,
+    "rh_pct": 87,
+    "precip_mm": 0.1,
+    "wind_ms": 3.2,
+    "wind_dir_deg": 243
+  }
+}

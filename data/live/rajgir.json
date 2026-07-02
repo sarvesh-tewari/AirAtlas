@@ -1,0 +1,59 @@
+{
+  "city": "Rajgir",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 27.328819444444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 12
+    },
+    "pm25": {
+      "value": 52.5875,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 143
+    },
+    "so2": {
+      "value": 5.397061917745966,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 86,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 143,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.9,
+    "rh_pct": 77,
+    "precip_mm": 0.0,
+    "wind_ms": 3.01,
+    "wind_dir_deg": 42
+  }
+}

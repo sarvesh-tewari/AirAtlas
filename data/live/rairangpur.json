@@ -1,0 +1,77 @@
+{
+  "city": "Rairangpur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.514375,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 9.343593176976823,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    },
+    "o3": {
+      "value": 7.248020833333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 60.44743055555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 60,
+      "us_subindex": 53
+    },
+    "pm25": {
+      "value": 13.80107638888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 60
+    },
+    "so2": {
+      "value": 21.994392047261986,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 60,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 60,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.0,
+    "rh_pct": 89,
+    "precip_mm": 0.0,
+    "wind_ms": 2.26,
+    "wind_dir_deg": 96
+  }
+}

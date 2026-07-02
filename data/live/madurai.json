@@ -1,0 +1,45 @@
+{
+  "city": "Madurai",
+  "updated_utc": "2026-06-23T10:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 118.2587369650837,
+      "unit": "µg/m³",
+      "naqi_subindex": 113,
+      "us_subindex": 62
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 62,
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.5,
+    "rh_pct": 71,
+    "precip_mm": 0.0,
+    "wind_ms": 0.94,
+    "wind_dir_deg": 212
+  }
+}

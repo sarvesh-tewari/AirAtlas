@@ -1,0 +1,77 @@
+{
+  "city": "Rajsamand",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.1773684210526316,
+      "unit": "mg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 23.286485676956534,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 44.393253968253966,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 20
+    },
+    "pm10": {
+      "value": 69.20238095238095,
+      "unit": "µg/m³",
+      "naqi_subindex": 69,
+      "us_subindex": 58
+    },
+    "pm25": {
+      "value": 14.226190476190476,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 61
+    },
+    "so2": {
+      "value": 11.013520823189534,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 69,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 61,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.2,
+    "rh_pct": 74,
+    "precip_mm": 0.0,
+    "wind_ms": 2.41,
+    "wind_dir_deg": 222
+  }
+}

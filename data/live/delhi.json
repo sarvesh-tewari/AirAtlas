@@ -1,0 +1,79 @@
+{
+  "city": "Delhi",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 20,
+  "pollutants": {
+    "co": {
+      "value": 0.7783333333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 101.18911458333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 101,
+      "us_subindex": 74
+    },
+    "o3": {
+      "value": 15.734427083333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 7
+    },
+    "pm25": {
+      "value": 34.297604166666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 98
+    },
+    "so2": {
+      "value": 20.621107276755286,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    },
+    "no2": {
+      "value": 46.898156706572365,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 23
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 101,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 98,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25",
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 33.0,
+    "rh_pct": 59,
+    "precip_mm": 0.0,
+    "wind_ms": 0.58,
+    "wind_dir_deg": 121
+  }
+}

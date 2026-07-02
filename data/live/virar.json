@@ -1,0 +1,77 @@
+{
+  "city": "Virar",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6633928571428571,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 33.59736551027364,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 16
+    },
+    "o3": {
+      "value": 22.528988095238095,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 35.529821428571424,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 32
+    },
+    "pm25": {
+      "value": 10.526130952380953,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 54
+    },
+    "so2": {
+      "value": 3.034801033855942,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 41,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 54,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.4,
+    "rh_pct": 93,
+    "precip_mm": 0.5,
+    "wind_ms": 4.95,
+    "wind_dir_deg": 237
+  }
+}

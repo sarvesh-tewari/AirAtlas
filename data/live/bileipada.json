@@ -1,0 +1,78 @@
+{
+  "city": "Bileipada",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5908333333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 21.74180625142013,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 14.841006944444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 64.95072916666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 55
+    },
+    "pm25": {
+      "value": 16.00673076923077,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 64
+    },
+    "so2": {
+      "value": 30.593935125539655,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 16
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 64,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 64,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.7,
+    "rh_pct": 99,
+    "precip_mm": 0.2,
+    "wind_ms": 0.3,
+    "wind_dir_deg": 99
+  }
+}

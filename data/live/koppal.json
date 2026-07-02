@@ -1,0 +1,51 @@
+{
+  "city": "Koppal",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 12.238148148148149,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 6
+    },
+    "so2": {
+      "value": 30.052257653563586,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 16
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 16,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.4,
+    "rh_pct": 72,
+    "precip_mm": 0.0,
+    "wind_ms": 7.4,
+    "wind_dir_deg": 258
+  }
+}

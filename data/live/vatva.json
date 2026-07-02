@@ -1,0 +1,45 @@
+{
+  "city": "Vatva",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 54.80619047619048,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 149
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 149,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.5,
+    "rh_pct": 75,
+    "precip_mm": 0.1,
+    "wind_ms": 2.84,
+    "wind_dir_deg": 229
+  }
+}

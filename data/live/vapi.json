@@ -1,0 +1,52 @@
+{
+  "city": "Vapi",
+  "updated_utc": "2026-06-29T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 34.12290185114178,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 17
+    },
+    "pm25": {
+      "value": 37.436458333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 106
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 106,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.1,
+    "rh_pct": 96,
+    "precip_mm": 0.9,
+    "wind_ms": 2.98,
+    "wind_dir_deg": 215
+  }
+}

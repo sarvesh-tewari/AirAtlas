@@ -1,0 +1,51 @@
+{
+  "city": "Saharsa",
+  "updated_utc": "2026-06-28T17:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 45.759803921568626,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 126
+    },
+    "so2": {
+      "value": 37.13613601186896,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 126,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.4,
+    "rh_pct": 93,
+    "precip_mm": 0.1,
+    "wind_ms": 2.56,
+    "wind_dir_deg": 84
+  }
+}

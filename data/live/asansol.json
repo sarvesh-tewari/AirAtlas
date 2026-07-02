@@ -1,0 +1,78 @@
+{
+  "city": "Asansol",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "no2": {
+      "value": 22.050443467393773,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 10
+    },
+    "pm25": {
+      "value": 23.995757575757576,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 79
+    },
+    "so2": {
+      "value": 47.41312525988412,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 26
+    },
+    "co": {
+      "value": 0.7274131944444444,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 16.989496527777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 34.339999999999996,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 31
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 59,
+      "category": "Satisfactory",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 79,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.0,
+    "rh_pct": 88,
+    "precip_mm": 0.6,
+    "wind_ms": 2.27,
+    "wind_dir_deg": 131
+  }
+}

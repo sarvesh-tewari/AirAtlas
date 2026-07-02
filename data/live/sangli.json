@@ -1,0 +1,77 @@
+{
+  "city": "Sangli",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.25075757575757573,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 10.798833924366363,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 22.731742424242423,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 60.97431818181818,
+      "unit": "µg/m³",
+      "naqi_subindex": 60,
+      "us_subindex": 53
+    },
+    "pm25": {
+      "value": 7.923295454545454,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 44
+    },
+    "so2": {
+      "value": 20.791971779141104,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 60,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 53,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.5,
+    "rh_pct": 89,
+    "precip_mm": 0.0,
+    "wind_ms": 4.35,
+    "wind_dir_deg": 253
+  }
+}

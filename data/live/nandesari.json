@@ -1,0 +1,61 @@
+{
+  "city": "Nandesari",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 44.429987856020865,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 22
+    },
+    "pm10": {
+      "value": 71.26527777777777,
+      "unit": "µg/m³",
+      "naqi_subindex": 71,
+      "us_subindex": 59
+    },
+    "pm25": {
+      "value": 41.19027777777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 68,
+      "us_subindex": 115
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 71,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 115,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.2,
+    "rh_pct": 67,
+    "precip_mm": 0.0,
+    "wind_ms": 3.44,
+    "wind_dir_deg": 234
+  }
+}

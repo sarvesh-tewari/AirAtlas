@@ -1,0 +1,78 @@
+{
+  "city": "Rourkela",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.7102951388888888,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 19.934703991635423,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "o3": {
+      "value": 9.119782608695653,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 65.53262152777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 56
+    },
+    "pm25": {
+      "value": 36.674739583333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 104
+    },
+    "so2": {
+      "value": 15.799734996307658,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 65,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 104,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.3,
+    "rh_pct": 96,
+    "precip_mm": 0.7,
+    "wind_ms": 0.45,
+    "wind_dir_deg": 354
+  }
+}

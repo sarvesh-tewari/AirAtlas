@@ -1,0 +1,79 @@
+{
+  "city": "Solapur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.2726388888888889,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 21.165822827198365,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 13.31670138888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 28.151875,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 26
+    },
+    "pm25": {
+      "value": 8.85265625,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 49
+    },
+    "so2": {
+      "value": 5.475033631561009,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 28,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 49,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.1,
+    "rh_pct": 67,
+    "precip_mm": 0.0,
+    "wind_ms": 4.7,
+    "wind_dir_deg": 272
+  }
+}

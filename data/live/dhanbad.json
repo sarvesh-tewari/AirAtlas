@@ -1,0 +1,71 @@
+{
+  "city": "Dhanbad",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.606304347826087,
+      "unit": "mg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 16
+    },
+    "no2": {
+      "value": 144.23073985062683,
+      "unit": "µg/m³",
+      "naqi_subindex": 164,
+      "us_subindex": 74
+    },
+    "o3": {
+      "value": 46.34695652173913,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 21
+    },
+    "pm10": {
+      "value": 259.2877777777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 209,
+      "us_subindex": 153
+    },
+    "so2": {
+      "value": 334.6612191956374,
+      "unit": "µg/m³",
+      "naqi_subindex": 185,
+      "us_subindex": 124
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 209,
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 153,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.3,
+    "rh_pct": 87,
+    "precip_mm": 0.0,
+    "wind_ms": 1.59,
+    "wind_dir_deg": 139
+  }
+}

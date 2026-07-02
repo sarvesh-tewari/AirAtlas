@@ -1,0 +1,79 @@
+{
+  "city": "Bundi",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.400625,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 44.82267283868291,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 22
+    },
+    "o3": {
+      "value": 28.732971014492755,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 13
+    },
+    "pm10": {
+      "value": 50.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 46
+    },
+    "pm25": {
+      "value": 15.804347826086957,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 63
+    },
+    "so2": {
+      "value": 8.861331846068042,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 55,
+      "category": "Satisfactory",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 63,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.6,
+    "rh_pct": 73,
+    "precip_mm": 0.0,
+    "wind_ms": 2.3,
+    "wind_dir_deg": 204
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "city": "Moradabad",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "no2": {
+      "value": 36.941143796154286,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 18
+    },
+    "o3": {
+      "value": 30.681562500000002,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 14
+    },
+    "pm10": {
+      "value": 44.51215277777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 41
+    },
+    "pm25": {
+      "value": 20.631493055555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 72
+    },
+    "co": {
+      "value": 0.49211805555555554,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "so2": {
+      "value": 29.89323599608044,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 16
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 45,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 72,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.4,
+    "rh_pct": 77,
+    "precip_mm": 0.0,
+    "wind_ms": 1.72,
+    "wind_dir_deg": 120
+  }
+}

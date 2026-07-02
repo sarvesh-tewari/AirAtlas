@@ -1,0 +1,79 @@
+{
+  "city": "Nanded",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4671180555555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 14.65543305214724,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 17.471875,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 13.73090579710145,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 12
+    },
+    "pm25": {
+      "value": 8.441630434782608,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 47
+    },
+    "so2": {
+      "value": 31.7242975204499,
+      "unit": "µg/m³",
+      "naqi_subindex": 39,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 39,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 47,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.4,
+    "rh_pct": 74,
+    "precip_mm": 0.0,
+    "wind_ms": 4.19,
+    "wind_dir_deg": 247
+  }
+}

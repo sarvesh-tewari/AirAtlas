@@ -1,0 +1,80 @@
+{
+  "city": "Boisar",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.22145833333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 21.00510149965917,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 11.877048611111112,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 31.728680555555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 29
+    },
+    "pm25": {
+      "value": 14.277743055555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 61
+    },
+    "so2": {
+      "value": 31.582001417291526,
+      "unit": "µg/m³",
+      "naqi_subindex": 39,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 39,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 61,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.7,
+    "rh_pct": 95,
+    "precip_mm": 0.6,
+    "wind_ms": 3.68,
+    "wind_dir_deg": 239
+  }
+}

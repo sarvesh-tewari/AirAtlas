@@ -1,0 +1,59 @@
+{
+  "city": "Jind",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 28.514903529737563,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 14
+    },
+    "pm25": {
+      "value": 61.871180555555554,
+      "unit": "µg/m³",
+      "naqi_subindex": 101,
+      "us_subindex": 155
+    },
+    "so2": {
+      "value": 1.0857811349693252,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": 0
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 101,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 155,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 33.5,
+    "rh_pct": 56,
+    "precip_mm": 0.0,
+    "wind_ms": 0.87,
+    "wind_dir_deg": 77
+  }
+}

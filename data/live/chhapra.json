@@ -1,0 +1,66 @@
+{
+  "city": "Chhapra",
+  "updated_utc": "2026-07-01T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.9868229166666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 95,
+      "us_subindex": 19
+    },
+    "no2": {
+      "value": 3.31046734406953,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 1
+    },
+    "pm25": {
+      "value": 38.65625,
+      "unit": "µg/m³",
+      "naqi_subindex": 63,
+      "us_subindex": 109
+    },
+    "so2": {
+      "value": 44.263732191547376,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 23
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 95,
+      "category": "Satisfactory",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 109,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.2,
+    "rh_pct": 85,
+    "precip_mm": 0.1,
+    "wind_ms": 2.7,
+    "wind_dir_deg": 88
+  }
+}

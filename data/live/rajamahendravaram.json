@@ -1,0 +1,59 @@
+{
+  "city": "Rajamahendravaram",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.30833333333333335,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "pm25": {
+      "value": 5.708333333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 32
+    },
+    "so2": {
+      "value": 11.552005254487618,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 15,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 32,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.8,
+    "rh_pct": 75,
+    "precip_mm": 0.1,
+    "wind_ms": 4.49,
+    "wind_dir_deg": 289
+  }
+}

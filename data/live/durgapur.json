@@ -1,0 +1,77 @@
+{
+  "city": "Durgapur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "o3": {
+      "value": 35.77829861111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 17
+    },
+    "pm10": {
+      "value": 57.79416666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 52
+    },
+    "pm25": {
+      "value": 25.54513888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 42,
+      "us_subindex": 82
+    },
+    "co": {
+      "value": 0.5647743055555555,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 63.047808100786746,
+      "unit": "µg/m³",
+      "naqi_subindex": 79,
+      "us_subindex": 31
+    },
+    "so2": {
+      "value": 25.41218249687571,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 79,
+      "category": "Satisfactory",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 82,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.1,
+    "rh_pct": 89,
+    "precip_mm": 0.2,
+    "wind_ms": 2.31,
+    "wind_dir_deg": 120
+  }
+}

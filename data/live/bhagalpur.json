@@ -1,0 +1,59 @@
+{
+  "city": "Bhagalpur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.5681597222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 14.37541207254033,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 47.01315789473684,
+      "unit": "µg/m³",
+      "naqi_subindex": 47,
+      "us_subindex": 44
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 47,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 44,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.5,
+    "rh_pct": 82,
+    "precip_mm": 0.0,
+    "wind_ms": 2.34,
+    "wind_dir_deg": 74
+  }
+}

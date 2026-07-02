@@ -1,0 +1,67 @@
+{
+  "city": "Ahmednagar",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 16.360923845182246,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 22.259652777777777,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 16.671458333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 15
+    },
+    "pm25": {
+      "value": 7.618298611111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 42
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 22,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 42,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.3,
+    "rh_pct": 89,
+    "precip_mm": 0.1,
+    "wind_ms": 4.41,
+    "wind_dir_deg": 237
+  }
+}

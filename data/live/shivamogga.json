@@ -1,0 +1,72 @@
+{
+  "city": "Shivamogga",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4598263888888889,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 34.057175974920476,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 17
+    },
+    "o3": {
+      "value": 50.18774305555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 23
+    },
+    "pm25": {
+      "value": 17.286493055555557,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 66
+    },
+    "so2": {
+      "value": 10.868274298454898,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 50,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 66,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.7,
+    "rh_pct": 88,
+    "precip_mm": 0.0,
+    "wind_ms": 5.2,
+    "wind_dir_deg": 252
+  }
+}

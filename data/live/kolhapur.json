@@ -1,0 +1,79 @@
+{
+  "city": "Kolhapur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.24947916666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 24.014837026386047,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 22.64670138888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 23.189270833333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 21
+    },
+    "pm25": {
+      "value": 7.198854166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 39
+    },
+    "so2": {
+      "value": 1.465267737446035,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": 0
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 30,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 39,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.6,
+    "rh_pct": 92,
+    "precip_mm": 0.0,
+    "wind_ms": 4.13,
+    "wind_dir_deg": 249
+  }
+}

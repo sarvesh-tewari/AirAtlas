@@ -1,0 +1,77 @@
+{
+  "city": "Faridabad",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.6438368055555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 46.47191851922858,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 23
+    },
+    "o3": {
+      "value": 15.089392361111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 104.97795138888888,
+      "unit": "µg/m³",
+      "naqi_subindex": 103,
+      "us_subindex": 75
+    },
+    "pm25": {
+      "value": 53.06886363636364,
+      "unit": "µg/m³",
+      "naqi_subindex": 88,
+      "us_subindex": 144
+    },
+    "so2": {
+      "value": 13.874052022267668,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 103,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 144,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.3,
+    "rh_pct": 64,
+    "precip_mm": 0.0,
+    "wind_ms": 1.54,
+    "wind_dir_deg": 299
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "city": "Udaipur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4203472222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 14.53757074528516,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 14.42875,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 40.44375,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 113
+    },
+    "so2": {
+      "value": 21.585747639370503,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 66,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 113,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.6,
+    "rh_pct": 72,
+    "precip_mm": 0.2,
+    "wind_ms": 3.35,
+    "wind_dir_deg": 350
+  }
+}

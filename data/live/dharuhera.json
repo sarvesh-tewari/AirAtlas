@@ -1,0 +1,57 @@
+{
+  "city": "Dharuhera",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.3402777777777777,
+      "unit": "mg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 13
+    },
+    "no2": {
+      "value": 61.804145161611,
+      "unit": "µg/m³",
+      "naqi_subindex": 76,
+      "us_subindex": 30
+    },
+    "so2": {
+      "value": 23.084085415246534,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 30,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.7,
+    "rh_pct": 59,
+    "precip_mm": 0.0,
+    "wind_ms": 1.89,
+    "wind_dir_deg": 122
+  }
+}

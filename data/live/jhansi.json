@@ -1,0 +1,59 @@
+{
+  "city": "Jhansi",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.29125,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "o3": {
+      "value": 5.763159722222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 2
+    },
+    "pm25": {
+      "value": 10.019565217391303,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 53
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 17,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 53,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.2,
+    "rh_pct": 71,
+    "precip_mm": 0.0,
+    "wind_ms": 1.82,
+    "wind_dir_deg": 323
+  }
+}

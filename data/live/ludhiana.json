@@ -1,0 +1,65 @@
+{
+  "city": "Ludhiana",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5527777777777777,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 62.70908463630425,
+      "unit": "µg/m³",
+      "naqi_subindex": 77,
+      "us_subindex": 31
+    },
+    "pm25": {
+      "value": 45.76861111111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 126
+    },
+    "so2": {
+      "value": 29.05042272778914,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 16
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 77,
+      "category": "Satisfactory",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 126,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.5,
+    "rh_pct": 64,
+    "precip_mm": 0.0,
+    "wind_ms": 1.74,
+    "wind_dir_deg": 117
+  }
+}

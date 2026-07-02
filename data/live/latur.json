@@ -1,0 +1,79 @@
+{
+  "city": "Latur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.2503125,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 16.36704985656669,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 17.791840277777776,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 17.309886363636362,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 16
+    },
+    "pm25": {
+      "value": 7.240189393939394,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 40
+    },
+    "so2": {
+      "value": 9.127785517496024,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 20,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 40,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.6,
+    "rh_pct": 76,
+    "precip_mm": 0.1,
+    "wind_ms": 5.33,
+    "wind_dir_deg": 264
+  }
+}

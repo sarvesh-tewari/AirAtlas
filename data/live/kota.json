@@ -1,0 +1,79 @@
+{
+  "city": "Kota",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "no2": {
+      "value": 25.672324717038745,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 29.08078125,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 13
+    },
+    "pm10": {
+      "value": 69.84652777777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 69,
+      "us_subindex": 58
+    },
+    "pm25": {
+      "value": 24.751041666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 80
+    },
+    "so2": {
+      "value": 24.7183980118155,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 13
+    },
+    "co": {
+      "value": 0.45097222222222216,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 69,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 80,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.4,
+    "rh_pct": 61,
+    "precip_mm": 0.0,
+    "wind_ms": 1.28,
+    "wind_dir_deg": 321
+  }
+}

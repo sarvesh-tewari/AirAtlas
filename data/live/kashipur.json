@@ -1,0 +1,74 @@
+{
+  "city": "Kashipur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.45489583333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 30.43859408586117,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 15
+    },
+    "pm10": {
+      "value": 45.752743055555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 42
+    },
+    "pm25": {
+      "value": 27.394618055555554,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 85
+    },
+    "so2": {
+      "value": 11.63575847121522,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 45,
+      "category": "Good",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 85,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.7,
+    "rh_pct": 82,
+    "precip_mm": 0.0,
+    "wind_ms": 1.37,
+    "wind_dir_deg": 123
+  }
+}

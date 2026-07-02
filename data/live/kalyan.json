@@ -1,0 +1,45 @@
+{
+  "city": "Kalyan",
+  "updated_utc": "2026-07-01T01:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 7.971376811594203,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 4,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.0,
+    "rh_pct": 92,
+    "precip_mm": 0.7,
+    "wind_ms": 3.61,
+    "wind_dir_deg": 223
+  }
+}

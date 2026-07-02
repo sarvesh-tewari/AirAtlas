@@ -1,0 +1,51 @@
+{
+  "city": "Panipat",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5808695652173913,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 37.02028985507246,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 17,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.0,
+    "rh_pct": 64,
+    "precip_mm": 0.0,
+    "wind_ms": 1.96,
+    "wind_dir_deg": 105
+  }
+}

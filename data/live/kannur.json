@@ -1,0 +1,59 @@
+{
+  "city": "Kannur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 19.23435754018973,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "pm25": {
+      "value": 25.34992753623189,
+      "unit": "µg/m³",
+      "naqi_subindex": 42,
+      "us_subindex": 81
+    },
+    "so2": {
+      "value": 2.5583274454669396,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": 0
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 42,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 81,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.5,
+    "rh_pct": 95,
+    "precip_mm": 0.9,
+    "wind_ms": 3.55,
+    "wind_dir_deg": 284
+  }
+}

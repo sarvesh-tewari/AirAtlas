@@ -1,0 +1,63 @@
+{
+  "city": "Ankleshwar",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.085,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 10
+    },
+    "no2": {
+      "value": 41.45379963426144,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 21
+    },
+    "o3": {
+      "value": 13.229487179487178,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    },
+    "so2": {
+      "value": 39.11936273399402,
+      "unit": "µg/m³",
+      "naqi_subindex": 49,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 21,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.9,
+    "rh_pct": 83,
+    "precip_mm": 0.0,
+    "wind_ms": 3.76,
+    "wind_dir_deg": 229
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "city": "Sikar",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.26885416666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 15.784010374062712,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 52.07881944444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 52,
+      "us_subindex": 24
+    },
+    "pm10": {
+      "value": 108.61458333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 106,
+      "us_subindex": 77
+    },
+    "pm25": {
+      "value": 43.65625,
+      "unit": "µg/m³",
+      "naqi_subindex": 71,
+      "us_subindex": 121
+    },
+    "so2": {
+      "value": 3.3772578959327424,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 106,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 121,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.5,
+    "rh_pct": 55,
+    "precip_mm": 0.2,
+    "wind_ms": 0.43,
+    "wind_dir_deg": 36
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "city": "Kanpur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "no2": {
+      "value": 55.48959367082765,
+      "unit": "µg/m³",
+      "naqi_subindex": 69,
+      "us_subindex": 27
+    },
+    "o3": {
+      "value": 12.365,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 39.355121527777776,
+      "unit": "µg/m³",
+      "naqi_subindex": 39,
+      "us_subindex": 36
+    },
+    "pm25": {
+      "value": 19.136631944444446,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 70
+    },
+    "co": {
+      "value": 0.6191666666666666,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "so2": {
+      "value": 49.39803762213134,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 26
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 69,
+      "category": "Satisfactory",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 70,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.4,
+    "rh_pct": 75,
+    "precip_mm": 0.0,
+    "wind_ms": 0.8,
+    "wind_dir_deg": 360
+  }
+}

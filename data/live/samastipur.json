@@ -1,0 +1,59 @@
+{
+  "city": "Samastipur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 12.413435866848443,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 78.85526315789474,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 62
+    },
+    "pm25": {
+      "value": 51.21491228070175,
+      "unit": "µg/m³",
+      "naqi_subindex": 85,
+      "us_subindex": 140
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 85,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 140,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.2,
+    "rh_pct": 81,
+    "precip_mm": 0.0,
+    "wind_ms": 2.52,
+    "wind_dir_deg": 76
+  }
+}

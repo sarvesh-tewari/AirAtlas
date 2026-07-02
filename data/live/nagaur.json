@@ -1,0 +1,79 @@
+{
+  "city": "Nagaur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.20194444444444445,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 6.7032553680981595,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    },
+    "o3": {
+      "value": 30.58298611111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 14
+    },
+    "pm10": {
+      "value": 83.44791666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 83,
+      "us_subindex": 65
+    },
+    "pm25": {
+      "value": 16.739583333333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 65
+    },
+    "so2": {
+      "value": 9.404549302036099,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 83,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 65,
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.0,
+    "rh_pct": 67,
+    "precip_mm": 0.0,
+    "wind_ms": 1.02,
+    "wind_dir_deg": 281
+  }
+}

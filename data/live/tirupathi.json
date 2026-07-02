@@ -1,0 +1,79 @@
+{
+  "city": "Tirupathi",
+  "updated_utc": "2026-06-29T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.43333333333333335,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 47.40808758520791,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 24
+    },
+    "o3": {
+      "value": 43.15826388888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 69.53375,
+      "unit": "µg/m³",
+      "naqi_subindex": 69,
+      "us_subindex": 58
+    },
+    "pm25": {
+      "value": 29.971319444444447,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 90
+    },
+    "so2": {
+      "value": 21.21167249772779,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 69,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 90,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.2,
+    "rh_pct": 82,
+    "precip_mm": 0.0,
+    "wind_ms": 1.47,
+    "wind_dir_deg": 198
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "city": "Gangtok",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.1242391304347826,
+      "unit": "mg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 11.46762863430248,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 20.58858695652174,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    },
+    "so2": {
+      "value": 1.8573652588838505,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": 0
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 9,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 19.5,
+    "rh_pct": 95,
+    "precip_mm": 0.3,
+    "wind_ms": 0.29,
+    "wind_dir_deg": 149
+  }
+}

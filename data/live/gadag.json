@@ -1,0 +1,65 @@
+{
+  "city": "Gadag",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.19520833333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 0.8227494624801182,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": 0
+    },
+    "pm10": {
+      "value": 25.20045138888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 23
+    },
+    "so2": {
+      "value": 51.208036775732786,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 27
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 64,
+      "category": "Satisfactory",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 27,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.9,
+    "rh_pct": 84,
+    "precip_mm": 0.0,
+    "wind_ms": 7.38,
+    "wind_dir_deg": 257
+  }
+}

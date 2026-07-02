@@ -1,0 +1,45 @@
+{
+  "city": "Sonipat",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 36.750347222222224,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 104
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 104,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.7,
+    "rh_pct": 62,
+    "precip_mm": 0.0,
+    "wind_ms": 0.9,
+    "wind_dir_deg": 93
+  }
+}

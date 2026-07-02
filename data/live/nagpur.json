@@ -1,0 +1,77 @@
+{
+  "city": "Nagpur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "no2": {
+      "value": 19.544758770733925,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 32.62215277777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 30
+    },
+    "so2": {
+      "value": 13.86258826971143,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "co": {
+      "value": 0.5214930555555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 14.165208333333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 17.560277777777777,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 67
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 32,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 67,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.9,
+    "rh_pct": 95,
+    "precip_mm": 0.1,
+    "wind_ms": 2.59,
+    "wind_dir_deg": 242
+  }
+}

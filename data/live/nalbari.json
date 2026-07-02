@@ -1,0 +1,77 @@
+{
+  "city": "Nalbari",
+  "updated_utc": "2026-06-23T10:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.42324074074074075,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 21.840678179201696,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 18.88425925925926,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 41.6712962962963,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 38
+    },
+    "pm25": {
+      "value": 33.90740740740741,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 97
+    },
+    "so2": {
+      "value": 16.496885821404227,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 54,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 97,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.8,
+    "rh_pct": 97,
+    "precip_mm": 0.1,
+    "wind_ms": 0.56,
+    "wind_dir_deg": 153
+  }
+}

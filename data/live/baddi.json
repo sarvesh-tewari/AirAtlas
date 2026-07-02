@@ -1,0 +1,51 @@
+{
+  "city": "Baddi",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 14.803472222222224,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 41.53125,
+      "unit": "µg/m³",
+      "naqi_subindex": 68,
+      "us_subindex": 116
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 116,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.8,
+    "rh_pct": 71,
+    "precip_mm": 0.0,
+    "wind_ms": 1.49,
+    "wind_dir_deg": 222
+  }
+}

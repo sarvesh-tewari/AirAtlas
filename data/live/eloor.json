@@ -1,0 +1,53 @@
+{
+  "city": "Eloor",
+  "updated_utc": "2026-06-26T04:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 0.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": 0
+    },
+    "so2": {
+      "value": 0.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": 0
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 0,
+      "category": "Good",
+      "dominant": [
+        "no2",
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "no2",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.7,
+    "rh_pct": 100,
+    "precip_mm": 0.2,
+    "wind_ms": 2.46,
+    "wind_dir_deg": 95
+  }
+}

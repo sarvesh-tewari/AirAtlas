@@ -1,0 +1,78 @@
+{
+  "city": "Tonk",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6103819444444444,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 21.769246478073168,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 41.99128787878788,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 103.82916666666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 102,
+      "us_subindex": 75
+    },
+    "pm25": {
+      "value": 31.854166666666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 93
+    },
+    "so2": {
+      "value": 3.429117728925245,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 102,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 93,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.5,
+    "rh_pct": 69,
+    "precip_mm": 0.0,
+    "wind_ms": 2.14,
+    "wind_dir_deg": 217
+  }
+}

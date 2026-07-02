@@ -1,0 +1,59 @@
+{
+  "city": "Rupnagar",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0756597222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 10
+    },
+    "pm25": {
+      "value": 54.72958333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 148
+    },
+    "so2": {
+      "value": 27.905048275960013,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 90,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 148,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.6,
+    "rh_pct": 68,
+    "precip_mm": 0.0,
+    "wind_ms": 1.2,
+    "wind_dir_deg": 180
+  }
+}

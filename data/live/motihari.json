@@ -1,0 +1,59 @@
+{
+  "city": "Motihari",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 4.148416874129397,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 2
+    },
+    "o3": {
+      "value": 55.597101449275364,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 26
+    },
+    "pm25": {
+      "value": 26.704545454545453,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 84
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 55,
+      "category": "Satisfactory",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 84,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.4,
+    "rh_pct": 80,
+    "precip_mm": 0.0,
+    "wind_ms": 2.4,
+    "wind_dir_deg": 90
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "city": "Belapur",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.19985507246376813,
+      "unit": "mg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 39.63520877345069,
+      "unit": "µg/m³",
+      "naqi_subindex": 49,
+      "us_subindex": 20
+    },
+    "o3": {
+      "value": 7.962173913043478,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 19.62018115942029,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 18
+    },
+    "pm25": {
+      "value": 8.043840579710144,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 44
+    },
+    "so2": {
+      "value": 8.875989986725505,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 49,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 44,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.9,
+    "rh_pct": 96,
+    "precip_mm": 0.8,
+    "wind_ms": 3.13,
+    "wind_dir_deg": 200
+  }
+}

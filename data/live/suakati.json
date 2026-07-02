@@ -1,0 +1,78 @@
+{
+  "city": "Suakati",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.0661111111111111,
+      "unit": "mg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": 0
+    },
+    "no2": {
+      "value": 26.38181791070211,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 13
+    },
+    "o3": {
+      "value": 106.93097222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 108,
+      "us_subindex": 50
+    },
+    "pm10": {
+      "value": 31.464270833333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 29
+    },
+    "pm25": {
+      "value": 14.738124999999998,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 61
+    },
+    "so2": {
+      "value": 13.80272200636219,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 108,
+      "category": "Moderate",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 61,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "o3"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.1,
+    "rh_pct": 98,
+    "precip_mm": 0.4,
+    "wind_ms": 0.6,
+    "wind_dir_deg": 114
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "city": "Araria",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.38518939393939394,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "o3": {
+      "value": 9.908333333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 59.79545454545455,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 53
+    },
+    "so2": {
+      "value": 119.88703095370887,
+      "unit": "µg/m³",
+      "naqi_subindex": 114,
+      "us_subindex": 62
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 114,
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 62,
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.6,
+    "rh_pct": 86,
+    "precip_mm": 0.1,
+    "wind_ms": 1.95,
+    "wind_dir_deg": 138
+  }
+}

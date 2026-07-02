@@ -1,0 +1,66 @@
+{
+  "city": "Thiruvananthapuram",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.3000173611111111,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "pm10": {
+      "value": 23.690972222222225,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 21
+    },
+    "o3": {
+      "value": 30.415104166666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 14
+    },
+    "so2": {
+      "value": 22.048617416496253,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 30,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 21,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm10",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.4,
+    "rh_pct": 81,
+    "precip_mm": 0.0,
+    "wind_ms": 5.41,
+    "wind_dir_deg": 289
+  }
+}

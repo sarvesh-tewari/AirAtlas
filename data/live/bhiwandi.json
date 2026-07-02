@@ -1,0 +1,78 @@
+{
+  "city": "Bhiwandi",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.46369565217391306,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 37.122570280222874,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 18
+    },
+    "o3": {
+      "value": 26.660434782608696,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 44.9404347826087,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 41
+    },
+    "pm25": {
+      "value": 20.236811594202898,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 72
+    },
+    "so2": {
+      "value": 12.975828638748112,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 46,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 72,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.1,
+    "rh_pct": 97,
+    "precip_mm": 0.6,
+    "wind_ms": 3.32,
+    "wind_dir_deg": 225
+  }
+}

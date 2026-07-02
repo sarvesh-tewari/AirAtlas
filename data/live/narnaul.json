@@ -1,0 +1,65 @@
+{
+  "city": "Narnaul",
+  "updated_utc": "2026-07-01T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 34.79224737985685,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 17
+    },
+    "o3": {
+      "value": 25.226493055555554,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 84.03159722222223,
+      "unit": "µg/m³",
+      "naqi_subindex": 180,
+      "us_subindex": 171
+    },
+    "so2": {
+      "value": 13.891884526244036,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 180,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 171,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.0,
+    "rh_pct": 64,
+    "precip_mm": 0.0,
+    "wind_ms": 3.6,
+    "wind_dir_deg": 128
+  }
+}

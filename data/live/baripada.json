@@ -1,0 +1,78 @@
+{
+  "city": "Baripada",
+  "updated_utc": "2026-07-01T17:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.35985507246376813,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 19.628727000533473,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "o3": {
+      "value": 35.47793478260869,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 17
+    },
+    "pm10": {
+      "value": 68.52710144927536,
+      "unit": "µg/m³",
+      "naqi_subindex": 68,
+      "us_subindex": 57
+    },
+    "pm25": {
+      "value": 24.907028985507246,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 80
+    },
+    "so2": {
+      "value": 15.227850786876502,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 68,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 80,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.4,
+    "rh_pct": 89,
+    "precip_mm": 0.0,
+    "wind_ms": 1.54,
+    "wind_dir_deg": 151
+  }
+}
