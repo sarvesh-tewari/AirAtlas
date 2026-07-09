@@ -1,0 +1,31 @@
+# TEMPORARY self-test for the shared alert action (issue #12). Delete after verification.
+name: alert-selftest
+on:
+  workflow_dispatch:
+    inputs:
+      status:
+        description: "status to simulate"
+        type: choice
+        options: [failure, success]
+        default: failure
+      throttle-hours:
+        description: "throttle window (0 forces a comment)"
+        default: "6"
+permissions:
+  issues: write
+  actions: read
+jobs:
+  selftest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: printf 'selftest log line A\nselftest log line B\nsimulated cause: boom\n' > /tmp/selftest.log
+      - name: Exercise alert action
+        uses: ./.github/actions/alert
+        with:
+          status: ${{ inputs.status }}
+          workflow: "SELFTEST"
+          log-path: /tmp/selftest.log
+          tail-lines: "10"
+          throttle-hours: ${{ inputs.throttle-hours }}
+          note: "Self-test of the alert action (issue #12); safe to ignore."
