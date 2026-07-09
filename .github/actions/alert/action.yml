@@ -1,0 +1,115 @@
+name: "Automated failure alert"
+description: >
+  Per-workflow failure alerting: opens one issue per workflow on failure, throttles repeat
+  comments during long outages, and auto-closes the issue when the workflow next succeeds.
+  Replaces the duplicated "Open/append failure issue" github-script blocks. Call once per job
+  with `if: always()` so both the failure and recovery paths run.
+inputs:
+  status:
+    description: "Job status: success | failure | cancelled (usually ${{ job.status }})."
+    required: true
+  workflow:
+    description: "Workflow identity for the issue title (usually ${{ github.workflow }})."
+    required: true
+  log-path:
+    description: "Optional path to a captured run log; its tail is embedded in the alert."
+    required: false
+    default: ""
+  tail-lines:
+    description: "How many trailing log lines to include."
+    required: false
+    default: "40"
+  throttle-hours:
+    description: "Minimum hours between repeat failure comments on an already-open issue."
+    required: false
+    default: "6"
+  note:
+    description: "Optional extra line added to the failure body (e.g. a chain-halted warning)."
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/github-script@v9
+      env:
+        ALERT_STATUS: ${{ inputs.status }}
+        ALERT_WORKFLOW: ${{ inputs.workflow }}
+        ALERT_LOG_PATH: ${{ inputs.log-path }}
+        ALERT_TAIL_LINES: ${{ inputs.tail-lines }}
+        ALERT_THROTTLE_HOURS: ${{ inputs.throttle-hours }}
+        ALERT_NOTE: ${{ inputs.note }}
+      with:
+        script: |
+          const fs = require("fs");
+          const { owner, repo } = context.repo;
+          const status = process.env.ALERT_STATUS;
+          const wf = process.env.ALERT_WORKFLOW;
+          const label = "automated-alert";
+          const title = `🚨 AirAtlas: ${wf}`;   // per-workflow identity -> which pipeline is failing
+          const runUrl = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`;
+
+          // This workflow's own open alert issue (exact-title match under a shared label).
+          const open = await github.rest.issues.listForRepo({
+            owner, repo, state: "open", labels: label, per_page: 100 });
+          const issue = open.data.find((i) => i.title === title);
+
+          // --- Recovery: close this workflow's issue on a green run. ---
+          if (status === "success") {
+            if (issue) {
+              await github.rest.issues.createComment({ owner, repo, issue_number: issue.number,
+                body: `✅ Recovered — **${wf}** succeeded.\n**Run:** ${runUrl}` });
+              await github.rest.issues.update({ owner, repo, issue_number: issue.number, state: "closed" });
+              core.info(`Closed #${issue.number} (${wf} recovered).`);
+            }
+            return;
+          }
+          if (status !== "failure") return; // cancelled/skipped -> no alert
+
+          // --- Cause: which step failed + a tail of the captured log. ---
+          let failedStep = "unknown step";
+          try {
+            const jobs = await github.rest.actions.listJobsForWorkflowRun({ owner, repo, run_id: context.runId });
+            for (const job of jobs.data.jobs) {
+              const s = (job.steps || []).find((s) => s.conclusion === "failure");
+              if (s) { failedStep = `${job.name} → ${s.name}`; break; }
+            }
+          } catch (e) { /* keep "unknown step" */ }
+
+          const tail = parseInt(process.env.ALERT_TAIL_LINES || "40", 10);
+          let logTail = "(no run log captured)";
+          const logPath = process.env.ALERT_LOG_PATH;
+          if (logPath) {
+            try { logTail = fs.readFileSync(logPath, "utf8").trim().split("\n").slice(-tail).join("\n"); }
+            catch (e) { /* step may have failed before writing the log */ }
+          }
+          const note = process.env.ALERT_NOTE;
+          const body = [
+            `Workflow **${wf}** failed.`,
+            ...(note ? [``, note] : []),
+            ``,
+            `**Failed step:** ${failedStep}`,
+            `**Run:** ${runUrl}`, ``,
+            `<details><summary>Last ${tail} log lines</summary>`, ``, "```", logTail, "```", `</details>`,
+          ].join("\n");
+
+          // --- First failure: open immediately. ---
+          if (!issue) {
+            const created = await github.rest.issues.create({ owner, repo, title, body, labels: [label] });
+            core.info(`Opened #${created.data.number} for ${wf}.`);
+            return;
+          }
+
+          // --- Repeat failure: throttle so a long outage doesn't spam comments. ---
+          const throttleMs = parseInt(process.env.ALERT_THROTTLE_HOURS || "6", 10) * 3600e3;
+          const comments = await github.rest.issues.listComments({
+            owner, repo, issue_number: issue.number, per_page: 100 });
+          const lastActivity = comments.data.length
+            ? comments.data[comments.data.length - 1].created_at
+            : issue.created_at;
+          const sinceMs = Date.now() - new Date(lastActivity).getTime();
+          if (throttleMs > 0 && sinceMs < throttleMs) {
+            core.info(`Throttled: last activity ${Math.round(sinceMs / 3600e3)}h ago (< ${process.env.ALERT_THROTTLE_HOURS}h).`);
+            return;
+          }
+          await github.rest.issues.createComment({ owner, repo, issue_number: issue.number, body });
+          core.info(`Appended failure comment to #${issue.number} (${wf}).`);
