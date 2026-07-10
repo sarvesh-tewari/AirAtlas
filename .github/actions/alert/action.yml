@@ -6,10 +6,10 @@ description: >
   with `if: always()` so both the failure and recovery paths run.
 inputs:
   status:
-    description: "Job status: success | failure | cancelled (usually ${{ job.status }})."
+    description: "Job status: success | failure | cancelled. Callers pass the job.status context."
     required: true
   workflow:
-    description: "Workflow identity for the issue title (usually ${{ github.workflow }})."
+    description: "Workflow identity for the issue title. Callers pass the github.workflow context."
     required: true
   log-path:
     description: "Optional path to a captured run log; its tail is embedded in the alert."
