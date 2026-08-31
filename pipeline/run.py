@@ -210,7 +210,7 @@ def main():
                               if not args.cities or r.city in set(args.cities)]
                 print(f"[run] CPCB live: {len(today_cpcb)} city-pollutant records")
             except Exception as e:
-                print(f"[run] CPCB live unavailable ({type(e).__name__}); history-only today")
+                print(f"[run] CPCB live unavailable ({e}); history-only today")
         city_daily = reconcile.reconcile_daily(today_cpcb=today_cpcb,
                                                 history_openaq=city_daily, today=today)
         print("[run] fetching daily weather…")
@@ -255,7 +255,7 @@ def main():
             wx_now = build.fetch_weather_current(centroids)
         except Exception as e:
             live, wx_now = [], {}
-            print(f"[run] CPCB live fetch failed ({type(e).__name__}); keeping last-good live data")
+            print(f"[run] CPCB live fetch failed ({e}); keeping last-good live data")
         by_city = {}
         for r in live:
             if args.cities and r.city not in set(args.cities):
