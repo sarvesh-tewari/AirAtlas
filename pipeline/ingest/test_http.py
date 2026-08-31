@@ -57,6 +57,32 @@ def test_get_json_does_not_retry_404(monkeypatch):
     assert calls["n"] == 1
 
 
+def test_get_json_sends_identifying_user_agent(monkeypatch):
+    # data.gov.in's gateway tarpits httpx's default UA from datacenter IPs (ReadTimeout).
+    # Every request must carry an identifying User-Agent so the gateway serves it.
+    seen = {}
+
+    def fake_get(url, params=None, headers=None, timeout=None):
+        seen["headers"] = headers or {}
+        return _Resp(200, {"ok": True})
+
+    monkeypatch.setattr(http.httpx, "get", fake_get)
+    http.get_json("https://x", use_cache=False)
+    assert "AirAtlas" in seen["headers"].get("User-Agent", "")
+
+
+def test_get_json_caller_user_agent_wins(monkeypatch):
+    seen = {}
+
+    def fake_get(url, params=None, headers=None, timeout=None):
+        seen["headers"] = headers or {}
+        return _Resp(200, {"ok": True})
+
+    monkeypatch.setattr(http.httpx, "get", fake_get)
+    http.get_json("https://x", use_cache=False, headers={"User-Agent": "custom/9"})
+    assert seen["headers"]["User-Agent"] == "custom/9"
+
+
 def test_retry_wait_honors_numeric_retry_after():
     assert http._retry_wait(429, "30", attempt=0, backoff=2.0) == 30.0
 

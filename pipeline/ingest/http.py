@@ -20,6 +20,12 @@ import os
 
 CACHE_DIR = pathlib.Path(__file__).resolve().parents[1] / ".cache"
 
+# data.gov.in's API gateway (tyk.io) silently tarpits requests carrying httpx's default
+# `python-httpx/*` User-Agent from datacenter IPs — the read hangs until timeout, so the
+# CPCB live fetch fails only in CI (works from a laptop). Sending any identifying UA makes
+# the gateway serve the request normally. Applied to every request as basic client hygiene.
+_DEFAULT_UA = "Mozilla/5.0 (compatible; AirAtlasBot/1.0; +https://github.com/sarvesh-tewari/AirAtlas)"
+
 # Optional politeness throttle (seconds between requests). OpenAQ's free tier is ~60/min;
 # set AIRATLAS_MIN_REQUEST_INTERVAL=1.1 to stay comfortably under it during big backfills.
 _MIN_INTERVAL = float(os.environ.get("AIRATLAS_MIN_REQUEST_INTERVAL", "0") or "0")
@@ -90,7 +96,8 @@ def get_json(
         wait = _retry_wait(None, None, attempt, backoff)  # transient/timeout default
         try:
             _throttle(min_interval)
-            r = httpx.get(url, params=params, headers=headers, timeout=timeout)
+            hdrs = {"User-Agent": _DEFAULT_UA, **(headers or {})}
+            r = httpx.get(url, params=params, headers=hdrs, timeout=timeout)
             if r.status_code in (403, 408, 429):
                 # Timeout / rate-limit / transient 403 — retry. OpenAQ intermittently returns 403
                 # on otherwise-valid requests (e.g. the /locations discovery call), so a single
