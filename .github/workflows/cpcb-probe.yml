@@ -31,12 +31,13 @@ jobs:
               print("runner egress IP:", ip)
           except Exception as e:
               print("ip lookup failed:", e)
-          params={"api-key":key,"format":"json","limit":5}
-          # 1) exactly what the pipeline sends: httpx default UA, no headers
-          for label, headers in [
-              ("default-httpx-UA", None),
-              ("browser-UA", {"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) airatlas"}),
+          print("key stripped len:", len(key.strip()))
+          UA={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) airatlas"}
+          for label, headers, k in [
+              ("default-UA + stripped key", None, key.strip()),
+              ("browser-UA + stripped key", UA, key.strip()),
           ]:
+              params={"api-key":k,"format":"json","limit":5}
               print(f"\n=== attempt: {label} ===")
               try:
                   r=httpx.get(BASE, params=params, headers=headers, timeout=30)
