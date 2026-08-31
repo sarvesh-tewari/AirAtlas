@@ -55,11 +55,14 @@ export function MapView({
     const map = mapRef.current;
     if (!map) return;
     if (tileRef.current) tileRef.current.remove();
+    // Esri's Light/Dark Gray Canvas: muted keyless basemaps (CARTO's positron/dark-matter
+    // now stamp an "API KEY REQUIRED" watermark on unauthenticated tiles). NOTE Esri's tile
+    // path is {z}/{y}/{x} (y before x) and has no {s} subdomain or {r} retina token.
     const url = dark
-      ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-      : "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+      ? "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+      : "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}";
     tileRef.current = L.tileLayer(url, {
-      attribution: "© OpenStreetMap, © CARTO",
+      attribution: "© Esri, © OpenStreetMap contributors",
       maxZoom: 10,
     }).addTo(map);
   }, [dark]);
