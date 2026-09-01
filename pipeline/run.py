@@ -82,9 +82,34 @@ def _scrub() -> None:
     print(f"[scrub] rebuilt meta from {len({r['city'] for r in all_daily})} surviving cities.")
 
 
+def _live(dg_key: str) -> None:
+    """Fast live-only refresh: CPCB nationwide snapshot -> data/live JSON, skipping the slow
+    OpenAQ discovery + hourly fetch entirely so the live headline refreshes in ~minutes. The
+    hourly/daily runs still maintain the recent + history tiers. CPCB is the true live source;
+    OpenAQ's India feed lags days, so coupling the headline to it needlessly delayed it hours."""
+    if not dg_key:
+        print("[run] live: DATA_GOV_IN_KEY not set — nothing to do.")
+        return
+    city_records, centroids = build.fetch_live_cpcb_full(dg_key)
+    wx_now = build.fetch_weather_current(centroids)
+    by_city: dict[str, list] = {}
+    for r in city_records:
+        by_city.setdefault(r.city, []).append(r)
+    n = 0
+    for city, recs in by_city.items():
+        try:  # isolate per city so one bad city can't suppress the rest
+            snap = storage.live_snapshot(city, recs, updated_utc=recs[0].datetime_utc,
+                                         weather=wx_now.get(city))
+            storage.write_live_json(snap, build.DATA / "live")
+            n += 1
+        except Exception as e:
+            print(f"[run] live snapshot skipped for {city}: {type(e).__name__}: {e}")
+    print(f"[run] live: wrote {n} CPCB live snapshots across {len(centroids)} cities")
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("mode", choices=["backfill", "daily", "hourly", "scrub"])
+    ap.add_argument("mode", choices=["backfill", "daily", "hourly", "scrub", "live"])
     ap.add_argument("--cities", nargs="*", default=None, help="limit to these cities")
     ap.add_argument("--max-per-city", type=int, default=None)
     ap.add_argument("--from", dest="date_from", default=None)
@@ -106,6 +131,9 @@ def main():
     _load_env()
     if args.mode == "scrub":
         _scrub()
+        return
+    if args.mode == "live":
+        _live(os.environ.get("DATA_GOV_IN_KEY", "").strip())
         return
 
     # .strip() guards against stray whitespace/newlines in the stored secret (an errant

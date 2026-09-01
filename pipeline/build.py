@@ -193,6 +193,25 @@ def fetch_live_cpcb(api_key, mapping) -> list[agg.CityPollutantRecord]:
     return agg.aggregate_to_city(raw, mapping)
 
 
+def cpcb_centroids(raw_records) -> dict[str, tuple[float, float]]:
+    """City centroids (mean lat/lon) from raw CPCB AQRecords, which carry their own city
+    and coordinates — so the fast live path needs no OpenAQ station discovery."""
+    pts: dict[str, list[tuple[float, float]]] = defaultdict(list)
+    for r in raw_records:
+        if r.city and r.lat is not None and r.lon is not None:
+            pts[r.city].append((r.lat, r.lon))
+    return {c: (sum(a for a, _ in v) / len(v), sum(b for _, b in v) / len(v))
+            for c, v in pts.items()}
+
+
+def fetch_live_cpcb_full(api_key) -> tuple[list[agg.CityPollutantRecord], dict[str, tuple[float, float]]]:
+    """CPCB nationwide live as (city-aggregated records, city centroids) in one fetch.
+    Used by the fast live-only refresh, which needs centroids for weather but skips the
+    slow OpenAQ discovery + hourly fetch entirely."""
+    raw = cpcb.fetch_live(api_key)
+    return agg.aggregate_to_city(raw), cpcb_centroids(raw)
+
+
 # --------------------------------------------------------------------------- #
 # Freshness helpers
 # --------------------------------------------------------------------------- #

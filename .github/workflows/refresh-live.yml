@@ -1,0 +1,89 @@
+# Fast live headline: CPCB (data.gov.in) nationwide snapshot -> data/live -> publish.
+# CPCB is the true live source and returns in seconds; this decouples the headline from the
+# slow OpenAQ hourly fetch (which lags days and dominated refresh-hourly's ~2-3h runtime).
+# The hourly/daily jobs still maintain the recent + history tiers.
+name: refresh-live
+
+on:
+  schedule:
+    - cron: "20 * * * *" # hourly, near the top of the hour
+  workflow_dispatch: {}
+
+# Share the data-refresh lane so no two jobs race to push the data branch. This job is quick,
+# so it does not hold the lane long.
+concurrency:
+  group: data-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+  actions: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install pipeline
+        run: pip install -e ./pipeline
+
+      # Data lives on the orphan `data` branch. Repopulate the working tree before running so
+      # the publish below preserves history/recent (the live run only rewrites data/live).
+      - name: Hydrate prior data from data branch
+        run: |
+          if git fetch --depth 1 origin '+refs/heads/data:refs/remotes/origin/data' 2>/dev/null; then
+            rm -rf data
+            git archive origin/data data | tar -x
+            echo "Hydrated $(find data -type f | wc -l) files from data branch."
+          else
+            echo "No data branch yet; starting fresh."
+          fi
+
+      - name: Refresh live snapshot (CPCB-only, fast)
+        env:
+          DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
+        run: |
+          set -o pipefail
+          python pipeline/run.py live 2>&1 | tee /tmp/airatlas-run.log
+
+      # Keep-last-good means a data.gov.in outage leaves OLD snapshots and the run still exits 0,
+      # so check freshness BEFORE committing and alert only on a genuine multi-day blackout (96h).
+      - name: Staleness check
+        run: |
+          set -o pipefail
+          python pipeline/checks.py staleness --live-dir data/live --max-hours 96 2>&1 | tee -a /tmp/airatlas-run.log
+
+      # Publish the whole data/ tree as a single PARENTLESS commit on the `data` branch, in a
+      # throwaway index so the real worktree is untouched. Skip if nothing changed.
+      - name: Publish data to data branch
+        run: |
+          git config user.name  "airatlas-bot"
+          git config user.email "airatlas-bot@users.noreply.github.com"
+          NEW_TREE=$(
+            export GIT_INDEX_FILE="$(mktemp -u)"
+            git add -f data
+            git write-tree
+          )
+          PREV_TREE=$(git rev-parse --verify --quiet 'refs/remotes/origin/data^{tree}' || echo none)
+          if [ "$NEW_TREE" = "$PREV_TREE" ]; then
+            echo "No data change; skipping publish + redeploy."
+            exit 0
+          fi
+          NEW_COMMIT=$(git commit-tree "$NEW_TREE" -m "data: live refresh")
+          git push --force origin "${NEW_COMMIT}:refs/heads/data"
+          echo "Published data tree $NEW_TREE to data branch."
+
+      - name: Alert on failure / auto-close on recovery
+        if: always()
+        uses: ./.github/actions/alert
+        with:
+          status: ${{ job.status }}
+          workflow: ${{ github.workflow }}
+          log-path: /tmp/airatlas-run.log
+          note: "Fast CPCB live refresh failed or the live tier went stale (>96h)."

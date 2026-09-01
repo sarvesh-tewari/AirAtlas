@@ -1,7 +1,33 @@
 """Tests for meta-assembly helpers in build.py."""
 
 import build
-from ingest.records import Sensor, Station
+from ingest.records import AQRecord, Sensor, Station
+
+
+def _cpcb_rec(city, param, value, lat, lon, station=""):
+    return AQRecord(source="cpcb", station_id=f"cpcb:{city}-{param}-{station}{lat}",
+                    station_name=f"{city}{station}", city=city, state=None, lat=lat, lon=lon,
+                    parameter=param, value=value, unit="µg/m³",
+                    datetime_utc="2026-09-01T09:30:00Z", averaging="live")
+
+
+def test_cpcb_centroids_mean_of_station_coords():
+    recs = [_cpcb_rec("Delhi", "pm25", 40, 28.6, 77.2),
+            _cpcb_rec("Delhi", "pm10", 90, 28.8, 77.0),
+            _cpcb_rec("Pune", "pm25", 20, 18.5, 73.9)]
+    c = build.cpcb_centroids(recs)
+    assert abs(c["Delhi"][0] - 28.7) < 1e-6 and abs(c["Delhi"][1] - 77.1) < 1e-6
+    assert c["Pune"] == (18.5, 73.9)
+
+
+def test_fetch_live_cpcb_full_aggregates_and_centroids(monkeypatch):
+    recs = [_cpcb_rec("Delhi", "pm25", 40, 28.6, 77.2),
+            _cpcb_rec("Delhi", "pm25", 60, 28.8, 77.0)]  # two stations -> median 50
+    monkeypatch.setattr(build.cpcb, "fetch_live", lambda *a, **k: recs)
+    city_records, centroids = build.fetch_live_cpcb_full("key")
+    pm25 = next(r for r in city_records if r.city == "Delhi" and r.parameter == "pm25")
+    assert pm25.value == 50.0
+    assert "Delhi" in centroids
 
 
 def _st(sid, name, sensors):
