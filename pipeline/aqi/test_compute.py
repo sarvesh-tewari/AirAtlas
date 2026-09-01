@@ -11,7 +11,6 @@ import pytest
 
 from aqi import compute
 
-
 # Shared §7 input — 24h concentrations in µg/m³ (CO would be mg/m³).
 SEVEN = {"pm25": 90, "pm10": 250, "no2": 80, "so2": 40}
 

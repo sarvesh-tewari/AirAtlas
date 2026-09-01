@@ -1,8 +1,8 @@
 """Tests for assembling wide, storage-ready rows (concentrations + precomputed AQI + weather)."""
 
 from ingest.records import WeatherRecord
-from transform.aggregate import CityPollutantRecord
 from transform import storage
+from transform.aggregate import CityPollutantRecord
 
 
 def _c(city, param, date, value, source="openaq", unit="µg/m³"):
@@ -174,8 +174,9 @@ def test_read_all_daily_returns_union_across_incremental_batches(tmp_path):
 
 def test_write_parquet_recent_prunes_old(tmp_path):
     import datetime as dt
+
     import polars as pl
-    today = dt.date.today()
+    today = dt.datetime.now(dt.UTC).date()
     old = (today - dt.timedelta(days=200)).isoformat()
     fresh = (today - dt.timedelta(days=2)).isoformat()
     rows = [

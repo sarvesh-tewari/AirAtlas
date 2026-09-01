@@ -17,9 +17,10 @@ Parsing is pure (testable on a fixture); fetching is thin HTTP with retry + keep
 
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta, timezone
 
-from . import http, records as rec
+from . import http
+from . import records as rec
 
 RESOURCE_ID = "3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69"
 BASE = f"https://api.data.gov.in/resource/{RESOURCE_ID}"
@@ -49,10 +50,10 @@ def _ist_to_utc_z(last_update: str) -> str | None:
     if _na(last_update):
         return None
     try:
-        naive = datetime.strptime(last_update.strip(), "%d-%m-%Y %H:%M:%S")
+        naive = datetime.strptime(last_update.strip(), "%d-%m-%Y %H:%M:%S")  # noqa: DTZ007 - IST tz attached below
     except ValueError:
         return None
-    return naive.replace(tzinfo=_IST).astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return naive.replace(tzinfo=_IST).astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def parse_live(payload: dict) -> list[rec.AQRecord]:

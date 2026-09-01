@@ -43,7 +43,7 @@ def _today_ist() -> str:
 
 def _now_utc() -> str:
     """UTC timestamp of this run, published so the site can show when data was last refreshed."""
-    return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+    return dt.datetime.now(dt.UTC).isoformat(timespec="seconds")
 
 
 # Known citymap orphans: city slugs that should never have existed as their own city. The

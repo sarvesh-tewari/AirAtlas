@@ -7,7 +7,7 @@ import checks
 
 
 def _now():
-    return dt.datetime(2026, 6, 11, 12, 0, 0, tzinfo=dt.timezone.utc)
+    return dt.datetime(2026, 6, 11, 12, 0, 0, tzinfo=dt.UTC)
 
 
 def test_age_none_when_no_live_files(tmp_path):

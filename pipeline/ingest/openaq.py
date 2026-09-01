@@ -16,7 +16,8 @@ Parsing is pure (testable on fixtures); fetching is thin HTTP with pagination + 
 
 from __future__ import annotations
 
-from . import http, records as rec
+from . import http
+from . import records as rec
 
 BASE = "https://api.openaq.org/v3"
 CPCB_PROVIDER_ID = 168  # OpenAQ's provider id for CPCB (India)

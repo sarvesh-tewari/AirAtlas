@@ -14,7 +14,9 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0",
-    "ruff>=0.6",
+    # Pinned to a minor range: ruff enables new lint rules in minor bumps, and an unbounded
+    # `>=` let CI silently adopt them and go red on unchanged code. Bump deliberately.
+    "ruff>=0.16.5,<0.17",
 ]
 
 [build-system]
@@ -30,3 +32,9 @@ testpaths = ["aqi", "ingest", "transform", "test_checks.py", "test_build.py", "t
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+
+[tool.ruff.lint]
+# BLE001 (blind-except): the ingest/build paths deliberately catch broad `Exception` so one
+# flaky sensor, city, or upstream blip can't abort a whole refresh (self-heals next run).
+# That resilience is intentional and documented at each site, so silence the rule globally.
+ignore = ["BLE001"]

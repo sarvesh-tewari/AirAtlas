@@ -151,11 +151,11 @@ def rollup_hourly_to_daily(
         if r.value is None:
             continue
         try:
-            ts = dt.datetime.fromisoformat(r.datetime_utc.replace("Z", "+00:00"))
+            ts = dt.datetime.fromisoformat(r.datetime_utc)
         except ValueError:
             continue
         if ts.tzinfo is None:
-            ts = ts.replace(tzinfo=dt.timezone.utc)
+            ts = ts.replace(tzinfo=dt.UTC)
         local_date = ts.astimezone(tz).date().isoformat()
         groups[(r.city, r.parameter, local_date)].append(r)
 
@@ -188,7 +188,7 @@ def rolling_24h(
     freshest reading time. Median-across-stations is already applied per hour.
     """
     def _ts(r: CityPollutantRecord) -> dt.datetime:
-        return dt.datetime.fromisoformat(r.datetime_utc.replace("Z", "+00:00"))
+        return dt.datetime.fromisoformat(r.datetime_utc)
 
     by_city: dict[str, list[CityPollutantRecord]] = defaultdict(list)
     for r in hourly:

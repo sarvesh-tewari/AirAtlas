@@ -11,12 +11,11 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import pathlib
 import time
 
 import httpx
-
-import os
 
 CACHE_DIR = pathlib.Path(__file__).resolve().parents[1] / ".cache"
 
@@ -87,9 +86,9 @@ def get_json(
     min_interval: per-call request spacing override (e.g. for rate-strict endpoints).
     """
     cache_file = CACHE_DIR / f"{_cache_key(url, params)}.json"
-    if use_cache and cache_file.exists():
-        if cache_ttl is None or (time.time() - cache_file.stat().st_mtime) < cache_ttl:
-            return json.loads(cache_file.read_text())
+    if use_cache and cache_file.exists() and (
+            cache_ttl is None or (time.time() - cache_file.stat().st_mtime) < cache_ttl):
+        return json.loads(cache_file.read_text())
 
     last_err: Exception | None = None
     for attempt in range(retries):

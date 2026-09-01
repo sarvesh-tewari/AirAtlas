@@ -44,7 +44,7 @@ def _truncate(value: float, decimals: int) -> float:
 
 
 def _round_half_up(value: float) -> int:
-    return int(math.floor(value + 0.5))
+    return math.floor(value + 0.5)
 
 
 def ugm3_to_ppb(pollutant: str, value_ugm3: float) -> float:

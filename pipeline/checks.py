@@ -16,13 +16,13 @@ from pathlib import Path
 
 def newest_live_age_hours(live_dir, now: dt.datetime | None = None) -> float | None:
     """Age (hours) of the newest data/live/*.json by its `updated_utc`. None if no usable file."""
-    now = now or dt.datetime.now(dt.timezone.utc)
+    now = now or dt.datetime.now(dt.UTC)
     newest: dt.datetime | None = None
     for f in Path(live_dir).glob("*.json"):
         try:
             ts = json.loads(f.read_text()).get("updated_utc")
-            t = dt.datetime.strptime(ts, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
-        except Exception:
+            t = dt.datetime.strptime(ts, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.UTC)
+        except Exception:  # noqa: S112 - skip an unreadable/partial live JSON, keep scanning
             continue
         if newest is None or t > newest:
             newest = t
@@ -74,8 +74,8 @@ def coverage_verdict(
     if problems:
         return False, "COVERAGE DROP: " + "; ".join(problems)
     return (True,
-            f"OK: coverage cities {current_cities} (prior {prior_cities}), "
-            f"stations {current_stations} (prior {prior_stations})")
+            (f"OK: coverage cities {current_cities} (prior {prior_cities}), "
+             f"stations {current_stations} (prior {prior_stations})"))
 
 
 def _run_staleness(live_dir, max_hours) -> int:

@@ -19,8 +19,10 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-from aqi import breakpoints as bp, compute
+from aqi import breakpoints as bp
+from aqi import compute
 from ingest.records import WeatherRecord
+
 from .aggregate import CityPollutantRecord
 
 POLLUTANTS = ["pm25", "pm10", "no2", "so2", "o3", "co", "nh3"]
@@ -192,7 +194,7 @@ def write_parquet_per_city(
             df = pl.concat([existing, df], how="diagonal_relaxed").unique(
                 subset=merge_keys, keep="last", maintain_order=True)
         if keep_days and date_col:
-            cutoff = (_dt.date.today() - _dt.timedelta(days=keep_days)).isoformat()
+            cutoff = (_dt.datetime.now(_dt.UTC).date() - _dt.timedelta(days=keep_days)).isoformat()
             df = df.filter(pl.col(date_col).str.slice(0, 10) >= cutoff)
         if flatline_col:
             df = drop_flatlined_rows(df, sort_col=flatline_col)
@@ -223,6 +225,7 @@ def drop_sentinel_rows(df):
     aggregation prevent these going forward, but rows written before the fix persist because
     an upsert re-fetch produces no replacement row for an all-sentinel station-day."""
     import polars as pl
+
     from .aggregate import SENSOR_SENTINELS
 
     present = [c for c in POLLUTANTS if c in df.columns]

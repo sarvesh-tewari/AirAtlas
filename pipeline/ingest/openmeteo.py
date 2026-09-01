@@ -10,8 +10,10 @@ Parsing is pure (testable on fixtures); fetching is thin HTTP with cache.
 from __future__ import annotations
 
 import os
+from datetime import UTC
 
-from . import http, records as rec
+from . import http
+from . import records as rec
 
 FORECAST_BASE = "https://api.open-meteo.com/v1/forecast"
 ARCHIVE_BASE = "https://archive-api.open-meteo.com/v1/archive"
@@ -42,12 +44,12 @@ def _wind_to_ms(value: float | None, unit: str | None) -> float | None:
 
 def _to_utc_z(local_iso: str, utc_offset_seconds: int) -> str:
     """Convert an Open-Meteo local timestamp (no tz) to an ISO-8601 Z string."""
-    from datetime import datetime, timedelta, timezone
+    from datetime import datetime, timedelta
     # Times may be "YYYY-MM-DDTHH:MM" (hourly/current) or "YYYY-MM-DD" (daily).
     fmt = "%Y-%m-%dT%H:%M" if "T" in local_iso else "%Y-%m-%d"
-    naive = datetime.strptime(local_iso, fmt)
+    naive = datetime.strptime(local_iso, fmt)  # noqa: DTZ007 - local time, converted to UTC below
     utc = naive - timedelta(seconds=utc_offset_seconds)
-    return utc.replace(tzinfo=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return utc.replace(tzinfo=UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def parse_current(payload: dict) -> rec.WeatherRecord | None:
@@ -77,7 +79,7 @@ def parse_archive_daily(payload: dict) -> list[rec.WeatherRecord]:
     lat, lon = payload["latitude"], payload["longitude"]
     out: list[rec.WeatherRecord] = []
     for i, day in enumerate(daily["time"]):
-        def col(name):
+        def col(name, i=i):
             vals = daily.get(name)
             return vals[i] if vals is not None else None
         out.append(rec.WeatherRecord(

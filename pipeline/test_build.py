@@ -26,7 +26,7 @@ def test_discover_falls_back_to_cache_when_locations_down(tmp_path, monkeypatch)
         raise RuntimeError("GET failed after 8 attempts")
 
     monkeypatch.setattr(build.openaq, "fetch_india_locations", boom)
-    stations, mapping, unmapped = build.discover("key")
+    stations, mapping, _unmapped = build.discover("key")
     assert [s.station_id for s in stations] == ["openaq:1"]
     assert mapping == {"openaq:1": "Delhi"}
 
@@ -47,6 +47,7 @@ def test_discover_raises_when_down_and_no_cache(tmp_path, monkeypatch):
 
 def test_http_status_extracts_code():
     import httpx
+
     import build
     req = httpx.Request("GET", "https://x/y")
     resp = httpx.Response(422, request=req)
@@ -61,7 +62,7 @@ def test_http_status_extracts_code():
 
 def test_fetch_city_aq_prints_summary(monkeypatch, capsys):
     import build
-    from ingest.records import Station, Sensor
+    from ingest.records import Sensor, Station
     st = Station(source="openaq", station_id="s1", name="S1", lat=1.0, lon=2.0,
                  locality=None, city=None, state=None, timezone="Asia/Kolkata",
                  sensors=[Sensor(sensor_id=1, parameter="pm25", units="µg/m³")])

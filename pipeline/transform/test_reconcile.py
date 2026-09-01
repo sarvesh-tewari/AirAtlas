@@ -1,7 +1,7 @@
 """Tests for the today=CPCB / history=OpenAQ reconciliation seam."""
 
-from transform.aggregate import CityPollutantRecord
 from transform import reconcile as rec
+from transform.aggregate import CityPollutantRecord
 
 
 def _city(city, param, date, value, source, averaging="1d"):
