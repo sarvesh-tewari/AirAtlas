@@ -9,8 +9,9 @@ history (today=CPCB, history=OpenAQ seam, handled in transform/reconcile).
 
 Schema robustness: data.gov.in has shipped two field-name variants over time
 (`pollutant_avg`/`pollutant_min`/… vs `avg_value`/`min_value`/… with `latitude`). The
-parser accepts both. Missing values are the string "NA". Concentrations are µg/m³
-(CO in mg/m³); OZONE maps to o3.
+parser accepts both. Missing values are the string "NA". Concentrations are µg/m³; OZONE
+maps to o3. CO is DROPPED: the feed's CO number is not a usable ambient concentration
+(see parse_live) and, read as mg/m³, wrongly dominates the NAQI for every city.
 
 Parsing is pure (testable on a fixture); fetching is thin HTTP with retry + keep-last-good.
 """
@@ -65,6 +66,15 @@ def parse_live(payload: dict) -> list[rec.AQRecord]:
     for r in payload.get("records", []):
         param = _canon_pollutant(r.get("pollutant_id"))
         if param is None:
+            continue
+        # DROP CO. The data.gov.in feed's CO value is NOT a usable ambient concentration:
+        # nationwide it sits around 4-108 (Delhi median ~37) whereas real ambient CO is
+        # ~0.3-2 mg/m³. Read as mg/m³ it lands in the NAQI "Very Poor/Severe" CO band and
+        # wrongly dominates every city's index — CPCB's own published AQI (PM-driven) does
+        # not. We can't recover a real concentration from this field, and CO is never the
+        # true NAQI driver in India, so exclude it from this source. PM2.5/PM10/NO2/SO2/O3/
+        # NH3 remain valid concentrations. (OpenAQ's CO, a real concentration, is unaffected.)
+        if param == "co":
             continue
         # Dual schema: pollutant_avg/… or avg_value/….
         avg = _num(r.get("pollutant_avg", r.get("avg_value")))

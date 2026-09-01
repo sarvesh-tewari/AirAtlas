@@ -55,3 +55,17 @@ def test_parse_live_handles_newer_field_variant():
 def test_parse_live_maps_ozone_to_o3():
     # Sanity: the canonical mapping is applied (OZONE -> o3) even though this row is NA.
     assert cpcb._canon_pollutant("OZONE") == "o3"
+
+
+def test_parse_live_drops_co():
+    # The data.gov.in CO value is not a usable concentration (~4-108 vs real ~0.3-2 mg/m³);
+    # read as mg/m³ it wrongly dominates the NAQI. It must be dropped from this source.
+    payload = {"records": [
+        {"pollutant_id": "CO", "city": "Delhi", "station": "X", "avg_value": "37",
+         "last_update": "01-09-2026 15:00:00", "latitude": "28.5", "longitude": "77.1"},
+        {"pollutant_id": "PM2.5", "city": "Delhi", "station": "X", "avg_value": "48",
+         "last_update": "01-09-2026 15:00:00", "latitude": "28.5", "longitude": "77.1"},
+    ]}
+    params = {r.parameter for r in cpcb.parse_live(payload)}
+    assert "co" not in params
+    assert "pm25" in params
