@@ -1,0 +1,66 @@
+{
+  "city": "Pampore",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": 0
+    },
+    "pm25": {
+      "value": 38.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 63,
+      "us_subindex": 107
+    },
+    "no2": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": 1
+    },
+    "pm10": {
+      "value": 54.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 50
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 63,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 107,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 17.4,
+    "rh_pct": 69,
+    "precip_mm": 0.0,
+    "wind_ms": 0.05,
+    "wind_dir_deg": 90
+  }
+}

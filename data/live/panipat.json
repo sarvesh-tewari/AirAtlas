@@ -1,0 +1,77 @@
+{
+  "city": "Panipat",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 59.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 98,
+      "us_subindex": 153
+    },
+    "no2": {
+      "value": 7.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    },
+    "o3": {
+      "value": 42.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 42,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 82.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 82,
+      "us_subindex": 64
+    },
+    "so2": {
+      "value": 49.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 26
+    },
+    "nh3": {
+      "value": 9.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 98,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 153,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.9,
+    "rh_pct": 95,
+    "precip_mm": 0.0,
+    "wind_ms": 1.06,
+    "wind_dir_deg": 98
+  }
+}

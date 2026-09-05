@@ -1,0 +1,78 @@
+{
+  "city": "Saharsa",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "nh3": {
+      "value": 4.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 19.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 57.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 52
+    },
+    "pm25": {
+      "value": 42.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 70,
+      "us_subindex": 117
+    },
+    "no2": {
+      "value": 7.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    },
+    "o3": {
+      "value": 15.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 70,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 117,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.9,
+    "rh_pct": 97,
+    "precip_mm": 0.0,
+    "wind_ms": 2.86,
+    "wind_dir_deg": 85
+  }
+}

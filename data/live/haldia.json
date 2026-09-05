@@ -1,0 +1,78 @@
+{
+  "city": "Haldia",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 26.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 53.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 53,
+      "us_subindex": 49
+    },
+    "nh3": {
+      "value": 12.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": null
+    },
+    "no2": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 39.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 110
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 65,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 110,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.9,
+    "rh_pct": 86,
+    "precip_mm": 0.0,
+    "wind_ms": 3.73,
+    "wind_dir_deg": 212
+  }
+}

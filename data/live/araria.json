@@ -1,0 +1,77 @@
+{
+  "city": "Araria",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 61.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 54
+    },
+    "nh3": {
+      "value": 4.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 37.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 17
+    },
+    "pm25": {
+      "value": 53.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 88,
+      "us_subindex": 144
+    },
+    "no2": {
+      "value": 15.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    },
+    "so2": {
+      "value": 19.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 88,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 144,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.6,
+    "rh_pct": 96,
+    "precip_mm": 0.6,
+    "wind_ms": 2.04,
+    "wind_dir_deg": 79
+  }
+}

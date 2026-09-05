@@ -1,0 +1,77 @@
+{
+  "city": "Karauli",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 10.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 12.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 11
+    },
+    "nh3": {
+      "value": 7.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    },
+    "pm25": {
+      "value": 7.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 39
+    },
+    "no2": {
+      "value": 38.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 19
+    },
+    "so2": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 48,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 39,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.6,
+    "rh_pct": 97,
+    "precip_mm": 0.9,
+    "wind_ms": 2.52,
+    "wind_dir_deg": 353
+  }
+}

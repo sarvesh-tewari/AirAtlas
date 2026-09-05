@@ -1,0 +1,78 @@
+{
+  "city": "Lucknow",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 6,
+  "pollutants": {
+    "pm25": {
+      "value": 36.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 102
+    },
+    "no2": {
+      "value": 25.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "nh3": {
+      "value": 8.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    },
+    "pm10": {
+      "value": 41.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 38
+    },
+    "so2": {
+      "value": 13.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 38.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 18
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 59,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 102,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.1,
+    "rh_pct": 95,
+    "precip_mm": 0.0,
+    "wind_ms": 2.85,
+    "wind_dir_deg": 105
+  }
+}

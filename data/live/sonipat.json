@@ -1,0 +1,79 @@
+{
+  "city": "Sonipat",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "nh3": {
+      "value": 9.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 51.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 23
+    },
+    "pm10": {
+      "value": 57.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 52
+    },
+    "so2": {
+      "value": 44.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 23
+    },
+    "no2": {
+      "value": 7.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    },
+    "pm25": {
+      "value": 36.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 102
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 59,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 102,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "so2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.8,
+    "rh_pct": 96,
+    "precip_mm": 0.0,
+    "wind_ms": 2.03,
+    "wind_dir_deg": 100
+  }
+}

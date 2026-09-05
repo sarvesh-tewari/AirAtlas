@@ -1,0 +1,77 @@
+{
+  "city": "Vijayawada",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 3,
+  "pollutants": {
+    "o3": {
+      "value": 17.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 7
+    },
+    "so2": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 19.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "nh3": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "pm25": {
+      "value": 57.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 95,
+      "us_subindex": 152
+    },
+    "pm10": {
+      "value": 62.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 54
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 95,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 152,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.1,
+    "rh_pct": 81,
+    "precip_mm": 0.0,
+    "wind_ms": 0.47,
+    "wind_dir_deg": 288
+  }
+}

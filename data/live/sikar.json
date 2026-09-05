@@ -1,0 +1,77 @@
+{
+  "city": "Sikar",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 52.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 142
+    },
+    "nh3": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": null
+    },
+    "no2": {
+      "value": 10.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "so2": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": 0
+    },
+    "pm10": {
+      "value": 87.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 87,
+      "us_subindex": 67
+    },
+    "o3": {
+      "value": 24.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 87,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 142,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.4,
+    "rh_pct": 91,
+    "precip_mm": 0.0,
+    "wind_ms": 2.17,
+    "wind_dir_deg": 157
+  }
+}

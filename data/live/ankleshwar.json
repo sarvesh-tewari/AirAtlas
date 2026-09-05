@@ -1,0 +1,79 @@
+{
+  "city": "Ankleshwar",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 17.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "pm25": {
+      "value": 47.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 129
+    },
+    "pm10": {
+      "value": 74.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 74,
+      "us_subindex": 60
+    },
+    "no2": {
+      "value": 27.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 13
+    },
+    "nh3": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 51.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 23
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 78,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 129,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10",
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.2,
+    "rh_pct": 85,
+    "precip_mm": 0.0,
+    "wind_ms": 3.09,
+    "wind_dir_deg": 220
+  }
+}

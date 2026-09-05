@@ -1,0 +1,78 @@
+{
+  "city": "Chennai",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 6,
+  "pollutants": {
+    "pm10": {
+      "value": 79.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 79,
+      "us_subindex": 63
+    },
+    "nh3": {
+      "value": 2.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "pm25": {
+      "value": 44.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 123
+    },
+    "no2": {
+      "value": 12.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "so2": {
+      "value": 5.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 3
+    },
+    "o3": {
+      "value": 9.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 79,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 123,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.8,
+    "rh_pct": 84,
+    "precip_mm": 0.0,
+    "wind_ms": 4.91,
+    "wind_dir_deg": 210
+  }
+}

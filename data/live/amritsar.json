@@ -1,0 +1,77 @@
+{
+  "city": "Amritsar",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 24.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 5
+    },
+    "so2": {
+      "value": 17.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "nh3": {
+      "value": 8.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    },
+    "pm25": {
+      "value": 82.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 173,
+      "us_subindex": 170
+    },
+    "pm10": {
+      "value": 100.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 100,
+      "us_subindex": 73
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 173,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 170,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.2,
+    "rh_pct": 89,
+    "precip_mm": 0.0,
+    "wind_ms": 1.52,
+    "wind_dir_deg": 117
+  }
+}

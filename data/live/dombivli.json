@@ -1,0 +1,80 @@
+{
+  "city": "Dombivli",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 26.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 13
+    },
+    "pm10": {
+      "value": 17.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 16
+    },
+    "o3": {
+      "value": 27.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 12
+    },
+    "no2": {
+      "value": 16.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 8
+    },
+    "pm25": {
+      "value": 9.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 50
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 33,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 50,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "so2",
+        "pm10",
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.3,
+    "rh_pct": 96,
+    "precip_mm": 0.0,
+    "wind_ms": 1.7,
+    "wind_dir_deg": 182
+  }
+}

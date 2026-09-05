@@ -1,0 +1,72 @@
+{
+  "city": "Bareilly",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 2,
+  "pollutants": {
+    "nh3": {
+      "value": 0.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 23.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 8.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 35.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 32
+    },
+    "o3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 35,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 32,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "so2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.9,
+    "rh_pct": 97,
+    "precip_mm": 0.0,
+    "wind_ms": 2.1,
+    "wind_dir_deg": 87
+  }
+}

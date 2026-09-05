@@ -1,0 +1,77 @@
+{
+  "city": "Mandi Gobindgarh",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 56.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 93,
+      "us_subindex": 151
+    },
+    "no2": {
+      "value": 25.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "nh3": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 14.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 84.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 84,
+      "us_subindex": 65
+    },
+    "o3": {
+      "value": 65.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 31
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 93,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 151,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.1,
+    "rh_pct": 97,
+    "precip_mm": 0.0,
+    "wind_ms": 0.61,
+    "wind_dir_deg": 99
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "city": "Ahmedabad",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 8,
+  "pollutants": {
+    "so2": {
+      "value": 11.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 46.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 76,
+      "us_subindex": 127
+    },
+    "pm10": {
+      "value": 78.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 62
+    },
+    "no2": {
+      "value": 21.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "nh3": {
+      "value": 2.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 7.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 78,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 127,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.3,
+    "rh_pct": 73,
+    "precip_mm": 0.0,
+    "wind_ms": 2.12,
+    "wind_dir_deg": 255
+  }
+}

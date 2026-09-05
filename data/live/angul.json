@@ -1,0 +1,78 @@
+{
+  "city": "Angul",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 9.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    },
+    "o3": {
+      "value": 27.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 12
+    },
+    "pm25": {
+      "value": 45.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 124
+    },
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 10.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 77.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 77,
+      "us_subindex": 62
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 77,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 124,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 88,
+    "precip_mm": 0.0,
+    "wind_ms": 1.66,
+    "wind_dir_deg": 275
+  }
+}

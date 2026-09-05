@@ -1,0 +1,72 @@
+{
+  "city": "Agartala",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 89.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 89,
+      "us_subindex": 68
+    },
+    "pm25": {
+      "value": 49.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 81,
+      "us_subindex": 134
+    },
+    "so2": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 89,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 134,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 92,
+    "precip_mm": 0.0,
+    "wind_ms": 3.11,
+    "wind_dir_deg": 156
+  }
+}

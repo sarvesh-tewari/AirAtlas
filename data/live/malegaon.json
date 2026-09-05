@@ -1,0 +1,77 @@
+{
+  "city": "Malegaon",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 1
+    },
+    "o3": {
+      "value": 21.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 80.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 80,
+      "us_subindex": 63
+    },
+    "pm25": {
+      "value": 56.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 93,
+      "us_subindex": 151
+    },
+    "nh3": {
+      "value": 1.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": null
+    },
+    "no2": {
+      "value": 17.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 8
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 93,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 151,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.7,
+    "rh_pct": 90,
+    "precip_mm": 0.0,
+    "wind_ms": 3.74,
+    "wind_dir_deg": 254
+  }
+}

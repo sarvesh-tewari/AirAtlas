@@ -1,0 +1,45 @@
+{
+  "city": "Leh",
+  "updated_utc": "2026-09-05T19:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 277.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 313,
+      "us_subindex": 238
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 238,
+      "category": "Very Unhealthy",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 10.9,
+    "rh_pct": 44,
+    "precip_mm": 0.0,
+    "wind_ms": 0.7,
+    "wind_dir_deg": 339
+  }
+}

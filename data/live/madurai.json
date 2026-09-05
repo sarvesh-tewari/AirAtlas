@@ -1,0 +1,66 @@
+{
+  "city": "Madurai",
+  "updated_utc": "2026-08-06T15:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 12.925354761904762,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 5.585416666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 2
+    },
+    "pm10": {
+      "value": 36.71532051282051,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 33
+    },
+    "so2": {
+      "value": 11.580573653715065,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 36,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 33,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.6,
+    "rh_pct": 61,
+    "precip_mm": 0.0,
+    "wind_ms": 1.12,
+    "wind_dir_deg": 297
+  }
+}
