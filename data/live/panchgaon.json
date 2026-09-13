@@ -1,0 +1,77 @@
+{
+  "city": "Panchgaon",
+  "updated_utc": "2026-09-12T23:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 14.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 34.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 31
+    },
+    "o3": {
+      "value": 12.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 6
+    },
+    "nh3": {
+      "value": 6.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    },
+    "pm25": {
+      "value": 7.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 39
+    },
+    "no2": {
+      "value": 39.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 49,
+      "us_subindex": 19
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 49,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 39,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 92,
+    "precip_mm": 0.0,
+    "wind_ms": 3.01,
+    "wind_dir_deg": 86
+  }
+}

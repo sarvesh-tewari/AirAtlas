@@ -1,0 +1,1990 @@
+[
+  {
+    "city": "Agartala",
+    "n_days": 636,
+    "first_date": "2022-03-25",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Agra",
+    "n_days": 2206,
+    "first_date": "2016-03-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ahmedabad",
+    "n_days": 1614,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ahmednagar",
+    "n_days": 532,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Aizawl",
+    "n_days": 591,
+    "first_date": "2020-03-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ajmer",
+    "n_days": 1586,
+    "first_date": "2018-04-16",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Akola",
+    "n_days": 508,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Alwar",
+    "n_days": 1649,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Amaravati",
+    "n_days": 536,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ambala",
+    "n_days": 1177,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Amravati",
+    "n_days": 486,
+    "first_date": "2025-03-17",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Amritsar",
+    "n_days": 1581,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Anantapur",
+    "n_days": 490,
+    "first_date": "2022-09-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Angul",
+    "n_days": 528,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ankleshwar",
+    "n_days": 493,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Araria",
+    "n_days": 705,
+    "first_date": "2021-12-17",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ariyalur",
+    "n_days": 120,
+    "first_date": "2025-03-02",
+    "last_date": "2025-12-15",
+    "thin": true
+  },
+  {
+    "city": "Arrah",
+    "n_days": 536,
+    "first_date": "2021-12-16",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Asansol",
+    "n_days": 1570,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Aurangabad",
+    "n_days": 1467,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Baddi",
+    "n_days": 684,
+    "first_date": "2022-03-25",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Badlapur",
+    "n_days": 495,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-07",
+    "thin": false
+  },
+  {
+    "city": "Bagalkot",
+    "n_days": 715,
+    "first_date": "2020-02-11",
+    "last_date": "2026-08-12",
+    "thin": false
+  },
+  {
+    "city": "Baghpat",
+    "n_days": 663,
+    "first_date": "2022-03-25",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bahadurgarh",
+    "n_days": 1047,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Balasore",
+    "n_days": 524,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ballabgarh",
+    "n_days": 1225,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Banswara",
+    "n_days": 532,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Baran",
+    "n_days": 527,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Barbil",
+    "n_days": 535,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bareilly",
+    "n_days": 605,
+    "first_date": "2022-06-02",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Baripada",
+    "n_days": 522,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Barmer",
+    "n_days": 519,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Barrackpore",
+    "n_days": 534,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bathinda",
+    "n_days": 1445,
+    "first_date": "2018-08-10",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Begusarai",
+    "n_days": 436,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Belapur",
+    "n_days": 530,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Belgaum",
+    "n_days": 312,
+    "first_date": "2022-09-16",
+    "last_date": "2026-09-08",
+    "thin": true
+  },
+  {
+    "city": "Bengaluru",
+    "n_days": 1997,
+    "first_date": "2016-03-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bettiah",
+    "n_days": 696,
+    "first_date": "2021-07-18",
+    "last_date": "2026-09-10",
+    "thin": false
+  },
+  {
+    "city": "Bhagalpur",
+    "n_days": 735,
+    "first_date": "2021-11-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bharatpur",
+    "n_days": 534,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bhilai",
+    "n_days": 586,
+    "first_date": "2021-11-16",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bhilwara",
+    "n_days": 538,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bhiwadi",
+    "n_days": 543,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bhiwandi",
+    "n_days": 520,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bhiwani",
+    "n_days": 1070,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bhopal",
+    "n_days": 1383,
+    "first_date": "2019-09-23",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bhubaneswar",
+    "n_days": 542,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bidar",
+    "n_days": 378,
+    "first_date": "2021-01-04",
+    "last_date": "2026-04-19",
+    "thin": false
+  },
+  {
+    "city": "Bihar Sharif",
+    "n_days": 645,
+    "first_date": "2021-07-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bikaner",
+    "n_days": 530,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bilaspur",
+    "n_days": 745,
+    "first_date": "2021-09-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bileipada",
+    "n_days": 340,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Boisar",
+    "n_days": 509,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Brajrajnagar",
+    "n_days": 1380,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bulandshahr",
+    "n_days": 1563,
+    "first_date": "2018-08-10",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Bundi",
+    "n_days": 537,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Buxar",
+    "n_days": 172,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-10",
+    "thin": true
+  },
+  {
+    "city": "Byasanagar",
+    "n_days": 497,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Byrnihat",
+    "n_days": 457,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-10",
+    "thin": false
+  },
+  {
+    "city": "Chamarajanagar",
+    "n_days": 961,
+    "first_date": "2020-01-03",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Chandigarh",
+    "n_days": 820,
+    "first_date": "2021-08-25",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Chandrapur",
+    "n_days": 1222,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Charkhi Dadri",
+    "n_days": 885,
+    "first_date": "2020-04-23",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Chengalpattu",
+    "n_days": 259,
+    "first_date": "2022-09-15",
+    "last_date": "2026-01-10",
+    "thin": true
+  },
+  {
+    "city": "Chennai",
+    "n_days": 2235,
+    "first_date": "2016-03-21",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Chhal",
+    "n_days": 445,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Chhapra",
+    "n_days": 676,
+    "first_date": "2021-11-22",
+    "last_date": "2026-09-10",
+    "thin": false
+  },
+  {
+    "city": "Chikkaballapur",
+    "n_days": 1402,
+    "first_date": "2018-08-10",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Chikkamagaluru",
+    "n_days": 1163,
+    "first_date": "2020-02-03",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Chittoor",
+    "n_days": 503,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Chittorgarh",
+    "n_days": 535,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Churu",
+    "n_days": 527,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Coimbatore",
+    "n_days": 505,
+    "first_date": "2022-09-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Cuddalore",
+    "n_days": 320,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Cuttack",
+    "n_days": 525,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Damoh",
+    "n_days": 811,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Dausa",
+    "n_days": 537,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Davanagere",
+    "n_days": 690,
+    "first_date": "2021-01-12",
+    "last_date": "2026-09-03",
+    "thin": false
+  },
+  {
+    "city": "Dehradun",
+    "n_days": 621,
+    "first_date": "2022-04-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Delhi",
+    "n_days": 2460,
+    "first_date": "2016-02-05",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Dewas",
+    "n_days": 1649,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Dhanbad",
+    "n_days": 427,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Dharuhera",
+    "n_days": 1165,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-11",
+    "thin": false
+  },
+  {
+    "city": "Dharwad",
+    "n_days": 343,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Dholpur",
+    "n_days": 509,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Dhule",
+    "n_days": 516,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Dindigul",
+    "n_days": 295,
+    "first_date": "2022-09-13",
+    "last_date": "2026-07-10",
+    "thin": true
+  },
+  {
+    "city": "Dungarpur",
+    "n_days": 513,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Durgapur",
+    "n_days": 1169,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Eloor",
+    "n_days": 1201,
+    "first_date": "2019-06-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Faridabad",
+    "n_days": 1504,
+    "first_date": "2016-03-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Fatehabad",
+    "n_days": 1117,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Firozabad",
+    "n_days": 734,
+    "first_date": "2021-07-18",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Gadag",
+    "n_days": 507,
+    "first_date": "2021-01-04",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Gandhinagar",
+    "n_days": 1426,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Gangtok",
+    "n_days": 295,
+    "first_date": "2025-02-25",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Gaya",
+    "n_days": 2008,
+    "first_date": "2016-03-21",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ghaziabad",
+    "n_days": 1734,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Gorakhpur",
+    "n_days": 419,
+    "first_date": "2021-07-01",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Greater Noida",
+    "n_days": 1618,
+    "first_date": "2018-08-10",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Gummidipoondi",
+    "n_days": 598,
+    "first_date": "2021-01-05",
+    "last_date": "2026-09-10",
+    "thin": false
+  },
+  {
+    "city": "Gurugram",
+    "n_days": 2323,
+    "first_date": "2016-03-25",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Guwahati",
+    "n_days": 1322,
+    "first_date": "2019-12-24",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Gwalior",
+    "n_days": 1067,
+    "first_date": "2020-02-03",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Hajipur",
+    "n_days": 1238,
+    "first_date": "2020-03-02",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Hanumangarh",
+    "n_days": 535,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Hapur",
+    "n_days": 1328,
+    "first_date": "2018-10-23",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Hassan",
+    "n_days": 42,
+    "first_date": "2025-02-19",
+    "last_date": "2025-10-31",
+    "thin": true
+  },
+  {
+    "city": "Haveri",
+    "n_days": 47,
+    "first_date": "2025-02-24",
+    "last_date": "2026-03-13",
+    "thin": true
+  },
+  {
+    "city": "Hisar",
+    "n_days": 1218,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Hosur",
+    "n_days": 173,
+    "first_date": "2025-03-14",
+    "last_date": "2025-11-13",
+    "thin": true
+  },
+  {
+    "city": "Howrah",
+    "n_days": 1664,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Hubballi",
+    "n_days": 494,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Hyderabad",
+    "n_days": 2315,
+    "first_date": "2016-03-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Imphal",
+    "n_days": 100,
+    "first_date": "2025-02-19",
+    "last_date": "2025-07-21",
+    "thin": true
+  },
+  {
+    "city": "Indore",
+    "n_days": 544,
+    "first_date": "2019-09-23",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jabalpur",
+    "n_days": 1401,
+    "first_date": "2019-09-23",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jaipur",
+    "n_days": 1699,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jaisalmer",
+    "n_days": 536,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jalandhar",
+    "n_days": 1606,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jalgaon",
+    "n_days": 512,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jalna",
+    "n_days": 461,
+    "first_date": "2025-02-20",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jalore",
+    "n_days": 520,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jhalawar",
+    "n_days": 541,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jhansi",
+    "n_days": 655,
+    "first_date": "2022-02-04",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jhunjhunu",
+    "n_days": 538,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jind",
+    "n_days": 1247,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jodhpur",
+    "n_days": 1626,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Jorapokhar",
+    "n_days": 457,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kadapa",
+    "n_days": 455,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kaithal",
+    "n_days": 358,
+    "first_date": "2019-04-27",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Kalaburagi",
+    "n_days": 706,
+    "first_date": "2018-11-16",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kalyan",
+    "n_days": 1171,
+    "first_date": "2019-07-11",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kanchipuram",
+    "n_days": 114,
+    "first_date": "2025-02-24",
+    "last_date": "2025-11-12",
+    "thin": true
+  },
+  {
+    "city": "Kannur",
+    "n_days": 1132,
+    "first_date": "2020-02-11",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kanpur",
+    "n_days": 1584,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Karauli",
+    "n_days": 536,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Karnal",
+    "n_days": 1162,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Karur",
+    "n_days": 156,
+    "first_date": "2025-02-19",
+    "last_date": "2025-10-25",
+    "thin": true
+  },
+  {
+    "city": "Karwar",
+    "n_days": 215,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Kashipur",
+    "n_days": 393,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Katihar",
+    "n_days": 621,
+    "first_date": "2021-11-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Katni",
+    "n_days": 1310,
+    "first_date": "2020-01-07",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Keonjhar",
+    "n_days": 445,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Khanna",
+    "n_days": 1561,
+    "first_date": "2018-04-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Khurja",
+    "n_days": 618,
+    "first_date": "2022-06-02",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kishanganj",
+    "n_days": 561,
+    "first_date": "2021-11-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kohima",
+    "n_days": 999,
+    "first_date": "2020-09-04",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kolar",
+    "n_days": 281,
+    "first_date": "2021-01-12",
+    "last_date": "2025-03-14",
+    "thin": true
+  },
+  {
+    "city": "Kolhapur",
+    "n_days": 518,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kolkata",
+    "n_days": 1951,
+    "first_date": "2016-06-28",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kollam",
+    "n_days": 746,
+    "first_date": "2020-03-03",
+    "last_date": "2026-07-09",
+    "thin": false
+  },
+  {
+    "city": "Koppal",
+    "n_days": 695,
+    "first_date": "2020-12-16",
+    "last_date": "2026-07-22",
+    "thin": false
+  },
+  {
+    "city": "Korba",
+    "n_days": 510,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kota",
+    "n_days": 1653,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kunjemura",
+    "n_days": 506,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Kurukshetra",
+    "n_days": 1236,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Latur",
+    "n_days": 532,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Lucknow",
+    "n_days": 2256,
+    "first_date": "2016-03-21",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ludhiana",
+    "n_days": 1567,
+    "first_date": "2018-03-09",
+    "last_date": "2026-08-23",
+    "thin": false
+  },
+  {
+    "city": "Madikeri",
+    "n_days": 885,
+    "first_date": "2020-11-08",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Madurai",
+    "n_days": 254,
+    "first_date": "2025-03-09",
+    "last_date": "2026-07-23",
+    "thin": true
+  },
+  {
+    "city": "Mahad",
+    "n_days": 519,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Maihar",
+    "n_days": 878,
+    "first_date": "2019-02-11",
+    "last_date": "2026-09-08",
+    "thin": false
+  },
+  {
+    "city": "Malegaon",
+    "n_days": 507,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Mandi Gobindgarh",
+    "n_days": 1612,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Mandideep",
+    "n_days": 1633,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Mandikhera",
+    "n_days": 1104,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-10",
+    "thin": false
+  },
+  {
+    "city": "Manesar",
+    "n_days": 1224,
+    "first_date": "2019-01-03",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Mangalore",
+    "n_days": 779,
+    "first_date": "2021-01-04",
+    "last_date": "2026-08-24",
+    "thin": false
+  },
+  {
+    "city": "Manguraha",
+    "n_days": 648,
+    "first_date": "2021-12-02",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Meerut",
+    "n_days": 1435,
+    "first_date": "2019-07-03",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Milupara",
+    "n_days": 457,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Mira-Bhayandar",
+    "n_days": 494,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Moradabad",
+    "n_days": 702,
+    "first_date": "2021-11-10",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Motihari",
+    "n_days": 632,
+    "first_date": "2021-07-18",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Mumbai",
+    "n_days": 1470,
+    "first_date": "2019-06-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Munger",
+    "n_days": 675,
+    "first_date": "2021-11-12",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Muzaffarnagar",
+    "n_days": 1486,
+    "first_date": "2018-08-10",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Muzaffarpur",
+    "n_days": 2287,
+    "first_date": "2016-03-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Mysuru",
+    "n_days": 668,
+    "first_date": "2019-07-29",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Nagaon",
+    "n_days": 453,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Nagapattinam",
+    "n_days": 252,
+    "first_date": "2025-02-19",
+    "last_date": "2026-04-29",
+    "thin": true
+  },
+  {
+    "city": "Nagaur",
+    "n_days": 535,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Nagpur",
+    "n_days": 1513,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Naharlagun",
+    "n_days": 696,
+    "first_date": "2021-03-26",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Nalbari",
+    "n_days": 302,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Nanded",
+    "n_days": 381,
+    "first_date": "2025-02-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Nandesari",
+    "n_days": 428,
+    "first_date": "2020-02-26",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Narnaul",
+    "n_days": 1126,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Nashik",
+    "n_days": 1538,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Navi Mumbai",
+    "n_days": 1421,
+    "first_date": "2019-06-27",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Nayagarh",
+    "n_days": 328,
+    "first_date": "2025-03-05",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "New Delhi",
+    "n_days": 2357,
+    "first_date": "2016-02-05",
+    "last_date": "2026-09-10",
+    "thin": false
+  },
+  {
+    "city": "Noida",
+    "n_days": 1476,
+    "first_date": "2019-06-28",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ooty",
+    "n_days": 175,
+    "first_date": "2022-09-13",
+    "last_date": "2026-01-23",
+    "thin": true
+  },
+  {
+    "city": "Pali",
+    "n_days": 1633,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Palkalaiperur",
+    "n_days": 136,
+    "first_date": "2025-04-01",
+    "last_date": "2025-12-11",
+    "thin": true
+  },
+  {
+    "city": "Palwal",
+    "n_days": 481,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Panchkula",
+    "n_days": 1944,
+    "first_date": "2016-03-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Panipat",
+    "n_days": 1064,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Parbhani",
+    "n_days": 140,
+    "first_date": "2025-02-25",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Patiala",
+    "n_days": 1580,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Patna",
+    "n_days": 2224,
+    "first_date": "2016-03-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Perundurai",
+    "n_days": 230,
+    "first_date": "2025-02-19",
+    "last_date": "2026-06-22",
+    "thin": true
+  },
+  {
+    "city": "Pimpri Chinchwad",
+    "n_days": 41,
+    "first_date": "2025-03-09",
+    "last_date": "2026-09-07",
+    "thin": true
+  },
+  {
+    "city": "Pimpri-Chinchwad",
+    "n_days": 488,
+    "first_date": "2025-02-28",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Pithampur",
+    "n_days": 1645,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Pratapgarh",
+    "n_days": 504,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Prayagraj",
+    "n_days": 696,
+    "first_date": "2021-06-02",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Puducherry",
+    "n_days": 898,
+    "first_date": "2021-01-12",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Pudukottai",
+    "n_days": 245,
+    "first_date": "2025-02-19",
+    "last_date": "2026-04-01",
+    "thin": true
+  },
+  {
+    "city": "Pune",
+    "n_days": 1466,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Purnia",
+    "n_days": 681,
+    "first_date": "2021-11-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Raichur",
+    "n_days": 393,
+    "first_date": "2020-12-16",
+    "last_date": "2026-03-14",
+    "thin": false
+  },
+  {
+    "city": "Raipur",
+    "n_days": 528,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Rairangpur",
+    "n_days": 460,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Rajamahendravaram",
+    "n_days": 1627,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Rajgir",
+    "n_days": 520,
+    "first_date": "2021-11-23",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Rajsamand",
+    "n_days": 545,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ramanagara",
+    "n_days": 1134,
+    "first_date": "2019-09-23",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Ramanathapuram",
+    "n_days": 130,
+    "first_date": "2022-09-13",
+    "last_date": "2026-09-02",
+    "thin": true
+  },
+  {
+    "city": "Ranipet",
+    "n_days": 47,
+    "first_date": "2025-03-13",
+    "last_date": "2025-10-31",
+    "thin": true
+  },
+  {
+    "city": "Ratlam",
+    "n_days": 1389,
+    "first_date": "2019-01-03",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Rishikesh",
+    "n_days": 240,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Rohtak",
+    "n_days": 1131,
+    "first_date": "2016-03-30",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Rourkela",
+    "n_days": 437,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Rupnagar",
+    "n_days": 860,
+    "first_date": "2018-05-02",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Sagar",
+    "n_days": 1180,
+    "first_date": "2020-02-03",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Saharsa",
+    "n_days": 654,
+    "first_date": "2021-11-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Salem",
+    "n_days": 103,
+    "first_date": "2025-02-19",
+    "last_date": "2025-12-29",
+    "thin": true
+  },
+  {
+    "city": "Samastipur",
+    "n_days": 673,
+    "first_date": "2022-03-25",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Sangli",
+    "n_days": 504,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Sasaram",
+    "n_days": 627,
+    "first_date": "2021-11-12",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Satna",
+    "n_days": 982,
+    "first_date": "2018-04-16",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Sawai Madhopur",
+    "n_days": 541,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Shillong",
+    "n_days": 1041,
+    "first_date": "2019-09-17",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Shivamogga",
+    "n_days": 927,
+    "first_date": "2020-11-08",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Sikar",
+    "n_days": 533,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Silchar",
+    "n_days": 525,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Siliguri",
+    "n_days": 1574,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Singrauli",
+    "n_days": 1510,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-10",
+    "thin": false
+  },
+  {
+    "city": "Sirohi",
+    "n_days": 524,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Sirsa",
+    "n_days": 1212,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Sivasagar",
+    "n_days": 550,
+    "first_date": "2022-09-29",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Siwan",
+    "n_days": 674,
+    "first_date": "2021-11-22",
+    "last_date": "2026-09-08",
+    "thin": false
+  },
+  {
+    "city": "Solapur",
+    "n_days": 1425,
+    "first_date": "2016-03-22",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Sonipat",
+    "n_days": 394,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Sri Ganganagar",
+    "n_days": 548,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Srinagar",
+    "n_days": 627,
+    "first_date": "2021-02-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Suakati",
+    "n_days": 325,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-10",
+    "thin": true
+  },
+  {
+    "city": "Surat",
+    "n_days": 417,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Talcher",
+    "n_days": 1403,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Tensa",
+    "n_days": 303,
+    "first_date": "2025-02-25",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Thane",
+    "n_days": 531,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Thanjavur",
+    "n_days": 255,
+    "first_date": "2025-02-19",
+    "last_date": "2026-03-11",
+    "thin": true
+  },
+  {
+    "city": "Thiruvananthapuram",
+    "n_days": 1650,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Thoothukudi",
+    "n_days": 927,
+    "first_date": "2020-11-08",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Thrissur",
+    "n_days": 890,
+    "first_date": "2020-10-12",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Tiruchirappalli",
+    "n_days": 172,
+    "first_date": "2025-02-28",
+    "last_date": "2025-11-29",
+    "thin": true
+  },
+  {
+    "city": "Tirunelveli",
+    "n_days": 166,
+    "first_date": "2025-02-19",
+    "last_date": "2025-12-08",
+    "thin": true
+  },
+  {
+    "city": "Tirupati",
+    "n_days": 1606,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Tirupur",
+    "n_days": 322,
+    "first_date": "2022-09-13",
+    "last_date": "2026-04-15",
+    "thin": true
+  },
+  {
+    "city": "Tonk",
+    "n_days": 540,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Tumakuru",
+    "n_days": 128,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-07",
+    "thin": true
+  },
+  {
+    "city": "Tumidih",
+    "n_days": 438,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Udaipur",
+    "n_days": 1631,
+    "first_date": "2018-03-10",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Udupi",
+    "n_days": 381,
+    "first_date": "2021-02-10",
+    "last_date": "2026-04-11",
+    "thin": false
+  },
+  {
+    "city": "Ujjain",
+    "n_days": 158,
+    "first_date": "2017-11-20",
+    "last_date": "2026-09-12",
+    "thin": true
+  },
+  {
+    "city": "Ulhasnagar",
+    "n_days": 511,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Vapi",
+    "n_days": 1087,
+    "first_date": "2019-04-27",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Varanasi",
+    "n_days": 1599,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Vatva",
+    "n_days": 1411,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Vellore",
+    "n_days": 24,
+    "first_date": "2025-02-19",
+    "last_date": "2025-07-30",
+    "thin": true
+  },
+  {
+    "city": "Vijayapura",
+    "n_days": 859,
+    "first_date": "2020-01-20",
+    "last_date": "2026-09-09",
+    "thin": false
+  },
+  {
+    "city": "Vijayawada",
+    "n_days": 486,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Virar",
+    "n_days": 531,
+    "first_date": "2025-02-19",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Virudhunagar",
+    "n_days": 21,
+    "first_date": "2025-02-19",
+    "last_date": "2025-12-11",
+    "thin": true
+  },
+  {
+    "city": "Visakhapatnam",
+    "n_days": 1640,
+    "first_date": "2018-03-09",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Vrindavan",
+    "n_days": 774,
+    "first_date": "2021-08-25",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Yadgir",
+    "n_days": 504,
+    "first_date": "2022-03-25",
+    "last_date": "2026-09-12",
+    "thin": false
+  },
+  {
+    "city": "Yamuna Nagar",
+    "n_days": 1219,
+    "first_date": "2019-02-13",
+    "last_date": "2026-09-12",
+    "thin": false
+  }
+]

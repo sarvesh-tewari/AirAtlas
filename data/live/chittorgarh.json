@@ -1,0 +1,78 @@
+{
+  "city": "Chittorgarh",
+  "updated_utc": "2026-09-12T23:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 24.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 44.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 122
+    },
+    "pm10": {
+      "value": 51.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 47
+    },
+    "no2": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 5
+    },
+    "nh3": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 8.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 73,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 122,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.0,
+    "rh_pct": 97,
+    "precip_mm": 0.0,
+    "wind_ms": 3.1,
+    "wind_dir_deg": 31
+  }
+}

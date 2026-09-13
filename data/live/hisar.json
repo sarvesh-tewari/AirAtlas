@@ -1,0 +1,78 @@
+{
+  "city": "Hisar",
+  "updated_utc": "2026-09-12T23:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 24.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 11
+    },
+    "nh3": {
+      "value": 10.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 134.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 150,
+      "us_subindex": 93
+    },
+    "pm25": {
+      "value": 47.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 129
+    },
+    "pm10": {
+      "value": 49.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 49,
+      "us_subindex": 45
+    },
+    "so2": {
+      "value": 133.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 118,
+      "us_subindex": 69
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 150,
+      "category": "Moderate",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 129,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "o3",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.8,
+    "rh_pct": 86,
+    "precip_mm": 0.0,
+    "wind_ms": 2.4,
+    "wind_dir_deg": 94
+  }
+}

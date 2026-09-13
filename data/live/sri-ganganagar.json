@@ -1,0 +1,79 @@
+{
+  "city": "Sri Ganganagar",
+  "updated_utc": "2026-09-12T23:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 49.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 81,
+      "us_subindex": 134
+    },
+    "pm10": {
+      "value": 69.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 69,
+      "us_subindex": 58
+    },
+    "nh3": {
+      "value": 12.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": null
+    },
+    "no2": {
+      "value": 43.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 21
+    },
+    "o3": {
+      "value": 37.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 17
+    },
+    "so2": {
+      "value": 6.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 81,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 134,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10",
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.0,
+    "rh_pct": 83,
+    "precip_mm": 0.0,
+    "wind_ms": 2.03,
+    "wind_dir_deg": 74
+  }
+}

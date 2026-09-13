@@ -1,0 +1,77 @@
+{
+  "city": "Mandideep",
+  "updated_utc": "2026-09-12T23:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 60.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 29
+    },
+    "o3": {
+      "value": 21.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "so2": {
+      "value": 38.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 20
+    },
+    "pm25": {
+      "value": 60.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 100,
+      "us_subindex": 154
+    },
+    "pm10": {
+      "value": 77.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 77,
+      "us_subindex": 62
+    },
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 100,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 154,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.5,
+    "rh_pct": 97,
+    "precip_mm": 0.0,
+    "wind_ms": 2.78,
+    "wind_dir_deg": 38
+  }
+}
