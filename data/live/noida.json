@@ -1,0 +1,77 @@
+{
+  "city": "Noida",
+  "updated_utc": "2026-09-15T15:30:00Z",
+  "source": "cpcb",
+  "n_stations": 4,
+  "pollutants": {
+    "no2": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 6
+    },
+    "nh3": {
+      "value": 8.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 8.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    },
+    "o3": {
+      "value": 39.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 39,
+      "us_subindex": 18
+    },
+    "pm10": {
+      "value": 120.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 114,
+      "us_subindex": 83
+    },
+    "pm25": {
+      "value": 102.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 239,
+      "us_subindex": 184
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 239,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 184,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.2,
+    "rh_pct": 86,
+    "precip_mm": 0.0,
+    "wind_ms": 0.58,
+    "wind_dir_deg": 121
+  }
+}

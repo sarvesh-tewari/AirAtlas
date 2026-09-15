@@ -1,0 +1,78 @@
+{
+  "city": "Sirsa",
+  "updated_utc": "2026-09-15T15:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 25.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 43.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 71,
+      "us_subindex": 119
+    },
+    "no2": {
+      "value": 20.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 9
+    },
+    "nh3": {
+      "value": 14.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": null
+    },
+    "pm10": {
+      "value": 70.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 70,
+      "us_subindex": 58
+    },
+    "so2": {
+      "value": 39.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 49,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 71,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 119,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.6,
+    "rh_pct": 72,
+    "precip_mm": 0.0,
+    "wind_ms": 2.0,
+    "wind_dir_deg": 103
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "city": "Kalaburgi",
+  "updated_utc": "2026-06-29T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.9875347222222223,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 19.14413146159964,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "o3": {
+      "value": 13.802456140350877,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 25.56347222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 23
+    },
+    "pm25": {
+      "value": 11.723159722222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 56
+    },
+    "so2": {
+      "value": 7.3126003805953195,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 45,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 56,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.3,
+    "rh_pct": 75,
+    "precip_mm": 0.0,
+    "wind_ms": 4.57,
+    "wind_dir_deg": 252
+  }
+}
