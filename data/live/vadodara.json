@@ -1,0 +1,77 @@
+{
+  "city": "Vadodara",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 9.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    },
+    "pm25": {
+      "value": 54.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 147
+    },
+    "pm10": {
+      "value": 66.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 56
+    },
+    "no2": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 6
+    },
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 4.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 2
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 90,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 147,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.8,
+    "rh_pct": 92,
+    "precip_mm": 0.0,
+    "wind_ms": 1.07,
+    "wind_dir_deg": 233
+  }
+}

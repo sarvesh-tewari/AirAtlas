@@ -1,0 +1,79 @@
+{
+  "city": "Visakhapatnam",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 50.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 83,
+      "us_subindex": 137
+    },
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "pm10": {
+      "value": 96.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 96,
+      "us_subindex": 71
+    },
+    "no2": {
+      "value": 51.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 25
+    },
+    "so2": {
+      "value": 9.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    },
+    "o3": {
+      "value": 38.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 18
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 96,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 137,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10",
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.8,
+    "rh_pct": 93,
+    "precip_mm": 0.0,
+    "wind_ms": 2.9,
+    "wind_dir_deg": 36
+  }
+}

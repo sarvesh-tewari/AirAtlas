@@ -1,0 +1,65 @@
+{
+  "city": "Ramanagara",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 32.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 30
+    },
+    "so2": {
+      "value": 18.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 9
+    },
+    "o3": {
+      "value": 28.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 13
+    },
+    "pm25": {
+      "value": 17.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 66
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 32,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 66,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.9,
+    "rh_pct": 98,
+    "precip_mm": 0.0,
+    "wind_ms": 1.14,
+    "wind_dir_deg": 285
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "city": "Muzaffarnagar",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "nh3": {
+      "value": 3.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "pm25": {
+      "value": 90.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 200,
+      "us_subindex": 175
+    },
+    "pm10": {
+      "value": 126.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 118,
+      "us_subindex": 86
+    },
+    "no2": {
+      "value": 30.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 14
+    },
+    "so2": {
+      "value": 26.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 13
+    },
+    "o3": {
+      "value": 67.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 31
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 200,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 175,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.5,
+    "rh_pct": 71,
+    "precip_mm": 0.0,
+    "wind_ms": 0.95,
+    "wind_dir_deg": 93
+  }
+}

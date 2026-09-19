@@ -1,0 +1,77 @@
+{
+  "city": "Thrissur",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 1.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": 0
+    },
+    "pm10": {
+      "value": 53.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 53,
+      "us_subindex": 49
+    },
+    "no2": {
+      "value": 9.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    },
+    "nh3": {
+      "value": 0.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 30.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 14
+    },
+    "pm25": {
+      "value": 53.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 88,
+      "us_subindex": 144
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 88,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 144,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.2,
+    "rh_pct": 95,
+    "precip_mm": 0.0,
+    "wind_ms": 0.51,
+    "wind_dir_deg": 119
+  }
+}

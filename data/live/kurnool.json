@@ -1,0 +1,71 @@
+{
+  "city": "Kurnool",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 6.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 36.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 33
+    },
+    "o3": {
+      "value": 32.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 15
+    },
+    "nh3": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "no2": {
+      "value": 30.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 38,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 33,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.6,
+    "rh_pct": 82,
+    "precip_mm": 0.3,
+    "wind_ms": 5.39,
+    "wind_dir_deg": 257
+  }
+}

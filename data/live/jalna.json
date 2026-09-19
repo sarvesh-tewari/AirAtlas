@@ -1,0 +1,65 @@
+{
+  "city": "Jalna",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 47.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 129
+    },
+    "no2": {
+      "value": 20.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 9
+    },
+    "nh3": {
+      "value": 4.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 58.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 58,
+      "us_subindex": 27
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 78,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 129,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.8,
+    "rh_pct": 82,
+    "precip_mm": 0.0,
+    "wind_ms": 2.4,
+    "wind_dir_deg": 358
+  }
+}

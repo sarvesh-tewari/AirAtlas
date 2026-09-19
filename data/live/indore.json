@@ -1,0 +1,77 @@
+{
+  "city": "Indore",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 5,
+  "pollutants": {
+    "pm10": {
+      "value": 20.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 19
+    },
+    "so2": {
+      "value": 18.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 9
+    },
+    "o3": {
+      "value": 7.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 3
+    },
+    "pm25": {
+      "value": 17.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 66
+    },
+    "nh3": {
+      "value": 0.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": null
+    },
+    "no2": {
+      "value": 20.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 28,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 66,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.9,
+    "rh_pct": 96,
+    "precip_mm": 0.0,
+    "wind_ms": 0.89,
+    "wind_dir_deg": 63
+  }
+}

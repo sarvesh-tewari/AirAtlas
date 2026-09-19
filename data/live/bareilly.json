@@ -1,0 +1,77 @@
+{
+  "city": "Bareilly",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 2,
+  "pollutants": {
+    "so2": {
+      "value": 45.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 24
+    },
+    "o3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 8.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    },
+    "pm25": {
+      "value": 58.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 97,
+      "us_subindex": 153
+    },
+    "pm10": {
+      "value": 75.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 61
+    },
+    "nh3": {
+      "value": 0.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": null
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 97,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 153,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.5,
+    "rh_pct": 88,
+    "precip_mm": 0.0,
+    "wind_ms": 1.75,
+    "wind_dir_deg": 149
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "city": "Bahadurgarh",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 23.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    },
+    "nh3": {
+      "value": 8.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    },
+    "pm25": {
+      "value": 94.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 211,
+      "us_subindex": 178
+    },
+    "o3": {
+      "value": 27.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 99.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 99,
+      "us_subindex": 73
+    },
+    "so2": {
+      "value": 6.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 211,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 178,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 82,
+    "precip_mm": 0.0,
+    "wind_ms": 1.04,
+    "wind_dir_deg": 145
+  }
+}

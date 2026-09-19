@@ -1,0 +1,78 @@
+{
+  "city": "Fatehpur Sikri",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 64.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 55
+    },
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 25.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 42.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 70,
+      "us_subindex": 117
+    },
+    "no2": {
+      "value": 8.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    },
+    "so2": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 70,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 117,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.3,
+    "rh_pct": 82,
+    "precip_mm": 0.0,
+    "wind_ms": 1.45,
+    "wind_dir_deg": 131
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "city": "Sawai Madhopur",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 64.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 55
+    },
+    "no2": {
+      "value": 15.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    },
+    "so2": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": 0
+    },
+    "pm25": {
+      "value": 32.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 53,
+      "us_subindex": 94
+    },
+    "nh3": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 41.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 19
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 64,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 94,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.9,
+    "rh_pct": 77,
+    "precip_mm": 0.0,
+    "wind_ms": 1.17,
+    "wind_dir_deg": 140
+  }
+}

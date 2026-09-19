@@ -1,0 +1,72 @@
+{
+  "city": "Dharuhera",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 29.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 14
+    },
+    "nh3": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 15.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "so2": {
+      "value": 6.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 85.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 85,
+      "us_subindex": 66
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 85,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 66,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.5,
+    "rh_pct": 81,
+    "precip_mm": 0.0,
+    "wind_ms": 1.35,
+    "wind_dir_deg": 165
+  }
+}

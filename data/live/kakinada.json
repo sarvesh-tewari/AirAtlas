@@ -1,0 +1,71 @@
+{
+  "city": "Kakinada",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 42.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 42,
+      "us_subindex": 39
+    },
+    "no2": {
+      "value": 28.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 13
+    },
+    "so2": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "nh3": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 29.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 42,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 39,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.5,
+    "rh_pct": 84,
+    "precip_mm": 0.0,
+    "wind_ms": 3.11,
+    "wind_dir_deg": 66
+  }
+}

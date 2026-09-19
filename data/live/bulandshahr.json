@@ -1,0 +1,77 @@
+{
+  "city": "Bulandshahr",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 19.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "pm25": {
+      "value": 95.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 215,
+      "us_subindex": 179
+    },
+    "nh3": {
+      "value": 3.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "pm10": {
+      "value": 141.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 128,
+      "us_subindex": 94
+    },
+    "so2": {
+      "value": 20.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 64.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 30
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 215,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 179,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.6,
+    "rh_pct": 89,
+    "precip_mm": 0.0,
+    "wind_ms": 0.32,
+    "wind_dir_deg": 39
+  }
+}

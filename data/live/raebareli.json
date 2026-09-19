@@ -1,0 +1,78 @@
+{
+  "city": "Raebareli",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 2,
+  "pollutants": {
+    "no2": {
+      "value": 19.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "nh3": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 48.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 22
+    },
+    "so2": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 33.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 96
+    },
+    "pm10": {
+      "value": 74.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 74,
+      "us_subindex": 60
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 74,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 96,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.4,
+    "rh_pct": 86,
+    "precip_mm": 0.0,
+    "wind_ms": 1.63,
+    "wind_dir_deg": 43
+  }
+}

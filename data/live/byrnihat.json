@@ -1,0 +1,77 @@
+{
+  "city": "Byrnihat",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 2,
+  "pollutants": {
+    "pm10": {
+      "value": 115.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 110,
+      "us_subindex": 81
+    },
+    "o3": {
+      "value": 20.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    },
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "no2": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 2
+    },
+    "so2": {
+      "value": 17.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "pm25": {
+      "value": 99.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 228,
+      "us_subindex": 181
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 228,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 181,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.3,
+    "rh_pct": 89,
+    "precip_mm": 0.0,
+    "wind_ms": 0.81,
+    "wind_dir_deg": 137
+  }
+}

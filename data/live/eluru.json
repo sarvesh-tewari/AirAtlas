@@ -1,0 +1,77 @@
+{
+  "city": "Eluru",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 55.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 51
+    },
+    "no2": {
+      "value": 1.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": 0
+    },
+    "so2": {
+      "value": 14.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 14.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 52.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 142
+    },
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 86,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 142,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.2,
+    "rh_pct": 91,
+    "precip_mm": 0.0,
+    "wind_ms": 1.5,
+    "wind_dir_deg": 60
+  }
+}

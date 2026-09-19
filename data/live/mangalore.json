@@ -1,0 +1,71 @@
+{
+  "city": "Mangalore",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 54.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 147
+    },
+    "no2": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 2
+    },
+    "o3": {
+      "value": 34.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 16
+    },
+    "nh3": {
+      "value": 3.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "pm10": {
+      "value": 60.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 60,
+      "us_subindex": 53
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 90,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 147,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.7,
+    "rh_pct": 86,
+    "precip_mm": 0.0,
+    "wind_ms": 1.34,
+    "wind_dir_deg": 63
+  }
+}

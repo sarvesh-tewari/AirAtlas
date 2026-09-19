@@ -1,0 +1,77 @@
+{
+  "city": "Surat",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 2,
+  "pollutants": {
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 15.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    },
+    "pm25": {
+      "value": 51.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 85,
+      "us_subindex": 139
+    },
+    "pm10": {
+      "value": 67.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 57
+    },
+    "no2": {
+      "value": 6.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    },
+    "o3": {
+      "value": 15.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 85,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 139,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.3,
+    "rh_pct": 94,
+    "precip_mm": 0.0,
+    "wind_ms": 0.99,
+    "wind_dir_deg": 221
+  }
+}

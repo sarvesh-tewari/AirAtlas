@@ -1,0 +1,66 @@
+{
+  "city": "Nanded",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 47.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 129
+    },
+    "pm10": {
+      "value": 53.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 53,
+      "us_subindex": 49
+    },
+    "nh3": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 39.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 39,
+      "us_subindex": 18
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 78,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 129,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.2,
+    "rh_pct": 95,
+    "precip_mm": 0.0,
+    "wind_ms": 1.4,
+    "wind_dir_deg": 4
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "city": "Gurugram",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 4,
+  "pollutants": {
+    "no2": {
+      "value": 25.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 19.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 131.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 121,
+      "us_subindex": 89
+    },
+    "so2": {
+      "value": 12.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 130.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 308,
+      "us_subindex": 205
+    },
+    "nh3": {
+      "value": 10.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": null
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 308,
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 205,
+      "category": "Very Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.9,
+    "rh_pct": 86,
+    "precip_mm": 0.0,
+    "wind_ms": 0.45,
+    "wind_dir_deg": 174
+  }
+}

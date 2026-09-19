@@ -1,0 +1,78 @@
+{
+  "city": "Katni",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 48.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 44
+    },
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "pm25": {
+      "value": 37.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 105
+    },
+    "no2": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 35.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 16
+    },
+    "so2": {
+      "value": 18.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 61,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 105,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.7,
+    "rh_pct": 99,
+    "precip_mm": 0.0,
+    "wind_ms": 0.93,
+    "wind_dir_deg": 54
+  }
+}

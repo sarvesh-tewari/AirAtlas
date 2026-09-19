@@ -1,0 +1,78 @@
+{
+  "city": "Silchar",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 54.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 50
+    },
+    "so2": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 1
+    },
+    "o3": {
+      "value": 7.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 3
+    },
+    "nh3": {
+      "value": 1.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": null
+    },
+    "pm25": {
+      "value": 37.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 105
+    },
+    "no2": {
+      "value": 15.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 61,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 105,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.2,
+    "rh_pct": 82,
+    "precip_mm": 0.0,
+    "wind_ms": 2.56,
+    "wind_dir_deg": 69
+  }
+}

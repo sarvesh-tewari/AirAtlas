@@ -1,0 +1,78 @@
+{
+  "city": "Mehsana",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 48.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 80,
+      "us_subindex": 132
+    },
+    "no2": {
+      "value": 6.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    },
+    "nh3": {
+      "value": 0.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 15.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 10.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 66.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 56
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 80,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 132,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.9,
+    "rh_pct": 96,
+    "precip_mm": 0.0,
+    "wind_ms": 0.0,
+    "wind_dir_deg": 270
+  }
+}

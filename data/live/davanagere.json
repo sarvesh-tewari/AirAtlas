@@ -1,0 +1,65 @@
+{
+  "city": "Davanagere",
+  "updated_utc": "2026-09-18T23:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 26.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 24
+    },
+    "pm25": {
+      "value": 20.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 71
+    },
+    "no2": {
+      "value": 10.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "nh3": {
+      "value": 4.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 33,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 71,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 71,
+    "precip_mm": 0.0,
+    "wind_ms": 3.15,
+    "wind_dir_deg": 297
+  }
+}

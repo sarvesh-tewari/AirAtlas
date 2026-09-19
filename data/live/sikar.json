@@ -1,0 +1,71 @@
+{
+  "city": "Sikar",
+  "updated_utc": "2026-09-19T17:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 83.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 83,
+      "us_subindex": 65
+    },
+    "o3": {
+      "value": 42.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 42,
+      "us_subindex": 19
+    },
+    "so2": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 15.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    },
+    "pm25": {
+      "value": 59.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 98,
+      "us_subindex": 153
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 98,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 153,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 62,
+    "precip_mm": 0.0,
+    "wind_ms": 3.29,
+    "wind_dir_deg": 136
+  }
+}
