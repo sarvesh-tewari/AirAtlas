@@ -1,0 +1,78 @@
+{
+  "city": "Rairangpur",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3590277777777777,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 9.529598713360599,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 10.705972222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 21.112777777777776,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 19
+    },
+    "pm25": {
+      "value": 12.380833333333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 57
+    },
+    "so2": {
+      "value": 18.30451943876392,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 23,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 57,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.3,
+    "rh_pct": 94,
+    "precip_mm": 0.0,
+    "wind_ms": 1.81,
+    "wind_dir_deg": 228
+  }
+}

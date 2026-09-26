@@ -1,0 +1,51 @@
+{
+  "city": "Dewas",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 97.25687444141482,
+      "unit": "µg/m³",
+      "naqi_subindex": 117,
+      "us_subindex": 48
+    },
+    "so2": {
+      "value": 60.74697068847989,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 33
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 48,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.3,
+    "rh_pct": 68,
+    "precip_mm": 0.0,
+    "wind_ms": 5.9,
+    "wind_dir_deg": 270
+  }
+}

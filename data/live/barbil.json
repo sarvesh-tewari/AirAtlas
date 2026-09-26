@@ -1,0 +1,61 @@
+{
+  "city": "Barbil",
+  "updated_utc": "2026-09-24T15:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 37.734313725490196,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 18
+    },
+    "pm10": {
+      "value": 10.607142857142858,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 9
+    },
+    "pm25": {
+      "value": 4.464285714285714,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 24
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 37,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 24,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "o3",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.9,
+    "rh_pct": 96,
+    "precip_mm": 0.0,
+    "wind_ms": 1.58,
+    "wind_dir_deg": 235
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "city": "Nagpur",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "co": {
+      "value": 0.29333333333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "pm25": {
+      "value": 11.852013888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 56
+    },
+    "no2": {
+      "value": 10.721027221086116,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 21.16465277777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 27.825208333333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 25
+    },
+    "so2": {
+      "value": 11.653359384230859,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 27,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 56,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm25",
+        "no2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.1,
+    "rh_pct": 66,
+    "precip_mm": 0.0,
+    "wind_ms": 3.23,
+    "wind_dir_deg": 251
+  }
+}

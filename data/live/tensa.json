@@ -1,0 +1,71 @@
+{
+  "city": "Tensa",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5876388888888889,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 6.433055555555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 14.246666666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 13
+    },
+    "pm25": {
+      "value": 4.660694444444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 26
+    },
+    "so2": {
+      "value": 77.08445576005454,
+      "unit": "µg/m³",
+      "naqi_subindex": 96,
+      "us_subindex": 41
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 96,
+      "category": "Satisfactory",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 41,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.3,
+    "rh_pct": 96,
+    "precip_mm": 0.0,
+    "wind_ms": 1.58,
+    "wind_dir_deg": 198
+  }
+}

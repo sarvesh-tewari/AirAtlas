@@ -1,0 +1,59 @@
+{
+  "city": "Madikeri",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 2.889411764705882,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": 1
+    },
+    "pm10": {
+      "value": 13.962962962962964,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 12
+    },
+    "pm25": {
+      "value": 5.385416666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 29
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 13,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 29,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 18.3,
+    "rh_pct": 99,
+    "precip_mm": 0.0,
+    "wind_ms": 2.3,
+    "wind_dir_deg": 304
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "city": "Gwalior",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.7239351851851852,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 35.77407407407407,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 17
+    },
+    "pm25": {
+      "value": 8.618055555555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 48
+    },
+    "no2": {
+      "value": 86.96766056483375,
+      "unit": "µg/m³",
+      "naqi_subindex": 106,
+      "us_subindex": 43
+    },
+    "pm10": {
+      "value": 46.00694444444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 43
+    },
+    "so2": {
+      "value": 18.197645724456564,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 106,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 48,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.7,
+    "rh_pct": 72,
+    "precip_mm": 0.0,
+    "wind_ms": 2.09,
+    "wind_dir_deg": 312
+  }
+}

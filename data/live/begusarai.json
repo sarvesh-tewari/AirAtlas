@@ -1,0 +1,64 @@
+{
+  "city": "Begusarai",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.1710648148148148,
+      "unit": "mg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 14.0206491422404,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 46.09362745098039,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 21
+    },
+    "so2": {
+      "value": 33.31281576156934,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 21,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 94,
+    "precip_mm": 0.0,
+    "wind_ms": 5.15,
+    "wind_dir_deg": 122
+  }
+}

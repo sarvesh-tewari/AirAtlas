@@ -1,0 +1,78 @@
+{
+  "city": "Aurangabad",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.5726157407407407,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "pm25": {
+      "value": 48.51050925925926,
+      "unit": "µg/m³",
+      "naqi_subindex": 80,
+      "us_subindex": 133
+    },
+    "no2": {
+      "value": 15.275930621828373,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 7.927199074074074,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 91.02819444444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 91,
+      "us_subindex": 69
+    },
+    "so2": {
+      "value": 5.181494845868364,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 91,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 133,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.8,
+    "rh_pct": 63,
+    "precip_mm": 0.0,
+    "wind_ms": 5.2,
+    "wind_dir_deg": 269
+  }
+}

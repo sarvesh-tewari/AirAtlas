@@ -1,0 +1,79 @@
+{
+  "city": "Durgapur",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "no2": {
+      "value": 25.748602013746876,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 21.610833333333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 55.51152777777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 51
+    },
+    "so2": {
+      "value": 24.084434299022952,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 13
+    },
+    "co": {
+      "value": 1.1861805555555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 38.268359374999996,
+      "unit": "µg/m³",
+      "naqi_subindex": 63,
+      "us_subindex": 108
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 63,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 108,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.6,
+    "rh_pct": 93,
+    "precip_mm": 0.1,
+    "wind_ms": 2.73,
+    "wind_dir_deg": 131
+  }
+}

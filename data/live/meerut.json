@@ -1,0 +1,73 @@
+{
+  "city": "Meerut",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "o3": {
+      "value": 44.03659722222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 20
+    },
+    "pm25": {
+      "value": 21.666666666666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 74
+    },
+    "no2": {
+      "value": 36.59829340869499,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 18
+    },
+    "pm10": {
+      "value": 78.12962962962962,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 62
+    },
+    "so2": {
+      "value": 36.28186701885935,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 19
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 78,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 74,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "no2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.1,
+    "rh_pct": 90,
+    "precip_mm": 0.3,
+    "wind_ms": 3.89,
+    "wind_dir_deg": 336
+  }
+}

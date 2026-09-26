@@ -1,0 +1,57 @@
+{
+  "city": "Dhanbad",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.045000000000000005,
+      "unit": "mg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": 0
+    },
+    "no2": {
+      "value": 148.19290405589638,
+      "unit": "µg/m³",
+      "naqi_subindex": 168,
+      "us_subindex": 77
+    },
+    "o3": {
+      "value": 27.46611111111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 12
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 77,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.2,
+    "rh_pct": 96,
+    "precip_mm": 0.0,
+    "wind_ms": 3.64,
+    "wind_dir_deg": 127
+  }
+}

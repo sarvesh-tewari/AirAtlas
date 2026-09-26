@@ -1,0 +1,59 @@
+{
+  "city": "Sivasagar",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.29458333333333336,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "o3": {
+      "value": 26.99416666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm25": {
+      "value": 14.865833333333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 62
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 26,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 62,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.2,
+    "rh_pct": 89,
+    "precip_mm": 0.0,
+    "wind_ms": 1.61,
+    "wind_dir_deg": 206
+  }
+}

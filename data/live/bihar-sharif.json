@@ -1,0 +1,60 @@
+{
+  "city": "Bihar Sharif",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 13.736111111111112,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 12
+    },
+    "pm25": {
+      "value": 5.451388888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 30
+    },
+    "so2": {
+      "value": 23.233205180640766,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 29,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 30,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 92,
+    "precip_mm": 0.1,
+    "wind_ms": 4.88,
+    "wind_dir_deg": 125
+  }
+}

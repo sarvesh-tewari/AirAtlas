@@ -1,0 +1,79 @@
+{
+  "city": "Baripada",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.20750000000000002,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 16.358033782094978,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 41.24652777777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 30.20513888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 28
+    },
+    "pm25": {
+      "value": 8.377638888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 46
+    },
+    "so2": {
+      "value": 14.15294267969401,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 41,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 46,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.3,
+    "rh_pct": 97,
+    "precip_mm": 0.1,
+    "wind_ms": 2.87,
+    "wind_dir_deg": 187
+  }
+}

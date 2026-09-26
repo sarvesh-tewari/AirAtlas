@@ -1,0 +1,77 @@
+{
+  "city": "Mira-Bhayandar",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3223611111111111,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 9.374365431152011,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    },
+    "o3": {
+      "value": 21.69597222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 43.30638888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 40
+    },
+    "pm25": {
+      "value": 20.485416666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 72
+    },
+    "so2": {
+      "value": 6.736683287889117,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 43,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 72,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.9,
+    "rh_pct": 85,
+    "precip_mm": 0.0,
+    "wind_ms": 2.04,
+    "wind_dir_deg": 242
+  }
+}

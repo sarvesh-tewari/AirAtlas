@@ -1,0 +1,72 @@
+{
+  "city": "Patna",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 6,
+  "pollutants": {
+    "pm25": {
+      "value": 13.852314814814815,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 60
+    },
+    "so2": {
+      "value": 19.946201590547602,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 10
+    },
+    "no2": {
+      "value": 21.971607260660456,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 29.547314814814815,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 14
+    },
+    "co": {
+      "value": 0.9201388888888888,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 45,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 60,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm25",
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.5,
+    "rh_pct": 95,
+    "precip_mm": 1.6,
+    "wind_ms": 4.95,
+    "wind_dir_deg": 123
+  }
+}

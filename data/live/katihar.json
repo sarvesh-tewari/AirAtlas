@@ -1,0 +1,77 @@
+{
+  "city": "Katihar",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.930462962962963,
+      "unit": "mg/m³",
+      "naqi_subindex": 95,
+      "us_subindex": 18
+    },
+    "no2": {
+      "value": 14.093823079981822,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 26.30972222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 23.22222222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 21
+    },
+    "pm25": {
+      "value": 13.958333333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 60
+    },
+    "so2": {
+      "value": 49.89704445959252,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 27
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 95,
+      "category": "Satisfactory",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 60,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 91,
+    "precip_mm": 0.0,
+    "wind_ms": 2.93,
+    "wind_dir_deg": 115
+  }
+}

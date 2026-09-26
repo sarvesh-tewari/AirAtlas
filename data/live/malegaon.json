@@ -1,0 +1,79 @@
+{
+  "city": "Malegaon",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.29000000000000004,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 26.74799505292915,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 13
+    },
+    "o3": {
+      "value": 14.388725490196078,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 113.71416666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 109,
+      "us_subindex": 80
+    },
+    "pm25": {
+      "value": 43.9471875,
+      "unit": "µg/m³",
+      "naqi_subindex": 71,
+      "us_subindex": 122
+    },
+    "so2": {
+      "value": 2.2923651750270664,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": 0
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 109,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 122,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.8,
+    "rh_pct": 78,
+    "precip_mm": 0.0,
+    "wind_ms": 4.77,
+    "wind_dir_deg": 257
+  }
+}

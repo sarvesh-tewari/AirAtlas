@@ -1,0 +1,60 @@
+{
+  "city": "Bilaspur",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.46194444444444444,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "pm25": {
+      "value": 6.836111111111112,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 38
+    },
+    "so2": {
+      "value": 32.200631136280215,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 40,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 38,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.9,
+    "rh_pct": 85,
+    "precip_mm": 0.0,
+    "wind_ms": 2.27,
+    "wind_dir_deg": 188
+  }
+}

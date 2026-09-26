@@ -1,0 +1,79 @@
+{
+  "city": "Korba",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.23020833333333332,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 8.88945742586912,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    },
+    "o3": {
+      "value": 21.722430555555558,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 20.604583333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 19
+    },
+    "pm25": {
+      "value": 9.189722222222223,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 51
+    },
+    "so2": {
+      "value": 17.830320404453534,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 21,
+      "category": "Good",
+      "dominant": [
+        "o3",
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 51,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.9,
+    "rh_pct": 91,
+    "precip_mm": 0.0,
+    "wind_ms": 0.94,
+    "wind_dir_deg": 155
+  }
+}

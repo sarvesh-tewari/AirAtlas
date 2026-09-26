@@ -1,0 +1,65 @@
+{
+  "city": "Mandideep",
+  "updated_utc": "2026-09-24T16:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0925925925925926,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 26.889814814814812,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm25": {
+      "value": 36.40740740740741,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 103
+    },
+    "so2": {
+      "value": 422.0105457500918,
+      "unit": "µg/m³",
+      "naqi_subindex": 211,
+      "us_subindex": 139
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 211,
+      "category": "Poor",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 139,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.3,
+    "rh_pct": 67,
+    "precip_mm": 0.0,
+    "wind_ms": 4.42,
+    "wind_dir_deg": 264
+  }
+}
