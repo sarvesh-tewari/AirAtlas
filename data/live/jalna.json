@@ -1,0 +1,79 @@
+{
+  "city": "Jalna",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.2739930555555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 28.19600889570552,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 13
+    },
+    "o3": {
+      "value": 50.59128472222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 23
+    },
+    "pm10": {
+      "value": 111.94538194444443,
+      "unit": "µg/m³",
+      "naqi_subindex": 108,
+      "us_subindex": 79
+    },
+    "pm25": {
+      "value": 40.744305555555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 114
+    },
+    "so2": {
+      "value": 4.096107966939332,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 108,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 114,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.4,
+    "rh_pct": 44,
+    "precip_mm": 0.0,
+    "wind_ms": 3.27,
+    "wind_dir_deg": 11
+  }
+}

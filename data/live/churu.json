@@ -1,0 +1,77 @@
+{
+  "city": "Churu",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6129513888888889,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 25.721945793569642,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 44.49861111111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 20
+    },
+    "pm10": {
+      "value": 130.07291666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 120,
+      "us_subindex": 88
+    },
+    "pm25": {
+      "value": 27.479166666666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 85
+    },
+    "so2": {
+      "value": 7.773516019086571,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 120,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 88,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.8,
+    "rh_pct": 26,
+    "precip_mm": 0.0,
+    "wind_ms": 2.83,
+    "wind_dir_deg": 228
+  }
+}

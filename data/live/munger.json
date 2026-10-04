@@ -1,0 +1,65 @@
+{
+  "city": "Munger",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 23.666542149511475,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 75.64826388888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 35
+    },
+    "pm10": {
+      "value": 161.75833333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 141,
+      "us_subindex": 104
+    },
+    "so2": {
+      "value": 206.69327823221997,
+      "unit": "µg/m³",
+      "naqi_subindex": 142,
+      "us_subindex": 102
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 142,
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 104,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.1,
+    "rh_pct": 77,
+    "precip_mm": 0.0,
+    "wind_ms": 2.12,
+    "wind_dir_deg": 255
+  }
+}

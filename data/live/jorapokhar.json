@@ -1,0 +1,61 @@
+{
+  "city": "Jorapokhar",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 13.5534375,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 33.31118055555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 96
+    },
+    "so2": {
+      "value": 43.75878118609407,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 23
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 54,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 96,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.0,
+    "rh_pct": 83,
+    "precip_mm": 0.0,
+    "wind_ms": 1.41,
+    "wind_dir_deg": 333
+  }
+}

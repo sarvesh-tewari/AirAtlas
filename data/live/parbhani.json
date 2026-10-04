@@ -1,0 +1,78 @@
+{
+  "city": "Parbhani",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.21708333333333332,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 15.406315254345602,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 6.742847222222221,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 142.86114583333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 128,
+      "us_subindex": 94
+    },
+    "pm25": {
+      "value": 60.152187500000004,
+      "unit": "µg/m³",
+      "naqi_subindex": 100,
+      "us_subindex": 154
+    },
+    "so2": {
+      "value": 13.56041830947512,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 128,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 154,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.7,
+    "rh_pct": 55,
+    "precip_mm": 0.0,
+    "wind_ms": 1.77,
+    "wind_dir_deg": 140
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "city": "Latur",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4410869565217391,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 30.589546579087756,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 15
+    },
+    "o3": {
+      "value": 40.22572916666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 76.8978125,
+      "unit": "µg/m³",
+      "naqi_subindex": 76,
+      "us_subindex": 61
+    },
+    "pm25": {
+      "value": 37.51173913043478,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 106
+    },
+    "so2": {
+      "value": 7.915258317773628,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 76,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 106,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.7,
+    "rh_pct": 53,
+    "precip_mm": 0.0,
+    "wind_ms": 2.35,
+    "wind_dir_deg": 94
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "city": "Ballabgarh",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 30.023201321432627,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 14
+    },
+    "pm25": {
+      "value": 53.0346875,
+      "unit": "µg/m³",
+      "naqi_subindex": 88,
+      "us_subindex": 144
+    },
+    "so2": {
+      "value": 5.285517785730517,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 88,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 144,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 34.2,
+    "rh_pct": 36,
+    "precip_mm": 0.0,
+    "wind_ms": 2.1,
+    "wind_dir_deg": 270
+  }
+}

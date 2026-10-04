@@ -1,0 +1,72 @@
+{
+  "city": "Bahadurgarh",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 44.78689260111338,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 22
+    },
+    "o3": {
+      "value": 22.291909722222226,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 236.9322463768116,
+      "unit": "µg/m³",
+      "naqi_subindex": 191,
+      "us_subindex": 141
+    },
+    "pm25": {
+      "value": 95.6473484848485,
+      "unit": "µg/m³",
+      "naqi_subindex": 215,
+      "us_subindex": 179
+    },
+    "so2": {
+      "value": 14.133351187230176,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 215,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 179,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.1,
+    "rh_pct": 58,
+    "precip_mm": 0.0,
+    "wind_ms": 1.65,
+    "wind_dir_deg": 2
+  }
+}

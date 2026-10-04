@@ -1,0 +1,78 @@
+{
+  "city": "Byasanagar",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8286458333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 15.711489775051126,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 41.6,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 81.86458333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 81,
+      "us_subindex": 64
+    },
+    "pm25": {
+      "value": 41.364583333333336,
+      "unit": "µg/m³",
+      "naqi_subindex": 68,
+      "us_subindex": 115
+    },
+    "so2": {
+      "value": 17.962608469665987,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 81,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 115,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.0,
+    "rh_pct": 80,
+    "precip_mm": 0.0,
+    "wind_ms": 1.89,
+    "wind_dir_deg": 238
+  }
+}

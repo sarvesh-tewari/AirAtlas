@@ -1,0 +1,78 @@
+{
+  "city": "Akola",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5069791666666666,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 18.20698238752556,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 19.841354166666665,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 85.55760416666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 85,
+      "us_subindex": 66
+    },
+    "pm25": {
+      "value": 36.53625,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 103
+    },
+    "so2": {
+      "value": 12.183239502385822,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 85,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 103,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.6,
+    "rh_pct": 56,
+    "precip_mm": 0.0,
+    "wind_ms": 0.5,
+    "wind_dir_deg": 96
+  }
+}

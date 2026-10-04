@@ -1,0 +1,71 @@
+{
+  "city": "Kanpur",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.6563541666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 18.276875,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 8
+    },
+    "pm25": {
+      "value": 56.24946180555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 93,
+      "us_subindex": 151
+    },
+    "so2": {
+      "value": 56.36072060327199,
+      "unit": "µg/m³",
+      "naqi_subindex": 70,
+      "us_subindex": 30
+    },
+    "no2": {
+      "value": 40.40240171906953,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 93,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 151,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.7,
+    "rh_pct": 67,
+    "precip_mm": 0.0,
+    "wind_ms": 1.71,
+    "wind_dir_deg": 265
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "city": "Srinagar",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.2573958333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 29.08629937983462,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 14
+    },
+    "o3": {
+      "value": 0.47423913043478266,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": 0
+    },
+    "pm25": {
+      "value": 18.354347826086954,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 68
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 36,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 68,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 19.9,
+    "rh_pct": 54,
+    "precip_mm": 0.0,
+    "wind_ms": 0.63,
+    "wind_dir_deg": 108
+  }
+}

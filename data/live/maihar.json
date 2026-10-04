@@ -1,0 +1,65 @@
+{
+  "city": "Maihar",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4428125,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 89.78383360386844,
+      "unit": "µg/m³",
+      "naqi_subindex": 109,
+      "us_subindex": 44
+    },
+    "pm25": {
+      "value": 22.55270833333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 76
+    },
+    "so2": {
+      "value": 24.398413744035448,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 109,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 76,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.9,
+    "rh_pct": 63,
+    "precip_mm": 0.0,
+    "wind_ms": 2.55,
+    "wind_dir_deg": 254
+  }
+}

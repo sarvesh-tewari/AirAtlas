@@ -1,0 +1,45 @@
+{
+  "city": "Ambala",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 69.31635416666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 128,
+      "us_subindex": 161
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 161,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.7,
+    "rh_pct": 70,
+    "precip_mm": 0.0,
+    "wind_ms": 2.33,
+    "wind_dir_deg": 305
+  }
+}

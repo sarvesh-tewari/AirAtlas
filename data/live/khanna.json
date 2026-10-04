@@ -1,0 +1,79 @@
+{
+  "city": "Khanna",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.9704861111111112,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 29.58487636758691,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 14
+    },
+    "o3": {
+      "value": 25.35013888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 66.71708333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 56
+    },
+    "pm25": {
+      "value": 23.350798611111113,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 77
+    },
+    "so2": {
+      "value": 25.762054405248808,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 66,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 77,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.9,
+    "rh_pct": 78,
+    "precip_mm": 0.0,
+    "wind_ms": 1.27,
+    "wind_dir_deg": 312
+  }
+}

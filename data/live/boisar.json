@@ -1,0 +1,78 @@
+{
+  "city": "Boisar",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5505902777777778,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 24.281352561106242,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 30.584930555555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 14
+    },
+    "pm10": {
+      "value": 105.3,
+      "unit": "µg/m³",
+      "naqi_subindex": 104,
+      "us_subindex": 76
+    },
+    "pm25": {
+      "value": 45.75239583333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 126
+    },
+    "so2": {
+      "value": 7.837840408429902,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 104,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 126,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.8,
+    "rh_pct": 84,
+    "precip_mm": 0.0,
+    "wind_ms": 1.55,
+    "wind_dir_deg": 15
+  }
+}

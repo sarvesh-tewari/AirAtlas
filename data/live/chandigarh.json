@@ -1,0 +1,78 @@
+{
+  "city": "Chandigarh",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.4773611111111111,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 15.135669685511814,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 26.807309027777777,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 56.748645833333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 51
+    },
+    "pm25": {
+      "value": 21.875,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 75
+    },
+    "so2": {
+      "value": 8.692435866848443,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 56,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 75,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.8,
+    "rh_pct": 70,
+    "precip_mm": 0.0,
+    "wind_ms": 2.42,
+    "wind_dir_deg": 342
+  }
+}

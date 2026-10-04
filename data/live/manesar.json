@@ -1,0 +1,65 @@
+{
+  "city": "Manesar",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3509027777777778,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 45.6459023630993,
+      "unit": "µg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 23
+    },
+    "pm10": {
+      "value": 132.85659722222223,
+      "unit": "µg/m³",
+      "naqi_subindex": 122,
+      "us_subindex": 89
+    },
+    "so2": {
+      "value": 28.11294251874574,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 122,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 89,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.9,
+    "rh_pct": 59,
+    "precip_mm": 0.0,
+    "wind_ms": 0.21,
+    "wind_dir_deg": 346
+  }
+}

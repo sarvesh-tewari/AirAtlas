@@ -1,0 +1,77 @@
+{
+  "city": "Mahad",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.666875,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 15.601336865201091,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 26.821718750000002,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 88.07470588235294,
+      "unit": "µg/m³",
+      "naqi_subindex": 88,
+      "us_subindex": 67
+    },
+    "pm25": {
+      "value": 60.099895833333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 100,
+      "us_subindex": 154
+    },
+    "so2": {
+      "value": 29.093639255282895,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 16
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 100,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 154,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.4,
+    "rh_pct": 87,
+    "precip_mm": 0.0,
+    "wind_ms": 0.51,
+    "wind_dir_deg": 61
+  }
+}

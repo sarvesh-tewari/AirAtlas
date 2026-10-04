@@ -1,0 +1,66 @@
+{
+  "city": "Panchkula",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 42.93487330365258,
+      "unit": "µg/m³",
+      "naqi_subindex": 52,
+      "us_subindex": 21
+    },
+    "o3": {
+      "value": 36.118090277777775,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 17
+    },
+    "pm25": {
+      "value": 28.7778125,
+      "unit": "µg/m³",
+      "naqi_subindex": 47,
+      "us_subindex": 88
+    },
+    "so2": {
+      "value": 23.787013607702793,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 52,
+      "category": "Satisfactory",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 88,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.3,
+    "rh_pct": 72,
+    "precip_mm": 0.0,
+    "wind_ms": 1.92,
+    "wind_dir_deg": 335
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "city": "Tirupati",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.48364583333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 32.72177083333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 15
+    },
+    "pm10": {
+      "value": 85.6884375,
+      "unit": "µg/m³",
+      "naqi_subindex": 85,
+      "us_subindex": 66
+    },
+    "pm25": {
+      "value": 41.88760416666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 68,
+      "us_subindex": 117
+    },
+    "no2": {
+      "value": 36.96041728868439,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 18
+    },
+    "so2": {
+      "value": 28.25269112133606,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 85,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 117,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25",
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.7,
+    "rh_pct": 90,
+    "precip_mm": 0.0,
+    "wind_ms": 0.95,
+    "wind_dir_deg": 18
+  }
+}

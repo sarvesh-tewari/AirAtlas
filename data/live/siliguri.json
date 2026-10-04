@@ -1,0 +1,57 @@
+{
+  "city": "Siliguri",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 31.362219048227676,
+      "unit": "µg/m³",
+      "naqi_subindex": 39,
+      "us_subindex": 15
+    },
+    "o3": {
+      "value": 13.805451388888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    },
+    "so2": {
+      "value": 14.013800624857987,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 15,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.9,
+    "rh_pct": 71,
+    "precip_mm": 0.1,
+    "wind_ms": 1.65,
+    "wind_dir_deg": 270
+  }
+}

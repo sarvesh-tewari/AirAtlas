@@ -1,0 +1,51 @@
+{
+  "city": "Firozabad",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "no2": {
+      "value": 21.35904775654681,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 73.37759615384616,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 60
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 60,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.4,
+    "rh_pct": 69,
+    "precip_mm": 0.0,
+    "wind_ms": 0.87,
+    "wind_dir_deg": 204
+  }
+}

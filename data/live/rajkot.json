@@ -1,0 +1,78 @@
+{
+  "city": "Rajkot",
+  "updated_utc": "2026-09-25T08:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 54.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 147
+    },
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "pm10": {
+      "value": 86.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 66
+    },
+    "no2": {
+      "value": 61.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 76,
+      "us_subindex": 30
+    },
+    "o3": {
+      "value": 13.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    },
+    "so2": {
+      "value": 17.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 90,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 147,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25",
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.5,
+    "rh_pct": 50,
+    "precip_mm": 0.0,
+    "wind_ms": 4.84,
+    "wind_dir_deg": 286
+  }
+}

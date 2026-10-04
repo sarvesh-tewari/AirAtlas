@@ -1,0 +1,78 @@
+{
+  "city": "Badlapur",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.3183333333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 13
+    },
+    "no2": {
+      "value": 14.722572515802193,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 7.32,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 46.53072916666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 43
+    },
+    "pm25": {
+      "value": 20.919166666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 73
+    },
+    "so2": {
+      "value": 14.74651558637859,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 62,
+      "category": "Satisfactory",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 73,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.8,
+    "rh_pct": 63,
+    "precip_mm": 0.0,
+    "wind_ms": 1.2,
+    "wind_dir_deg": 95
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "city": "Agartala",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5239583333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 5,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    }
+  },
+  "weather": {
+    "temp_c": 26.9,
+    "rh_pct": 85,
+    "precip_mm": 0.0,
+    "wind_ms": 1.44,
+    "wind_dir_deg": 160
+  }
+}

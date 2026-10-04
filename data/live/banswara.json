@@ -1,0 +1,79 @@
+{
+  "city": "Banswara",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3857291666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 55.03921461741649,
+      "unit": "µg/m³",
+      "naqi_subindex": 69,
+      "us_subindex": 27
+    },
+    "o3": {
+      "value": 24.223958333333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 84.14583333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 84,
+      "us_subindex": 65
+    },
+    "pm25": {
+      "value": 18.65625,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 69
+    },
+    "so2": {
+      "value": 13.868411128152694,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 84,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 69,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.3,
+    "rh_pct": 55,
+    "precip_mm": 0.0,
+    "wind_ms": 0.3,
+    "wind_dir_deg": 171
+  }
+}

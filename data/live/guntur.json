@@ -1,0 +1,77 @@
+{
+  "city": "Guntur",
+  "updated_utc": "2026-09-25T08:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 57.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 52
+    },
+    "so2": {
+      "value": 12.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 21.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 32.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 16
+    },
+    "nh3": {
+      "value": 6.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    },
+    "pm25": {
+      "value": 52.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 142
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 86,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 142,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.5,
+    "rh_pct": 63,
+    "precip_mm": 0.0,
+    "wind_ms": 4.18,
+    "wind_dir_deg": 281
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "city": "Barbil",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6204166666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 23.50635886563214,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 43.06944444444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 93.7125,
+      "unit": "µg/m³",
+      "naqi_subindex": 93,
+      "us_subindex": 70
+    },
+    "pm25": {
+      "value": 35.2875,
+      "unit": "µg/m³",
+      "naqi_subindex": 58,
+      "us_subindex": 100
+    },
+    "so2": {
+      "value": 45.26544580777096,
+      "unit": "µg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 24
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 93,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 100,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.6,
+    "rh_pct": 74,
+    "precip_mm": 0.0,
+    "wind_ms": 1.95,
+    "wind_dir_deg": 228
+  }
+}

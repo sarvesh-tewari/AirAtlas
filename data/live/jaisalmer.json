@@ -1,0 +1,77 @@
+{
+  "city": "Jaisalmer",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3194791666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 45.71345758776414,
+      "unit": "µg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 23
+    },
+    "o3": {
+      "value": 47.84027777777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 47,
+      "us_subindex": 22
+    },
+    "pm10": {
+      "value": 130.59375,
+      "unit": "µg/m³",
+      "naqi_subindex": 120,
+      "us_subindex": 88
+    },
+    "pm25": {
+      "value": 20.979166666666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 73
+    },
+    "so2": {
+      "value": 7.6233954498977505,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 120,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 88,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.9,
+    "rh_pct": 34,
+    "precip_mm": 0.0,
+    "wind_ms": 3.69,
+    "wind_dir_deg": 196
+  }
+}

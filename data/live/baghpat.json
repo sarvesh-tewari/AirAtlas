@@ -1,0 +1,63 @@
+{
+  "city": "Baghpat",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.42239130434782607,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 89.49041918029992,
+      "unit": "µg/m³",
+      "naqi_subindex": 109,
+      "us_subindex": 44
+    },
+    "o3": {
+      "value": 35.44965277777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 17
+    },
+    "so2": {
+      "value": 28.186115912391454,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 44,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.9,
+    "rh_pct": 74,
+    "precip_mm": 0.0,
+    "wind_ms": 1.7,
+    "wind_dir_deg": 313
+  }
+}

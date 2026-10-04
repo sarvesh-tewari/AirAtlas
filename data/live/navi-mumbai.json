@@ -1,0 +1,78 @@
+{
+  "city": "Navi Mumbai",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 5,
+  "pollutants": {
+    "so2": {
+      "value": 9.911960781640536,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    },
+    "co": {
+      "value": 0.7076736111111112,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 22.948359550741312,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 15.57328125,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 93.78213541666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 93,
+      "us_subindex": 70
+    },
+    "pm25": {
+      "value": 47.542118055555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 131
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 93,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 131,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.9,
+    "rh_pct": 41,
+    "precip_mm": 0.0,
+    "wind_ms": 2.63,
+    "wind_dir_deg": 9
+  }
+}

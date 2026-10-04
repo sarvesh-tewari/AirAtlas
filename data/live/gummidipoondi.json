@@ -1,0 +1,51 @@
+{
+  "city": "Gummidipoondi",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 80.88895833333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 166,
+      "us_subindex": 169
+    },
+    "so2": {
+      "value": 40.828427675528296,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 21
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 169,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.9,
+    "rh_pct": 70,
+    "precip_mm": 0.0,
+    "wind_ms": 1.86,
+    "wind_dir_deg": 117
+  }
+}

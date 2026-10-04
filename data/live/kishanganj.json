@@ -1,0 +1,59 @@
+{
+  "city": "Kishanganj",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 32.55173611111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 15
+    },
+    "pm25": {
+      "value": 44.072916666666664,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 122
+    },
+    "so2": {
+      "value": 19.73403118609407,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 73,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 122,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.0,
+    "rh_pct": 89,
+    "precip_mm": 0.0,
+    "wind_ms": 1.24,
+    "wind_dir_deg": 317
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "city": "Begusarai",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.2012847222222223,
+      "unit": "mg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 13.961848656555327,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 37.05381944444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 17
+    },
+    "pm10": {
+      "value": 71.47916666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 71,
+      "us_subindex": 59
+    },
+    "pm25": {
+      "value": 45.552083333333336,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 126
+    },
+    "so2": {
+      "value": 26.498555015905477,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 75,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 126,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.5,
+    "rh_pct": 80,
+    "precip_mm": 0.0,
+    "wind_ms": 1.72,
+    "wind_dir_deg": 234
+  }
+}

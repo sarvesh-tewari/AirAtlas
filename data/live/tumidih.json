@@ -1,0 +1,72 @@
+{
+  "city": "Tumidih",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4526041666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 50.541761468984326,
+      "unit": "µg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 25
+    },
+    "o3": {
+      "value": 5.7975,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 2
+    },
+    "pm25": {
+      "value": 36.754687499999996,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 104
+    },
+    "so2": {
+      "value": 10.915676005453307,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 62,
+      "category": "Satisfactory",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 104,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.8,
+    "rh_pct": 76,
+    "precip_mm": 0.0,
+    "wind_ms": 1.89,
+    "wind_dir_deg": 282
+  }
+}

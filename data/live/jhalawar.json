@@ -1,0 +1,79 @@
+{
+  "city": "Jhalawar",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.358125,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 40.42533390848671,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 20
+    },
+    "o3": {
+      "value": 33.184374999999996,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 15
+    },
+    "pm10": {
+      "value": 81.82291666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 81,
+      "us_subindex": 64
+    },
+    "pm25": {
+      "value": 23.364583333333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 77
+    },
+    "so2": {
+      "value": 23.589855260168147,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 81,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 77,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.3,
+    "rh_pct": 64,
+    "precip_mm": 0.0,
+    "wind_ms": 1.45,
+    "wind_dir_deg": 243
+  }
+}

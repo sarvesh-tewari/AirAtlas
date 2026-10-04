@@ -1,0 +1,79 @@
+{
+  "city": "Jabalpur",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.9,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 30.57690589496705,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 15
+    },
+    "o3": {
+      "value": 34.03854166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 16
+    },
+    "so2": {
+      "value": 23.042597548852537,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 78.91840277777779,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 62
+    },
+    "pm25": {
+      "value": 29.163194444444443,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 88
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 78,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 88,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.6,
+    "rh_pct": 66,
+    "precip_mm": 0.0,
+    "wind_ms": 2.69,
+    "wind_dir_deg": 215
+  }
+}

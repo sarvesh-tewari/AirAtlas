@@ -1,0 +1,79 @@
+{
+  "city": "Kadapa",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.43249999999999994,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 25.880837772665302,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 30.421145833333338,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 14
+    },
+    "pm10": {
+      "value": 59.99135416666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 53
+    },
+    "pm25": {
+      "value": 39.32791666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 110
+    },
+    "so2": {
+      "value": 19.56971739945467,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 65,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 110,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.2,
+    "rh_pct": 71,
+    "precip_mm": 0.0,
+    "wind_ms": 2.17,
+    "wind_dir_deg": 98
+  }
+}

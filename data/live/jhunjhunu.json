@@ -1,0 +1,78 @@
+{
+  "city": "Jhunjhunu",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3975694444444444,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 20.824518674733017,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 53.388888888888886,
+      "unit": "µg/m³",
+      "naqi_subindex": 53,
+      "us_subindex": 25
+    },
+    "pm10": {
+      "value": 119.76041666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 113,
+      "us_subindex": 83
+    },
+    "pm25": {
+      "value": 29.864583333333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 90
+    },
+    "so2": {
+      "value": 7.986414280845263,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 113,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 90,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.7,
+    "rh_pct": 39,
+    "precip_mm": 0.0,
+    "wind_ms": 2.34,
+    "wind_dir_deg": 228
+  }
+}

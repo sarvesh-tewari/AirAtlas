@@ -1,0 +1,78 @@
+{
+  "city": "Jalore",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4873958333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 13.714233277948194,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 43.98715277777777,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 20
+    },
+    "pm10": {
+      "value": 99.94791666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 99,
+      "us_subindex": 73
+    },
+    "pm25": {
+      "value": 19.28125,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 70
+    },
+    "so2": {
+      "value": 9.029979692115429,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 99,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 73,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.3,
+    "rh_pct": 34,
+    "precip_mm": 0.0,
+    "wind_ms": 2.98,
+    "wind_dir_deg": 235
+  }
+}

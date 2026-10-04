@@ -1,0 +1,59 @@
+{
+  "city": "Karnal",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4995652173913044,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 11.949673913043478,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 52.88956521739131,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 144
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 86,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 144,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.0,
+    "rh_pct": 75,
+    "precip_mm": 0.0,
+    "wind_ms": 2.0,
+    "wind_dir_deg": 302
+  }
+}

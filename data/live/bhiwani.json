@@ -1,0 +1,58 @@
+{
+  "city": "Bhiwani",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 27.337064467592594,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 13
+    },
+    "o3": {
+      "value": 29.840555555555554,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 14
+    },
+    "so2": {
+      "value": 26.214235756078168,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 14,
+      "category": "Good",
+      "dominant": [
+        "o3",
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.8,
+    "rh_pct": 56,
+    "precip_mm": 0.0,
+    "wind_ms": 1.47,
+    "wind_dir_deg": 350
+  }
+}

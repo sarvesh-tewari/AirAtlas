@@ -1,0 +1,78 @@
+{
+  "city": "Solapur",
+  "updated_utc": "2026-10-02T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.2697569444444445,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 19.849051284154168,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "o3": {
+      "value": 40.746631944444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 76.46467013888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 76,
+      "us_subindex": 61
+    },
+    "pm25": {
+      "value": 43.05953125,
+      "unit": "µg/m³",
+      "naqi_subindex": 71,
+      "us_subindex": 119
+    },
+    "so2": {
+      "value": 5.104872700806635,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 76,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 119,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.8,
+    "rh_pct": 43,
+    "precip_mm": 0.0,
+    "wind_ms": 2.22,
+    "wind_dir_deg": 82
+  }
+}

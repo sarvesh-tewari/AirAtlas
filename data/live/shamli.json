@@ -1,0 +1,78 @@
+{
+  "city": "Shamli",
+  "updated_utc": "2026-09-25T08:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 52.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 52,
+      "us_subindex": 48
+    },
+    "pm25": {
+      "value": 37.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 105
+    },
+    "no2": {
+      "value": 17.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 8
+    },
+    "nh3": {
+      "value": 1.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 1.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": 0
+    },
+    "o3": {
+      "value": 18.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 8
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 61,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 105,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.8,
+    "rh_pct": 56,
+    "precip_mm": 0.0,
+    "wind_ms": 1.07,
+    "wind_dir_deg": 217
+  }
+}
