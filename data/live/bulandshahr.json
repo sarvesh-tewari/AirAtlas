@@ -1,0 +1,63 @@
+{
+  "city": "Bulandshahr",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.7050000000000001,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 35.22653096698802,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 17
+    },
+    "o3": {
+      "value": 84.01785714285714,
+      "unit": "µg/m³",
+      "naqi_subindex": 84,
+      "us_subindex": 39
+    },
+    "so2": {
+      "value": 15.39418200408998,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 39,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.5,
+    "rh_pct": 91,
+    "precip_mm": 0.0,
+    "wind_ms": 3.04,
+    "wind_dir_deg": 104
+  }
+}

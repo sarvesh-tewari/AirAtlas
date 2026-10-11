@@ -1,0 +1,59 @@
+{
+  "city": "Alwar",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 92.03016666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 92,
+      "us_subindex": 69
+    },
+    "pm25": {
+      "value": 52.09083333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 142
+    },
+    "so2": {
+      "value": 51.84702270393093,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 27
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 92,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 142,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.1,
+    "rh_pct": 57,
+    "precip_mm": 0.0,
+    "wind_ms": 0.97,
+    "wind_dir_deg": 249
+  }
+}

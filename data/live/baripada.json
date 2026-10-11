@@ -1,0 +1,77 @@
+{
+  "city": "Baripada",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3653333333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 30.2245995182913,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 15
+    },
+    "o3": {
+      "value": 25.367666666666665,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 116.15366666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 111,
+      "us_subindex": 81
+    },
+    "pm25": {
+      "value": 51.924166666666665,
+      "unit": "µg/m³",
+      "naqi_subindex": 85,
+      "us_subindex": 141
+    },
+    "so2": {
+      "value": 14.290750329470576,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 111,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 141,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.0,
+    "rh_pct": 91,
+    "precip_mm": 0.0,
+    "wind_ms": 0.18,
+    "wind_dir_deg": 304
+  }
+}

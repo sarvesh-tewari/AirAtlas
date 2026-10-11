@@ -1,0 +1,78 @@
+{
+  "city": "Gandhinagar",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.32216666666666666,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 32.59998233867303,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 16
+    },
+    "pm25": {
+      "value": 88.93188888888888,
+      "unit": "µg/m³",
+      "naqi_subindex": 193,
+      "us_subindex": 174
+    },
+    "o3": {
+      "value": 10.749583333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 5
+    },
+    "so2": {
+      "value": 6.248800536241763,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 142.84983333333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 128,
+      "us_subindex": 94
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 193,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 174,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.8,
+    "rh_pct": 50,
+    "precip_mm": 0.0,
+    "wind_ms": 2.72,
+    "wind_dir_deg": 257
+  }
+}

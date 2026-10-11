@@ -1,0 +1,77 @@
+{
+  "city": "Tirupati",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "no2": {
+      "value": 75.77814591854124,
+      "unit": "µg/m³",
+      "naqi_subindex": 94,
+      "us_subindex": 38
+    },
+    "o3": {
+      "value": 31.239916666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 14
+    },
+    "so2": {
+      "value": 21.4994490797546,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 11
+    },
+    "co": {
+      "value": 0.4765,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 80.44200000000001,
+      "unit": "µg/m³",
+      "naqi_subindex": 80,
+      "us_subindex": 63
+    },
+    "pm25": {
+      "value": 36.809333333333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 104
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 94,
+      "category": "Satisfactory",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 104,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.4,
+    "rh_pct": 85,
+    "precip_mm": 0.0,
+    "wind_ms": 0.76,
+    "wind_dir_deg": 8
+  }
+}

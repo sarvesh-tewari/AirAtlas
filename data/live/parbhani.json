@@ -1,0 +1,78 @@
+{
+  "city": "Parbhani",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.23750000000000002,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 18.246742715941185,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 62.95381944444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 30
+    },
+    "pm10": {
+      "value": 92.60166666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 92,
+      "us_subindex": 69
+    },
+    "pm25": {
+      "value": 38.99041666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 63,
+      "us_subindex": 109
+    },
+    "so2": {
+      "value": 1.8727248563638137,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": 0
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 92,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 109,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.1,
+    "rh_pct": 56,
+    "precip_mm": 0.0,
+    "wind_ms": 0.11,
+    "wind_dir_deg": 117
+  }
+}

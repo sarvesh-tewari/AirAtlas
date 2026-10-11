@@ -1,0 +1,77 @@
+{
+  "city": "Jalore",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.33055555555555555,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 33.89730398773006,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 17
+    },
+    "o3": {
+      "value": 66.81722222222223,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 31
+    },
+    "pm10": {
+      "value": 125.85,
+      "unit": "µg/m³",
+      "naqi_subindex": 117,
+      "us_subindex": 86
+    },
+    "pm25": {
+      "value": 39.81666666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 112
+    },
+    "so2": {
+      "value": 15.602349193365145,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 117,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 112,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.8,
+    "rh_pct": 46,
+    "precip_mm": 0.0,
+    "wind_ms": 4.1,
+    "wind_dir_deg": 204
+  }
+}

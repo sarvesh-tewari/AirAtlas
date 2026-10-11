@@ -1,0 +1,45 @@
+{
+  "city": "Shillong",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 28.034166666666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 26
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 26,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 14.5,
+    "rh_pct": 99,
+    "precip_mm": 0.0,
+    "wind_ms": 1.6,
+    "wind_dir_deg": 200
+  }
+}

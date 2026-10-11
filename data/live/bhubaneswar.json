@@ -1,0 +1,78 @@
+{
+  "city": "Bhubaneswar",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.62,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 23.248405362417635,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 52.272222222222226,
+      "unit": "µg/m³",
+      "naqi_subindex": 52,
+      "us_subindex": 24
+    },
+    "pm10": {
+      "value": 68.41666666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 68,
+      "us_subindex": 57
+    },
+    "pm25": {
+      "value": 19.58888888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 70
+    },
+    "so2": {
+      "value": 16.858630902067713,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 68,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 70,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.7,
+    "rh_pct": 92,
+    "precip_mm": 0.0,
+    "wind_ms": 1.8,
+    "wind_dir_deg": 214
+  }
+}

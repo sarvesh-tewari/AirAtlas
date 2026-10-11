@@ -1,0 +1,78 @@
+{
+  "city": "Nayagarh",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.22013888888888888,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 10.179801417291523,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 14.990277777777777,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 78.34020833333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 62
+    },
+    "pm25": {
+      "value": 20.959722222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 73
+    },
+    "so2": {
+      "value": 38.473445364689844,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 78,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 73,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.9,
+    "rh_pct": 91,
+    "precip_mm": 0.0,
+    "wind_ms": 0.1,
+    "wind_dir_deg": 270
+  }
+}

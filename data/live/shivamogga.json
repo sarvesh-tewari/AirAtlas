@@ -1,0 +1,59 @@
+{
+  "city": "Shivamogga",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 53.644,
+      "unit": "µg/m³",
+      "naqi_subindex": 53,
+      "us_subindex": 25
+    },
+    "pm10": {
+      "value": 41.183277777777775,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 38
+    },
+    "so2": {
+      "value": 5.193698586684845,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 53,
+      "category": "Satisfactory",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 38,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.4,
+    "rh_pct": 90,
+    "precip_mm": 0.0,
+    "wind_ms": 2.24,
+    "wind_dir_deg": 260
+  }
+}

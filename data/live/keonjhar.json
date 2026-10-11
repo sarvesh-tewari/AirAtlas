@@ -1,0 +1,79 @@
+{
+  "city": "Keonjhar",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8644999999999999,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 24.37538853783231,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 19.619500000000002,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 58.33083333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 58,
+      "us_subindex": 52
+    },
+    "pm25": {
+      "value": 16.984833333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 66
+    },
+    "so2": {
+      "value": 81.88045311520109,
+      "unit": "µg/m³",
+      "naqi_subindex": 101,
+      "us_subindex": 44
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 101,
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 66,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.0,
+    "rh_pct": 86,
+    "precip_mm": 0.0,
+    "wind_ms": 0.11,
+    "wind_dir_deg": 297
+  }
+}

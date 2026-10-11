@@ -1,0 +1,77 @@
+{
+  "city": "Mumbai",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 19,
+  "pollutants": {
+    "no2": {
+      "value": 33.39977347818677,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 16
+    },
+    "pm25": {
+      "value": 51.583083333333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 85,
+      "us_subindex": 140
+    },
+    "co": {
+      "value": 0.5993333333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 39.525,
+      "unit": "µg/m³",
+      "naqi_subindex": 39,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 100.5886111111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 100,
+      "us_subindex": 73
+    },
+    "so2": {
+      "value": 12.151796066803001,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 100,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 140,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.5,
+    "rh_pct": 67,
+    "precip_mm": 0.0,
+    "wind_ms": 2.33,
+    "wind_dir_deg": 9
+  }
+}

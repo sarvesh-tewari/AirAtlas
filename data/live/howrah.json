@@ -1,0 +1,77 @@
+{
+  "city": "Howrah",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 5,
+  "pollutants": {
+    "o3": {
+      "value": 37.251333333333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 17
+    },
+    "pm25": {
+      "value": 57.711,
+      "unit": "µg/m³",
+      "naqi_subindex": 95,
+      "us_subindex": 153
+    },
+    "pm10": {
+      "value": 91.9,
+      "unit": "µg/m³",
+      "naqi_subindex": 91,
+      "us_subindex": 69
+    },
+    "co": {
+      "value": 0.9638333333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 18.357668432174503,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 8
+    },
+    "so2": {
+      "value": 22.603244683026585,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 95,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 153,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.7,
+    "rh_pct": 83,
+    "precip_mm": 0.0,
+    "wind_ms": 0.52,
+    "wind_dir_deg": 343
+  }
+}

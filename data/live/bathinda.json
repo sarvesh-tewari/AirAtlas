@@ -1,0 +1,45 @@
+{
+  "city": "Bathinda",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 43.80745944444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 22
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 22,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.2,
+    "rh_pct": 61,
+    "precip_mm": 0.0,
+    "wind_ms": 2.87,
+    "wind_dir_deg": 121
+  }
+}

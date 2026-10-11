@@ -1,0 +1,78 @@
+{
+  "city": "Kolhapur",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.7217777777777777,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 38.530782259713696,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 19
+    },
+    "o3": {
+      "value": 30.06158333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 14
+    },
+    "pm10": {
+      "value": 43.07855555555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 40
+    },
+    "pm25": {
+      "value": 15.138361111111113,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 62
+    },
+    "so2": {
+      "value": 5.141292860713475,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 48,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 62,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.1,
+    "rh_pct": 52,
+    "precip_mm": 0.0,
+    "wind_ms": 0.34,
+    "wind_dir_deg": 243
+  }
+}

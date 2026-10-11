@@ -1,0 +1,51 @@
+{
+  "city": "Pithampur",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6137222222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 59.84,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 28
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 28,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.4,
+    "rh_pct": 29,
+    "precip_mm": 0.0,
+    "wind_ms": 2.31,
+    "wind_dir_deg": 309
+  }
+}

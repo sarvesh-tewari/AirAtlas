@@ -1,0 +1,79 @@
+{
+  "city": "Bharatpur",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.4677777777777776,
+      "unit": "mg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 14
+    },
+    "no2": {
+      "value": 44.144791297432405,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 22
+    },
+    "o3": {
+      "value": 66.62388888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 31
+    },
+    "pm10": {
+      "value": 87.12222222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 87,
+      "us_subindex": 67
+    },
+    "pm25": {
+      "value": 33.75555555555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 97
+    },
+    "so2": {
+      "value": 10.479689479663712,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 87,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 97,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.1,
+    "rh_pct": 71,
+    "precip_mm": 0.0,
+    "wind_ms": 3.65,
+    "wind_dir_deg": 107
+  }
+}

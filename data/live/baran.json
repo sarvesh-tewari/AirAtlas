@@ -1,0 +1,79 @@
+{
+  "city": "Baran",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0141666666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 35.14857832310838,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 17
+    },
+    "o3": {
+      "value": 61.437777777777775,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 29
+    },
+    "pm10": {
+      "value": 102.93333333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 102,
+      "us_subindex": 74
+    },
+    "pm25": {
+      "value": 40.81666666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 114
+    },
+    "so2": {
+      "value": 30.85823830947512,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 16
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 102,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 114,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.3,
+    "rh_pct": 49,
+    "precip_mm": 0.0,
+    "wind_ms": 3.28,
+    "wind_dir_deg": 188
+  }
+}

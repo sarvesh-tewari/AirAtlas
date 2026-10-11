@@ -1,0 +1,79 @@
+{
+  "city": "Vrindavan",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.311,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 40.720355545330605,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 20
+    },
+    "o3": {
+      "value": 15.905666666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 73.4088888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 60
+    },
+    "pm25": {
+      "value": 47.83211111111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 131
+    },
+    "so2": {
+      "value": 27.613450443081117,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 78,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 131,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.1,
+    "rh_pct": 75,
+    "precip_mm": 0.0,
+    "wind_ms": 3.11,
+    "wind_dir_deg": 95
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "city": "Dungarpur",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8662222222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 24.00314226312202,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 38.571666666666665,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 18
+    },
+    "pm10": {
+      "value": 95.83333333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 95,
+      "us_subindex": 71
+    },
+    "pm25": {
+      "value": 54.65,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 148
+    },
+    "so2": {
+      "value": 16.60824798909339,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 95,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 148,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.7,
+    "rh_pct": 58,
+    "precip_mm": 0.0,
+    "wind_ms": 2.04,
+    "wind_dir_deg": 242
+  }
+}

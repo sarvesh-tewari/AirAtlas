@@ -1,0 +1,78 @@
+{
+  "city": "Jodhpur",
+  "updated_utc": "2026-10-07T13:30:00Z",
+  "source": "openaq",
+  "n_stations": 5,
+  "pollutants": {
+    "o3": {
+      "value": 37.02308333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 17
+    },
+    "co": {
+      "value": 0.3879444444444445,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 23.24108796864349,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 92.34166666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 92,
+      "us_subindex": 69
+    },
+    "pm25": {
+      "value": 29.15,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 88
+    },
+    "so2": {
+      "value": 8.450423312883435,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 92,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 88,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.8,
+    "rh_pct": 38,
+    "precip_mm": 0.0,
+    "wind_ms": 3.38,
+    "wind_dir_deg": 207
+  }
+}
