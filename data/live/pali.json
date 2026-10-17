@@ -1,0 +1,77 @@
+{
+  "city": "Pali",
+  "updated_utc": "2026-10-15T15:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 38.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 18
+    },
+    "so2": {
+      "value": 12.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 127.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 118,
+      "us_subindex": 87
+    },
+    "no2": {
+      "value": 21.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "pm25": {
+      "value": 104.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 245,
+      "us_subindex": 185
+    },
+    "nh3": {
+      "value": 9.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 245,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 185,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.1,
+    "rh_pct": 33,
+    "precip_mm": 0.0,
+    "wind_ms": 2.62,
+    "wind_dir_deg": 211
+  }
+}

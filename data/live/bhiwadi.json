@@ -1,0 +1,77 @@
+{
+  "city": "Bhiwadi",
+  "updated_utc": "2026-10-15T15:30:00Z",
+  "source": "cpcb",
+  "n_stations": 2,
+  "pollutants": {
+    "pm25": {
+      "value": 116.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 286,
+      "us_subindex": 193
+    },
+    "no2": {
+      "value": 51.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 25
+    },
+    "nh3": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": null
+    },
+    "pm10": {
+      "value": 141.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 128,
+      "us_subindex": 94
+    },
+    "o3": {
+      "value": 34.5,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 16
+    },
+    "so2": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 286,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 193,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.2,
+    "rh_pct": 86,
+    "precip_mm": 0.0,
+    "wind_ms": 0.42,
+    "wind_dir_deg": 45
+  }
+}

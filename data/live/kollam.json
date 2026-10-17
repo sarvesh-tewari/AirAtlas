@@ -1,0 +1,51 @@
+{
+  "city": "Kollam",
+  "updated_utc": "2026-07-21T02:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3055555555555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "pm10": {
+      "value": 156.81671052631577,
+      "unit": "µg/m³",
+      "naqi_subindex": 138,
+      "us_subindex": 101
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 101,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.5,
+    "rh_pct": 93,
+    "precip_mm": 0.0,
+    "wind_ms": 1.9,
+    "wind_dir_deg": 27
+  }
+}

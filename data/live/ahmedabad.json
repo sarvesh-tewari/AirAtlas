@@ -1,0 +1,77 @@
+{
+  "city": "Ahmedabad",
+  "updated_utc": "2026-10-15T15:30:00Z",
+  "source": "cpcb",
+  "n_stations": 8,
+  "pollutants": {
+    "so2": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 110.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 266,
+      "us_subindex": 189
+    },
+    "no2": {
+      "value": 41.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 20
+    },
+    "nh3": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "pm10": {
+      "value": 137.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 125,
+      "us_subindex": 92
+    },
+    "o3": {
+      "value": 26.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 266,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 189,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.6,
+    "rh_pct": 44,
+    "precip_mm": 0.0,
+    "wind_ms": 1.34,
+    "wind_dir_deg": 153
+  }
+}

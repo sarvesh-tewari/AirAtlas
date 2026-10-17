@@ -1,0 +1,77 @@
+{
+  "city": "Aurangabad",
+  "updated_utc": "2026-10-15T15:30:00Z",
+  "source": "cpcb",
+  "n_stations": 3,
+  "pollutants": {
+    "nh3": {
+      "value": 2.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "no2": {
+      "value": 10.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "so2": {
+      "value": 3.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 1
+    },
+    "o3": {
+      "value": 35.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 16
+    },
+    "pm10": {
+      "value": 98.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 98,
+      "us_subindex": 72
+    },
+    "pm25": {
+      "value": 91.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 201,
+      "us_subindex": 176
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 201,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 176,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.5,
+    "rh_pct": 66,
+    "precip_mm": 0.0,
+    "wind_ms": 1.38,
+    "wind_dir_deg": 347
+  }
+}

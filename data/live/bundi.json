@@ -1,0 +1,77 @@
+{
+  "city": "Bundi",
+  "updated_utc": "2026-10-15T15:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 122.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 115,
+      "us_subindex": 84
+    },
+    "o3": {
+      "value": 133.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 148,
+      "us_subindex": 90
+    },
+    "pm25": {
+      "value": 98.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 225,
+      "us_subindex": 181
+    },
+    "no2": {
+      "value": 47.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 23
+    },
+    "nh3": {
+      "value": 7.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": null
+    },
+    "so2": {
+      "value": 8.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 225,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 181,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.3,
+    "rh_pct": 84,
+    "precip_mm": 0.0,
+    "wind_ms": 1.45,
+    "wind_dir_deg": 131
+  }
+}
