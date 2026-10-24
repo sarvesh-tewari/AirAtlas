@@ -1,0 +1,59 @@
+{
+  "city": "Bagalkot",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 17.990347222222223,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 8
+    },
+    "pm25": {
+      "value": 21.340416666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 74
+    },
+    "so2": {
+      "value": 20.56406146046353,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 35,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 74,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.3,
+    "rh_pct": 62,
+    "precip_mm": 0.0,
+    "wind_ms": 2.65,
+    "wind_dir_deg": 90
+  }
+}

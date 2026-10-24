@@ -1,0 +1,77 @@
+{
+  "city": "Bhiwandi",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6265972222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 40.09580173204437,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 20
+    },
+    "o3": {
+      "value": 31.935381944444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 15
+    },
+    "pm10": {
+      "value": 120.57159722222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 114,
+      "us_subindex": 83
+    },
+    "pm25": {
+      "value": 41.993715277777774,
+      "unit": "µg/m³",
+      "naqi_subindex": 68,
+      "us_subindex": 117
+    },
+    "so2": {
+      "value": 16.869639743808225,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 114,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 117,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 34.4,
+    "rh_pct": 42,
+    "precip_mm": 0.0,
+    "wind_ms": 0.6,
+    "wind_dir_deg": 5
+  }
+}

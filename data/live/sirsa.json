@@ -1,0 +1,60 @@
+{
+  "city": "Sirsa",
+  "updated_utc": "2026-10-18T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 9.358090277777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 100.99416666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 100,
+      "us_subindex": 73
+    },
+    "pm25": {
+      "value": 16.69357638888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 65
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 100,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 73,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.4,
+    "rh_pct": 63,
+    "precip_mm": 0.0,
+    "wind_ms": 1.71,
+    "wind_dir_deg": 328
+  }
+}

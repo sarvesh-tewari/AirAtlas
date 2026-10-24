@@ -1,0 +1,71 @@
+{
+  "city": "Varanasi",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "no2": {
+      "value": 25.420952640735063,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 11.166979166666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 5
+    },
+    "so2": {
+      "value": 35.410803788911615,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 19
+    },
+    "co": {
+      "value": 0.2744270833333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "pm10": {
+      "value": 131.62060763888888,
+      "unit": "µg/m³",
+      "naqi_subindex": 121,
+      "us_subindex": 89
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 121,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 89,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.4,
+    "rh_pct": 43,
+    "precip_mm": 0.0,
+    "wind_ms": 0.54,
+    "wind_dir_deg": 326
+  }
+}

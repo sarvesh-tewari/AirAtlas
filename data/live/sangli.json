@@ -1,0 +1,77 @@
+{
+  "city": "Sangli",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4040972222222223,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 32.14047614320609,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 16
+    },
+    "o3": {
+      "value": 43.94013888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 20
+    },
+    "pm10": {
+      "value": 81.12548611111112,
+      "unit": "µg/m³",
+      "naqi_subindex": 81,
+      "us_subindex": 64
+    },
+    "pm25": {
+      "value": 50.274097222222224,
+      "unit": "µg/m³",
+      "naqi_subindex": 83,
+      "us_subindex": 137
+    },
+    "so2": {
+      "value": 7.52604453533288,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 83,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 137,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.8,
+    "rh_pct": 47,
+    "precip_mm": 0.0,
+    "wind_ms": 3.0,
+    "wind_dir_deg": 93
+  }
+}

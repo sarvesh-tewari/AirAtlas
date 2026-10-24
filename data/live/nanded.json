@@ -1,0 +1,80 @@
+{
+  "city": "Nanded",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.45875,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 35.88012169890366,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 18
+    },
+    "o3": {
+      "value": 67.35215277777777,
+      "unit": "µg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 31
+    },
+    "pm10": {
+      "value": 83.71875,
+      "unit": "µg/m³",
+      "naqi_subindex": 83,
+      "us_subindex": 65
+    },
+    "pm25": {
+      "value": 36.07822916666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 102
+    },
+    "so2": {
+      "value": 44.47362804192229,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 23
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 83,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 102,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.8,
+    "rh_pct": 37,
+    "precip_mm": 0.0,
+    "wind_ms": 2.06,
+    "wind_dir_deg": 61
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "city": "Aizawl",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.0603125,
+      "unit": "mg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": 0
+    },
+    "pm25": {
+      "value": 1.528,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": 8
+    },
+    "so2": {
+      "value": 19.486377738014088,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 24,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 10,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.4,
+    "rh_pct": 55,
+    "precip_mm": 0.0,
+    "wind_ms": 0.85,
+    "wind_dir_deg": 332
+  }
+}

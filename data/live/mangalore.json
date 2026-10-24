@@ -1,0 +1,59 @@
+{
+  "city": "Mangalore",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5584782608695652,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 35.82336956521739,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 17
+    },
+    "pm10": {
+      "value": 41.9425,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 38
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 41,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 38,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.5,
+    "rh_pct": 92,
+    "precip_mm": 0.1,
+    "wind_ms": 1.35,
+    "wind_dir_deg": 360
+  }
+}

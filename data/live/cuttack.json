@@ -1,0 +1,78 @@
+{
+  "city": "Cuttack",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5850000000000001,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 21.750299654907977,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 52.816319444444446,
+      "unit": "µg/m³",
+      "naqi_subindex": 52,
+      "us_subindex": 24
+    },
+    "pm10": {
+      "value": 75.10763888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 61
+    },
+    "pm25": {
+      "value": 37.96180555555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 107
+    },
+    "so2": {
+      "value": 16.06199108157237,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 75,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 107,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.3,
+    "rh_pct": 53,
+    "precip_mm": 0.0,
+    "wind_ms": 1.98,
+    "wind_dir_deg": 45
+  }
+}

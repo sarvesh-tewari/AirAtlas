@@ -1,0 +1,59 @@
+{
+  "city": "Gorakhpur",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 16.995561714667122,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 8
+    },
+    "pm25": {
+      "value": 51.10894927536232,
+      "unit": "µg/m³",
+      "naqi_subindex": 85,
+      "us_subindex": 139
+    },
+    "so2": {
+      "value": 110.18585930186322,
+      "unit": "µg/m³",
+      "naqi_subindex": 111,
+      "us_subindex": 59
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 111,
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 139,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.6,
+    "rh_pct": 51,
+    "precip_mm": 0.0,
+    "wind_ms": 1.37,
+    "wind_dir_deg": 260
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "city": "Damoh",
+  "updated_utc": "2026-10-18T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.37166666666666665,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 94.27072916666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 94,
+      "us_subindex": 70
+    },
+    "so2": {
+      "value": 43.126364170074986,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 23
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 94,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 70,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.0,
+    "rh_pct": 72,
+    "precip_mm": 0.0,
+    "wind_ms": 1.36,
+    "wind_dir_deg": 36
+  }
+}

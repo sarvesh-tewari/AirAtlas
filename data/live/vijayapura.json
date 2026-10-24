@@ -1,0 +1,59 @@
+{
+  "city": "Vijayapura",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 16.246485507246376,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 42.654782608695655,
+      "unit": "µg/m³",
+      "naqi_subindex": 42,
+      "us_subindex": 39
+    },
+    "so2": {
+      "value": 6.70783798642601,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 42,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 39,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.6,
+    "rh_pct": 46,
+    "precip_mm": 0.0,
+    "wind_ms": 2.9,
+    "wind_dir_deg": 92
+  }
+}

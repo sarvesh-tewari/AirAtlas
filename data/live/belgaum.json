@@ -1,0 +1,59 @@
+{
+  "city": "Belgaum",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 69.25900140451034,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 34
+    },
+    "pm10": {
+      "value": 79.33482638888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 79,
+      "us_subindex": 63
+    },
+    "pm25": {
+      "value": 36.518055555555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 103
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 86,
+      "category": "Satisfactory",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 103,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.4,
+    "rh_pct": 59,
+    "precip_mm": 0.0,
+    "wind_ms": 3.21,
+    "wind_dir_deg": 95
+  }
+}

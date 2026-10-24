@@ -1,0 +1,78 @@
+{
+  "city": "Badlapur",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5755208333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 28.19483288599182,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 13
+    },
+    "o3": {
+      "value": 14.2396875,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 88.3914393939394,
+      "unit": "µg/m³",
+      "naqi_subindex": 88,
+      "us_subindex": 67
+    },
+    "pm25": {
+      "value": 53.531060606060606,
+      "unit": "µg/m³",
+      "naqi_subindex": 88,
+      "us_subindex": 145
+    },
+    "so2": {
+      "value": 14.0758504601227,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 88,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 145,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 33.9,
+    "rh_pct": 44,
+    "precip_mm": 0.0,
+    "wind_ms": 0.6,
+    "wind_dir_deg": 42
+  }
+}

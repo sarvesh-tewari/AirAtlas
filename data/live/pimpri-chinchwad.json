@@ -1,0 +1,71 @@
+{
+  "city": "Pimpri-Chinchwad",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.6082638888888887,
+      "unit": "mg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 16
+    },
+    "no2": {
+      "value": 124.51251112531243,
+      "unit": "µg/m³",
+      "naqi_subindex": 144,
+      "us_subindex": 64
+    },
+    "o3": {
+      "value": 26.285714285714285,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 153.4888888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 136,
+      "us_subindex": 100
+    },
+    "pm25": {
+      "value": 57.751736111111114,
+      "unit": "µg/m³",
+      "naqi_subindex": 95,
+      "us_subindex": 153
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 144,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 153,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.0,
+    "rh_pct": 36,
+    "precip_mm": 0.0,
+    "wind_ms": 1.53,
+    "wind_dir_deg": 101
+  }
+}

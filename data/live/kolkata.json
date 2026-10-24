@@ -1,0 +1,79 @@
+{
+  "city": "Kolkata",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 6,
+  "pollutants": {
+    "co": {
+      "value": 0.7331423611111111,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 34.960659722222225,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 16
+    },
+    "pm25": {
+      "value": 49.95600694444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 81,
+      "us_subindex": 136
+    },
+    "so2": {
+      "value": 17.581165750681667,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 37.94976812727221,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 84.8015625,
+      "unit": "µg/m³",
+      "naqi_subindex": 84,
+      "us_subindex": 65
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 84,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 136,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "no2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.0,
+    "rh_pct": 51,
+    "precip_mm": 0.0,
+    "wind_ms": 2.08,
+    "wind_dir_deg": 10
+  }
+}

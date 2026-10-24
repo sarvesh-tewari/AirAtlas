@@ -1,0 +1,77 @@
+{
+  "city": "Ulhasnagar",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.38475694444444447,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 15.434735489093386,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 44.14434027777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 20
+    },
+    "pm10": {
+      "value": 88.77086805555557,
+      "unit": "µg/m³",
+      "naqi_subindex": 88,
+      "us_subindex": 67
+    },
+    "pm25": {
+      "value": 50.64659420289855,
+      "unit": "µg/m³",
+      "naqi_subindex": 83,
+      "us_subindex": 138
+    },
+    "so2": {
+      "value": 35.09609648659396,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 19
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 88,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 138,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 35.7,
+    "rh_pct": 35,
+    "precip_mm": 0.0,
+    "wind_ms": 0.67,
+    "wind_dir_deg": 347
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "city": "Hyderabad",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 9,
+  "pollutants": {
+    "no2": {
+      "value": 19.83431849579641,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "pm25": {
+      "value": 31.819739583333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 93
+    },
+    "so2": {
+      "value": 25.224031383492388,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 13
+    },
+    "o3": {
+      "value": 22.31347222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 76.90357638888888,
+      "unit": "µg/m³",
+      "naqi_subindex": 76,
+      "us_subindex": 61
+    },
+    "co": {
+      "value": 0.6081076388888889,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 76,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 93,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.2,
+    "rh_pct": 38,
+    "precip_mm": 0.0,
+    "wind_ms": 2.62,
+    "wind_dir_deg": 47
+  }
+}

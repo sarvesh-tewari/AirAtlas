@@ -1,0 +1,51 @@
+{
+  "city": "Raichur",
+  "updated_utc": "2026-10-18T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 43.57527592663599,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 22
+    },
+    "pm25": {
+      "value": 52.220729166666665,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 142
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 142,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.3,
+    "rh_pct": 58,
+    "precip_mm": 0.0,
+    "wind_ms": 1.95,
+    "wind_dir_deg": 48
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "city": "Manguraha",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6368115942028986,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 4.226135776947927,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 2
+    },
+    "pm25": {
+      "value": 32.85144927536232,
+      "unit": "µg/m³",
+      "naqi_subindex": 53,
+      "us_subindex": 95
+    },
+    "so2": {
+      "value": 33.788401944222166,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 53,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 95,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.5,
+    "rh_pct": 55,
+    "precip_mm": 0.0,
+    "wind_ms": 2.33,
+    "wind_dir_deg": 211
+  }
+}

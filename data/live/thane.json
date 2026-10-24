@@ -1,0 +1,79 @@
+{
+  "city": "Thane",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.38916666666666666,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 37.52075325032663,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 18
+    },
+    "o3": {
+      "value": 27.54800347222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 13
+    },
+    "pm10": {
+      "value": 100.99383680555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 100,
+      "us_subindex": 73
+    },
+    "pm25": {
+      "value": 35.404461805555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 58,
+      "us_subindex": 100
+    },
+    "so2": {
+      "value": 21.522831495682798,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 100,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 100,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 34.6,
+    "rh_pct": 42,
+    "precip_mm": 0.0,
+    "wind_ms": 0.74,
+    "wind_dir_deg": 70
+  }
+}

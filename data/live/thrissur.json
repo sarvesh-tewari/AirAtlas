@@ -1,0 +1,51 @@
+{
+  "city": "Thrissur",
+  "updated_utc": "2026-10-18T07:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 12.093157342597756,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 27.23064393939394,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 12
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 12,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.8,
+    "rh_pct": 99,
+    "precip_mm": 0.1,
+    "wind_ms": 1.11,
+    "wind_dir_deg": 198
+  }
+}

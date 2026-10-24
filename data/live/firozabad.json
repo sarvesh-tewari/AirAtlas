@@ -1,0 +1,73 @@
+{
+  "city": "Firozabad",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "no2": {
+      "value": 25.765196817484664,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 10.121805555555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 5
+    },
+    "pm25": {
+      "value": 37.14277777777777,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 105
+    },
+    "so2": {
+      "value": 56.00907454271757,
+      "unit": "µg/m³",
+      "naqi_subindex": 70,
+      "us_subindex": 30
+    },
+    "co": {
+      "value": 0.8240277777777778,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 70,
+      "category": "Satisfactory",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 105,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.9,
+    "rh_pct": 39,
+    "precip_mm": 0.0,
+    "wind_ms": 1.75,
+    "wind_dir_deg": 204
+  }
+}

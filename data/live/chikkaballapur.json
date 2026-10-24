@@ -1,0 +1,62 @@
+{
+  "city": "Chikkaballapur",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 5.516792234719381,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 2
+    },
+    "o3": {
+      "value": 19.023020833333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 9.216666666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 8
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 19,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 8,
+      "category": "Good",
+      "dominant": [
+        "o3",
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "no2",
+        "o3",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.5,
+    "rh_pct": 81,
+    "precip_mm": 0.1,
+    "wind_ms": 2.61,
+    "wind_dir_deg": 86
+  }
+}

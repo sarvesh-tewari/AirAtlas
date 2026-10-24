@@ -1,0 +1,71 @@
+{
+  "city": "Hapur",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.2489583333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 22.155369667405136,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 12.044791666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 80.5625,
+      "unit": "µg/m³",
+      "naqi_subindex": 166,
+      "us_subindex": 169
+    },
+    "so2": {
+      "value": 32.65258853101568,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 166,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 169,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.6,
+    "rh_pct": 52,
+    "precip_mm": 0.0,
+    "wind_ms": 1.61,
+    "wind_dir_deg": 154
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "city": "Ajmer",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 28.701431737105207,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 14
+    },
+    "pm25": {
+      "value": 40.725,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 114
+    },
+    "so2": {
+      "value": 20.95310119007044,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 66,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 114,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.0,
+    "rh_pct": 26,
+    "precip_mm": 0.0,
+    "wind_ms": 4.9,
+    "wind_dir_deg": 241
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "city": "Ratlam",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 73.19560185185185,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 60
+    },
+    "pm25": {
+      "value": 42.022534722222225,
+      "unit": "µg/m³",
+      "naqi_subindex": 70,
+      "us_subindex": 117
+    },
+    "so2": {
+      "value": 29.28051661838219,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 16
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 73,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 117,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.7,
+    "rh_pct": 29,
+    "precip_mm": 0.0,
+    "wind_ms": 2.95,
+    "wind_dir_deg": 195
+  }
+}

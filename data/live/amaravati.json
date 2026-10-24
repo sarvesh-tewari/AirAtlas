@@ -1,0 +1,79 @@
+{
+  "city": "Amaravati",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.5583506944444444,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 32.94940749155022,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 16
+    },
+    "o3": {
+      "value": 53.80170138888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 53,
+      "us_subindex": 25
+    },
+    "pm10": {
+      "value": 101.78305555555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 101,
+      "us_subindex": 74
+    },
+    "pm25": {
+      "value": 36.67352430555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 104
+    },
+    "so2": {
+      "value": 29.385237088161784,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 16
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 101,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 104,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.7,
+    "rh_pct": 42,
+    "precip_mm": 0.0,
+    "wind_ms": 2.59,
+    "wind_dir_deg": 40
+  }
+}

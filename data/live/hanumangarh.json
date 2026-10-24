@@ -1,0 +1,77 @@
+{
+  "city": "Hanumangarh",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6470833333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 110.97112751750636,
+      "unit": "µg/m³",
+      "naqi_subindex": 130,
+      "us_subindex": 55
+    },
+    "o3": {
+      "value": 34.7481884057971,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 16
+    },
+    "pm10": {
+      "value": 292.3623188405797,
+      "unit": "µg/m³",
+      "naqi_subindex": 242,
+      "us_subindex": 169
+    },
+    "pm25": {
+      "value": 72.01515151515152,
+      "unit": "µg/m³",
+      "naqi_subindex": 139,
+      "us_subindex": 163
+    },
+    "so2": {
+      "value": 6.540790419532751,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 242,
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 169,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.4,
+    "rh_pct": 40,
+    "precip_mm": 0.0,
+    "wind_ms": 1.93,
+    "wind_dir_deg": 107
+  }
+}

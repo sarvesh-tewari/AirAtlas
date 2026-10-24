@@ -1,0 +1,66 @@
+{
+  "city": "Yadgir",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.2522916666666666,
+      "unit": "mg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 74.83333333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 74,
+      "us_subindex": 60
+    },
+    "pm25": {
+      "value": 38.65972222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 63,
+      "us_subindex": 109
+    },
+    "so2": {
+      "value": 28.69031532606226,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 74,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 109,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.3,
+    "rh_pct": 41,
+    "precip_mm": 0.0,
+    "wind_ms": 2.38,
+    "wind_dir_deg": 80
+  }
+}

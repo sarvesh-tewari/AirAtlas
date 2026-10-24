@@ -1,0 +1,58 @@
+{
+  "city": "Muzaffarpur",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.6921875000000001,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 21.517449731595093,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "so2": {
+      "value": 18.45773340149966,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 10,
+      "category": "Good",
+      "dominant": [
+        "no2",
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.5,
+    "rh_pct": 53,
+    "precip_mm": 0.0,
+    "wind_ms": 1.69,
+    "wind_dir_deg": 289
+  }
+}

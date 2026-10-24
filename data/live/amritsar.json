@@ -1,0 +1,59 @@
+{
+  "city": "Amritsar",
+  "updated_utc": "2026-10-23T14:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 32.69868875397636,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 16
+    },
+    "pm10": {
+      "value": 100.19756944444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 100,
+      "us_subindex": 73
+    },
+    "pm25": {
+      "value": 55.98802083333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 92,
+      "us_subindex": 151
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 100,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 151,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.0,
+    "rh_pct": 46,
+    "precip_mm": 0.0,
+    "wind_ms": 1.28,
+    "wind_dir_deg": 321
+  }
+}

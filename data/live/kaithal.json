@@ -1,0 +1,52 @@
+{
+  "city": "Kaithal",
+  "updated_utc": "2026-10-23T06:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 34.89312287974324,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 17
+    },
+    "so2": {
+      "value": 64.76883721029311,
+      "unit": "µg/m³",
+      "naqi_subindex": 80,
+      "us_subindex": 34
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 34,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.5,
+    "rh_pct": 51,
+    "precip_mm": 0.0,
+    "wind_ms": 1.7,
+    "wind_dir_deg": 118
+  }
+}
