@@ -1,0 +1,60 @@
+{
+  "city": "Katihar",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 14.17875711486026,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 10.396527777777779,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 34.31597222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 31
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 34,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 31,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.4,
+    "rh_pct": 69,
+    "precip_mm": 0.0,
+    "wind_ms": 0.05,
+    "wind_dir_deg": 180
+  }
+}

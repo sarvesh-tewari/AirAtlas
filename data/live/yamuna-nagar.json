@@ -1,0 +1,59 @@
+{
+  "city": "Yamuna Nagar",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8277631578947369,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 33.53421052631579,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 16
+    },
+    "pm10": {
+      "value": 80.32763157894736,
+      "unit": "µg/m³",
+      "naqi_subindex": 80,
+      "us_subindex": 63
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 80,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 63,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.0,
+    "rh_pct": 64,
+    "precip_mm": 0.0,
+    "wind_ms": 1.77,
+    "wind_dir_deg": 292
+  }
+}

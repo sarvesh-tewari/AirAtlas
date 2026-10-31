@@ -1,0 +1,79 @@
+{
+  "city": "Ahmednagar",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5548015873015872,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 39.079586792774364,
+      "unit": "µg/m³",
+      "naqi_subindex": 49,
+      "us_subindex": 19
+    },
+    "o3": {
+      "value": 51.350590277777776,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 24
+    },
+    "pm10": {
+      "value": 55.07288194444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 51
+    },
+    "pm25": {
+      "value": 25.6809375,
+      "unit": "µg/m³",
+      "naqi_subindex": 42,
+      "us_subindex": 82
+    },
+    "so2": {
+      "value": 9.06837416496251,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 55,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 82,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.2,
+    "rh_pct": 46,
+    "precip_mm": 0.1,
+    "wind_ms": 1.34,
+    "wind_dir_deg": 63
+  }
+}

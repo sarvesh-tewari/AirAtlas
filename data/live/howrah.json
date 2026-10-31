@@ -1,0 +1,78 @@
+{
+  "city": "Howrah",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 5,
+  "pollutants": {
+    "no2": {
+      "value": 26.55900337423313,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 13
+    },
+    "o3": {
+      "value": 15.452343749999999,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "pm25": {
+      "value": 20.104583333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 71
+    },
+    "so2": {
+      "value": 17.93981743779823,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "co": {
+      "value": 0.5532291666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 38.2528125,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 35
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 38,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 71,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.0,
+    "rh_pct": 70,
+    "precip_mm": 0.1,
+    "wind_ms": 0.76,
+    "wind_dir_deg": 188
+  }
+}

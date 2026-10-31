@@ -1,0 +1,65 @@
+{
+  "city": "Greater Noida",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "pm25": {
+      "value": 23.527777777777775,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 78
+    },
+    "so2": {
+      "value": 24.12801475516928,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 13
+    },
+    "no2": {
+      "value": 89.94122290388547,
+      "unit": "µg/m³",
+      "naqi_subindex": 109,
+      "us_subindex": 44
+    },
+    "o3": {
+      "value": 14.40777777777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 109,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 78,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.3,
+    "rh_pct": 61,
+    "precip_mm": 0.0,
+    "wind_ms": 1.42,
+    "wind_dir_deg": 321
+  }
+}

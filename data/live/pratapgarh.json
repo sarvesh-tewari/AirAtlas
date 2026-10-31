@@ -1,0 +1,78 @@
+{
+  "city": "Pratapgarh",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4347916666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 17.29322283997955,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 45.78125,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 21
+    },
+    "pm10": {
+      "value": 66.32291666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 56
+    },
+    "pm25": {
+      "value": 49.645833333333336,
+      "unit": "µg/m³",
+      "naqi_subindex": 81,
+      "us_subindex": 136
+    },
+    "so2": {
+      "value": 3.7721204839809137,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 81,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 136,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.4,
+    "rh_pct": 52,
+    "precip_mm": 0.0,
+    "wind_ms": 2.48,
+    "wind_dir_deg": 50
+  }
+}

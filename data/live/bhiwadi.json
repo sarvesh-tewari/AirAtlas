@@ -1,0 +1,79 @@
+{
+  "city": "Bhiwadi",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.8227430555555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 44.798783365996364,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 22
+    },
+    "o3": {
+      "value": 12.445104166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 75.7059375,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 61
+    },
+    "pm25": {
+      "value": 39.43055555555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 111
+    },
+    "so2": {
+      "value": 16.771924900590776,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 75,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 111,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.9,
+    "rh_pct": 54,
+    "precip_mm": 0.0,
+    "wind_ms": 1.3,
+    "wind_dir_deg": 344
+  }
+}

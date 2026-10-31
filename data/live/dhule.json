@@ -1,0 +1,79 @@
+{
+  "city": "Dhule",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.25437499999999996,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 33.14376176356023,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 16
+    },
+    "o3": {
+      "value": 13.575069444444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 82.00934210526316,
+      "unit": "µg/m³",
+      "naqi_subindex": 82,
+      "us_subindex": 64
+    },
+    "pm25": {
+      "value": 43.22684210526315,
+      "unit": "µg/m³",
+      "naqi_subindex": 71,
+      "us_subindex": 120
+    },
+    "so2": {
+      "value": 5.177249011588276,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 82,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 120,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.5,
+    "rh_pct": 45,
+    "precip_mm": 0.0,
+    "wind_ms": 1.49,
+    "wind_dir_deg": 50
+  }
+}

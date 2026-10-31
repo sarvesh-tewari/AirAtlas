@@ -1,0 +1,71 @@
+{
+  "city": "Guwahati",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "so2": {
+      "value": 54.20012168399228,
+      "unit": "µg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 29
+    },
+    "co": {
+      "value": 0.6640972222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 22.060590277777777,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 20
+    },
+    "no2": {
+      "value": 12.74533194160418,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 10.248559027777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 5
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 67,
+      "category": "Satisfactory",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 29,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.0,
+    "rh_pct": 73,
+    "precip_mm": 0.5,
+    "wind_ms": 2.21,
+    "wind_dir_deg": 265
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "city": "Hajipur",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.45864583333333336,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 12.451394847051807,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 11.276874999999999,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 5
+    },
+    "pm25": {
+      "value": 8.917708333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 49
+    },
+    "so2": {
+      "value": 10.452485812883436,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 20,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 49,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.5,
+    "rh_pct": 95,
+    "precip_mm": 0.3,
+    "wind_ms": 2.37,
+    "wind_dir_deg": 55
+  }
+}

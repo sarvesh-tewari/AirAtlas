@@ -1,0 +1,78 @@
+{
+  "city": "Barmer",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.46118055555555554,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 21.221350938027918,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 92.36388888888888,
+      "unit": "µg/m³",
+      "naqi_subindex": 92,
+      "us_subindex": 44
+    },
+    "pm10": {
+      "value": 89.1195652173913,
+      "unit": "µg/m³",
+      "naqi_subindex": 89,
+      "us_subindex": 68
+    },
+    "pm25": {
+      "value": 29.434782608695652,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 89
+    },
+    "so2": {
+      "value": 11.65572492047262,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 92,
+      "category": "Satisfactory",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 89,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.8,
+    "rh_pct": 35,
+    "precip_mm": 0.0,
+    "wind_ms": 2.65,
+    "wind_dir_deg": 54
+  }
+}

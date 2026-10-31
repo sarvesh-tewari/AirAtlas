@@ -1,0 +1,78 @@
+{
+  "city": "Begusarai",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8644444444444445,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 14.943163428766189,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 32.13472222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 15
+    },
+    "pm10": {
+      "value": 9.195652173913043,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 8
+    },
+    "pm25": {
+      "value": 5.461805555555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 30
+    },
+    "so2": {
+      "value": 12.020563394683029,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 40,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 30,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.5,
+    "rh_pct": 73,
+    "precip_mm": 0.1,
+    "wind_ms": 1.35,
+    "wind_dir_deg": 90
+  }
+}

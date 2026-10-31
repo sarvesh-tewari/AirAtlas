@@ -1,0 +1,79 @@
+{
+  "city": "Churu",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.1528125,
+      "unit": "mg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 30.778134223755966,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 15
+    },
+    "o3": {
+      "value": 54.416666666666664,
+      "unit": "µg/m³",
+      "naqi_subindex": 54,
+      "us_subindex": 25
+    },
+    "pm10": {
+      "value": 85.59375,
+      "unit": "µg/m³",
+      "naqi_subindex": 85,
+      "us_subindex": 66
+    },
+    "pm25": {
+      "value": 23.65625,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 78
+    },
+    "so2": {
+      "value": 5.723687883435583,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 85,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 78,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.4,
+    "rh_pct": 43,
+    "precip_mm": 0.0,
+    "wind_ms": 1.54,
+    "wind_dir_deg": 299
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "city": "Jalgaon",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4840625,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 22.539010169563735,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 31.061666666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 14
+    },
+    "pm10": {
+      "value": 67.81293478260869,
+      "unit": "µg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 57
+    },
+    "pm25": {
+      "value": 35.98739130434783,
+      "unit": "µg/m³",
+      "naqi_subindex": 58,
+      "us_subindex": 102
+    },
+    "so2": {
+      "value": 5.947504004771644,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 67,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 102,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 31.2,
+    "rh_pct": 47,
+    "precip_mm": 0.0,
+    "wind_ms": 0.95,
+    "wind_dir_deg": 72
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "city": "Hubballi",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.32197916666666665,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 12.945514928425359,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 20.737708333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 52.385625,
+      "unit": "µg/m³",
+      "naqi_subindex": 52,
+      "us_subindex": 48
+    },
+    "pm25": {
+      "value": 23.660104166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 78
+    },
+    "so2": {
+      "value": 3.4022779907975464,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 52,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 78,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.6,
+    "rh_pct": 44,
+    "precip_mm": 0.0,
+    "wind_ms": 1.32,
+    "wind_dir_deg": 101
+  }
+}

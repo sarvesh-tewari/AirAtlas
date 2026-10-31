@@ -1,0 +1,77 @@
+{
+  "city": "Rishikesh",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3177083333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 10.341045415814587,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 13.463854166666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 8.546875,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 7
+    },
+    "pm25": {
+      "value": 3.710625,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 21
+    },
+    "so2": {
+      "value": 6.760611596796184,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 15,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 21,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.6,
+    "rh_pct": 64,
+    "precip_mm": 0.0,
+    "wind_ms": 1.85,
+    "wind_dir_deg": 218
+  }
+}

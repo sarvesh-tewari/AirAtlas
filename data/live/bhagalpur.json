@@ -1,0 +1,80 @@
+{
+  "city": "Bhagalpur",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "pm25": {
+      "value": 22.4375,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 76
+    },
+    "so2": {
+      "value": 58.743998366848444,
+      "unit": "µg/m³",
+      "naqi_subindex": 72,
+      "us_subindex": 31
+    },
+    "co": {
+      "value": 0.2652083333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 31.315831998409454,
+      "unit": "µg/m³",
+      "naqi_subindex": 39,
+      "us_subindex": 15
+    },
+    "o3": {
+      "value": 8.672916666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 52.1875,
+      "unit": "µg/m³",
+      "naqi_subindex": 52,
+      "us_subindex": 48
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 72,
+      "category": "Satisfactory",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 76,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "so2",
+        "no2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.2,
+    "rh_pct": 72,
+    "precip_mm": 0.0,
+    "wind_ms": 1.05,
+    "wind_dir_deg": 149
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "city": "Mandikhera",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.9419047619047619,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    },
+    "o3": {
+      "value": 58.8125,
+      "unit": "µg/m³",
+      "naqi_subindex": 58,
+      "us_subindex": 27
+    },
+    "so2": {
+      "value": 94.91906669178059,
+      "unit": "µg/m³",
+      "naqi_subindex": 105,
+      "us_subindex": 51
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 51,
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.6,
+    "rh_pct": 51,
+    "precip_mm": 0.0,
+    "wind_ms": 1.5,
+    "wind_dir_deg": 4
+  }
+}

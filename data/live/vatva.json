@@ -1,0 +1,77 @@
+{
+  "city": "Vatva",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3770486111111111,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 38.092653307486934,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 19
+    },
+    "o3": {
+      "value": 16.486597222222223,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 99.90710526315789,
+      "unit": "µg/m³",
+      "naqi_subindex": 99,
+      "us_subindex": 73
+    },
+    "pm25": {
+      "value": 52.68476851851852,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 143
+    },
+    "so2": {
+      "value": 54.06205625142013,
+      "unit": "µg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 29
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 99,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 143,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.9,
+    "rh_pct": 48,
+    "precip_mm": 0.0,
+    "wind_ms": 2.48,
+    "wind_dir_deg": 62
+  }
+}

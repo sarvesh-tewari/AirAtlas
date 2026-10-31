@@ -1,0 +1,78 @@
+{
+  "city": "Sagar",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.5367881944444445,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 14.495208333333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 13
+    },
+    "no2": {
+      "value": 24.06507877471029,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 38.97326388888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 18
+    },
+    "pm25": {
+      "value": 7.868421052631579,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 43
+    },
+    "so2": {
+      "value": 13.189684191092935,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 38,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 43,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.3,
+    "rh_pct": 67,
+    "precip_mm": 0.0,
+    "wind_ms": 2.85,
+    "wind_dir_deg": 15
+  }
+}

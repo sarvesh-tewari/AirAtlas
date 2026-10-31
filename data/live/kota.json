@@ -1,0 +1,77 @@
+{
+  "city": "Kota",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.4332291666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "o3": {
+      "value": 26.591458333333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 52.542013888888896,
+      "unit": "µg/m³",
+      "naqi_subindex": 52,
+      "us_subindex": 48
+    },
+    "so2": {
+      "value": 12.096897429561464,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 91.39359490030675,
+      "unit": "µg/m³",
+      "naqi_subindex": 111,
+      "us_subindex": 45
+    },
+    "pm25": {
+      "value": 31.809782608695652,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 93
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 111,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 93,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.5,
+    "rh_pct": 64,
+    "precip_mm": 0.0,
+    "wind_ms": 2.05,
+    "wind_dir_deg": 47
+  }
+}

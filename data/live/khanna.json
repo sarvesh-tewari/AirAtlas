@@ -1,0 +1,51 @@
+{
+  "city": "Khanna",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 106.44556818181817,
+      "unit": "µg/m³",
+      "naqi_subindex": 104,
+      "us_subindex": 76
+    },
+    "pm25": {
+      "value": 74.8775,
+      "unit": "µg/m³",
+      "naqi_subindex": 145,
+      "us_subindex": 165
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 165,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.3,
+    "rh_pct": 49,
+    "precip_mm": 0.0,
+    "wind_ms": 2.29,
+    "wind_dir_deg": 302
+  }
+}

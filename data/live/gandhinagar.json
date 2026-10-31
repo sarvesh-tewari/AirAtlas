@@ -1,0 +1,80 @@
+{
+  "city": "Gandhinagar",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "pm25": {
+      "value": 39.065694444444446,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 110
+    },
+    "so2": {
+      "value": 9.480250417518747,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    },
+    "no2": {
+      "value": 27.92111662512781,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 13
+    },
+    "o3": {
+      "value": 20.235590277777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 65.14819444444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 56
+    },
+    "co": {
+      "value": 0.8214583333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 65,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 110,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "no2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.3,
+    "rh_pct": 50,
+    "precip_mm": 0.0,
+    "wind_ms": 2.96,
+    "wind_dir_deg": 78
+  }
+}

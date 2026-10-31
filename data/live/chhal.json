@@ -1,0 +1,79 @@
+{
+  "city": "Chhal",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.49156249999999996,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 9.680911963190184,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 61.07,
+      "unit": "µg/m³",
+      "naqi_subindex": 61,
+      "us_subindex": 29
+    },
+    "pm10": {
+      "value": 18.432604166666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 17
+    },
+    "pm25": {
+      "value": 7.982604166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 44
+    },
+    "so2": {
+      "value": 12.095350732788004,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 61,
+      "category": "Satisfactory",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 44,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "o3",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.6,
+    "rh_pct": 67,
+    "precip_mm": 0.0,
+    "wind_ms": 2.09,
+    "wind_dir_deg": 249
+  }
+}

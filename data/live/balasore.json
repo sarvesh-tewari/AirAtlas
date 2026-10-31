@@ -1,0 +1,79 @@
+{
+  "city": "Balasore",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.9159027777777777,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 12.619237566746193,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 29.50034722222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 14
+    },
+    "pm10": {
+      "value": 16.916666666666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 15
+    },
+    "pm25": {
+      "value": 9.8125,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 52
+    },
+    "so2": {
+      "value": 10.618528260622586,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 45,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 52,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.3,
+    "rh_pct": 71,
+    "precip_mm": 0.0,
+    "wind_ms": 2.18,
+    "wind_dir_deg": 164
+  }
+}

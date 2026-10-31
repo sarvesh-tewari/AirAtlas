@@ -1,0 +1,45 @@
+{
+  "city": "Anantapur",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 35.373261512298335,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 17,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.7,
+    "rh_pct": 41,
+    "precip_mm": 0.0,
+    "wind_ms": 1.7,
+    "wind_dir_deg": 76
+  }
+}

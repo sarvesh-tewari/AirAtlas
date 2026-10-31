@@ -1,0 +1,72 @@
+{
+  "city": "Udupi",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 18.12125298375863,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 29.10768115942029,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 13
+    },
+    "pm10": {
+      "value": 58.45141304347826,
+      "unit": "µg/m³",
+      "naqi_subindex": 58,
+      "us_subindex": 52
+    },
+    "pm25": {
+      "value": 28.8611231884058,
+      "unit": "µg/m³",
+      "naqi_subindex": 47,
+      "us_subindex": 88
+    },
+    "so2": {
+      "value": 22.134488755519993,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 58,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 88,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.9,
+    "rh_pct": 61,
+    "precip_mm": 0.1,
+    "wind_ms": 2.62,
+    "wind_dir_deg": 296
+  }
+}

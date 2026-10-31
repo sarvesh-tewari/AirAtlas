@@ -1,0 +1,79 @@
+{
+  "city": "Bengaluru",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 5,
+  "pollutants": {
+    "no2": {
+      "value": 33.19218816355658,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 16
+    },
+    "pm10": {
+      "value": 95.55177083333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 95,
+      "us_subindex": 71
+    },
+    "so2": {
+      "value": 17.26495724267212,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "co": {
+      "value": 0.4383680555555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "pm25": {
+      "value": 45.90625,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 127
+    },
+    "o3": {
+      "value": 32.53274305555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 15
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 95,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 127,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.0,
+    "rh_pct": 37,
+    "precip_mm": 0.0,
+    "wind_ms": 2.09,
+    "wind_dir_deg": 101
+  }
+}

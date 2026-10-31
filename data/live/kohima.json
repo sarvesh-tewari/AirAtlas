@@ -1,0 +1,59 @@
+{
+  "city": "Kohima",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.183125,
+      "unit": "mg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 1
+    },
+    "pm25": {
+      "value": 14.954583333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 62
+    },
+    "so2": {
+      "value": 142.34323191888208,
+      "unit": "µg/m³",
+      "naqi_subindex": 121,
+      "us_subindex": 74
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 121,
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 74,
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.7,
+    "rh_pct": 83,
+    "precip_mm": 0.2,
+    "wind_ms": 1.71,
+    "wind_dir_deg": 355
+  }
+}

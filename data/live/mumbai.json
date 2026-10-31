@@ -1,0 +1,79 @@
+{
+  "city": "Mumbai",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 19,
+  "pollutants": {
+    "no2": {
+      "value": 37.47763289415757,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 18
+    },
+    "pm10": {
+      "value": 57.84475694444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 52
+    },
+    "pm25": {
+      "value": 27.020625,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 84
+    },
+    "so2": {
+      "value": 9.735045965405591,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    },
+    "o3": {
+      "value": 19.986215277777777,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 9
+    },
+    "co": {
+      "value": 0.4410416666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 57,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 84,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.9,
+    "rh_pct": 62,
+    "precip_mm": 0.0,
+    "wind_ms": 1.51,
+    "wind_dir_deg": 276
+  }
+}

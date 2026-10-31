@@ -1,0 +1,80 @@
+{
+  "city": "Kunjemura",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.49855263157894736,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 22.468222637498656,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 4.466578947368421,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 2
+    },
+    "pm10": {
+      "value": 24.95486842105263,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 22
+    },
+    "pm25": {
+      "value": 8.124210526315789,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 45
+    },
+    "so2": {
+      "value": 27.222361220536005,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 34,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 45,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.7,
+    "rh_pct": 68,
+    "precip_mm": 0.0,
+    "wind_ms": 1.93,
+    "wind_dir_deg": 239
+  }
+}

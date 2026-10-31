@@ -1,0 +1,65 @@
+{
+  "city": "Khurja",
+  "updated_utc": "2026-10-30T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6347348484848485,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 18.55679182236475,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 51.027499999999996,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 47
+    },
+    "so2": {
+      "value": 20.127074130879347,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 51,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 47,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.1,
+    "rh_pct": 57,
+    "precip_mm": 0.0,
+    "wind_ms": 1.75,
+    "wind_dir_deg": 329
+  }
+}
