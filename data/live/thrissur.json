@@ -1,0 +1,72 @@
+{
+  "city": "Thrissur",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5660069444444444,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 10.807006597932288,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 53.44194444444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 53,
+      "us_subindex": 49
+    },
+    "pm25": {
+      "value": 31.12489583333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 92
+    },
+    "so2": {
+      "value": 1.3630947682344923,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": 0
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 53,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 92,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.2,
+    "rh_pct": 57,
+    "precip_mm": 0.0,
+    "wind_ms": 3.87,
+    "wind_dir_deg": 61
+  }
+}

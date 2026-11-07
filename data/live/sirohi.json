@@ -1,0 +1,78 @@
+{
+  "city": "Sirohi",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4478125,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 60.497859705180645,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 30
+    },
+    "o3": {
+      "value": 32.39479166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 15
+    },
+    "pm10": {
+      "value": 133.54166666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 122,
+      "us_subindex": 90
+    },
+    "pm25": {
+      "value": 29.75,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 89
+    },
+    "so2": {
+      "value": 9.62409321745058,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 122,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 90,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 34.6,
+    "rh_pct": 16,
+    "precip_mm": 0.0,
+    "wind_ms": 2.05,
+    "wind_dir_deg": 317
+  }
+}

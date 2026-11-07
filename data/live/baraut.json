@@ -1,0 +1,59 @@
+{
+  "city": "Baraut",
+  "updated_utc": "2026-10-15T15:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 22.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 10
+    },
+    "pm10": {
+      "value": 125.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 117,
+      "us_subindex": 86
+    },
+    "o3": {
+      "value": 44.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 44,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 117,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 86,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 18.6,
+    "rh_pct": 95,
+    "precip_mm": 0.0,
+    "wind_ms": 1.06,
+    "wind_dir_deg": 341
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "city": "Sagar",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.7608506944444445,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "pm25": {
+      "value": 62.33147569444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 104,
+      "us_subindex": 156
+    },
+    "so2": {
+      "value": 6.891671402806181,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 11.119171843047035,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 72.90277777777779,
+      "unit": "µg/m³",
+      "naqi_subindex": 72,
+      "us_subindex": 34
+    },
+    "pm10": {
+      "value": 109.56597222222223,
+      "unit": "µg/m³",
+      "naqi_subindex": 106,
+      "us_subindex": 78
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 106,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 156,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.2,
+    "rh_pct": 33,
+    "precip_mm": 0.0,
+    "wind_ms": 2.17,
+    "wind_dir_deg": 331
+  }
+}

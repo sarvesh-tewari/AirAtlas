@@ -1,0 +1,79 @@
+{
+  "city": "Virar",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.7601515151515151,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 55.98889591621739,
+      "unit": "µg/m³",
+      "naqi_subindex": 69,
+      "us_subindex": 27
+    },
+    "o3": {
+      "value": 20.053863636363637,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 82.62404761904762,
+      "unit": "µg/m³",
+      "naqi_subindex": 82,
+      "us_subindex": 64
+    },
+    "pm25": {
+      "value": 39.667857142857144,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 111
+    },
+    "so2": {
+      "value": 6.7944817748032476,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 82,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 111,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 35.5,
+    "rh_pct": 24,
+    "precip_mm": 0.0,
+    "wind_ms": 2.66,
+    "wind_dir_deg": 85
+  }
+}

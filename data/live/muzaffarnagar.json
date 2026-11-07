@@ -1,0 +1,45 @@
+{
+  "city": "Muzaffarnagar",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 115.47916666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 283,
+      "us_subindex": 193
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 193,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.2,
+    "rh_pct": 53,
+    "precip_mm": 0.0,
+    "wind_ms": 2.43,
+    "wind_dir_deg": 284
+  }
+}

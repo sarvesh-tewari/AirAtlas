@@ -1,0 +1,78 @@
+{
+  "city": "Jaipur",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 6,
+  "pollutants": {
+    "no2": {
+      "value": 94.77361015216712,
+      "unit": "µg/m³",
+      "naqi_subindex": 114,
+      "us_subindex": 47
+    },
+    "o3": {
+      "value": 35.08140625,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 16
+    },
+    "pm25": {
+      "value": 95.49201388888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 215,
+      "us_subindex": 179
+    },
+    "so2": {
+      "value": 33.598757536639404,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 17
+    },
+    "co": {
+      "value": 1.2152951388888888,
+      "unit": "mg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 205.54097222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 170,
+      "us_subindex": 126
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 215,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 179,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.5,
+    "rh_pct": 33,
+    "precip_mm": 0.0,
+    "wind_ms": 1.28,
+    "wind_dir_deg": 249
+  }
+}

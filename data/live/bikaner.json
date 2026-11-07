@@ -1,0 +1,77 @@
+{
+  "city": "Bikaner",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.1776041666666666,
+      "unit": "mg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 93.7475743438991,
+      "unit": "µg/m³",
+      "naqi_subindex": 113,
+      "us_subindex": 46
+    },
+    "o3": {
+      "value": 62.85833333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 30
+    },
+    "pm10": {
+      "value": 327.6875,
+      "unit": "µg/m³",
+      "naqi_subindex": 277,
+      "us_subindex": 187
+    },
+    "pm25": {
+      "value": 96.26041666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 218,
+      "us_subindex": 180
+    },
+    "so2": {
+      "value": 9.00177522154056,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 277,
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 187,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 33.8,
+    "rh_pct": 20,
+    "precip_mm": 0.0,
+    "wind_ms": 3.01,
+    "wind_dir_deg": 276
+  }
+}

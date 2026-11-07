@@ -1,0 +1,59 @@
+{
+  "city": "Mandi Gobindgarh",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8515476190476191,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 40.5659375,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 19
+    },
+    "pm25": {
+      "value": 131.5340909090909,
+      "unit": "µg/m³",
+      "naqi_subindex": 309,
+      "us_subindex": 207
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 309,
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 207,
+      "category": "Very Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.9,
+    "rh_pct": 37,
+    "precip_mm": 0.0,
+    "wind_ms": 2.56,
+    "wind_dir_deg": 309
+  }
+}

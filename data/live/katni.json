@@ -1,0 +1,59 @@
+{
+  "city": "Katni",
+  "updated_utc": "2026-11-06T19:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 57.850531171892754,
+      "unit": "µg/m³",
+      "naqi_subindex": 71,
+      "us_subindex": 28
+    },
+    "o3": {
+      "value": 37.67673611111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 18
+    },
+    "pm25": {
+      "value": 84.79166666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 180,
+      "us_subindex": 171
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 180,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 171,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.7,
+    "rh_pct": 42,
+    "precip_mm": 0.0,
+    "wind_ms": 1.52,
+    "wind_dir_deg": 297
+  }
+}

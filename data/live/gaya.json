@@ -1,0 +1,59 @@
+{
+  "city": "Gaya",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "pm25": {
+      "value": 56.64982638888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 93,
+      "us_subindex": 152
+    },
+    "o3": {
+      "value": 30.906770833333336,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 14
+    },
+    "so2": {
+      "value": 93.24397972051808,
+      "unit": "µg/m³",
+      "naqi_subindex": 105,
+      "us_subindex": 50
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 105,
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 152,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.5,
+    "rh_pct": 53,
+    "precip_mm": 0.0,
+    "wind_ms": 1.77,
+    "wind_dir_deg": 295
+  }
+}

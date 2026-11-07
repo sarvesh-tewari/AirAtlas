@@ -1,0 +1,57 @@
+{
+  "city": "Karwar",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5671180555555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 39.20378648531584,
+      "unit": "µg/m³",
+      "naqi_subindex": 49,
+      "us_subindex": 19
+    },
+    "so2": {
+      "value": 21.678683941149743,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 19,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 34.9,
+    "rh_pct": 40,
+    "precip_mm": 0.0,
+    "wind_ms": 1.05,
+    "wind_dir_deg": 275
+  }
+}

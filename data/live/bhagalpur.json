@@ -1,0 +1,72 @@
+{
+  "city": "Bhagalpur",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.3710185185185185,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "o3": {
+      "value": 8.987673611111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 151.89236111111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 134,
+      "us_subindex": 99
+    },
+    "pm25": {
+      "value": 53.979166666666664,
+      "unit": "µg/m³",
+      "naqi_subindex": 88,
+      "us_subindex": 146
+    },
+    "so2": {
+      "value": 83.38586455647433,
+      "unit": "µg/m³",
+      "naqi_subindex": 102,
+      "us_subindex": 44
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 134,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 146,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.6,
+    "rh_pct": 49,
+    "precip_mm": 0.0,
+    "wind_ms": 1.22,
+    "wind_dir_deg": 305
+  }
+}

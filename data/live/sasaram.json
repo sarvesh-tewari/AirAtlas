@@ -1,0 +1,65 @@
+{
+  "city": "Sasaram",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.2732638888888889,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 10.493273339865938,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 3.1621527777777776,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": 1
+    },
+    "pm25": {
+      "value": 104.15625,
+      "unit": "µg/m³",
+      "naqi_subindex": 245,
+      "us_subindex": 185
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 245,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 185,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.7,
+    "rh_pct": 54,
+    "precip_mm": 0.0,
+    "wind_ms": 1.71,
+    "wind_dir_deg": 308
+  }
+}

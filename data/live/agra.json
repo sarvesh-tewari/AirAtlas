@@ -1,0 +1,77 @@
+{
+  "city": "Agra",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "co": {
+      "value": 0.6289583333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 41.449475034438194,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 21
+    },
+    "o3": {
+      "value": 5.112916666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 2
+    },
+    "pm10": {
+      "value": 231.74578125000002,
+      "unit": "µg/m³",
+      "naqi_subindex": 187,
+      "us_subindex": 139
+    },
+    "so2": {
+      "value": 69.33100130794138,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 37
+    },
+    "pm25": {
+      "value": 81.385,
+      "unit": "µg/m³",
+      "naqi_subindex": 169,
+      "us_subindex": 169
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 187,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 169,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.5,
+    "rh_pct": 47,
+    "precip_mm": 0.0,
+    "wind_ms": 1.65,
+    "wind_dir_deg": 273
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "city": "Ghaziabad",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "co": {
+      "value": 1.497326388888889,
+      "unit": "mg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 15
+    },
+    "no2": {
+      "value": 44.02098360812884,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 22
+    },
+    "so2": {
+      "value": 34.851172503408314,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 219.0434027777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 179,
+      "us_subindex": 133
+    },
+    "pm25": {
+      "value": 160.32789855072463,
+      "unit": "µg/m³",
+      "naqi_subindex": 331,
+      "us_subindex": 235
+    },
+    "o3": {
+      "value": 28.982916666666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 331,
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 235,
+      "category": "Very Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.5,
+    "rh_pct": 49,
+    "precip_mm": 0.0,
+    "wind_ms": 1.94,
+    "wind_dir_deg": 282
+  }
+}

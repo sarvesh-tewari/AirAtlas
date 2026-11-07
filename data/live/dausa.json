@@ -1,0 +1,77 @@
+{
+  "city": "Dausa",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.2121875,
+      "unit": "mg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 90.82911023773005,
+      "unit": "µg/m³",
+      "naqi_subindex": 110,
+      "us_subindex": 45
+    },
+    "o3": {
+      "value": 42.25625,
+      "unit": "µg/m³",
+      "naqi_subindex": 42,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 300.4166666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 250,
+      "us_subindex": 173
+    },
+    "pm25": {
+      "value": 112.4375,
+      "unit": "µg/m³",
+      "naqi_subindex": 273,
+      "us_subindex": 191
+    },
+    "so2": {
+      "value": 15.514278459441037,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 273,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 191,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.6,
+    "rh_pct": 32,
+    "precip_mm": 0.0,
+    "wind_ms": 1.75,
+    "wind_dir_deg": 268
+  }
+}

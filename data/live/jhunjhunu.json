@@ -1,0 +1,78 @@
+{
+  "city": "Jhunjhunu",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.2254166666666666,
+      "unit": "mg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 75.04901989604635,
+      "unit": "µg/m³",
+      "naqi_subindex": 94,
+      "us_subindex": 37
+    },
+    "o3": {
+      "value": 63.571875,
+      "unit": "µg/m³",
+      "naqi_subindex": 63,
+      "us_subindex": 30
+    },
+    "pm10": {
+      "value": 247.55208333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 198,
+      "us_subindex": 147
+    },
+    "pm25": {
+      "value": 123.60416666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 303,
+      "us_subindex": 199
+    },
+    "so2": {
+      "value": 20.675696574642128,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 303,
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 199,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.3,
+    "rh_pct": 33,
+    "precip_mm": 0.0,
+    "wind_ms": 2.44,
+    "wind_dir_deg": 293
+  }
+}

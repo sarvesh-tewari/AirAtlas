@@ -1,0 +1,78 @@
+{
+  "city": "Bileipada",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.53,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 23.36417698534424,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 18.84541666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 471.32797619047625,
+      "unit": "µg/m³",
+      "naqi_subindex": 500,
+      "us_subindex": 352
+    },
+    "pm25": {
+      "value": 146.44147727272727,
+      "unit": "µg/m³",
+      "naqi_subindex": 320,
+      "us_subindex": 222
+    },
+    "so2": {
+      "value": 20.18248226823449,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 500,
+      "category": "Severe",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 352,
+      "category": "Hazardous",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.5,
+    "rh_pct": 52,
+    "precip_mm": 0.0,
+    "wind_ms": 1.65,
+    "wind_dir_deg": 357
+  }
+}

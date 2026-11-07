@@ -1,0 +1,51 @@
+{
+  "city": "Chamarajanagar",
+  "updated_utc": "2026-11-03T06:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 19.040652173913042,
+      "unit": "µg/m³",
+      "naqi_subindex": 32,
+      "us_subindex": 69
+    },
+    "so2": {
+      "value": 9.662305725971372,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 69,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.2,
+    "rh_pct": 96,
+    "precip_mm": 0.0,
+    "wind_ms": 2.21,
+    "wind_dir_deg": 57
+  }
+}

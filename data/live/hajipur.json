@@ -1,0 +1,51 @@
+{
+  "city": "Hajipur",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 93.059375,
+      "unit": "µg/m³",
+      "naqi_subindex": 208,
+      "us_subindex": 177
+    },
+    "so2": {
+      "value": 24.534614042263126,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 177,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.8,
+    "rh_pct": 53,
+    "precip_mm": 0.0,
+    "wind_ms": 0.9,
+    "wind_dir_deg": 267
+  }
+}

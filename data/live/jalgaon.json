@@ -1,0 +1,77 @@
+{
+  "city": "Jalgaon",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.2777083333333332,
+      "unit": "mg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 13
+    },
+    "no2": {
+      "value": 56.88554986792774,
+      "unit": "µg/m³",
+      "naqi_subindex": 70,
+      "us_subindex": 28
+    },
+    "o3": {
+      "value": 34.15913194444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 16
+    },
+    "pm10": {
+      "value": 117.95510416666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 112,
+      "us_subindex": 82
+    },
+    "pm25": {
+      "value": 68.89833333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 125,
+      "us_subindex": 160
+    },
+    "so2": {
+      "value": 52.948770812957534,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 29
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 125,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 160,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 33.0,
+    "rh_pct": 24,
+    "precip_mm": 0.0,
+    "wind_ms": 2.73,
+    "wind_dir_deg": 82
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "city": "Jalore",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0880208333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 10
+    },
+    "no2": {
+      "value": 99.19837936690526,
+      "unit": "µg/m³",
+      "naqi_subindex": 119,
+      "us_subindex": 49
+    },
+    "o3": {
+      "value": 35.624652777777776,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 17
+    },
+    "pm10": {
+      "value": 247.55208333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 198,
+      "us_subindex": 147
+    },
+    "pm25": {
+      "value": 72.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 139,
+      "us_subindex": 163
+    },
+    "so2": {
+      "value": 16.332208106112247,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 198,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 163,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 35.2,
+    "rh_pct": 16,
+    "precip_mm": 0.0,
+    "wind_ms": 2.79,
+    "wind_dir_deg": 314
+  }
+}

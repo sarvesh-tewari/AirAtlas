@@ -1,0 +1,65 @@
+{
+  "city": "Palwal",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 2.1143402777777776,
+      "unit": "mg/m³",
+      "naqi_subindex": 101,
+      "us_subindex": 20
+    },
+    "no2": {
+      "value": 16.945450634088843,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 22.89159722222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 22,
+      "us_subindex": 10
+    },
+    "pm25": {
+      "value": 62.640347222222225,
+      "unit": "µg/m³",
+      "naqi_subindex": 104,
+      "us_subindex": 156
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 104,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 156,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.0,
+    "rh_pct": 44,
+    "precip_mm": 0.0,
+    "wind_ms": 2.19,
+    "wind_dir_deg": 297
+  }
+}

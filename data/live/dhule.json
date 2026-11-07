@@ -1,0 +1,77 @@
+{
+  "city": "Dhule",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4636458333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 72.65309610599864,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 36
+    },
+    "o3": {
+      "value": 12.633854166666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 168.34477272727273,
+      "unit": "µg/m³",
+      "naqi_subindex": 146,
+      "us_subindex": 107
+    },
+    "pm25": {
+      "value": 97.74978260869565,
+      "unit": "µg/m³",
+      "naqi_subindex": 221,
+      "us_subindex": 181
+    },
+    "so2": {
+      "value": 12.142843421949557,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 221,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 181,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 32.7,
+    "rh_pct": 22,
+    "precip_mm": 0.0,
+    "wind_ms": 3.07,
+    "wind_dir_deg": 74
+  }
+}

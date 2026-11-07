@@ -1,0 +1,78 @@
+{
+  "city": "Jaisalmer",
+  "updated_utc": "2026-11-06T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.7429166666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 119.98827108895705,
+      "unit": "µg/m³",
+      "naqi_subindex": 139,
+      "us_subindex": 61
+    },
+    "o3": {
+      "value": 33.94166666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 16
+    },
+    "pm10": {
+      "value": 239.80208333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 193,
+      "us_subindex": 143
+    },
+    "pm25": {
+      "value": 65.9375,
+      "unit": "µg/m³",
+      "naqi_subindex": 115,
+      "us_subindex": 158
+    },
+    "so2": {
+      "value": 11.50196506475801,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 193,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 158,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "no2",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 34.3,
+    "rh_pct": 18,
+    "precip_mm": 0.0,
+    "wind_ms": 3.66,
+    "wind_dir_deg": 275
+  }
+}
