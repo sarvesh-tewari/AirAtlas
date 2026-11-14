@@ -1,0 +1,77 @@
+{
+  "city": "Nagpur",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "co": {
+      "value": 1.2240625,
+      "unit": "mg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 42.78042402791979,
+      "unit": "µg/m³",
+      "naqi_subindex": 52,
+      "us_subindex": 21
+    },
+    "o3": {
+      "value": 29.304427083333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 13
+    },
+    "pm10": {
+      "value": 153.43836805555557,
+      "unit": "µg/m³",
+      "naqi_subindex": 136,
+      "us_subindex": 100
+    },
+    "pm25": {
+      "value": 94.65045138888888,
+      "unit": "µg/m³",
+      "naqi_subindex": 211,
+      "us_subindex": 178
+    },
+    "so2": {
+      "value": 74.20578011815498,
+      "unit": "µg/m³",
+      "naqi_subindex": 92,
+      "us_subindex": 40
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 211,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 178,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.2,
+    "rh_pct": 56,
+    "precip_mm": 0.0,
+    "wind_ms": 1.52,
+    "wind_dir_deg": 314
+  }
+}

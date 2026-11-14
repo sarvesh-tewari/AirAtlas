@@ -1,0 +1,78 @@
+{
+  "city": "Indore",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 5,
+  "pollutants": {
+    "co": {
+      "value": 1.2846875,
+      "unit": "mg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 13
+    },
+    "no2": {
+      "value": 20.91340540892695,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 8.329913194444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 98.56088541666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 98,
+      "us_subindex": 72
+    },
+    "pm25": {
+      "value": 59.162708333333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 98,
+      "us_subindex": 154
+    },
+    "so2": {
+      "value": 33.458872460804365,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 98,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 154,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.0,
+    "rh_pct": 53,
+    "precip_mm": 0.0,
+    "wind_ms": 1.15,
+    "wind_dir_deg": 162
+  }
+}

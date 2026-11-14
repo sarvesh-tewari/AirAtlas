@@ -1,0 +1,51 @@
+{
+  "city": "Rohtak",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 173.62187500000002,
+      "unit": "µg/m³",
+      "naqi_subindex": 149,
+      "us_subindex": 110
+    },
+    "pm25": {
+      "value": 107.90729166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 256,
+      "us_subindex": 188
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 188,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.6,
+    "rh_pct": 69,
+    "precip_mm": 0.0,
+    "wind_ms": 1.22,
+    "wind_dir_deg": 35
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "city": "Dehradun",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 20.876132434389913,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 27.672083333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 13
+    },
+    "pm25": {
+      "value": 44.91930555555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 124
+    },
+    "so2": {
+      "value": 6.776715439672802,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 73,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 124,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 16.4,
+    "rh_pct": 85,
+    "precip_mm": 0.0,
+    "wind_ms": 0.74,
+    "wind_dir_deg": 42
+  }
+}

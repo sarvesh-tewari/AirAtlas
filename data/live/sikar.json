@@ -1,0 +1,77 @@
+{
+  "city": "Sikar",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0267708333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 92.07764055044309,
+      "unit": "µg/m³",
+      "naqi_subindex": 112,
+      "us_subindex": 45
+    },
+    "o3": {
+      "value": 48.71666666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 22
+    },
+    "pm10": {
+      "value": 280.2916666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 230,
+      "us_subindex": 163
+    },
+    "pm25": {
+      "value": 68.97916666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 125,
+      "us_subindex": 160
+    },
+    "so2": {
+      "value": 16.360412576687118,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 230,
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 163,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.2,
+    "rh_pct": 51,
+    "precip_mm": 0.0,
+    "wind_ms": 4.15,
+    "wind_dir_deg": 77
+  }
+}

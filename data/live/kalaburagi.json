@@ -1,0 +1,77 @@
+{
+  "city": "Kalaburagi",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.7705208333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 22.774800117160876,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 9.922638888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 38.8934375,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 35
+    },
+    "pm25": {
+      "value": 17.553645833333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 67
+    },
+    "so2": {
+      "value": 8.086858588957055,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 38,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 67,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.5,
+    "rh_pct": 46,
+    "precip_mm": 0.0,
+    "wind_ms": 3.04,
+    "wind_dir_deg": 54
+  }
+}

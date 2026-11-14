@@ -1,0 +1,65 @@
+{
+  "city": "Hapur",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 2.0881884057971014,
+      "unit": "mg/m³",
+      "naqi_subindex": 100,
+      "us_subindex": 20
+    },
+    "o3": {
+      "value": 16.796875,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 272.84090909090907,
+      "unit": "µg/m³",
+      "naqi_subindex": 222,
+      "us_subindex": 159
+    },
+    "so2": {
+      "value": 26.62058978690614,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 222,
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 159,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 19.2,
+    "rh_pct": 76,
+    "precip_mm": 0.0,
+    "wind_ms": 1.64,
+    "wind_dir_deg": 38
+  }
+}

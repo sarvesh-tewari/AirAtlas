@@ -1,0 +1,77 @@
+{
+  "city": "Sri Ganganagar",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 2.9347569444444446,
+      "unit": "mg/m³",
+      "naqi_subindex": 111,
+      "us_subindex": 28
+    },
+    "no2": {
+      "value": 168.8318745313565,
+      "unit": "µg/m³",
+      "naqi_subindex": 188,
+      "us_subindex": 88
+    },
+    "o3": {
+      "value": 28.001041666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 13
+    },
+    "pm10": {
+      "value": 206.75,
+      "unit": "µg/m³",
+      "naqi_subindex": 171,
+      "us_subindex": 126
+    },
+    "pm25": {
+      "value": 29.055555555555557,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 88
+    },
+    "so2": {
+      "value": 17.148318109520567,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 188,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 126,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 19.1,
+    "rh_pct": 79,
+    "precip_mm": 0.0,
+    "wind_ms": 0.51,
+    "wind_dir_deg": 119
+  }
+}

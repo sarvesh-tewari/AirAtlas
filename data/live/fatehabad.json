@@ -1,0 +1,71 @@
+{
+  "city": "Fatehabad",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.9191666666666668,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 28.678564881561005,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 14
+    },
+    "o3": {
+      "value": 55.475833333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 26
+    },
+    "pm25": {
+      "value": 150.21677083333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 323,
+      "us_subindex": 225
+    },
+    "so2": {
+      "value": 70.07655464383096,
+      "unit": "µg/m³",
+      "naqi_subindex": 87,
+      "us_subindex": 37
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 323,
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 225,
+      "category": "Very Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.4,
+    "rh_pct": 75,
+    "precip_mm": 0.0,
+    "wind_ms": 1.47,
+    "wind_dir_deg": 170
+  }
+}

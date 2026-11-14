@@ -1,0 +1,77 @@
+{
+  "city": "Byasanagar",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8375347222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 67.50491758265167,
+      "unit": "µg/m³",
+      "naqi_subindex": 84,
+      "us_subindex": 33
+    },
+    "o3": {
+      "value": 26.824652777777775,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 51.03819444444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 47
+    },
+    "pm25": {
+      "value": 31.072916666666668,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 92
+    },
+    "so2": {
+      "value": 18.2719478243581,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 84,
+      "category": "Satisfactory",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 92,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.8,
+    "rh_pct": 86,
+    "precip_mm": 0.0,
+    "wind_ms": 0.36,
+    "wind_dir_deg": 304
+  }
+}

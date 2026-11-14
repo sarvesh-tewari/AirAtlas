@@ -1,0 +1,78 @@
+{
+  "city": "Meerut",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 2.4072743055555557,
+      "unit": "mg/m³",
+      "naqi_subindex": 105,
+      "us_subindex": 24
+    },
+    "o3": {
+      "value": 26.467187499999998,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 333.375,
+      "unit": "µg/m³",
+      "naqi_subindex": 283,
+      "us_subindex": 190
+    },
+    "pm25": {
+      "value": 213.75,
+      "unit": "µg/m³",
+      "naqi_subindex": 372,
+      "us_subindex": 288
+    },
+    "no2": {
+      "value": 101.88360154652351,
+      "unit": "µg/m³",
+      "naqi_subindex": 121,
+      "us_subindex": 51
+    },
+    "so2": {
+      "value": 44.3810991820041,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 23
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 372,
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 288,
+      "category": "Very Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.0,
+    "rh_pct": 72,
+    "precip_mm": 0.0,
+    "wind_ms": 1.03,
+    "wind_dir_deg": 104
+  }
+}

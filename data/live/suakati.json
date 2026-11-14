@@ -1,0 +1,78 @@
+{
+  "city": "Suakati",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4762847222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 15.55998052360259,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 25.009270833333336,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 124.61885416666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 116,
+      "us_subindex": 85
+    },
+    "pm25": {
+      "value": 57.80104166666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 95,
+      "us_subindex": 153
+    },
+    "so2": {
+      "value": 17.034863352079075,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 116,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 153,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 17.6,
+    "rh_pct": 69,
+    "precip_mm": 0.0,
+    "wind_ms": 0.25,
+    "wind_dir_deg": 191
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "city": "Siwan",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 141.13888888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 128,
+      "us_subindex": 94
+    },
+    "pm25": {
+      "value": 85.95833333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 183,
+      "us_subindex": 172
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 172,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 19.3,
+    "rh_pct": 88,
+    "precip_mm": 0.0,
+    "wind_ms": 1.24,
+    "wind_dir_deg": 320
+  }
+}

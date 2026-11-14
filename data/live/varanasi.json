@@ -1,0 +1,78 @@
+{
+  "city": "Varanasi",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "no2": {
+      "value": 47.891394910602706,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 24
+    },
+    "pm10": {
+      "value": 160.53133680555555,
+      "unit": "µg/m³",
+      "naqi_subindex": 140,
+      "us_subindex": 103
+    },
+    "co": {
+      "value": 0.45979166666666665,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "pm25": {
+      "value": 68.7240625,
+      "unit": "µg/m³",
+      "naqi_subindex": 125,
+      "us_subindex": 160
+    },
+    "so2": {
+      "value": 65.7259240754942,
+      "unit": "µg/m³",
+      "naqi_subindex": 81,
+      "us_subindex": 36
+    },
+    "o3": {
+      "value": 10.596458333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 5
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 140,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 160,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.5,
+    "rh_pct": 87,
+    "precip_mm": 0.0,
+    "wind_ms": 1.31,
+    "wind_dir_deg": 173
+  }
+}

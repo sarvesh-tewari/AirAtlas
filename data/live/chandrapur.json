@@ -1,0 +1,77 @@
+{
+  "city": "Chandrapur",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "pm10": {
+      "value": 178.70411458333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 152,
+      "us_subindex": 112
+    },
+    "pm25": {
+      "value": 93.95166666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 208,
+      "us_subindex": 178
+    },
+    "co": {
+      "value": 0.5878125,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 30.37045085633947,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 15
+    },
+    "o3": {
+      "value": 45.31979166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 21
+    },
+    "so2": {
+      "value": 24.19397682344922,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 208,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 178,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.4,
+    "rh_pct": 66,
+    "precip_mm": 0.0,
+    "wind_ms": 0.25,
+    "wind_dir_deg": 281
+  }
+}

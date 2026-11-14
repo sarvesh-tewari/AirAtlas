@@ -1,0 +1,79 @@
+{
+  "city": "Chandigarh",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.9717708333333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 73.21996545493921,
+      "unit": "µg/m³",
+      "naqi_subindex": 91,
+      "us_subindex": 36
+    },
+    "o3": {
+      "value": 11.347239583333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 164.91059782608696,
+      "unit": "µg/m³",
+      "naqi_subindex": 143,
+      "us_subindex": 105
+    },
+    "pm25": {
+      "value": 65.47561594202898,
+      "unit": "µg/m³",
+      "naqi_subindex": 115,
+      "us_subindex": 158
+    },
+    "so2": {
+      "value": 15.611128972108611,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 143,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 158,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 19.1,
+    "rh_pct": 70,
+    "precip_mm": 0.0,
+    "wind_ms": 2.36,
+    "wind_dir_deg": 354
+  }
+}

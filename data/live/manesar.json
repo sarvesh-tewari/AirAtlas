@@ -1,0 +1,77 @@
+{
+  "city": "Manesar",
+  "updated_utc": "2026-11-13T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8643402777777779,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 104.74659719452966,
+      "unit": "µg/m³",
+      "naqi_subindex": 124,
+      "us_subindex": 52
+    },
+    "o3": {
+      "value": 11.502348484848484,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 254.34270833333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 204,
+      "us_subindex": 150
+    },
+    "pm25": {
+      "value": 144.9920138888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 319,
+      "us_subindex": 220
+    },
+    "so2": {
+      "value": 15.157992308566236,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 319,
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 220,
+      "category": "Very Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.0,
+    "rh_pct": 72,
+    "precip_mm": 0.0,
+    "wind_ms": 1.29,
+    "wind_dir_deg": 54
+  }
+}
