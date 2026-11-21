@@ -1,0 +1,80 @@
+{
+  "city": "Nayagarh",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.09429824561403509,
+      "unit": "mg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": 0
+    },
+    "no2": {
+      "value": 10.37748305011848,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 12.227579365079364,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 24.538968253968257,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 22
+    },
+    "pm25": {
+      "value": 8.45861111111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 47
+    },
+    "so2": {
+      "value": 37.64010074009154,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 46,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 47,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.5,
+    "rh_pct": 95,
+    "precip_mm": 0.0,
+    "wind_ms": 1.46,
+    "wind_dir_deg": 84
+  }
+}

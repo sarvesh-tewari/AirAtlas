@@ -1,0 +1,77 @@
+{
+  "city": "Ahmednagar",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6853125000000001,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 4.966289020961145,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 2
+    },
+    "o3": {
+      "value": 37.7653125,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 18
+    },
+    "pm10": {
+      "value": 109.17562500000001,
+      "unit": "µg/m³",
+      "naqi_subindex": 106,
+      "us_subindex": 78
+    },
+    "pm25": {
+      "value": 54.94708333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 149
+    },
+    "so2": {
+      "value": 3.466420415814588,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 106,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 149,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 18.6,
+    "rh_pct": 48,
+    "precip_mm": 0.0,
+    "wind_ms": 0.9,
+    "wind_dir_deg": 326
+  }
+}

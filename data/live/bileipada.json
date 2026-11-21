@@ -1,0 +1,80 @@
+{
+  "city": "Bileipada",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5789583333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 20.500397330862302,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 9
+    },
+    "o3": {
+      "value": 8.328125,
+      "unit": "µg/m³",
+      "naqi_subindex": 8,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 20.504280303030303,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 19
+    },
+    "pm25": {
+      "value": 7.6866666666666665,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 42
+    },
+    "so2": {
+      "value": 12.988977539195638,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 25,
+      "category": "Good",
+      "dominant": [
+        "co",
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 42,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.2,
+    "rh_pct": 96,
+    "precip_mm": 0.0,
+    "wind_ms": 1.41,
+    "wind_dir_deg": 84
+  }
+}

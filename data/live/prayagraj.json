@@ -1,0 +1,71 @@
+{
+  "city": "Prayagraj",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "o3": {
+      "value": 29.26166666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 13
+    },
+    "pm25": {
+      "value": 67.6517013888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 121,
+      "us_subindex": 159
+    },
+    "so2": {
+      "value": 90.36211970290844,
+      "unit": "µg/m³",
+      "naqi_subindex": 104,
+      "us_subindex": 49
+    },
+    "co": {
+      "value": 0.993125,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 8.151119327283572,
+      "unit": "µg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 121,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 159,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.7,
+    "rh_pct": 67,
+    "precip_mm": 0.0,
+    "wind_ms": 2.52,
+    "wind_dir_deg": 39
+  }
+}

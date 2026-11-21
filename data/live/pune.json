@@ -1,0 +1,77 @@
+{
+  "city": "Pune",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 8,
+  "pollutants": {
+    "co": {
+      "value": 1.1939930555555556,
+      "unit": "mg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 102.09374794897467,
+      "unit": "µg/m³",
+      "naqi_subindex": 122,
+      "us_subindex": 51
+    },
+    "pm10": {
+      "value": 164.99232638888887,
+      "unit": "µg/m³",
+      "naqi_subindex": 143,
+      "us_subindex": 105
+    },
+    "o3": {
+      "value": 25.504947916666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 64.57647569444444,
+      "unit": "µg/m³",
+      "naqi_subindex": 111,
+      "us_subindex": 157
+    },
+    "so2": {
+      "value": 13.361140077539195,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 143,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 157,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 16.6,
+    "rh_pct": 65,
+    "precip_mm": 0.0,
+    "wind_ms": 0.43,
+    "wind_dir_deg": 291
+  }
+}

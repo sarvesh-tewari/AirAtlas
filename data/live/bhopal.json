@@ -1,0 +1,78 @@
+{
+  "city": "Bhopal",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "no2": {
+      "value": 47.865555363837764,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 24
+    },
+    "o3": {
+      "value": 65.26302083333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 31
+    },
+    "pm10": {
+      "value": 202.9375,
+      "unit": "µg/m³",
+      "naqi_subindex": 168,
+      "us_subindex": 124
+    },
+    "pm25": {
+      "value": 101.88020833333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 235,
+      "us_subindex": 183
+    },
+    "co": {
+      "value": 0.27895833333333336,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "so2": {
+      "value": 23.830048170870256,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 235,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 183,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 17.7,
+    "rh_pct": 75,
+    "precip_mm": 0.0,
+    "wind_ms": 2.94,
+    "wind_dir_deg": 47
+  }
+}

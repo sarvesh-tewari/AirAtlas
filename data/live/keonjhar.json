@@ -1,0 +1,80 @@
+{
+  "city": "Keonjhar",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.928125,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 19.686206605743013,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 9
+    },
+    "o3": {
+      "value": 9.233645833333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 4
+    },
+    "pm10": {
+      "value": 26.187812500000003,
+      "unit": "µg/m³",
+      "naqi_subindex": 26,
+      "us_subindex": 24
+    },
+    "pm25": {
+      "value": 10.410104166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 53
+    },
+    "so2": {
+      "value": 20.0094341939332,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 45,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 53,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.1,
+    "rh_pct": 96,
+    "precip_mm": 0.0,
+    "wind_ms": 1.5,
+    "wind_dir_deg": 92
+  }
+}

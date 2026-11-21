@@ -1,0 +1,77 @@
+{
+  "city": "Dholpur",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.1708333333333334,
+      "unit": "mg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 11
+    },
+    "no2": {
+      "value": 37.60291059560327,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 18
+    },
+    "o3": {
+      "value": 29.402083333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 29,
+      "us_subindex": 13
+    },
+    "pm10": {
+      "value": 99.04166666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 99,
+      "us_subindex": 73
+    },
+    "pm25": {
+      "value": 52.65625,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 143
+    },
+    "so2": {
+      "value": 14.103145109066121,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 99,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 143,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 17.4,
+    "rh_pct": 83,
+    "precip_mm": 0.0,
+    "wind_ms": 1.0,
+    "wind_dir_deg": 37
+  }
+}

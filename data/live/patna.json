@@ -1,0 +1,77 @@
+{
+  "city": "Patna",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "no2": {
+      "value": 13.165918748934901,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 24.114722222222223,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 54.369507575757574,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 147
+    },
+    "so2": {
+      "value": 20.417034284821632,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 10
+    },
+    "co": {
+      "value": 0.8853125,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 82.87604166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 82,
+      "us_subindex": 64
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 90,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 147,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.9,
+    "rh_pct": 88,
+    "precip_mm": 0.0,
+    "wind_ms": 1.77,
+    "wind_dir_deg": 68
+  }
+}

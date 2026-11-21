@@ -1,0 +1,78 @@
+{
+  "city": "Nagaon",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.47350694444444447,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 0.9930748693478755,
+      "unit": "µg/m³",
+      "naqi_subindex": 0,
+      "us_subindex": 0
+    },
+    "o3": {
+      "value": 12.088541666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 56.732638888888886,
+      "unit": "µg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 51
+    },
+    "pm25": {
+      "value": 38.68402777777778,
+      "unit": "µg/m³",
+      "naqi_subindex": 63,
+      "us_subindex": 109
+    },
+    "so2": {
+      "value": 28.210839326289484,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 63,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 109,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.1,
+    "rh_pct": 83,
+    "precip_mm": 0.0,
+    "wind_ms": 1.01,
+    "wind_dir_deg": 27
+  }
+}

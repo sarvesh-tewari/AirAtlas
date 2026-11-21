@@ -1,0 +1,81 @@
+{
+  "city": "Rairangpur",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.36260416666666667,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 9.67470524525676,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 7.100659722222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 12.00701388888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 1.2128472222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 2,
+      "us_subindex": 7
+    },
+    "so2": {
+      "value": 14.998955487389232,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 18,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 11,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "no2",
+        "o3",
+        "pm10",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.9,
+    "rh_pct": 92,
+    "precip_mm": 0.0,
+    "wind_ms": 1.48,
+    "wind_dir_deg": 57
+  }
+}

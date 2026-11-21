@@ -1,0 +1,72 @@
+{
+  "city": "Bagalkot",
+  "updated_utc": "2026-11-15T02:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 15.488458599506606,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 24.032500000000002,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 57.092460317460315,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 52
+    },
+    "pm25": {
+      "value": 21.378809523809522,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 74
+    },
+    "so2": {
+      "value": 12.727936715681503,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 57,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 74,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.1,
+    "rh_pct": 65,
+    "precip_mm": 0.0,
+    "wind_ms": 1.84,
+    "wind_dir_deg": 61
+  }
+}

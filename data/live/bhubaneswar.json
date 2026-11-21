@@ -1,0 +1,77 @@
+{
+  "city": "Bhubaneswar",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.2503125,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 12.104733317001816,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 15.78003472222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 7
+    },
+    "pm10": {
+      "value": 12.625,
+      "unit": "µg/m³",
+      "naqi_subindex": 12,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 4.501984126984127,
+      "unit": "µg/m³",
+      "naqi_subindex": 7,
+      "us_subindex": 25
+    },
+    "so2": {
+      "value": 13.972585704953422,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 16,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 25,
+      "category": "Good",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.8,
+    "rh_pct": 95,
+    "precip_mm": 0.0,
+    "wind_ms": 1.39,
+    "wind_dir_deg": 38
+  }
+}

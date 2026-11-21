@@ -1,0 +1,78 @@
+{
+  "city": "Ankleshwar",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.3923263888888888,
+      "unit": "mg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 14
+    },
+    "no2": {
+      "value": 33.846082231311065,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 16
+    },
+    "o3": {
+      "value": 24.572847222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 172.66291666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 148,
+      "us_subindex": 109
+    },
+    "pm25": {
+      "value": 78.223125,
+      "unit": "µg/m³",
+      "naqi_subindex": 159,
+      "us_subindex": 167
+    },
+    "so2": {
+      "value": 52.461770983867304,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 29
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 159,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 167,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 18.4,
+    "rh_pct": 59,
+    "precip_mm": 0.0,
+    "wind_ms": 1.57,
+    "wind_dir_deg": 59
+  }
+}

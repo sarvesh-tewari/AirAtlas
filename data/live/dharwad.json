@@ -1,0 +1,79 @@
+{
+  "city": "Dharwad",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.5009375,
+      "unit": "mg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 15
+    },
+    "no2": {
+      "value": 39.9243537704499,
+      "unit": "µg/m³",
+      "naqi_subindex": 49,
+      "us_subindex": 20
+    },
+    "o3": {
+      "value": 25.788229166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 94.1571875,
+      "unit": "µg/m³",
+      "naqi_subindex": 94,
+      "us_subindex": 70
+    },
+    "pm25": {
+      "value": 35.31791666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 58,
+      "us_subindex": 100
+    },
+    "so2": {
+      "value": 28.626081918882075,
+      "unit": "µg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 94,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 100,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.0,
+    "rh_pct": 40,
+    "precip_mm": 0.0,
+    "wind_ms": 1.58,
+    "wind_dir_deg": 169
+  }
+}

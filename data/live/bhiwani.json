@@ -1,0 +1,71 @@
+{
+  "city": "Bhiwani",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.12940972222222222,
+      "unit": "mg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 10.31373585690752,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 13.91326388888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 181.71562500000002,
+      "unit": "µg/m³",
+      "naqi_subindex": 154,
+      "us_subindex": 114
+    },
+    "pm25": {
+      "value": 122.51354166666665,
+      "unit": "µg/m³",
+      "naqi_subindex": 302,
+      "us_subindex": 198
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 302,
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 198,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 15.6,
+    "rh_pct": 84,
+    "precip_mm": 0.0,
+    "wind_ms": 1.99,
+    "wind_dir_deg": 115
+  }
+}

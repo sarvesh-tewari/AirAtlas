@@ -1,0 +1,59 @@
+{
+  "city": "Mysuru",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3347569444444444,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "pm25": {
+      "value": 54.08291666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 147
+    },
+    "so2": {
+      "value": 44.180210565780506,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 23
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 90,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 147,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 21.0,
+    "rh_pct": 81,
+    "precip_mm": 0.0,
+    "wind_ms": 1.03,
+    "wind_dir_deg": 223
+  }
+}

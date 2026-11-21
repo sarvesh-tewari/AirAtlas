@@ -1,0 +1,59 @@
+{
+  "city": "Vrindavan",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4721527777777778,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "o3": {
+      "value": 16.89611111111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "pm25": {
+      "value": 55.64378472222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 92,
+      "us_subindex": 151
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 92,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 151,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 16.4,
+    "rh_pct": 82,
+    "precip_mm": 0.0,
+    "wind_ms": 1.03,
+    "wind_dir_deg": 47
+  }
+}

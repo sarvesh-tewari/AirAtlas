@@ -1,0 +1,45 @@
+{
+  "city": "Madurai",
+  "updated_utc": "2026-09-24T11:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 2
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 2,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.2,
+    "rh_pct": 50,
+    "precip_mm": 0.0,
+    "wind_ms": 8.66,
+    "wind_dir_deg": 241
+  }
+}

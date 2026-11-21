@@ -1,0 +1,80 @@
+{
+  "city": "Milupara",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.2581439393939394,
+      "unit": "mg/m³",
+      "naqi_subindex": 10,
+      "us_subindex": 2
+    },
+    "no2": {
+      "value": 22.751458880886755,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 18.12018115942029,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 17.594166666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 17,
+      "us_subindex": 16
+    },
+    "pm25": {
+      "value": 11.301060606060606,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 55
+    },
+    "so2": {
+      "value": 27.74114193118165,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 34,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 55,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.6,
+    "rh_pct": 97,
+    "precip_mm": 1.0,
+    "wind_ms": 2.52,
+    "wind_dir_deg": 82
+  }
+}

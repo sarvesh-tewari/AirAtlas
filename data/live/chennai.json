@@ -1,0 +1,78 @@
+{
+  "city": "Chennai",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.8581944444444445,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 20.602708333333332,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    },
+    "pm25": {
+      "value": 95.29177083333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 215,
+      "us_subindex": 179
+    },
+    "so2": {
+      "value": 5.024398977505113,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 1
+    },
+    "pm10": {
+      "value": 236.7504513888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 191,
+      "us_subindex": 141
+    },
+    "no2": {
+      "value": 20.560373826261074,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 215,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 179,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.5,
+    "rh_pct": 73,
+    "precip_mm": 0.0,
+    "wind_ms": 1.29,
+    "wind_dir_deg": 283
+  }
+}

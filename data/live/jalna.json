@@ -1,0 +1,78 @@
+{
+  "city": "Jalna",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5931944444444445,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 47.716006128578734,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 24
+    },
+    "o3": {
+      "value": 90.19913194444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 90,
+      "us_subindex": 42
+    },
+    "pm10": {
+      "value": 130.52228260869566,
+      "unit": "µg/m³",
+      "naqi_subindex": 120,
+      "us_subindex": 88
+    },
+    "pm25": {
+      "value": 59.38517361111111,
+      "unit": "µg/m³",
+      "naqi_subindex": 98,
+      "us_subindex": 154
+    },
+    "so2": {
+      "value": 29.152413732674393,
+      "unit": "µg/m³",
+      "naqi_subindex": 36,
+      "us_subindex": 16
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 120,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 154,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.3,
+    "rh_pct": 58,
+    "precip_mm": 0.0,
+    "wind_ms": 1.54,
+    "wind_dir_deg": 25
+  }
+}

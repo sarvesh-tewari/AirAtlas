@@ -1,0 +1,78 @@
+{
+  "city": "Jabalpur",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "pm25": {
+      "value": 76.83159722222221,
+      "unit": "µg/m³",
+      "naqi_subindex": 152,
+      "us_subindex": 166
+    },
+    "co": {
+      "value": 1.638888888888889,
+      "unit": "mg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 16
+    },
+    "no2": {
+      "value": 33.62277105345376,
+      "unit": "µg/m³",
+      "naqi_subindex": 41,
+      "us_subindex": 16
+    },
+    "o3": {
+      "value": 40.50833333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 128.13541666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 119,
+      "us_subindex": 87
+    },
+    "so2": {
+      "value": 15.396001647352875,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 7
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 152,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 166,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25",
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 20.8,
+    "rh_pct": 81,
+    "precip_mm": 0.0,
+    "wind_ms": 3.18,
+    "wind_dir_deg": 37
+  }
+}

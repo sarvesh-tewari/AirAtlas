@@ -1,0 +1,71 @@
+{
+  "city": "Pithampur",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0098263888888888,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 45.644203682401724,
+      "unit": "µg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 23
+    },
+    "o3": {
+      "value": 86.78576388888888,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 41
+    },
+    "pm10": {
+      "value": 341.2708333333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 291,
+      "us_subindex": 194
+    },
+    "so2": {
+      "value": 87.48636848768137,
+      "unit": "µg/m³",
+      "naqi_subindex": 103,
+      "us_subindex": 47
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 291,
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 194,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 16.5,
+    "rh_pct": 65,
+    "precip_mm": 0.0,
+    "wind_ms": 2.64,
+    "wind_dir_deg": 53
+  }
+}

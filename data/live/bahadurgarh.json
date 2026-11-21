@@ -1,0 +1,58 @@
+{
+  "city": "Bahadurgarh",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 16.244026173738924,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 19.74513888888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 9
+    },
+    "so2": {
+      "value": 25.47837202056351,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 13,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 16.2,
+    "rh_pct": 82,
+    "precip_mm": 0.0,
+    "wind_ms": 1.78,
+    "wind_dir_deg": 80
+  }
+}

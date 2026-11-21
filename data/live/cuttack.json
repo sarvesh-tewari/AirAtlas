@@ -1,0 +1,79 @@
+{
+  "city": "Cuttack",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.4702430555555555,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 13.511698271699615,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 19.44826388888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 14.975694444444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 13
+    },
+    "pm25": {
+      "value": 2.351851851851852,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": 13
+    },
+    "so2": {
+      "value": 22.80103990570325,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 28,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 13,
+      "category": "Good",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.9,
+    "rh_pct": 94,
+    "precip_mm": 0.0,
+    "wind_ms": 1.87,
+    "wind_dir_deg": 56
+  }
+}

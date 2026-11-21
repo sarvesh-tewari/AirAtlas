@@ -1,0 +1,72 @@
+{
+  "city": "Karnal",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.500625,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 22.05606218047035,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 21.135833333333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 131.85625,
+      "unit": "µg/m³",
+      "naqi_subindex": 121,
+      "us_subindex": 89
+    },
+    "pm25": {
+      "value": 65.92791666666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 115,
+      "us_subindex": 158
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 121,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 158,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 14.9,
+    "rh_pct": 86,
+    "precip_mm": 0.0,
+    "wind_ms": 2.4,
+    "wind_dir_deg": 88
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "city": "Ahmedabad",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 5,
+  "pollutants": {
+    "co": {
+      "value": 0.6272395833333333,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 69.42338142893661,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 34
+    },
+    "o3": {
+      "value": 27.714930555555554,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 13
+    },
+    "pm25": {
+      "value": 51.23670138888889,
+      "unit": "µg/m³",
+      "naqi_subindex": 85,
+      "us_subindex": 140
+    },
+    "so2": {
+      "value": 70.57868520222677,
+      "unit": "µg/m³",
+      "naqi_subindex": 87,
+      "us_subindex": 37
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 87,
+      "category": "Satisfactory",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 140,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 19.0,
+    "rh_pct": 51,
+    "precip_mm": 0.0,
+    "wind_ms": 2.58,
+    "wind_dir_deg": 72
+  }
+}

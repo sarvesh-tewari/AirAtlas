@@ -1,0 +1,78 @@
+{
+  "city": "Patiala",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.9451811594202898,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 24.526176844195486,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 40.84807971014493,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 159.0963768115942,
+      "unit": "µg/m³",
+      "naqi_subindex": 140,
+      "us_subindex": 103
+    },
+    "pm25": {
+      "value": 59.30478260869565,
+      "unit": "µg/m³",
+      "naqi_subindex": 98,
+      "us_subindex": 154
+    },
+    "so2": {
+      "value": 90.56934146883614,
+      "unit": "µg/m³",
+      "naqi_subindex": 104,
+      "us_subindex": 49
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 140,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 154,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 15.5,
+    "rh_pct": 79,
+    "precip_mm": 0.0,
+    "wind_ms": 2.85,
+    "wind_dir_deg": 112
+  }
+}

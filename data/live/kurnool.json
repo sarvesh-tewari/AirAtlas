@@ -1,0 +1,79 @@
+{
+  "city": "Kurnool",
+  "updated_utc": "2026-10-15T15:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "pm25": {
+      "value": 43.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 71,
+      "us_subindex": 119
+    },
+    "pm10": {
+      "value": 48.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 44
+    },
+    "no2": {
+      "value": 32.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 16
+    },
+    "so2": {
+      "value": 11.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "nh3": {
+      "value": 5.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": null
+    },
+    "o3": {
+      "value": 45.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 71,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 119,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25",
+        "pm10",
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.6,
+    "rh_pct": 74,
+    "precip_mm": 0.0,
+    "wind_ms": 3.0,
+    "wind_dir_deg": 116
+  }
+}

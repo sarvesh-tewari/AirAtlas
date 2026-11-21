@@ -1,0 +1,77 @@
+{
+  "city": "Pali",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.7818181818181817,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 39.021308978073165,
+      "unit": "µg/m³",
+      "naqi_subindex": 49,
+      "us_subindex": 19
+    },
+    "o3": {
+      "value": 24.497604166666665,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 124.63809523809525,
+      "unit": "µg/m³",
+      "naqi_subindex": 116,
+      "us_subindex": 85
+    },
+    "pm25": {
+      "value": 97.3047619047619,
+      "unit": "µg/m³",
+      "naqi_subindex": 221,
+      "us_subindex": 180
+    },
+    "so2": {
+      "value": 12.421521787661895,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 221,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 180,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 18.5,
+    "rh_pct": 49,
+    "precip_mm": 0.0,
+    "wind_ms": 2.82,
+    "wind_dir_deg": 84
+  }
+}

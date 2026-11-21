@@ -1,0 +1,78 @@
+{
+  "city": "Rishikesh",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.9873749999999999,
+      "unit": "mg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 12.326933819018405,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 31.861145833333335,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 15
+    },
+    "pm10": {
+      "value": 53.37895833333334,
+      "unit": "µg/m³",
+      "naqi_subindex": 53,
+      "us_subindex": 49
+    },
+    "pm25": {
+      "value": 30.823854166666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 91
+    },
+    "so2": {
+      "value": 4.67038738070893,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 53,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 91,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 14.3,
+    "rh_pct": 81,
+    "precip_mm": 0.0,
+    "wind_ms": 1.75,
+    "wind_dir_deg": 53
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "city": "Moradabad",
+  "updated_utc": "2026-11-20T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "no2": {
+      "value": 37.55351818762781,
+      "unit": "µg/m³",
+      "naqi_subindex": 46,
+      "us_subindex": 18
+    },
+    "o3": {
+      "value": 20.828854166666666,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 93.61741319444445,
+      "unit": "µg/m³",
+      "naqi_subindex": 93,
+      "us_subindex": 70
+    },
+    "so2": {
+      "value": 50.19758887184731,
+      "unit": "µg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 27
+    },
+    "co": {
+      "value": 0.33079861111111114,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 2
+    },
+    "pm25": {
+      "value": 44.40145833333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 123
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 93,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 123,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "so2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 16.6,
+    "rh_pct": 82,
+    "precip_mm": 0.0,
+    "wind_ms": 1.5,
+    "wind_dir_deg": 37
+  }
+}
