@@ -1,0 +1,78 @@
+{
+  "city": "Rajsamand",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8025000000000001,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 81.96573884551032,
+      "unit": "µg/m³",
+      "naqi_subindex": 101,
+      "us_subindex": 41
+    },
+    "o3": {
+      "value": 43.775000000000006,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 20
+    },
+    "pm10": {
+      "value": 87.51136363636364,
+      "unit": "µg/m³",
+      "naqi_subindex": 87,
+      "us_subindex": 67
+    },
+    "pm25": {
+      "value": 50.81818181818182,
+      "unit": "µg/m³",
+      "naqi_subindex": 83,
+      "us_subindex": 139
+    },
+    "so2": {
+      "value": 16.72516833984012,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 101,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 139,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.5,
+    "rh_pct": 27,
+    "precip_mm": 0.0,
+    "wind_ms": 2.58,
+    "wind_dir_deg": 99
+  }
+}

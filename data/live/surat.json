@@ -1,0 +1,57 @@
+{
+  "city": "Surat",
+  "updated_utc": "2026-11-27T21:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 2.211376811594203,
+      "unit": "mg/m³",
+      "naqi_subindex": 102,
+      "us_subindex": 22
+    },
+    "no2": {
+      "value": 7.416292214220088,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    },
+    "so2": {
+      "value": 46.78093965501912,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 24
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 24,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 33.3,
+    "rh_pct": 32,
+    "precip_mm": 0.0,
+    "wind_ms": 1.08,
+    "wind_dir_deg": 304
+  }
+}

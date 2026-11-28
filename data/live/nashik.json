@@ -1,0 +1,77 @@
+{
+  "city": "Nashik",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "co": {
+      "value": 0.8257065217391305,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 20.331503623188407,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    },
+    "pm10": {
+      "value": 129.3183695652174,
+      "unit": "µg/m³",
+      "naqi_subindex": 120,
+      "us_subindex": 88
+    },
+    "pm25": {
+      "value": 45.60380434782609,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 126
+    },
+    "no2": {
+      "value": 24.974458112163244,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 12
+    },
+    "so2": {
+      "value": 18.35168775673513,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 10
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 120,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 126,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.8,
+    "rh_pct": 34,
+    "precip_mm": 0.0,
+    "wind_ms": 1.78,
+    "wind_dir_deg": 169
+  }
+}

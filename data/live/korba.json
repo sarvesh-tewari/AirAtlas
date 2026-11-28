@@ -1,0 +1,79 @@
+{
+  "city": "Korba",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 2,
+  "pollutants": {
+    "co": {
+      "value": 0.4693478260869565,
+      "unit": "mg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 38.50310342239412,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 19
+    },
+    "o3": {
+      "value": 18.032210144927536,
+      "unit": "µg/m³",
+      "naqi_subindex": 18,
+      "us_subindex": 8
+    },
+    "pm10": {
+      "value": 63.72289855072463,
+      "unit": "µg/m³",
+      "naqi_subindex": 63,
+      "us_subindex": 55
+    },
+    "pm25": {
+      "value": 29.35201086956522,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 89
+    },
+    "so2": {
+      "value": 27.80669655760055,
+      "unit": "µg/m³",
+      "naqi_subindex": 34,
+      "us_subindex": 14
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 63,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 89,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.0,
+    "rh_pct": 42,
+    "precip_mm": 0.0,
+    "wind_ms": 0.14,
+    "wind_dir_deg": 45
+  }
+}

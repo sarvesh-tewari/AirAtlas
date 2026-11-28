@@ -1,0 +1,64 @@
+{
+  "city": "Coimbatore",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6082843137254903,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 6
+    },
+    "no2": {
+      "value": 34.469524180867985,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 17
+    },
+    "o3": {
+      "value": 19.525222222222222,
+      "unit": "µg/m³",
+      "naqi_subindex": 19,
+      "us_subindex": 8
+    },
+    "so2": {
+      "value": 44.61794394910248,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 24
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 24,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.3,
+    "rh_pct": 65,
+    "precip_mm": 0.0,
+    "wind_ms": 3.25,
+    "wind_dir_deg": 53
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "city": "Gwalior",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "o3": {
+      "value": 64.6804347826087,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 30
+    },
+    "pm10": {
+      "value": 239.8913043478261,
+      "unit": "µg/m³",
+      "naqi_subindex": 193,
+      "us_subindex": 143
+    },
+    "so2": {
+      "value": 34.16340668622745,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 19
+    },
+    "co": {
+      "value": 1.8065760869565215,
+      "unit": "mg/m³",
+      "naqi_subindex": 89,
+      "us_subindex": 17
+    },
+    "no2": {
+      "value": 121.2564867816603,
+      "unit": "µg/m³",
+      "naqi_subindex": 141,
+      "us_subindex": 62
+    },
+    "pm25": {
+      "value": 94.09601449275362,
+      "unit": "µg/m³",
+      "naqi_subindex": 211,
+      "us_subindex": 178
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 211,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 178,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10",
+        "no2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.5,
+    "rh_pct": 37,
+    "precip_mm": 0.0,
+    "wind_ms": 1.59,
+    "wind_dir_deg": 24
+  }
+}

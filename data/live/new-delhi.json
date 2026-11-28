@@ -1,0 +1,78 @@
+{
+  "city": "New Delhi",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 6,
+  "pollutants": {
+    "co": {
+      "value": 1.4860144927536232,
+      "unit": "mg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 14
+    },
+    "no2": {
+      "value": 54.45255620646988,
+      "unit": "µg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 26
+    },
+    "o3": {
+      "value": 33.50304347826087,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 16
+    },
+    "pm10": {
+      "value": 236.55722826086955,
+      "unit": "µg/m³",
+      "naqi_subindex": 191,
+      "us_subindex": 141
+    },
+    "so2": {
+      "value": 77.59009506535077,
+      "unit": "µg/m³",
+      "naqi_subindex": 96,
+      "us_subindex": 41
+    },
+    "pm25": {
+      "value": 129.46554347826086,
+      "unit": "µg/m³",
+      "naqi_subindex": 307,
+      "us_subindex": 205
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 307,
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 205,
+      "category": "Very Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.3,
+    "rh_pct": 50,
+    "precip_mm": 0.0,
+    "wind_ms": 0.71,
+    "wind_dir_deg": 8
+  }
+}

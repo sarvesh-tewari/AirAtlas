@@ -1,0 +1,71 @@
+{
+  "city": "Ambala",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.7380434782608696,
+      "unit": "mg/m³",
+      "naqi_subindex": 84,
+      "us_subindex": 17
+    },
+    "no2": {
+      "value": 24.46229736003675,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 48.81916666666667,
+      "unit": "µg/m³",
+      "naqi_subindex": 48,
+      "us_subindex": 22
+    },
+    "pm10": {
+      "value": 169.726884057971,
+      "unit": "µg/m³",
+      "naqi_subindex": 146,
+      "us_subindex": 108
+    },
+    "pm25": {
+      "value": 93.3508695652174,
+      "unit": "µg/m³",
+      "naqi_subindex": 208,
+      "us_subindex": 177
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 208,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 177,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.2,
+    "rh_pct": 52,
+    "precip_mm": 0.0,
+    "wind_ms": 1.01,
+    "wind_dir_deg": 290
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "city": "Kolar",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.2642028985507248,
+      "unit": "mg/m³",
+      "naqi_subindex": 56,
+      "us_subindex": 13
+    },
+    "no2": {
+      "value": 13.88032334548472,
+      "unit": "µg/m³",
+      "naqi_subindex": 16,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 25.811884057971014,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 12
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 13,
+      "category": "Good",
+      "dominant": [
+        "co"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.9,
+    "rh_pct": 51,
+    "precip_mm": 0.0,
+    "wind_ms": 3.03,
+    "wind_dir_deg": 68
+  }
+}

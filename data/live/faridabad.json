@@ -1,0 +1,78 @@
+{
+  "city": "Faridabad",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 1.1167391304347825,
+      "unit": "mg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 10
+    },
+    "no2": {
+      "value": 46.77553070818885,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 23
+    },
+    "o3": {
+      "value": 5.9294927536231885,
+      "unit": "µg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 3
+    },
+    "pm10": {
+      "value": 216.3021376811594,
+      "unit": "µg/m³",
+      "naqi_subindex": 177,
+      "us_subindex": 131
+    },
+    "pm25": {
+      "value": 108.43351449275362,
+      "unit": "µg/m³",
+      "naqi_subindex": 259,
+      "us_subindex": 188
+    },
+    "so2": {
+      "value": 12.216040550072615,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 259,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 188,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.7,
+    "rh_pct": 46,
+    "precip_mm": 0.0,
+    "wind_ms": 1.45,
+    "wind_dir_deg": 4
+  }
+}

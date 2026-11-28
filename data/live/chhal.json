@@ -1,0 +1,78 @@
+{
+  "city": "Chhal",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.5690579710144927,
+      "unit": "mg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 5
+    },
+    "no2": {
+      "value": 18.494440066239886,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 8
+    },
+    "o3": {
+      "value": 25.667348484848482,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 67.39394927536232,
+      "unit": "µg/m³",
+      "naqi_subindex": 67,
+      "us_subindex": 57
+    },
+    "pm25": {
+      "value": 28.514673913043477,
+      "unit": "µg/m³",
+      "naqi_subindex": 47,
+      "us_subindex": 87
+    },
+    "so2": {
+      "value": 24.84876358436324,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 13
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 67,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 87,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.1,
+    "rh_pct": 41,
+    "precip_mm": 0.0,
+    "wind_ms": 1.39,
+    "wind_dir_deg": 52
+  }
+}

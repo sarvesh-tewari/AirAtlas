@@ -1,0 +1,78 @@
+{
+  "city": "Chennai",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 7,
+  "pollutants": {
+    "no2": {
+      "value": 20.203062874914792,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 9
+    },
+    "o3": {
+      "value": 14.171376811594202,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "pm10": {
+      "value": 57.94510869565217,
+      "unit": "µg/m³",
+      "naqi_subindex": 57,
+      "us_subindex": 52
+    },
+    "pm25": {
+      "value": 22.766467391304346,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 76
+    },
+    "co": {
+      "value": 0.7246739130434783,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "so2": {
+      "value": 3.440929587149166,
+      "unit": "µg/m³",
+      "naqi_subindex": 4,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 57,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 76,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.7,
+    "rh_pct": 73,
+    "precip_mm": 0.1,
+    "wind_ms": 4.78,
+    "wind_dir_deg": 69
+  }
+}

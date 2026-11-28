@@ -1,0 +1,77 @@
+{
+  "city": "Angul",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.3577272727272727,
+      "unit": "mg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 13
+    },
+    "no2": {
+      "value": 36.25531037367541,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 18
+    },
+    "o3": {
+      "value": 30.00492424242424,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 14
+    },
+    "pm10": {
+      "value": 95.40530303030302,
+      "unit": "µg/m³",
+      "naqi_subindex": 95,
+      "us_subindex": 71
+    },
+    "pm25": {
+      "value": 53.95075757575758,
+      "unit": "µg/m³",
+      "naqi_subindex": 88,
+      "us_subindex": 146
+    },
+    "so2": {
+      "value": 51.745691733283756,
+      "unit": "µg/m³",
+      "naqi_subindex": 64,
+      "us_subindex": 27
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 95,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 146,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.7,
+    "rh_pct": 48,
+    "precip_mm": 0.0,
+    "wind_ms": 1.27,
+    "wind_dir_deg": 334
+  }
+}

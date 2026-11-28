@@ -1,0 +1,77 @@
+{
+  "city": "Gangtok",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.11836956521739131,
+      "unit": "mg/m³",
+      "naqi_subindex": 5,
+      "us_subindex": 1
+    },
+    "no2": {
+      "value": 11.622793742034913,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 1.6042028985507246,
+      "unit": "µg/m³",
+      "naqi_subindex": 1,
+      "us_subindex": 0
+    },
+    "pm10": {
+      "value": 27.848731884057973,
+      "unit": "µg/m³",
+      "naqi_subindex": 27,
+      "us_subindex": 25
+    },
+    "pm25": {
+      "value": 15.80318181818182,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 63
+    },
+    "so2": {
+      "value": 2.0757224504312264,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": 0
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 27,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 63,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 18.6,
+    "rh_pct": 42,
+    "precip_mm": 0.0,
+    "wind_ms": 1.79,
+    "wind_dir_deg": 198
+  }
+}

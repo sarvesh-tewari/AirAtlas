@@ -1,0 +1,51 @@
+{
+  "city": "Jalandhar",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.7943478260869563,
+      "unit": "mg/m³",
+      "naqi_subindex": 84,
+      "us_subindex": 17
+    },
+    "no2": {
+      "value": 67.74702219110281,
+      "unit": "µg/m³",
+      "naqi_subindex": 84,
+      "us_subindex": 34
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 34,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.9,
+    "rh_pct": 51,
+    "precip_mm": 0.0,
+    "wind_ms": 1.21,
+    "wind_dir_deg": 308
+  }
+}

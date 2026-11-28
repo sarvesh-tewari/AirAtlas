@@ -1,0 +1,45 @@
+{
+  "city": "Khairthal",
+  "updated_utc": "2026-10-15T15:30:00Z",
+  "source": "cpcb",
+  "n_stations": 1,
+  "pollutants": {
+    "o3": {
+      "value": 59.0,
+      "unit": "µg/m³",
+      "naqi_subindex": 59,
+      "us_subindex": 28
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 28,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 22.1,
+    "rh_pct": 76,
+    "precip_mm": 0.0,
+    "wind_ms": 1.92,
+    "wind_dir_deg": 171
+  }
+}

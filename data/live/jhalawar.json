@@ -1,0 +1,77 @@
+{
+  "city": "Jhalawar",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8523913043478261,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 89.55876409264692,
+      "unit": "µg/m³",
+      "naqi_subindex": 109,
+      "us_subindex": 44
+    },
+    "o3": {
+      "value": 51.03731884057971,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 23
+    },
+    "pm10": {
+      "value": 175.53985507246375,
+      "unit": "µg/m³",
+      "naqi_subindex": 150,
+      "us_subindex": 111
+    },
+    "pm25": {
+      "value": 93.19565217391305,
+      "unit": "µg/m³",
+      "naqi_subindex": 208,
+      "us_subindex": 177
+    },
+    "so2": {
+      "value": 36.74381906286121,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 208,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 177,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.7,
+    "rh_pct": 33,
+    "precip_mm": 0.0,
+    "wind_ms": 2.23,
+    "wind_dir_deg": 50
+  }
+}

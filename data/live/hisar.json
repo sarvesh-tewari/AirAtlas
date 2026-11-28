@@ -1,0 +1,59 @@
+{
+  "city": "Hisar",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 44.779995616608865,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 22
+    },
+    "o3": {
+      "value": 24.53326086956522,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 60.47532608695653,
+      "unit": "µg/m³",
+      "naqi_subindex": 100,
+      "us_subindex": 154
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 100,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 154,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.0,
+    "rh_pct": 37,
+    "precip_mm": 0.0,
+    "wind_ms": 1.14,
+    "wind_dir_deg": 52
+  }
+}

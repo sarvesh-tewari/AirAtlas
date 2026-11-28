@@ -1,0 +1,45 @@
+{
+  "city": "Cuddalore",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "pm10": {
+      "value": 23.861666666666665,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 21
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 21,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.4,
+    "rh_pct": 72,
+    "precip_mm": 0.0,
+    "wind_ms": 5.12,
+    "wind_dir_deg": 58
+  }
+}

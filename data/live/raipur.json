@@ -1,0 +1,79 @@
+{
+  "city": "Raipur",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 4,
+  "pollutants": {
+    "co": {
+      "value": 0.8044021739130435,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 40.98121154344862,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 20
+    },
+    "pm10": {
+      "value": 86.48561594202899,
+      "unit": "µg/m³",
+      "naqi_subindex": 86,
+      "us_subindex": 66
+    },
+    "pm25": {
+      "value": 38.58311594202898,
+      "unit": "µg/m³",
+      "naqi_subindex": 63,
+      "us_subindex": 108
+    },
+    "so2": {
+      "value": 12.257528416466615,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    },
+    "o3": {
+      "value": 3.43481884057971,
+      "unit": "µg/m³",
+      "naqi_subindex": 3,
+      "us_subindex": 1
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 86,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 108,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.0,
+    "rh_pct": 43,
+    "precip_mm": 0.0,
+    "wind_ms": 1.41,
+    "wind_dir_deg": 63
+  }
+}

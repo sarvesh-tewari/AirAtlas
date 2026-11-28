@@ -1,0 +1,79 @@
+{
+  "city": "Bharatpur",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.6340942028985508,
+      "unit": "mg/m³",
+      "naqi_subindex": 78,
+      "us_subindex": 16
+    },
+    "no2": {
+      "value": 94.1734943836875,
+      "unit": "µg/m³",
+      "naqi_subindex": 114,
+      "us_subindex": 47
+    },
+    "o3": {
+      "value": 37.225,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 17
+    },
+    "pm10": {
+      "value": 176.94927536231884,
+      "unit": "µg/m³",
+      "naqi_subindex": 151,
+      "us_subindex": 111
+    },
+    "pm25": {
+      "value": 56.130434782608695,
+      "unit": "µg/m³",
+      "naqi_subindex": 93,
+      "us_subindex": 151
+    },
+    "so2": {
+      "value": 7.390916244331822,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 3
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 151,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 151,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.3,
+    "rh_pct": 46,
+    "precip_mm": 0.0,
+    "wind_ms": 1.17,
+    "wind_dir_deg": 10
+  }
+}

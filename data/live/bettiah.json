@@ -1,0 +1,45 @@
+{
+  "city": "Bettiah",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 30.234828527607363,
+      "unit": "µg/m³",
+      "naqi_subindex": 38,
+      "us_subindex": 16
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 16,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.0,
+    "rh_pct": 48,
+    "precip_mm": 0.0,
+    "wind_ms": 0.52,
+    "wind_dir_deg": 163
+  }
+}

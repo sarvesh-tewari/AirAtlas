@@ -1,0 +1,57 @@
+{
+  "city": "Patiala",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0198188405797102,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 9
+    },
+    "no2": {
+      "value": 24.312040814587593,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 43.32496376811594,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 20
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 20,
+      "category": "Good",
+      "dominant": [
+        "o3"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Fair",
+      "category": "Fair",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.9,
+    "rh_pct": 44,
+    "precip_mm": 0.0,
+    "wind_ms": 1.1,
+    "wind_dir_deg": 321
+  }
+}

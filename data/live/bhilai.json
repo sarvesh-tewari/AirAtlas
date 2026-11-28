@@ -1,0 +1,80 @@
+{
+  "city": "Bhilai",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "no2": {
+      "value": 52.86961304458967,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 26
+    },
+    "pm10": {
+      "value": 76.8183152173913,
+      "unit": "µg/m³",
+      "naqi_subindex": 76,
+      "us_subindex": 61
+    },
+    "so2": {
+      "value": 40.56900983817907,
+      "unit": "µg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 21
+    },
+    "co": {
+      "value": 0.7851811594202899,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "o3": {
+      "value": 6.6169927536231885,
+      "unit": "µg/m³",
+      "naqi_subindex": 6,
+      "us_subindex": 3
+    },
+    "pm25": {
+      "value": 44.4925,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 123
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 76,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 123,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "so2",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.8,
+    "rh_pct": 40,
+    "precip_mm": 0.0,
+    "wind_ms": 1.63,
+    "wind_dir_deg": 72
+  }
+}

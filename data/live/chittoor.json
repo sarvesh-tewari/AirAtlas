@@ -1,0 +1,80 @@
+{
+  "city": "Chittoor",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.3990476190476191,
+      "unit": "mg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 3
+    },
+    "no2": {
+      "value": 26.33910822459181,
+      "unit": "µg/m³",
+      "naqi_subindex": 33,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 37.2084126984127,
+      "unit": "µg/m³",
+      "naqi_subindex": 37,
+      "us_subindex": 17
+    },
+    "pm10": {
+      "value": 73.30603174603175,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 60
+    },
+    "pm25": {
+      "value": 44.05829365079365,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 122
+    },
+    "so2": {
+      "value": 32.0205224461973,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 17
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 73,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 122,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 27.9,
+    "rh_pct": 69,
+    "precip_mm": 0.0,
+    "wind_ms": 3.41,
+    "wind_dir_deg": 76
+  }
+}

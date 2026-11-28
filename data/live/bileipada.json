@@ -1,0 +1,78 @@
+{
+  "city": "Bileipada",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.038478260869565,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 10
+    },
+    "no2": {
+      "value": 22.591726083251828,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 11
+    },
+    "o3": {
+      "value": 11.758442028985508,
+      "unit": "µg/m³",
+      "naqi_subindex": 11,
+      "us_subindex": 5
+    },
+    "pm10": {
+      "value": 232.01325757575754,
+      "unit": "µg/m³",
+      "naqi_subindex": 188,
+      "us_subindex": 139
+    },
+    "pm25": {
+      "value": 110.95500000000001,
+      "unit": "µg/m³",
+      "naqi_subindex": 266,
+      "us_subindex": 190
+    },
+    "so2": {
+      "value": 17.300725100026675,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 266,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 190,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.0,
+    "rh_pct": 47,
+    "precip_mm": 0.0,
+    "wind_ms": 2.43,
+    "wind_dir_deg": 37
+  }
+}

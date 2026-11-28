@@ -1,0 +1,77 @@
+{
+  "city": "Kolkata",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 6,
+  "pollutants": {
+    "co": {
+      "value": 1.1207789855072463,
+      "unit": "mg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 10
+    },
+    "no2": {
+      "value": 107.57969833474111,
+      "unit": "µg/m³",
+      "naqi_subindex": 127,
+      "us_subindex": 54
+    },
+    "o3": {
+      "value": 23.642228260869565,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 11
+    },
+    "so2": {
+      "value": 16.64161866423639,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    },
+    "pm25": {
+      "value": 45.96510869565218,
+      "unit": "µg/m³",
+      "naqi_subindex": 75,
+      "us_subindex": 127
+    },
+    "pm10": {
+      "value": 79.21489130434783,
+      "unit": "µg/m³",
+      "naqi_subindex": 79,
+      "us_subindex": 63
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 127,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 127,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 26.8,
+    "rh_pct": 58,
+    "precip_mm": 0.0,
+    "wind_ms": 2.05,
+    "wind_dir_deg": 1
+  }
+}

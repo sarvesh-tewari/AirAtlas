@@ -1,0 +1,79 @@
+{
+  "city": "Vijayawada",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 3,
+  "pollutants": {
+    "co": {
+      "value": 0.7209782608695652,
+      "unit": "mg/m³",
+      "naqi_subindex": 35,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 41.9576404782016,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 21
+    },
+    "o3": {
+      "value": 25.678586956521738,
+      "unit": "µg/m³",
+      "naqi_subindex": 25,
+      "us_subindex": 12
+    },
+    "pm10": {
+      "value": 73.84572463768116,
+      "unit": "µg/m³",
+      "naqi_subindex": 73,
+      "us_subindex": 60
+    },
+    "pm25": {
+      "value": 41.63485507246377,
+      "unit": "µg/m³",
+      "naqi_subindex": 68,
+      "us_subindex": 116
+    },
+    "so2": {
+      "value": 34.17299541507365,
+      "unit": "µg/m³",
+      "naqi_subindex": 43,
+      "us_subindex": 19
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 73,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 116,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 30.2,
+    "rh_pct": 46,
+    "precip_mm": 0.0,
+    "wind_ms": 2.19,
+    "wind_dir_deg": 63
+  }
+}

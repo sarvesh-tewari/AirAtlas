@@ -1,0 +1,77 @@
+{
+  "city": "Tumidih",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.6915942028985507,
+      "unit": "mg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 7
+    },
+    "no2": {
+      "value": 89.89213728105273,
+      "unit": "µg/m³",
+      "naqi_subindex": 109,
+      "us_subindex": 44
+    },
+    "o3": {
+      "value": 24.96,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 11
+    },
+    "pm10": {
+      "value": 94.15470833333333,
+      "unit": "µg/m³",
+      "naqi_subindex": 94,
+      "us_subindex": 70
+    },
+    "pm25": {
+      "value": 40.714285714285715,
+      "unit": "µg/m³",
+      "naqi_subindex": 66,
+      "us_subindex": 114
+    },
+    "so2": {
+      "value": 12.537785124922204,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 109,
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 114,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.9,
+    "rh_pct": 40,
+    "precip_mm": 0.0,
+    "wind_ms": 1.53,
+    "wind_dir_deg": 52
+  }
+}

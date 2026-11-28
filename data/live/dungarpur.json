@@ -1,0 +1,79 @@
+{
+  "city": "Dungarpur",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 0.8397463768115941,
+      "unit": "mg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 8
+    },
+    "no2": {
+      "value": 36.20610079724964,
+      "unit": "µg/m³",
+      "naqi_subindex": 45,
+      "us_subindex": 18
+    },
+    "o3": {
+      "value": 51.84202898550724,
+      "unit": "µg/m³",
+      "naqi_subindex": 51,
+      "us_subindex": 24
+    },
+    "pm10": {
+      "value": 76.21014492753623,
+      "unit": "µg/m³",
+      "naqi_subindex": 76,
+      "us_subindex": 61
+    },
+    "pm25": {
+      "value": 39.594202898550726,
+      "unit": "µg/m³",
+      "naqi_subindex": 65,
+      "us_subindex": 111
+    },
+    "so2": {
+      "value": 10.959632257490886,
+      "unit": "µg/m³",
+      "naqi_subindex": 13,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 76,
+      "category": "Satisfactory",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 111,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2",
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.4,
+    "rh_pct": 28,
+    "precip_mm": 0.0,
+    "wind_ms": 2.85,
+    "wind_dir_deg": 72
+  }
+}

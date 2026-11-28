@@ -1,0 +1,59 @@
+{
+  "city": "Kurukshetra",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.0519565217391305,
+      "unit": "mg/m³",
+      "naqi_subindex": 50,
+      "us_subindex": 10
+    },
+    "o3": {
+      "value": 28.067065217391306,
+      "unit": "µg/m³",
+      "naqi_subindex": 28,
+      "us_subindex": 13
+    },
+    "pm10": {
+      "value": 241.18152173913043,
+      "unit": "µg/m³",
+      "naqi_subindex": 194,
+      "us_subindex": 144
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 194,
+      "category": "Moderate",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 144,
+      "category": "Unhealthy for Sensitive Groups",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 23.4,
+    "rh_pct": 51,
+    "precip_mm": 0.0,
+    "wind_ms": 0.89,
+    "wind_dir_deg": 344
+  }
+}

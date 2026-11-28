@@ -1,0 +1,78 @@
+{
+  "city": "Sawai Madhopur",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.3352536231884058,
+      "unit": "mg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 13
+    },
+    "no2": {
+      "value": 62.87459238019027,
+      "unit": "µg/m³",
+      "naqi_subindex": 77,
+      "us_subindex": 31
+    },
+    "o3": {
+      "value": 40.11086956521739,
+      "unit": "µg/m³",
+      "naqi_subindex": 40,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 215.25,
+      "unit": "µg/m³",
+      "naqi_subindex": 177,
+      "us_subindex": 131
+    },
+    "pm25": {
+      "value": 105.56818181818181,
+      "unit": "µg/m³",
+      "naqi_subindex": 249,
+      "us_subindex": 186
+    },
+    "so2": {
+      "value": 12.891808588957057,
+      "unit": "µg/m³",
+      "naqi_subindex": 15,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 249,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 186,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Very Poor",
+      "category": "Very Poor",
+      "dominant": [
+        "pm10",
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.5,
+    "rh_pct": 40,
+    "precip_mm": 0.0,
+    "wind_ms": 2.1,
+    "wind_dir_deg": 38
+  }
+}

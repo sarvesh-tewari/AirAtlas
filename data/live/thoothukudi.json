@@ -1,0 +1,65 @@
+{
+  "city": "Thoothukudi",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 25.21628537445002,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 30.34059523809524,
+      "unit": "µg/m³",
+      "naqi_subindex": 30,
+      "us_subindex": 14
+    },
+    "pm10": {
+      "value": 21.760757575757577,
+      "unit": "µg/m³",
+      "naqi_subindex": 21,
+      "us_subindex": 19
+    },
+    "so2": {
+      "value": 7.9419488163847065,
+      "unit": "µg/m³",
+      "naqi_subindex": 9,
+      "us_subindex": 4
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 31,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 19,
+      "category": "Good",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 29.0,
+    "rh_pct": 74,
+    "precip_mm": 0.1,
+    "wind_ms": 4.15,
+    "wind_dir_deg": 75
+  }
+}

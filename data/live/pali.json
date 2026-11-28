@@ -1,0 +1,51 @@
+{
+  "city": "Pali",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 44.24925731972971,
+      "unit": "µg/m³",
+      "naqi_subindex": 55,
+      "us_subindex": 22
+    },
+    "o3": {
+      "value": 23.935797101449275,
+      "unit": "µg/m³",
+      "naqi_subindex": 23,
+      "us_subindex": 11
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 22,
+      "category": "Good",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Moderate",
+      "category": "Moderate",
+      "dominant": [
+        "no2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 28.9,
+    "rh_pct": 19,
+    "precip_mm": 0.0,
+    "wind_ms": 2.75,
+    "wind_dir_deg": 87
+  }
+}

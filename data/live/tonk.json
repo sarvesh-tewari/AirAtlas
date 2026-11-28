@@ -1,0 +1,77 @@
+{
+  "city": "Tonk",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "co": {
+      "value": 1.3821739130434783,
+      "unit": "mg/m³",
+      "naqi_subindex": 62,
+      "us_subindex": 14
+    },
+    "no2": {
+      "value": 89.38696441273228,
+      "unit": "µg/m³",
+      "naqi_subindex": 109,
+      "us_subindex": 44
+    },
+    "o3": {
+      "value": 42.0213768115942,
+      "unit": "µg/m³",
+      "naqi_subindex": 42,
+      "us_subindex": 19
+    },
+    "pm10": {
+      "value": 288.65579710144925,
+      "unit": "µg/m³",
+      "naqi_subindex": 238,
+      "us_subindex": 167
+    },
+    "pm25": {
+      "value": 112.34782608695652,
+      "unit": "µg/m³",
+      "naqi_subindex": 273,
+      "us_subindex": 191
+    },
+    "so2": {
+      "value": 11.141913043478262,
+      "unit": "µg/m³",
+      "naqi_subindex": 14,
+      "us_subindex": 6
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 273,
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 191,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Extremely Poor",
+      "category": "Extremely Poor",
+      "dominant": [
+        "pm10"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.1,
+    "rh_pct": 38,
+    "precip_mm": 0.0,
+    "wind_ms": 2.21,
+    "wind_dir_deg": 84
+  }
+}

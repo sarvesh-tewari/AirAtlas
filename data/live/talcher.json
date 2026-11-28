@@ -1,0 +1,65 @@
+{
+  "city": "Talcher",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "no2": {
+      "value": 25.607504605874695,
+      "unit": "µg/m³",
+      "naqi_subindex": 31,
+      "us_subindex": 12
+    },
+    "o3": {
+      "value": 24.16662878787879,
+      "unit": "µg/m³",
+      "naqi_subindex": 24,
+      "us_subindex": 11
+    },
+    "pm25": {
+      "value": 83.42305555555556,
+      "unit": "µg/m³",
+      "naqi_subindex": 176,
+      "us_subindex": 171
+    },
+    "so2": {
+      "value": 96.89739329491232,
+      "unit": "µg/m³",
+      "naqi_subindex": 106,
+      "us_subindex": 51
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": 176,
+      "category": "Moderate",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "us": {
+      "index": 171,
+      "category": "Unhealthy",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Poor",
+      "category": "Poor",
+      "dominant": [
+        "pm25"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 25.8,
+    "rh_pct": 48,
+    "precip_mm": 0.0,
+    "wind_ms": 1.28,
+    "wind_dir_deg": 329
+  }
+}

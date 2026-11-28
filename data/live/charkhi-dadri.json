@@ -1,0 +1,45 @@
+{
+  "city": "Charkhi Dadri",
+  "updated_utc": "2026-11-27T22:30:00Z",
+  "source": "openaq",
+  "n_stations": 1,
+  "pollutants": {
+    "so2": {
+      "value": 16.460339723029456,
+      "unit": "µg/m³",
+      "naqi_subindex": 20,
+      "us_subindex": 9
+    }
+  },
+  "aqi": {
+    "naqi": {
+      "index": null,
+      "category": null,
+      "dominant": [],
+      "valid": false
+    },
+    "us": {
+      "index": 9,
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    },
+    "eu": {
+      "band": "Good",
+      "category": "Good",
+      "dominant": [
+        "so2"
+      ],
+      "valid": true
+    }
+  },
+  "weather": {
+    "temp_c": 24.6,
+    "rh_pct": 40,
+    "precip_mm": 0.0,
+    "wind_ms": 1.27,
+    "wind_dir_deg": 42
+  }
+}
